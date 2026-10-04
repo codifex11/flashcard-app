@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-mode="quiz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Flashcards — Study Desk</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <!-- Inline theme initializer to eliminate flash and apply dark theme immediately -->
+  <script>
+    (function () {
+      try {
+        if (!localStorage.getItem("flashcards.theme_initialized")) {
+          localStorage.setItem("flashcards.theme_initialized", "true");
+          localStorage.setItem("flashcards.theme", "dark");
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          var t = localStorage.getItem("flashcards.theme") || "dark";
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+      // Restore last study mode (quiz is the default)
+      try {
+        var m = localStorage.getItem("flashcards.mode");
+        document.documentElement.setAttribute("data-mode", m === "flashcards" ? "flashcards" : "quiz");
+      } catch (e) {
+        document.documentElement.setAttribute("data-mode", "quiz");
+      }
+    })();
+  </script>
+  <!-- Stylesheets loaded in exact required order -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <!-- Scripts loaded with defer in exact required order -->
+  <script defer src="content/data-bundle.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/state.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/app.js"></script>
+  <script defer src="js/quiz.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-brand">
+      <svg class="header-doodle" viewBox="0 0 36 36" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <!-- Handcrafted stationery index card doodle with bookmark tag -->
+        <rect x="5" y="8" width="24" height="20" rx="3" fill="var(--color-card-front)" stroke="var(--color-ink)"/>
+        <path d="M10 14h14M10 19h9" stroke="var(--color-ink)" stroke-width="1.8"/>
+        <path d="M21 5v8l3.5-2.2L28 13V5z" fill="var(--color-accent-blush)" stroke="var(--color-ink)" stroke-width="1.8"/>
+      </svg>
+      <div class="header-titles">
+        <h1>Flashcards</h1>
+        <span class="header-desk-tag">Study Desk</span>
+      </div>
+    </div>
+    <div class="header-controls">
+      <div class="mode-switch" role="group" aria-label="Study mode">
+        <button type="button" class="mode-btn" data-mode="quiz" aria-pressed="true">Quiz</button>
+        <button type="button" class="mode-btn" data-mode="flashcards" aria-pressed="false">Flashcards</button>
+      </div>
+      <div class="select-wrapper">
+        <select id="deck-select" aria-label="Choose deck"></select>
+      </div>
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Quiz mode: Department → Year → Semester → Subject → Level → Set (rendered by js/quiz.js) -->
+  <main id="quiz-view" class="quiz-layout" aria-labelledby="quiz-heading">
+    <nav class="quiz-breadcrumb" aria-label="Quiz navigation">
+      <ol id="quiz-crumbs"></ol>
+    </nav>
+    <section id="quiz-panel" class="quiz-panel" aria-live="polite"></section>
+  </main>
+
+  <main id="flashcard-view" class="study-layout">
+    <!-- Main Focus Area: The Index Card Stage -->
+    <div class="study-stage">
+      <!-- Academic course hierarchy & Phase Navigation bar -->
+      <section class="study-hierarchy-bar" id="study-hierarchy-bar" aria-label="Course and Phase selection">
+        <div class="hierarchy-breadcrumbs" id="fc-breadcrumbs">
+          <span class="fc-dept-tag" id="fc-dept-tag">Information System</span>
+          <span class="fc-crumb-sep">›</span>
+          <span class="fc-term-tag" id="fc-term-tag">Year 2 · Semester 1</span>
+          <span class="fc-crumb-sep">›</span>
+          <strong class="fc-subject-tag" id="fc-subject-tag">Database</strong>
+        </div>
+        <div class="phase-tabs" id="phase-tabs" role="tablist" aria-label="Study phases">
+          <!-- Phase pills populated by JS -->
+        </div>
+      </section>
+
+      <section class="progress" aria-label="Deck progress">
+        <div class="progress-info">
+          <span class="counter-label">Card</span>
+          <p id="counter" aria-live="polite">1 / 10</p>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10">
+            <div id="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card-area" aria-label="Flashcard area">
+        <button id="card" class="card" type="button" aria-label="Flashcard. Press to flip.">
+          <span class="card-inner">
+            <span class="card-face card-front">
+              <span class="card-top-strip"></span>
+              <span class="card-header-row">
+                <span class="card-label">Question</span>
+                <span class="card-category" id="card-category-front"></span>
+              </span>
+              <span id="card-question"></span>
+              <span class="card-hint">Click or press Space to flip &bull;</span>
+            </span>
+            <span class="card-face card-back">
+              <span class="card-top-strip"></span>
+              <span class="card-header-row">
+                <span class="card-label">Answer</span>
+                <span class="card-category" id="card-category-back"></span>
+              </span>
+              <span id="card-answer"></span>
+              <span id="card-source" class="card-source-tag"></span>
+              <span class="card-hint">Click or press Space to flip &bull;</span>
+            </span>
+          </span>
+        </button>
+        <div id="empty-message" class="empty-state" hidden></div>
+      </section>
+
+      <section class="controls primary-controls" aria-label="Card navigation">
+        <button id="prev-btn" class="btn-primary-nav" type="button" aria-label="Previous card">
+          <span class="btn-arrow" aria-hidden="true">&larr;</span> Previous
+        </button>
+        <button id="flip-btn" class="btn-flip" type="button" aria-label="Flip card">
+          Flip Card
+        </button>
+        <button id="next-btn" class="btn-primary-nav" type="button" aria-label="Next card">
+          Next <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+        </button>
+      </section>
+    </div>
+
+    <!-- Side Panel: Study Feedback, Tools, and Card Management -->
+    <aside class="study-sidebar">
+      <!-- Self-check feedback -->
+      <section class="panel-section feedback-panel" aria-label="Study feedback">
+        <h2 class="panel-heading">Self Check</h2>
+        <div class="feedback">
+          <button id="known-btn" class="btn-known" type="button" aria-label="Mark card as known">
+            <svg class="btn-svg" viewBox="0 0 18 18" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3.5 9.5 7.5 13.5 14.5 4.5" />
+            </svg>
+            I knew it
+          </button>
+          <button id="review-btn" class="btn-review" type="button" aria-label="Mark card for review">
+            <svg class="btn-svg" viewBox="0 0 18 18" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 4v4h-4" />
+              <path d="M13.5 8A6 6 0 1 0 14 12" />
+            </svg>
+            Review again
+          </button>
+        </div>
+        <p id="score" aria-live="polite">Known: 0 · Review: 0</p>
+      </section>
+
+      <!-- Deck order controls -->
+      <section class="panel-section tools-panel" aria-label="Study tools">
+        <h2 class="panel-heading">Order &amp; Focus</h2>
+        <div class="controls secondary-controls">
+          <button id="shuffle-btn" class="btn-quiet" type="button" aria-label="Shuffle cards">Shuffle</button>
+          <button id="reset-order-btn" class="btn-quiet" type="button" aria-label="Reset card order">Reset order</button>
+          <label class="toggle-container" for="review-only-toggle">
+            <input type="checkbox" id="review-only-toggle">
+            <span class="toggle-box" aria-hidden="true"></span>
+            <span class="toggle-text">Review only</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Content management -->
+      <section class="panel-section manage-panel" aria-label="Card management">
+        <h2 class="panel-heading">Deck Shelf</h2>
+        <div class="manage">
+          <button id="add-card-btn" class="btn-quiet btn-add" type="button" aria-label="Add new card">+ Add card</button>
+          <button id="delete-card-btn" class="btn-quiet btn-delete" type="button" aria-label="Delete current card">Delete card</button>
+          <button id="export-btn" class="btn-quiet" type="button" aria-label="Export custom cards">Export</button>
+          <label for="import-input" class="file-label btn-quiet" role="button" tabindex="0">
+            Import
+            <input type="file" id="import-input" accept=".json" aria-label="Import custom cards">
+          </label>
+        </div>
+        <p id="status-message" aria-live="polite"></p>
+      </section>
+    </aside>
+  </main>
+
+  <dialog id="add-dialog" aria-labelledby="dialog-heading">
+    <form id="add-card-form" method="dialog" novalidate>
+      <div class="dialog-header">
+        <h2 id="dialog-heading">New Index Card</h2>
+        <span class="dialog-subtitle">Write a prompt for your study collection</span>
+      </div>
+      <div class="form-group">
+        <label for="new-question">Question</label>
+        <textarea id="new-question" maxlength="300" required rows="3" placeholder="Write question prompt..."></textarea>
+        <span id="question-error" class="error-message" aria-live="polite"></span>
+      </div>
+      <div class="form-group">
+        <label for="new-answer">Answer</label>
+        <textarea id="new-answer" maxlength="300" required rows="3" placeholder="Write answer details..."></textarea>
+        <span id="answer-error" class="error-message" aria-live="polite"></span>
+      </div>
+      <div class="dialog-actions">
+        <button type="button" id="cancel-card-btn" class="btn-dialog-secondary">Cancel</button>
+        <button type="submit" id="save-card-btn" class="btn-dialog-primary">Save to Desk</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer>
+    <p>A quiet place to practice &bull; Built with plain HTML, CSS, and JavaScript.</p>
+  </footer>
+</body>
+</html>

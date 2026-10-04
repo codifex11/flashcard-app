@@ -1,0 +1,440 @@
+{
+  "level": "easy",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "advanced-programming-easy-s1-q01",
+          "question": "What is the valid range of index subscripts for an array of size N in C++?",
+          "options": [
+            "0 to N",
+            "-1 to N-1",
+            "1 to N",
+            "0 to N-1"
+          ],
+          "correctIndex": 3,
+          "explanation": "In C++, arrays are zero-bounded, meaning the first element is located at index 0 and the last element is at index N-1.",
+          "sourceRef": "Chapter 1.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s1-q02",
+          "question": "Which special character is automatically appended to the end of a string enclosed in double quotes in C++?",
+          "options": [
+            "'\\t'",
+            "' '",
+            "'\\n'",
+            "'\\0'"
+          ],
+          "correctIndex": 3,
+          "explanation": "In C++, strings enclosed in double quotes are null-terminated, with the null character '\\0' automatically appended to mark the end of the string.",
+          "sourceRef": "Chapter 1.pdf, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s1-q03",
+          "question": "Which C++ standard library header must be included to use predefined mathematical functions like sqrt() and pow()?",
+          "options": [
+            "<iostream>",
+            "<cmath>",
+            "<string>",
+            "<cstdlib>"
+          ],
+          "correctIndex": 1,
+          "explanation": "Mathematical functions such as sqrt(), pow(), ceil(), and floor() are declared in the <cmath> header library.",
+          "sourceRef": "Chapter 2.pdf, slide 7",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s1-q04",
+          "question": "What return type must be declared for a C++ function that does not return any value to its caller?",
+          "options": [
+            "empty",
+            "null",
+            "none",
+            "void"
+          ],
+          "correctIndex": 3,
+          "explanation": "A function that performs actions without returning a calculated result to the caller must specify void as its return type.",
+          "sourceRef": "Chapter 2.pdf, slide 10",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s1-q05",
+          "question": "Which operator in C++ is used to obtain the memory address of an existing variable?",
+          "options": [
+            "The address-of operator (&)",
+            "The dereference operator (*)",
+            "The member access operator (->)",
+            "The scope resolution operator (::)"
+          ],
+          "correctIndex": 0,
+          "explanation": "The ampersand (&) is the address-of operator, which produces the memory address of whichever variable it precedes.",
+          "sourceRef": "Chapter 3.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s1-q06",
+          "question": "From which memory storage area is dynamic memory allocated when using the new operator in C++?",
+          "options": [
+            "The read-only code segment",
+            "The CPU register cache",
+            "The heap",
+            "The runtime stack"
+          ],
+          "correctIndex": 2,
+          "explanation": "Unlike normal local variables allocated on the runtime stack, dynamic objects created using new are allocated from the heap.",
+          "sourceRef": "Chapter 3.pdf, slide 38",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s1-q07",
+          "question": "Which stream class in C++ is specifically used for reading input from a disk file?",
+          "options": [
+            "ifstream",
+            "ofstream",
+            "iostream",
+            "ostream"
+          ],
+          "correctIndex": 0,
+          "explanation": "The ifstream class stands for input-file stream and provides member functions for reading data from disk files.",
+          "sourceRef": "Chapter 4.pdf, slide 11",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s1-q08",
+          "question": "What is the default access mode when opening a disk file in C++?",
+          "options": [
+            "Text mode",
+            "Append mode",
+            "Random mode",
+            "Binary mode"
+          ],
+          "correctIndex": 0,
+          "explanation": "In C++, the default mode for file operations is text mode, which interprets files as standard ASCII characters.",
+          "sourceRef": "Chapter 4.pdf, slide 45",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s1-q09",
+          "question": "What are the four fundamental pillars of Object-Oriented Programming (OOP)?",
+          "options": [
+            "Compilation, Linking, Execution, and Debugging",
+            "Abstraction, Encapsulation, Inheritance, and Polymorphism",
+            "Iteration, Selection, Sequence, and Recursion",
+            "Pointers, References, Arrays, and Structures"
+          ],
+          "correctIndex": 1,
+          "explanation": "The four pillars of OOP defined in the material are abstraction, encapsulation, inheritance, and polymorphism.",
+          "sourceRef": "Chapter 5.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s1-q10",
+          "question": "What is the default access specifier for members of a class in C++ if none is explicitly provided?",
+          "options": [
+            "public",
+            "global",
+            "private",
+            "protected"
+          ],
+          "correctIndex": 2,
+          "explanation": "In C++, members of a class are private by default, while members of a struct are public by default.",
+          "sourceRef": "Chapter 5.pdf, slide 17",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "advanced-programming-easy-s2-q01",
+          "question": "What initial values are assigned to the elements of a global array declared outside all functions?",
+          "options": [
+            "All elements are initialized to zero",
+            "All elements are initialized to negative one",
+            "All elements are set to null pointers",
+            "Undetermined garbage values"
+          ],
+          "correctIndex": 0,
+          "explanation": "Declaring a global array outside any function initializes all its elements to zero automatically.",
+          "sourceRef": "Chapter 1.pdf, slide 6",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s2-q02",
+          "question": "Which C-string manipulation function returns the length of a string without counting its null terminating character?",
+          "options": [
+            "strcmp()",
+            "sizeof()",
+            "strcpy()",
+            "strlen()"
+          ],
+          "correctIndex": 3,
+          "explanation": "strlen() calculates the number of valid characters in a string, excluding the final null character '\\0'.",
+          "sourceRef": "Chapter 1.pdf, slide 29",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s2-q03",
+          "question": "What is the programming technique of breaking down an overall task into smaller subtasks to design an algorithm called?",
+          "options": [
+            "Inline substitution",
+            "Bottom-up compilation",
+            "Dynamic binding",
+            "Top-down design or divide and conquer"
+          ],
+          "correctIndex": 3,
+          "explanation": "Top-down design (or divide and conquer) breaks down a problem into a hierarchy of smaller subtasks.",
+          "sourceRef": "Chapter 2.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s2-q04",
+          "question": "What happens to a local automatic variable when the function in which it is defined finishes execution?",
+          "options": [
+            "It is preserved until the whole program ends",
+            "It is converted into a static global variable",
+            "It is erased from memory",
+            "It is moved into heap storage"
+          ],
+          "correctIndex": 2,
+          "explanation": "By default, local variables are automatic and are erased from the runtime stack once the function terminates.",
+          "sourceRef": "Chapter 2.pdf, slide 33",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s2-q05",
+          "question": "What does the dereference operator (*) produce when applied to a valid pointer variable?",
+          "options": [
+            "The memory address of the pointer variable itself",
+            "The value stored at the memory location pointed to by the pointer",
+            "The total number of bytes occupied by the pointer",
+            "A boolean flag indicating if the pointer is null"
+          ],
+          "correctIndex": 1,
+          "explanation": "Dereferencing a pointer with * retrieves the actual data value stored at the memory location to which the pointer points.",
+          "sourceRef": "Chapter 3.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s2-q06",
+          "question": "Which C++ operator is used to deallocate dynamic memory that was allocated for a single object?",
+          "options": [
+            "delete",
+            "remove",
+            "free",
+            "dispose"
+          ],
+          "correctIndex": 0,
+          "explanation": "The delete operator is used in C++ to free memory allocated for a single object created with new.",
+          "sourceRef": "Chapter 3.pdf, slide 43",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s2-q07",
+          "question": "Which stream member function can be called to verify whether a file opening operation was unsuccessful?",
+          "options": [
+            "bad()",
+            "fail()",
+            "error()",
+            "eof()"
+          ],
+          "correctIndex": 1,
+          "explanation": "The fail() member function returns true if an operation such as opening a file could not be completed successfully.",
+          "sourceRef": "Chapter 4.pdf, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s2-q08",
+          "question": "Which file access mode should be used to write data to the end of a file without overwriting existing contents?",
+          "options": [
+            "ios::out",
+            "ios::app",
+            "ios::trunc",
+            "ios::in"
+          ],
+          "correctIndex": 1,
+          "explanation": "The ios::app mode opens a file in append mode, causing all write operations to be added to the end of the file.",
+          "sourceRef": "Chapter 4.pdf, slide 16, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s2-q09",
+          "question": "What is an identifiable runtime instance created from a class blueprint called in OOP?",
+          "options": [
+            "An object",
+            "A module",
+            "A structure tag",
+            "A prototype"
+          ],
+          "correctIndex": 0,
+          "explanation": "An object is an instance or replica of a class, holding state through data members and behavior through methods.",
+          "sourceRef": "Chapter 5.pdf, slide 10, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s2-q10",
+          "question": "Which operator is used to link a member function definition to its class name when defining it outside the class?",
+          "options": [
+            "The arrow operator (->)",
+            "The extraction operator (>>)",
+            "The scope resolution operator (::)",
+            "The dot operator (.)"
+          ],
+          "correctIndex": 2,
+          "explanation": "The scope resolution operator (::) specifies the class scope when defining member functions outside the class header.",
+          "sourceRef": "Chapter 5.pdf, slide 22, 23",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "advanced-programming-easy-s3-q01",
+          "question": "What punctuation mark is required immediately after the closing brace of a structure definition in C++?",
+          "options": [
+            "A period (.)",
+            "A colon (:)",
+            "A semicolon (;)",
+            "A comma (,)"
+          ],
+          "correctIndex": 2,
+          "explanation": "In C++, all structure and class definitions must end with a closing curly brace followed by a semicolon.",
+          "sourceRef": "Chapter 1.pdf, slide 39",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s3-q02",
+          "question": "Which operator is used to access an individual member variable of a structure instance?",
+          "options": [
+            "The dot operator (.)",
+            "The address operator (&)",
+            "The scope operator (::)",
+            "The dereference operator (*)"
+          ],
+          "correctIndex": 0,
+          "explanation": "The dot operator (.) is used with a structure variable name to access its members, with the syntax VarName.Member.",
+          "sourceRef": "Chapter 1.pdf, slide 41",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s3-q03",
+          "question": "Which components of a function declaration constitute its function signature in C++?",
+          "options": [
+            "The function body and return statements",
+            "The function name and the types of its parameters",
+            "The parameter names and default values",
+            "The return type and function name"
+          ],
+          "correctIndex": 1,
+          "explanation": "A function signature in C++ consists of the function name and the types of its arguments; the return type is not part of the signature.",
+          "sourceRef": "Chapter 2.pdf, slide 11",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s3-q04",
+          "question": "What is a function that calls itself to solve a computational problem defined as?",
+          "options": [
+            "An inline function",
+            "A void function",
+            "An overloaded function",
+            "A recursive function"
+          ],
+          "correctIndex": 3,
+          "explanation": "A function which calls itself during its execution is defined as a recursive function.",
+          "sourceRef": "Chapter 2.pdf, slide 46",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s3-q05",
+          "question": "Which type of pointer is designed to store the address of an object of any data type without being tied to a specific type?",
+          "options": [
+            "void*",
+            "generic*",
+            "auto*",
+            "null*"
+          ],
+          "correctIndex": 0,
+          "explanation": "A void pointer (void*) is a generic pointer that can hold the memory address of any variable regardless of data type.",
+          "sourceRef": "Chapter 3.pdf, slide 14, 49",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s3-q06",
+          "question": "What standardized keyword was introduced in modern C++ (C++11) to indicate a null pointer?",
+          "options": [
+            "NULL",
+            "nil",
+            "null",
+            "nullptr"
+          ],
+          "correctIndex": 3,
+          "explanation": "In C++11 and later, nullptr is the dedicated literal used to represent a pointer that does not point to any valid memory location.",
+          "sourceRef": "Chapter 3.pdf, slide 50",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s3-q07",
+          "question": "Which member function must be called after completing file operations to release system resources?",
+          "options": [
+            "clear()",
+            "close()",
+            "exit()",
+            "flush()"
+          ],
+          "correctIndex": 1,
+          "explanation": "The close() member function disconnects the stream from the file, flushes remaining data, and releases system resources.",
+          "sourceRef": "Chapter 4.pdf, slide 20",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s3-q08",
+          "question": "Which stream member function reads a single character from an input stream without automatically skipping blanks?",
+          "options": [
+            "peek()",
+            "get()",
+            "getline()",
+            "read()"
+          ],
+          "correctIndex": 1,
+          "explanation": "The get() member function reads the next single character of input, including spaces and newlines, without skipping whitespace.",
+          "sourceRef": "Chapter 4.pdf, slide 22",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s3-q09",
+          "question": "What is the OOP concept of wrapping data and the functions that manipulate that data into a single unit called?",
+          "options": [
+            "Inheritance",
+            "Abstraction",
+            "Encapsulation",
+            "Polymorphism"
+          ],
+          "correctIndex": 2,
+          "explanation": "Encapsulation is the process of aggregating data and functions into a single unit (an object), enabling data hiding.",
+          "sourceRef": "Chapter 5.pdf, slide 5, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-easy-s3-q10",
+          "question": "Which special member function is automatically invoked when an object of a class is created and cannot return any value?",
+          "options": [
+            "Mutator",
+            "Destructor",
+            "Accessor",
+            "Constructor"
+          ],
+          "correctIndex": 3,
+          "explanation": "A constructor is automatically executed when an object is declared to initialize member variables, and cannot have any return type.",
+          "sourceRef": "Chapter 5.pdf, slide 29",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

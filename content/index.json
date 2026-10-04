@@ -1,0 +1,31 @@
+{
+  "departments": [
+    {
+      "name": "Information System",
+      "years": [
+        {
+          "year": "Year 2",
+          "semesters": [
+            {
+              "semester": "Semester 1",
+              "subjects": [
+                {
+                  "id": "advanced-programming",
+                  "name": "Advanced Programming",
+                  "questionCount": 90,
+                  "reviewStatus": "pending_review"
+                },
+                {
+                  "id": "database",
+                  "name": "Database",
+                  "questionCount": 90,
+                  "reviewStatus": "pending_review"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

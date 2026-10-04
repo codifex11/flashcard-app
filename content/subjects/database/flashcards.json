@@ -1,0 +1,435 @@
+{
+  "subjectId": "database",
+  "phases": [
+    {
+      "phaseNumber": 1,
+      "title": "Database Concepts & Architecture",
+      "cards": [
+        {
+          "id": "database-fc-p1-c01",
+          "question": "What is a database?",
+          "answer": "A shared collection of logically related data and metadata designed to meet an organization's information needs.",
+          "category": "Database Basics",
+          "sourceRef": "Chapter 1.pdf, slide 14",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p1-c02",
+          "question": "What is a Database Management System (DBMS)?",
+          "answer": "A software system that enables users to define, create, maintain, and control access to the database.",
+          "category": "DBMS",
+          "sourceRef": "Chapter 1.pdf, slide 15",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p1-c03",
+          "question": "What are three major limitations of traditional file-based systems?",
+          "answer": "Separation and isolation of data, data duplication (redundancy), and program-data dependence.",
+          "category": "File Systems vs DBMS",
+          "sourceRef": "Chapter 1.pdf, slide 11, 12",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p1-c04",
+          "question": "What are the four categories of SQL statements provided by a DBMS?",
+          "answer": "DDL (Data Definition), DML (Data Manipulation), DCL (Data Control), and TCL (Transaction Control).",
+          "category": "SQL Categories",
+          "sourceRef": "Chapter 1.pdf, slide 17",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p1-c05",
+          "question": "What are the five core components of a DBMS environment?",
+          "answer": "Hardware, Software, Data (schema/metadata), Procedures, and People.",
+          "category": "DBMS Components",
+          "sourceRef": "Chapter 1.pdf, slide 23",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p1-c06",
+          "question": "What is the difference between the roles of DA and DBA?",
+          "answer": "The Data Administrator (DA) manages data planning and policies; the DBA handles physical design, security, and performance.",
+          "category": "Database Roles",
+          "sourceRef": "Chapter 1.pdf, slide 26",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p1-c07",
+          "question": "What are the three levels of the ANSI-SPARC architecture?",
+          "answer": "External Level (user views), Conceptual Level (community logical view), and Internal Level (physical computer storage).",
+          "category": "ANSI-SPARC",
+          "sourceRef": "Chapter 1.pdf, slide 36, 37",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p1-c08",
+          "question": "What is logical data independence?",
+          "answer": "The immunity of external schemas and application programs to changes in the conceptual schema.",
+          "category": "Data Independence",
+          "sourceRef": "Chapter 1.pdf, slide 41",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p1-c09",
+          "question": "What is physical data independence?",
+          "answer": "The immunity of the conceptual schema to changes in internal storage structures and file organizations.",
+          "category": "Data Independence",
+          "sourceRef": "Chapter 1.pdf, slide 42",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p1-c10",
+          "question": "What are the three generations of DBMS data models?",
+          "answer": "1st Gen: Hierarchical & Network; 2nd Gen: Relational; 3rd Gen: Object-Relational and Object-Oriented.",
+          "category": "Data Models",
+          "sourceRef": "Chapter 1.pdf, slide 31",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 2,
+      "title": "The Relational Data Model & Integrity",
+      "cards": [
+        {
+          "id": "database-fc-p2-c01",
+          "question": "What is a relation, tuple, and attribute in the relational model?",
+          "answer": "A relation is a 2D table, a tuple is a row (record), and an attribute is a named column (field).",
+          "category": "Relational Model",
+          "sourceRef": "Chapter 2.pdf, slide 3, 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p2-c02",
+          "question": "What is the degree and cardinality of a relation?",
+          "answer": "Degree is the number of attributes (columns); cardinality is the total number of tuples (rows).",
+          "category": "Relational Model",
+          "sourceRef": "Chapter 2.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p2-c03",
+          "question": "What is an attribute domain in a relational schema?",
+          "answer": "The set of allowable atomic values that one or more attributes are permitted to hold.",
+          "category": "Domains",
+          "sourceRef": "Chapter 2.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p2-c04",
+          "question": "What is a superkey versus a candidate key?",
+          "answer": "A superkey uniquely identifies tuples; a candidate key is a minimal (irreducible) superkey.",
+          "category": "Relational Keys",
+          "sourceRef": "Chapter 2.pdf, slide 15",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p2-c05",
+          "question": "What is a primary key and an alternate key?",
+          "answer": "The primary key is the candidate key selected to identify tuples; alternate keys are unselected candidate keys.",
+          "category": "Relational Keys",
+          "sourceRef": "Chapter 2.pdf, slide 16",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p2-c06",
+          "question": "What is a foreign key?",
+          "answer": "An attribute in one relation that matches the candidate key of some (possibly the same) relation.",
+          "category": "Relational Keys",
+          "sourceRef": "Chapter 2.pdf, slide 16",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p2-c07",
+          "question": "What is the entity integrity rule?",
+          "answer": "In a base relation, no attribute of a primary key can be null.",
+          "category": "Integrity Constraints",
+          "sourceRef": "Chapter 2.pdf, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p2-c08",
+          "question": "What is the referential integrity rule?",
+          "answer": "Foreign key values must either match an existing candidate key in the referenced relation or be null.",
+          "category": "Integrity Constraints",
+          "sourceRef": "Chapter 2.pdf, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p2-c09",
+          "question": "What is a database view and its benefits?",
+          "answer": "A virtual relation derived from base tables; it simplifies queries, customizes views, and enforces security.",
+          "category": "Views",
+          "sourceRef": "Chapter 1.pdf, slide 21, 22",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p2-c10",
+          "question": "Why does tuple order have no significance in a relation?",
+          "answer": "Relations are mathematical sets of tuples, and mathematical sets have no inherent element ordering.",
+          "category": "Relational Properties",
+          "sourceRef": "Chapter 2.pdf, slide 14",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 3,
+      "title": "Conceptual Design & ER Modeling",
+      "cards": [
+        {
+          "id": "database-fc-p3-c01",
+          "question": "What is an entity type in ER modeling?",
+          "answer": "A group of objects with the same properties, identified by the enterprise as having an independent existence.",
+          "category": "ER Modeling",
+          "sourceRef": "Chapter 3.pdf, slide 2, 14",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p3-c02",
+          "question": "What is a relationship type in ER modeling?",
+          "answer": "A set of meaningful associations among participating entity types.",
+          "category": "ER Modeling",
+          "sourceRef": "Chapter 3.pdf, slide 2, 14",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p3-c03",
+          "question": "What is multiplicity in ER modeling?",
+          "answer": "The constraint defining the number of possible occurrences of an entity type related to another entity type.",
+          "category": "Multiplicity",
+          "sourceRef": "Chapter 3.pdf, slide 2, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p3-c04",
+          "question": "What are cardinality and participation constraints in multiplicity?",
+          "answer": "Cardinality describes the maximum number of relationships; participation describes whether the minimum is 0 (optional) or 1 (mandatory).",
+          "category": "Multiplicity",
+          "sourceRef": "Chapter 3.pdf, slide 17",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p3-c05",
+          "question": "What is the difference between simple and composite attributes?",
+          "answer": "Simple (atomic) attributes cannot be divided; composite attributes are composed of multiple sub-components.",
+          "category": "Attributes",
+          "sourceRef": "Chapter 3.pdf, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p3-c06",
+          "question": "What is a derived attribute in ER modeling?",
+          "answer": "An attribute whose value is calculated dynamically from related attributes (e.g. `age` derived from `DOB`).",
+          "category": "Attributes",
+          "sourceRef": "Chapter 3.pdf, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p3-c07",
+          "question": "What is a strong entity versus a weak entity?",
+          "answer": "A strong entity exists independently with its own primary key; a weak entity is existence-dependent on another entity.",
+          "category": "Entity Types",
+          "sourceRef": "Chapter 3.pdf, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p3-c08",
+          "question": "What is a recursive (unary) relationship?",
+          "answer": "A relationship type where the same entity type participates in different roles (e.g. staff supervises staff).",
+          "category": "Relationships",
+          "sourceRef": "Chapter 3.pdf, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p3-c09",
+          "question": "What is a Fan Trap in ER design?",
+          "answer": "A misinterpretation where two 1..* relationships fan out from one central entity, leaving associations between outer entities ambiguous.",
+          "category": "Connection Traps",
+          "sourceRef": "Chapter 3.pdf, slide 19",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p3-c10",
+          "question": "What is a Chasm Trap in ER design?",
+          "answer": "A pathway that suggests a relationship between entities, but is broken due to optional (0..*) participation along the path.",
+          "category": "Connection Traps",
+          "sourceRef": "Chapter 3.pdf, slide 20",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 4,
+      "title": "Logical Design & Normalization",
+      "cards": [
+        {
+          "id": "database-fc-p4-c01",
+          "question": "What is functional dependency (FD)?",
+          "answer": "A relationship between attributes where the value of determinant X uniquely determines the value of Y (denoted X -> Y).",
+          "category": "Functional Dependencies",
+          "sourceRef": "Chapter 4.pdf, slide 2, 21",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p4-c02",
+          "question": "What is full functional dependency?",
+          "answer": "A condition where attribute Y is functionally dependent on composite key X, but not dependent on any proper subset of X.",
+          "category": "Functional Dependencies",
+          "sourceRef": "Chapter 4.pdf, slide 2, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p4-c03",
+          "question": "What are insertion, deletion, and modification anomalies?",
+          "answer": "Undesirable side-effects in unnormalized relations where inserting, deleting, or updating data causes inconsistency or data loss.",
+          "category": "Update Anomalies",
+          "sourceRef": "Chapter 4.pdf, slide 2, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p4-c04",
+          "question": "What are the rules for First Normal Form (1NF)?",
+          "answer": "A relation where the intersection of every row and column contains exactly one atomic value, with no repeating groups.",
+          "category": "Normalization",
+          "sourceRef": "Chapter 4.pdf, slide 3, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p4-c05",
+          "question": "What are the rules for Second Normal Form (2NF)?",
+          "answer": "The relation is in 1NF and every non-primary-key attribute is fully functionally dependent on the primary key (no partial dependencies).",
+          "category": "Normalization",
+          "sourceRef": "Chapter 4.pdf, slide 3, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p4-c06",
+          "question": "What is a transitive dependency?",
+          "answer": "A dependency where A -> B and B -> C (via a non-key attribute B), causing C to transitively depend on primary key A.",
+          "category": "Functional Dependencies",
+          "sourceRef": "Chapter 4.pdf, slide 3, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p4-c07",
+          "question": "What are the rules for Third Normal Form (3NF)?",
+          "answer": "The relation is in 2NF and no non-primary-key attribute is transitively dependent on the primary key.",
+          "category": "Normalization",
+          "sourceRef": "Chapter 4.pdf, slide 3, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p4-c08",
+          "question": "What is Boyce-Codd Normal Form (BCNF)?",
+          "answer": "A stricter normal form where for every non-trivial functional dependency X -> Y, determinant X must be a candidate key.",
+          "category": "Normalization",
+          "sourceRef": "Chapter 4.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p4-c09",
+          "question": "How is a 1:M relationship mapped to relations?",
+          "answer": "Place the primary key of the '1' side entity into the relation representing the 'M' side entity as a foreign key.",
+          "category": "ER-to-Relational Mapping",
+          "sourceRef": "Chapter 4.pdf, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p4-c10",
+          "question": "How is an M:N relationship mapped to relations?",
+          "answer": "Create a new intermediate relation with foreign keys referencing both entities, forming a composite primary key.",
+          "category": "ER-to-Relational Mapping",
+          "sourceRef": "Chapter 4.pdf, slide 2",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 5,
+      "title": "Physical Design & Relational Languages",
+      "cards": [
+        {
+          "id": "database-fc-p5-c01",
+          "question": "What is physical database design?",
+          "answer": "The process of mapping the logical data model to physical storage structures and access paths for the target DBMS.",
+          "category": "Physical Design",
+          "sourceRef": "Chapter 5.pdf, slide 2, 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p5-c02",
+          "question": "What is the purpose of secondary indexes in physical design?",
+          "answer": "To accelerate data retrieval on frequently searched non-key attributes without altering primary physical file order.",
+          "category": "Indexing",
+          "sourceRef": "Chapter 5.pdf, slide 3, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p5-c03",
+          "question": "What is denormalization and when is it considered?",
+          "answer": "Selectively reintroducing redundancy to eliminate costly joins and optimize critical read-intensive transactions.",
+          "category": "Physical Design",
+          "sourceRef": "Chapter 5.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p5-c04",
+          "question": "What are heap files vs indexed sequential files?",
+          "answer": "Heap files store records in insertion order; indexed sequential files maintain sorted records with an index for fast lookups.",
+          "category": "File Organizations",
+          "sourceRef": "Chapter 5.pdf, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p5-c05",
+          "question": "What are relational algebra and relational calculus?",
+          "answer": "Formal query languages; relational algebra is procedural (how to retrieve), while relational calculus is non-procedural (what to retrieve).",
+          "category": "Query Languages",
+          "sourceRef": "Chapter 6.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p5-c06",
+          "question": "What do the Selection (\u03c3) and Projection (\u03c0) operators do?",
+          "answer": "Selection (\u03c3) filters tuples matching a predicate condition; Projection (\u03c0) filters and extracts specified attribute columns.",
+          "category": "Relational Algebra",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p5-c07",
+          "question": "What is union-compatibility in relational algebra?",
+          "answer": "Two relations must have the same degree (number of columns) with identical or compatible data types across corresponding attributes.",
+          "category": "Relational Algebra",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p5-c08",
+          "question": "What is the difference between an Equijoin and a Natural Join?",
+          "answer": "Equijoin joins on equality and keeps both columns; Natural Join joins on shared attribute names and removes duplicate columns.",
+          "category": "Relational Algebra",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p5-c09",
+          "question": "What is an Outer Join (Left, Right, Full)?",
+          "answer": "A join operation that retains unmatched tuples from participating relations, filling missing column values with nulls.",
+          "category": "Relational Algebra",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-fc-p5-c10",
+          "question": "What does relational completeness mean?",
+          "answer": "A query language is relationally complete if it can express any query expressible in relational calculus or relational algebra.",
+          "category": "Query Languages",
+          "sourceRef": "Chapter 6.pdf, slide 3",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

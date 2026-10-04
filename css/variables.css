@@ -1,0 +1,129 @@
+/* CSS custom properties defining the exact palette: Navy, Teal, Sky Blue, Beige, and White */
+
+:root {
+  color-scheme: light;
+
+  /* Exact user palette */
+  --palette-navy: #2F4156;
+  --palette-teal: #567C8D;
+  --palette-sky-blue: #C8D9E6;
+  --palette-beige: #F5EFEB;
+  --palette-white: #FFFFFF;
+
+  /* Page background and surface panels */
+  --color-bg: #F5EFEB;
+  --color-surface: #FFFFFF;
+  --color-surface-panel: #EAE3DC;
+
+  /* Card faces and paper stack */
+  --color-card-front: #FFFFFF;
+  --color-card-back: #C8D9E6;
+  --color-card-band-front: #567C8D;
+  --color-card-band-back: #2F4156;
+  --color-card-stack-1: #EBE4DD;
+  --color-card-stack-2: #E0D7CF;
+  --color-card-ruled: rgba(47, 65, 86, 0.06);
+
+  /* Typography and ink colors (using Navy #2F4156 for text) */
+  --color-text: #2F4156;
+  --color-ink: #2F4156;
+  --color-muted: #567C8D;
+  --color-border: #D8D0C7;
+  --color-border-subtle: #E8E1D9;
+
+  /* Primary interactive actions */
+  --color-primary: #2F4156;
+  --color-primary-hover: #1E2B3A;
+  --color-accent-blue: #C8D9E6;
+  --color-accent-blue-border: #9BB8CD;
+  --color-accent-teal: #567C8D;
+
+  /* Study Feedback (Teal = Known, Soft Rose-Blush = Review) */
+  --color-sage: #567C8D;
+  --color-sage-border: #3D5A67;
+  --color-blush: #E8C5C8;
+  --color-blush-border: #D19DA1;
+  --color-success: #235843;
+  --color-danger: #9B3B36;
+
+  --color-accent-blush: #E8C5C8;
+  --color-accent-rose: #C8A99D;
+  --color-progress: var(--palette-teal);
+
+  /* Layout geometry */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 2px 6px rgba(47, 65, 86, 0.08), 0 1px 2px rgba(47, 65, 86, 0.05);
+  --shadow-card: 0 10px 22px rgba(47, 65, 86, 0.1), 0 2px 5px rgba(47, 65, 86, 0.05);
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+
+  /* Typography stacks matching the swatch card lettering */
+  --font-serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* Dark theme: styled using user's exact palette
+   #1E293B (Deep slate navy canvas)
+   #334155 (Mid slate navy surface & card front)
+   #5C6B66 (Muted sage slate accent & Known)
+   #8A7D7B (Muted dusty mauve taupe & Review)
+   #C8A99D (Warm sand / dusty rose interactive accent)
+   #F2E6D6 (Warm parchment linen text & ink)
+*/
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Exact user palette */
+  --palette-slate-dark: #144da8;
+  --palette-slate-mid: #334155;
+  --palette-sage: #5C6B66;
+  --palette-taupe: #8A7D7B;
+  --palette-rose: #C8A99D;
+  --palette-cream: #F2E6D6;
+
+  /* Page background and surface panels */
+  --color-bg: #1E293B;
+  --color-surface: #334155;
+  --color-surface-panel: #273444;
+
+  /* Card faces and physical paper stack */
+  --color-card-front: #334155;
+  --color-card-back: #29384A;
+  --color-card-band-front: #5C6B66;
+  --color-card-band-back: #C8A99D;
+  --color-card-stack-1: #283749;
+  --color-card-stack-2: #1E293B;
+  --color-card-ruled: rgba(242, 230, 214, 0.05);
+
+  /* Typography and ink colors (using warm linen cream #F2E6D6 for high contrast text) */
+  --color-text: #F2E6D6;
+  --color-ink: #F2E6D6;
+  --color-muted: #C8A99D;
+  --color-border: #475569;
+  --color-border-subtle: #29384B;
+
+  /* Dark mode accents */
+  --color-primary: #F2E6D6;
+  --color-primary-hover: #FFFFFF;
+  --color-accent-blue: #334155;
+  --color-accent-blue-border: #5C6B66;
+  --color-accent-teal: #5C6B66;
+  --color-accent-rose: #C8A99D;
+  --color-accent-blush: #C8A99D;
+  --color-progress: #C8A99D;
+
+  /* Study Feedback (Sage = Known, Dusty Mauve = Review) */
+  --color-sage: #5C6B66;
+  --color-sage-border: #72847E;
+  --color-blush: #8A7D7B;
+  --color-blush-border: #A39391;
+  --color-success: #7EB89E;
+  --color-danger: #E28F89;
+
+  --shadow: 0 2px 8px rgba(15, 23, 42, 0.45);
+  --shadow-card: 0 10px 26px rgba(15, 23, 42, 0.6);
+}

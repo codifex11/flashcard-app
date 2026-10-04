@@ -1,0 +1,440 @@
+{
+  "level": "medium",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "database-medium-s1-q01",
+          "question": "Why does changing a physical file organization (such as switching from a heap file to an indexed file) not require altering existing user application programs in a DBMS?",
+          "options": [
+            "Because physical data independence insulates the conceptual and external layers from internal storage alterations",
+            "Because the operating system automatically updates application source code",
+            "Because user applications only communicate with hardware registers",
+            "Because SQL statements are converted directly into machine microcode"
+          ],
+          "correctIndex": 0,
+          "explanation": "Physical data independence ensures that internal schema changes (file organizations, indexing structures) do not require changes to conceptual or external schemas.",
+          "sourceRef": "Chapter 1.pdf, slide 42",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s1-q02",
+          "question": "Suppose relation R has attributes {A, B, C, D}. If {A, B} uniquely identifies each tuple and no proper subset of {A, B} can identify tuples, but {A, B, C} also uniquely identifies tuples, which is the superkey and candidate key?",
+          "options": [
+            "{A, B, C} is a candidate key; {A, B} is only a superkey",
+            "Neither is a superkey",
+            "{A, B} is a candidate key; {A, B, C} is a superkey but not a candidate key",
+            "Both {A, B} and {A, B, C} are candidate keys"
+          ],
+          "correctIndex": 2,
+          "explanation": "A superkey uniquely identifies tuples. A candidate key is an irreducible superkey. Since {A, B} is minimal, {A, B} is a candidate key while {A, B, C} is a non-minimal superkey.",
+          "sourceRef": "Chapter 2.pdf, slide 15",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s1-q03",
+          "question": "In an ER model, if a relationship between Branch and Staff specifies that each Branch has 1..* Staff and each Staff belongs to 1..1 Branch, what is this constraint called?",
+          "options": [
+            "Multiplicity or structural constraint",
+            "Physical file ordering",
+            "Domain aggregation",
+            "Transitive functional dependency"
+          ],
+          "correctIndex": 0,
+          "explanation": "Multiplicity (or structural constraint) defines the number of possible occurrences of an entity type that may relate to a single occurrence of an associated entity type.",
+          "sourceRef": "Chapter 3.pdf, slide 2, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s1-q04",
+          "question": "Given the functional dependency X -> Y, what does this formal condition mean?",
+          "options": [
+            "Attribute X must always be numeric while attribute Y must be a string",
+            "Values of X and Y must be identical in every tuple",
+            "For every valid instance of relation R, each value of attribute X is associated with exactly one value of attribute Y",
+            "Attribute Y is a primary key that points to foreign key X"
+          ],
+          "correctIndex": 2,
+          "explanation": "A functional dependency X -> Y specifies that the value of X uniquely determines the value of Y (for any two tuples, if X1 = X2 then Y1 = Y2).",
+          "sourceRef": "Chapter 4.pdf, slide 2, 21",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s1-q05",
+          "question": "In a relation with composite primary key (StaffNo, CourseID), if attribute StaffName depends solely on StaffNo, what type of dependency exists and which normal form is violated?",
+          "options": [
+            "Transitive dependency; violates 3NF",
+            "Partial dependency; violates 2NF",
+            "Multi-valued dependency; violates 4NF",
+            "Trivial dependency; violates 1NF"
+          ],
+          "correctIndex": 1,
+          "explanation": "StaffName depends on part of the composite primary key (StaffNo), making it a partial dependency, which violates Second Normal Form (2NF).",
+          "sourceRef": "Chapter 4.pdf, slide 33",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s1-q06",
+          "question": "Why might a physical database designer choose to create a secondary index on a non-key column frequently used in query search conditions?",
+          "options": [
+            "To speed up retrieval of records without reorganizing the physical file ordering",
+            "To enforce entity integrity on that column",
+            "To convert the table into First Normal Form",
+            "To allow duplicate tuples in the base relation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Secondary indexes provide an auxiliary access path to locate records rapidly based on search criteria without changing the primary physical file ordering.",
+          "sourceRef": "Chapter 5.pdf, slide 3, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s1-q07",
+          "question": "If relation R has 4 tuples and relation S has 5 tuples, how many tuples are produced by their Cartesian Product (R × S)?",
+          "options": [
+            "1 tuple",
+            "5 tuples",
+            "9 tuples",
+            "20 tuples"
+          ],
+          "correctIndex": 3,
+          "explanation": "The Cartesian Product multiplies the cardinality of the two relations: 4 tuples × 5 tuples = 20 tuples.",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s1-q08",
+          "question": "What is the key distinction between Procedural DML and Non-Procedural DML in relational query systems?",
+          "options": [
+            "Procedural DML does not support SQL SELECT queries",
+            "Procedural DML is only used by naïve users, while Non-Procedural DML is used by system analysts",
+            "Non-Procedural DML requires manual pointer manipulation in C++",
+            "Procedural DML specifies how data is retrieved, whereas Non-Procedural DML specifies what data is needed"
+          ],
+          "correctIndex": 3,
+          "explanation": "In procedural DML (like relational algebra), the user specifies the exact sequence of operations; in non-procedural DML (like SQL/calculus), the user specifies what data is desired.",
+          "sourceRef": "Chapter 1.pdf, slide 45",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s1-q09",
+          "question": "In an organization, if deleting the last employee in a department also accidentally deletes all historical department information because both share one unnormalized table, what anomaly has occurred?",
+          "options": [
+            "Insertion anomaly",
+            "Deletion anomaly",
+            "Modification anomaly",
+            "Integrity trap"
+          ],
+          "correctIndex": 1,
+          "explanation": "A deletion anomaly occurs when deleting one piece of data unintentionally causes the loss of other unrelated, valuable information.",
+          "sourceRef": "Chapter 4.pdf, slide 2, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s1-q10",
+          "question": "What is the purpose of the conceptual/internal mapping in the ANSI-SPARC architecture?",
+          "options": [
+            "It automatically writes backup logs to magnetic tapes",
+            "It validates user login credentials during authentication",
+            "It maps user interface screen fields to external views",
+            "It enables the DBMS to correlate logical records in the conceptual schema with physical records and storage structures in the internal schema"
+          ],
+          "correctIndex": 3,
+          "explanation": "The conceptual/internal mapping allows the DBMS to find actual physical records that correspond to a logical record defined at the conceptual level.",
+          "sourceRef": "Chapter 1.pdf, slide 43",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "database-medium-s2-q01",
+          "question": "How does a view enhance database security for sensitive organizational data?",
+          "options": [
+            "By eliminating the need for primary keys in base tables",
+            "By converting SQL queries into network file protocols",
+            "By encrypting the hard drive sectors automatically",
+            "By restricting users to a tailored subset of data while hiding unauthorized columns and rows"
+          ],
+          "correctIndex": 3,
+          "explanation": "Views present only the specific columns and rows relevant to a authorized user, concealing confidential data present in underlying base tables.",
+          "sourceRef": "Chapter 1.pdf, slide 21, 22",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s2-q02",
+          "question": "Why is the order of tuples within a relational table considered theoretically insignificant in the relational model?",
+          "options": [
+            "Because the operating system constantly sorts files in random order",
+            "Because relations are mathematical sets, and sets have no defined order of elements",
+            "Because SQL does not permit the use of ORDER BY clauses",
+            "Because tuples can only be accessed using primary key hash codes"
+          ],
+          "correctIndex": 1,
+          "explanation": "In mathematical set theory, an element's position within a set has no meaning; thus tuples in a relation have no intrinsic order.",
+          "sourceRef": "Chapter 2.pdf, slide 14",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s2-q03",
+          "question": "What is a 'connection trap' in ER modeling, and what are its two main types?",
+          "options": [
+            "A misinterpretation in the ER model causing ambiguity; Fan Trap and Chasm Trap",
+            "A failure in primary key indexing; B-Tree Trap and Hash Trap",
+            "A deadlock between two concurrent transactions; Read Trap and Write Trap",
+            "A hardware network disconnect; Server Trap and Client Trap"
+          ],
+          "correctIndex": 0,
+          "explanation": "Connection traps are structural misinterpretations in an ER diagram where paths between entity types are ambiguous. The two main types are Fan traps and Chasm traps.",
+          "sourceRef": "Chapter 3.pdf, slide 2, 19",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s2-q04",
+          "question": "In a relation with primary key StaffNo, if `StaffNo -> BranchNo` and `BranchNo -> BranchAddress`, what dependency exists between StaffNo and BranchAddress?",
+          "options": [
+            "A partial dependency",
+            "A transitive dependency",
+            "A multi-valued constraint",
+            "A reflexive identity"
+          ],
+          "correctIndex": 1,
+          "explanation": "Because StaffNo determines BranchNo, and BranchNo determines BranchAddress (via non-key attribute BranchNo), BranchAddress is transitively dependent on StaffNo.",
+          "sourceRef": "Chapter 4.pdf, slide 3, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s2-q05",
+          "question": "When is a database said to be in Boyce-Codd Normal Form (BCNF)?",
+          "options": [
+            "When all primary keys consist of exactly one single attribute",
+            "When all tables have fewer than three foreign keys",
+            "When all attributes are stored in separate text files",
+            "When every functional dependency X -> Y has a determinant X that is a superkey"
+          ],
+          "correctIndex": 3,
+          "explanation": "A relation is in BCNF if and only if for every non-trivial functional dependency X -> Y, the determinant X is a candidate key (or superkey).",
+          "sourceRef": "Chapter 4.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s2-q06",
+          "question": "What is the primary trade-off of introducing controlled denormalization during physical database design?",
+          "options": [
+            "It guarantees zero data redundancy at the cost of slower queries",
+            "It eliminates the need for foreign keys at the cost of file size",
+            "It increases read performance for frequent join queries at the cost of reintroducing some redundancy and update overhead",
+            "It prevents all transaction deadlocks automatically"
+          ],
+          "correctIndex": 2,
+          "explanation": "Denormalization intentionally relaxes normal form constraints to reduce complex joins and speed up read-heavy transactions, accepting some redundancy.",
+          "sourceRef": "Chapter 5.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s2-q07",
+          "question": "What is the result of the relational algebra operation R - S (Set Difference)?",
+          "options": [
+            "Tuples that appear in both R and S simultaneously",
+            "Tuples that appear in R but do not appear in S",
+            "Tuples that appear in S but do not appear in R",
+            "All possible pairwise combinations of tuples from R and S"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Set Difference operation (R - S) produces a relation containing all tuples that are in relation R but not in relation S.",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s2-q08",
+          "question": "What property characterizes a language as being 'relationally complete'?",
+          "options": [
+            "If it can express any query that can be formulated in the predicate calculus (or relational algebra)",
+            "If it can execute operations in O(1) constant time",
+            "If it compiles directly to binary assembly code",
+            "If it supports both graphical user interfaces and web browsers"
+          ],
+          "correctIndex": 0,
+          "explanation": "A query language is called relationally complete if it has at least the expressive power of relational algebra / relational calculus.",
+          "sourceRef": "Chapter 6.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s2-q09",
+          "question": "Why is an unnormalized table containing repeating groups of data considered problematic for relational database systems?",
+          "options": [
+            "It prevents the operating system from allocating heap memory",
+            "It forces all numeric fields to be stored as floating point numbers",
+            "It automatically deletes primary key constraints upon reboot",
+            "It violates First Normal Form (1NF), leading to redundant storage, query complexity, and potential data inconsistency"
+          ],
+          "correctIndex": 3,
+          "explanation": "Repeating groups violate 1NF, requiring multi-valued cells that complicate querying, consume redundant storage, and cause update anomalies.",
+          "sourceRef": "Chapter 4.pdf, slide 2, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s2-q10",
+          "question": "In transaction management, what is the role of the Transaction Control Language (TCL) command ROLLBACK?",
+          "options": [
+            "Permanently saves all changes made by the transaction to disk",
+            "Grants select permissions to other active users",
+            "Undoes all changes made during the current uncommitted transaction to restore database consistency",
+            "Deletes the database schema definition completely"
+          ],
+          "correctIndex": 2,
+          "explanation": "ROLLBACK aborts the active transaction and reverts all modifications made by it, preserving data integrity in the event of an error.",
+          "sourceRef": "Chapter 1.pdf, slide 19",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "database-medium-s3-q01",
+          "question": "In relational database design, what is an alternate key?",
+          "options": [
+            "Any candidate key that was not chosen to be the primary key",
+            "A foreign key that points to a non-existent relation",
+            "A physical disk index that replaces table storage",
+            "A primary key composed of more than three attributes"
+          ],
+          "correctIndex": 0,
+          "explanation": "Candidate keys that are not selected as the primary key are designated as alternate keys (secondary candidate keys).",
+          "sourceRef": "Chapter 2.pdf, slide 16",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s3-q02",
+          "question": "What is a 'Fan Trap' in conceptual database design?",
+          "options": [
+            "A pathway where two 1..* relationships fan out from a single central entity, creating ambiguity about associations between outer entities",
+            "A table with more columns than allowed by the target DBMS",
+            "A recursive query that loops infinitely without terminating",
+            "A database server crash caused by hardware overheating"
+          ],
+          "correctIndex": 0,
+          "explanation": "A Fan Trap occurs when a model represents a relationship between entity types, but the pathway separates them via two 1..* relationships fanning out from one central entity.",
+          "sourceRef": "Chapter 3.pdf, slide 2, 19",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s3-q03",
+          "question": "What is a 'Chasm Trap' in conceptual database design?",
+          "options": [
+            "A corrupted disk block in the secondary storage subsystem",
+            "An attempt to insert a duplicate value into a primary key column",
+            "An ER pathway where the existence of optional (0..*) relationships between intermediate entities prevents finding connections between certain entity occurrences",
+            "A join operation between incompatible character sets"
+          ],
+          "correctIndex": 2,
+          "explanation": "A Chasm Trap occurs where a model suggests the existence of a relationship between entity types, but the pathway is broken due to optional participation (min multiplicity 0).",
+          "sourceRef": "Chapter 3.pdf, slide 2, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s3-q04",
+          "question": "Why does converting a relation from 1NF to 2NF require removing partial dependencies?",
+          "options": [
+            "Because 2NF relations are not allowed to use primary keys",
+            "Because non-key attributes that depend on only part of a composite key cause data redundancy every time that key component repeats",
+            "Because foreign keys cannot be declared on 1NF relations",
+            "Because partial dependencies prevent the creation of views"
+          ],
+          "correctIndex": 1,
+          "explanation": "Partial dependencies mean attributes depend on a subset of the key, causing duplicate data for every occurrence of that subset and risking anomalies.",
+          "sourceRef": "Chapter 4.pdf, slide 33",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s3-q05",
+          "question": "In relational algebra, how does the Natural Join (⨝) differ from a standard Equijoin?",
+          "options": [
+            "Natural Join is a non-procedural language construct",
+            "Natural Join only works on relations with identical row counts",
+            "Natural Join does not test for equality between attributes",
+            "Natural Join eliminates duplicate join columns from the resulting relation, whereas Equijoin retains both matching columns"
+          ],
+          "correctIndex": 3,
+          "explanation": "A Natural Join performs an equijoin over all identically named attributes and automatically removes duplicate copies of the join attributes from the result.",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s3-q06",
+          "question": "What is the fundamental difference between relational algebra and relational calculus?",
+          "options": [
+            "Relational algebra cannot handle join operations, while calculus can",
+            "Relational algebra is procedural (specifying how to retrieve data), while relational calculus is non-procedural (specifying what data to retrieve)",
+            "Relational calculus is supported only in first-generation DBMSs",
+            "Relational algebra operates on disk files, while calculus operates only in RAM"
+          ],
+          "correctIndex": 1,
+          "explanation": "Relational algebra provides explicit procedural operations to compute results, whereas relational calculus uses mathematical logic to state what data is desired.",
+          "sourceRef": "Chapter 6.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s3-q07",
+          "question": "What type of end users access the database via structured, pre-written menu interfaces without knowing the internal DBMS workings?",
+          "options": [
+            "Database Administrators",
+            "Sophisticated users",
+            "Naïve (or parametric) end users",
+            "Logical database designers"
+          ],
+          "correctIndex": 2,
+          "explanation": "Naïve end users interact with the database through pre-built application interfaces and canned queries without needing knowledge of database structure.",
+          "sourceRef": "Chapter 1.pdf, slide 30",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s3-q08",
+          "question": "What is the primary purpose of physical database design file organization analysis?",
+          "options": [
+            "To translate business rules into English text",
+            "To select storage structures (e.g. heap, hash, indexed sequential) that optimize query response times and transaction throughput",
+            "To write documentation for end user training",
+            "To determine user interface button placements"
+          ],
+          "correctIndex": 1,
+          "explanation": "File organization analysis evaluates transaction access patterns to pick physical storage structures (like indexing or hashing) that maximize performance.",
+          "sourceRef": "Chapter 5.pdf, slide 3, 18",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s3-q09",
+          "question": "If an attribute in an ER model can be divided into smaller constituent sub-components (such as Name into FName and LName), what is it called?",
+          "options": [
+            "A composite attribute",
+            "A multi-valued attribute",
+            "A null attribute",
+            "A derived attribute"
+          ],
+          "correctIndex": 0,
+          "explanation": "A composite attribute is composed of multiple simpler components, whereas a simple/atomic attribute cannot be further subdivided.",
+          "sourceRef": "Chapter 3.pdf, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "database-medium-s3-q10",
+          "question": "Why is the hierarchical data model more rigid than the relational data model?",
+          "options": [
+            "Because hierarchical models cannot be stored on magnetic hard drives",
+            "Because hierarchical models only support single-user access",
+            "Because hierarchical models do not allow records to contain fields",
+            "Because child records in a hierarchical model can only have a single parent, and adding new relationships requires physical restructuring"
+          ],
+          "correctIndex": 3,
+          "explanation": "Hierarchical models restrict relationships to 1:N tree hierarchies where a child has only one parent, making M:N modeling difficult and requiring structural redefinition.",
+          "sourceRef": "Chapter 1.pdf, slide 49",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

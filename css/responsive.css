@@ -1,0 +1,122 @@
+/* Responsive layout adjustments and reduced-motion preferences */
+
+/* Global horizontal overflow prevention */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Tablet and mobile collapse (under 860px): switch to single-column stack */
+@media (max-width: 860px) {
+  .study-layout {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-2) var(--space-2) var(--space-4);
+    gap: 1.5rem;
+  }
+
+  .study-stage {
+    width: 100%;
+  }
+
+  .study-sidebar {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+/* Small mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  .app-header {
+    padding: var(--space-1) var(--space-2);
+    gap: 0.5rem;
+  }
+
+  .header-brand {
+    gap: 0.5rem;
+  }
+
+  .header-doodle {
+    width: 28px;
+    height: 28px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  #deck-select {
+    max-width: 150px;
+    font-size: 0.85rem;
+    padding: 0 1.5rem 0 0.6rem;
+  }
+
+  .card,
+  #empty-message {
+    width: 94vw;
+    height: 310px;
+  }
+
+  .card-face {
+    padding: 1rem 1rem 0.75rem;
+  }
+
+  #card-question,
+  #card-answer {
+    font-size: 1.15rem;
+  }
+
+  .controls.primary-controls {
+    gap: 0.5rem;
+  }
+
+  .btn-primary-nav,
+  .btn-flip {
+    font-size: 0.875rem;
+    padding: 0 0.75rem;
+  }
+
+  .panel-section {
+    padding: 0.9rem;
+  }
+}
+
+/* Respect user's motion preferences by disabling tilt, slide, bounce, and flip transitions */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .card::before,
+  .card::after,
+  .card-inner,
+  .card:hover .card-inner,
+  .card.is-flipped .card-inner,
+  .card.card-turn .card-inner {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .card.is-flipped .card-front {
+    display: none !important;
+  }
+
+  .card.is-flipped .card-back {
+    transform: none !important;
+  }
+
+  .score-bounce {
+    animation: none !important;
+  }
+
+  #progress-fill {
+    transition: none !important;
+  }
+}

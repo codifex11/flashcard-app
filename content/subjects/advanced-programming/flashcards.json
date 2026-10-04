@@ -1,0 +1,435 @@
+{
+  "subjectId": "advanced-programming",
+  "phases": [
+    {
+      "phaseNumber": 1,
+      "title": "Arrays, Strings & Structures",
+      "cards": [
+        {
+          "id": "advanced-programming-fc-p1-c01",
+          "question": "What is an array in C++?",
+          "answer": "A collection of identical data objects stored in consecutive memory locations under a single variable name.",
+          "category": "Arrays",
+          "sourceRef": "Chapter 1.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p1-c02",
+          "question": "What is the indexing boundary for an array of size N in C++?",
+          "answer": "Arrays are zero-bounded: the first element is at index 0 and the last element is at index N-1.",
+          "category": "Arrays",
+          "sourceRef": "Chapter 1.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p1-c03",
+          "question": "How are uninitialized global vs local arrays initialized in C++?",
+          "answer": "Global arrays automatically initialize all elements to zero, while local arrays contain undetermined garbage values.",
+          "category": "Array Initialization",
+          "sourceRef": "Chapter 1.pdf, slide 6",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p1-c04",
+          "question": "How does C++ represent a string of characters?",
+          "answer": "As an array of `char` terminated by a special null character (`'\\0'`) marking the end of valid text.",
+          "category": "Strings",
+          "sourceRef": "Chapter 1.pdf, slide 16, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p1-c05",
+          "question": "Why is whole-array assignment like `arr1 = arr2;` illegal in C++?",
+          "answer": "An array name is a non-modifiable constant pointer to its allocated block; elements must be copied individually.",
+          "category": "Arrays & Pointers",
+          "sourceRef": "Chapter 1.pdf, slide 8, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p1-c06",
+          "question": "What function copies one C-string into another?",
+          "answer": "`strcpy(dest, src)` from `<string.h>` overwrites `dest` with the contents of `src` including the null terminator.",
+          "category": "String Functions",
+          "sourceRef": "Chapter 1.pdf, slide 22",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p1-c07",
+          "question": "Why is `cin.getline()` preferred over `cin >>` for reading string inputs?",
+          "answer": "`cin >>` stops reading at whitespace, while `cin.getline()` reads the full line including spaces up to a delimiter.",
+          "category": "Stream Input",
+          "sourceRef": "Chapter 1.pdf, slide 24, 26",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p1-c08",
+          "question": "How is a two-dimensional array `matrix[3][5]` laid out in physical memory?",
+          "answer": "As a single contiguous block of 15 elements arranged in row-major order.",
+          "category": "2D Arrays",
+          "sourceRef": "Chapter 1.pdf, slide 34",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p1-c09",
+          "question": "What is a `struct` in C++?",
+          "answer": "A user-defined composite data type that groups one or more variables of potentially different types under one name.",
+          "category": "Structures",
+          "sourceRef": "Chapter 1.pdf, slide 38",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p1-c10",
+          "question": "How do you access or assign members of a structure in C++?",
+          "answer": "Use the dot operator (`.`) with the syntax `VarName.Member`, or copy whole structs directly using `=` assignment.",
+          "category": "Structures",
+          "sourceRef": "Chapter 1.pdf, slide 41, 48",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 2,
+      "title": "Functions, Scope & Recursion",
+      "cards": [
+        {
+          "id": "advanced-programming-fc-p2-c01",
+          "question": "What is top-down design in software development?",
+          "answer": "Decomposing a large problem into smaller subtasks implemented as individual, self-contained functions.",
+          "category": "Modular Design",
+          "sourceRef": "Chapter 2.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p2-c02",
+          "question": "What constitutes a function signature in C++?",
+          "answer": "The function name and the types of its parameters; the return type is not part of the signature.",
+          "category": "Function Prototypes",
+          "sourceRef": "Chapter 2.pdf, slide 11",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p2-c03",
+          "question": "What is the difference between pass-by-value and pass-by-reference?",
+          "answer": "Pass-by-value passes a copy (leaving the caller's variable unchanged), while pass-by-reference operates on the original variable.",
+          "category": "Parameter Passing",
+          "sourceRef": "Chapter 2.pdf, slide 21, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p2-c04",
+          "question": "How can you access a global variable shadowed by a local variable of the same name?",
+          "answer": "Prefix the variable with the unary scope resolution operator `::` (e.g. `::num1`).",
+          "category": "Scope",
+          "sourceRef": "Chapter 2.pdf, slide 32",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p2-c05",
+          "question": "What is the behavior of a `static` local variable in C++?",
+          "answer": "It is initialized only once on the first call and retains its value in memory between subsequent function calls.",
+          "category": "Storage Classes",
+          "sourceRef": "Chapter 2.pdf, slide 34",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p2-c06",
+          "question": "What is an `inline` function in C++?",
+          "answer": "A function whose body the compiler substitutes in place of calls to eliminate function call overhead.",
+          "category": "Inline Functions",
+          "sourceRef": "Chapter 2.pdf, slide 37",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p2-c07",
+          "question": "Where must default argument parameters appear in a function declaration?",
+          "answer": "All default arguments must be placed at the right side (the end) of the parameter list.",
+          "category": "Default Arguments",
+          "sourceRef": "Chapter 2.pdf, slide 41",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p2-c08",
+          "question": "What rule governs function overloading in C++?",
+          "answer": "Overloaded functions must differ in their parameter count or types; differing only in return type is a compile error.",
+          "category": "Overloading",
+          "sourceRef": "Chapter 2.pdf, slide 42, 44",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p2-c09",
+          "question": "What are the three essential components of a recursive function?",
+          "answer": "A test condition, a base case that terminates recursion, and a recursive call that converges toward the base case.",
+          "category": "Recursion",
+          "sourceRef": "Chapter 2.pdf, slide 50",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p2-c10",
+          "question": "What is a stack frame (activation record) in recursion?",
+          "answer": "A memory section on the runtime stack storing local variables, arguments, and return addresses for an active call.",
+          "category": "Call Stack",
+          "sourceRef": "Chapter 2.pdf, slide 49",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 3,
+      "title": "Pointers & Dynamic Memory",
+      "cards": [
+        {
+          "id": "advanced-programming-fc-p3-c01",
+          "question": "What is a pointer in C++?",
+          "answer": "A variable that holds the memory address of another variable rather than a direct value.",
+          "category": "Pointers",
+          "sourceRef": "Chapter 3.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p3-c02",
+          "question": "What do the `&` and `*` operators do with pointers?",
+          "answer": "`&` (address-of) produces the memory address of a variable; `*` (dereference) accesses the value stored at that address.",
+          "category": "Pointer Operators",
+          "sourceRef": "Chapter 3.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p3-c03",
+          "question": "How does pointer arithmetic scale in C++?",
+          "answer": "Adding 1 to a pointer increments its byte address by `sizeof(type)` of the object it points to.",
+          "category": "Pointer Arithmetic",
+          "sourceRef": "Chapter 3.pdf, slide 24, 25",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p3-c04",
+          "question": "How does `*ptr++` evaluate in C++?",
+          "answer": "`++` has higher precedence than `*`; it dereferences the original address, then increments the pointer.",
+          "category": "Pointer Precedence",
+          "sourceRef": "Chapter 3.pdf, slide 28",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p3-c05",
+          "question": "How are array names related to pointers in C++?",
+          "answer": "An array name acts as a constant pointer to its first element; `arr[i]` is identical to `*(arr + i)`.",
+          "category": "Arrays & Pointers",
+          "sourceRef": "Chapter 3.pdf, slide 12, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p3-c06",
+          "question": "What is a pointer to a pointer in C++?",
+          "answer": "A variable declared with `**` (e.g. `int **p2;`) that stores the memory address of another pointer.",
+          "category": "Pointer to Pointer",
+          "sourceRef": "Chapter 3.pdf, slide 35",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p3-c07",
+          "question": "What is a void pointer (`void*`) in C++?",
+          "answer": "A generic pointer that can store any address, but cannot be dereferenced without first typecasting it.",
+          "category": "Void Pointers",
+          "sourceRef": "Chapter 3.pdf, slide 14, 49",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p3-c08",
+          "question": "What is `nullptr` in modern C++?",
+          "answer": "A standardized literal representing a null pointer that intentionally points to no valid memory location.",
+          "category": "Null Pointers",
+          "sourceRef": "Chapter 3.pdf, slide 50",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p3-c09",
+          "question": "How is dynamic memory allocated at runtime in C++?",
+          "answer": "Using the `new` operator (e.g. `p = new int[n];`), which allocates memory from the heap.",
+          "category": "Dynamic Memory",
+          "sourceRef": "Chapter 3.pdf, slide 38, 39",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p3-c10",
+          "question": "How do you free dynamic memory allocated with `new` and `new[]`?",
+          "answer": "Use `delete p;` for a single dynamic object, and `delete[] p;` for dynamically allocated arrays.",
+          "category": "Dynamic Memory",
+          "sourceRef": "Chapter 3.pdf, slide 43",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 4,
+      "title": "File I/O & Stream Processing",
+      "cards": [
+        {
+          "id": "advanced-programming-fc-p4-c01",
+          "question": "What is a stream in C++ I/O?",
+          "answer": "An object representing a flow of data into a program (input stream) or out of a program (output stream).",
+          "category": "Streams",
+          "sourceRef": "Chapter 4.pdf, slide 7, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p4-c02",
+          "question": "Which stream classes handle file input and output in C++?",
+          "answer": "`ifstream` handles input from files, and `ofstream` handles output to files (defined in `<fstream>`).",
+          "category": "File Streams",
+          "sourceRef": "Chapter 4.pdf, slide 11",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p4-c03",
+          "question": "What happens when `ofstream` opens an existing file with `ios::out`?",
+          "answer": "C++ discards existing contents, truncating the file so it is empty for new output.",
+          "category": "File Modes",
+          "sourceRef": "Chapter 4.pdf, slide 15, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p4-c04",
+          "question": "What does file access mode `ios::app` do?",
+          "answer": "Opens the file in append mode, automatically positioning the writing pointer at the end of the file.",
+          "category": "File Modes",
+          "sourceRef": "Chapter 4.pdf, slide 16, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p4-c05",
+          "question": "How do you verify if opening a file stream succeeded?",
+          "answer": "Call the `fail()` member function (e.g. `if(indata.fail())`), which returns true upon failure.",
+          "category": "Stream Verification",
+          "sourceRef": "Chapter 4.pdf, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p4-c06",
+          "question": "Why is `close()` important after completing file operations?",
+          "answer": "It flushes remaining buffered data to disk, releases system file locks, and updates directory metadata.",
+          "category": "File Management",
+          "sourceRef": "Chapter 4.pdf, slide 19, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p4-c07",
+          "question": "How does `stream.get(c)` differ from `stream >> c`?",
+          "answer": "`get()` reads the next raw character including spaces and newlines, whereas `>>` skips whitespace.",
+          "category": "Character I/O",
+          "sourceRef": "Chapter 4.pdf, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p4-c08",
+          "question": "What member functions reposition and report the input (get) file pointer?",
+          "answer": "`seekg()` repositions the get pointer, and `tellg()` returns its current byte position.",
+          "category": "File Pointers",
+          "sourceRef": "Chapter 4.pdf, slide 30, 31",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p4-c09",
+          "question": "What do `ios::beg`, `ios::cur`, and `ios::end` specify in `seekg()`?",
+          "answer": "They define the seek reference point: beginning of file, current pointer position, and end of file.",
+          "category": "File Pointers",
+          "sourceRef": "Chapter 4.pdf, slide 40",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p4-c10",
+          "question": "What is the difference between text files and binary files in C++?",
+          "answer": "Text files store ASCII character representations; binary files store raw in-memory byte representations directly.",
+          "category": "Text vs Binary",
+          "sourceRef": "Chapter 4.pdf, slide 45, 46",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 5,
+      "title": "Object-Oriented Programming & Classes",
+      "cards": [
+        {
+          "id": "advanced-programming-fc-p5-c01",
+          "question": "What are the four pillars of OOP?",
+          "answer": "Abstraction, Encapsulation, Inheritance, and Polymorphism.",
+          "category": "OOP Pillars",
+          "sourceRef": "Chapter 5.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p5-c02",
+          "question": "What is the relationship between a class and an object?",
+          "answer": "A class is a blueprint or template defining data and methods; an object is an instantiated runtime instance.",
+          "category": "Classes & Objects",
+          "sourceRef": "Chapter 5.pdf, slide 10, 11",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p5-c03",
+          "question": "What is the default access specifier for `class` vs `struct` in C++?",
+          "answer": "Members of a `class` are private by default; members of a `struct` are public by default.",
+          "category": "Access Control",
+          "sourceRef": "Chapter 5.pdf, slide 17",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p5-c04",
+          "question": "What do accessor and mutator functions do in a class?",
+          "answer": "Accessor (`get...`) functions retrieve private data; mutator (`set...`) functions update private data safely.",
+          "category": "Encapsulation",
+          "sourceRef": "Chapter 5.pdf, slide 28",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p5-c05",
+          "question": "How are member functions defined outside of the class body in C++?",
+          "answer": "Using the scope resolution operator `::` with syntax `ReturnType ClassName::FunctionName(params)`.",
+          "category": "Member Functions",
+          "sourceRef": "Chapter 5.pdf, slide 22",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p5-c06",
+          "question": "What are the two mandatory rules for a C++ constructor?",
+          "answer": "A constructor must have the exact same name as the class, and it cannot have any return type (not even `void`).",
+          "category": "Constructors",
+          "sourceRef": "Chapter 5.pdf, slide 29",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p5-c07",
+          "question": "What is a default constructor in C++?",
+          "answer": "A constructor that can be called with zero arguments, used when declaring an object without arguments.",
+          "category": "Constructors",
+          "sourceRef": "Chapter 5.pdf, slide 31",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p5-c08",
+          "question": "What is the purpose of constructor member initialization lists?",
+          "answer": "To initialize member variables directly upon instantiation before the constructor body statements execute.",
+          "category": "Constructors",
+          "sourceRef": "Chapter 5.pdf, slide 33",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p5-c09",
+          "question": "What does the `protected` access specifier allow in C++ class hierarchies?",
+          "answer": "Members are hidden from external code, but accessible to methods of the base class and its derived subclasses.",
+          "category": "Inheritance",
+          "sourceRef": "Chapter 5.pdf, slide 20",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-fc-p5-c10",
+          "question": "What three forms of polymorphism are supported in C++?",
+          "answer": "Function overloading, function overriding, and function redefining.",
+          "category": "Polymorphism",
+          "sourceRef": "Chapter 5.pdf, slide 8, 36",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

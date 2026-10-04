@@ -1,0 +1,440 @@
+{
+  "level": "hard",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "advanced-programming-hard-s1-q01",
+          "question": "In C++, what occurs when a program attempts to write to an array index beyond its declared bounds, such as `day[5] = 75;` for `int day[5];`?",
+          "options": [
+            "The operating system automatically doubles the array's capacity",
+            "The program intercepts the access and routes the value to index 0",
+            "The compiler flags a syntax error and prevents executable creation",
+            "C++ performs no bounds checking; it compiles cleanly but risks memory corruption, unexpected values, or runtime crashes"
+          ],
+          "correctIndex": 3,
+          "explanation": "In C++, exceeding array index bounds is not a compilation or syntax error because no bounds checking is performed; it causes logical errors or runtime faults.",
+          "sourceRef": "Chapter 1.pdf, slide 10",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s1-q02",
+          "question": "Given `char mystring[] = \"Hello\";`, why does the assignment statement `mystring = \"World\";` fail to compile in C++?",
+          "options": [
+            "\"World\" has fewer characters than \"Hello\"",
+            "String assignments in C++ require single quotation marks",
+            "The assignment operator can only be used on string class objects, never pointers",
+            "An array identifier is a constant pointer to its allocated memory block, and constant identifiers cannot be assigned new values"
+          ],
+          "correctIndex": 3,
+          "explanation": "An array name is a constant pointer to the first element; because it is constant, assigning a new address or string literal to it after definition is illegal.",
+          "sourceRef": "Chapter 1.pdf, slide 19, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s1-q03",
+          "question": "Inside a function where a local variable `int num1 = 33;` shadows a global variable `int num1 = 2;`, which statement correctly outputs the global variable?",
+          "options": [
+            "cout << extern(num1);",
+            "cout << ::num1;",
+            "cout << num1::global;",
+            "cout << global.num1;"
+          ],
+          "correctIndex": 1,
+          "explanation": "The unary scope resolution operator (::) with no preceding class or namespace name accesses the variable defined at global scope.",
+          "sourceRef": "Chapter 2.pdf, slide 32",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s1-q04",
+          "question": "Under which condition will a C++ compiler typically refuse to inline a function even if declared with the `inline` keyword?",
+          "options": [
+            "The function is called multiple times within main()",
+            "The function calls itself recursively or contains loops such as for or while",
+            "The function accepts more than two parameters",
+            "The function return type is a fundamental type such as int or float"
+          ],
+          "correctIndex": 1,
+          "explanation": "Compilers treat inline as a suggestion and will decline to inline functions that are recursive, contain loops, or are too large in code size.",
+          "sourceRef": "Chapter 2.pdf, slide 38",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s1-q05",
+          "question": "What is the operational difference between executing `var1 = *p1++;` and `var2 = *++p2;`?",
+          "options": [
+            "Both statements produce identical results because ++ and * have identical precedence",
+            "*p1++ is invalid C++ syntax, whereas *++p2 is valid",
+            "*p1++ increments the value in memory, while *++p2 increments the pointer address",
+            "*p1++ dereferences the original pointer before incrementing it, while *++p2 increments the pointer first and then dereferences the new address"
+          ],
+          "correctIndex": 3,
+          "explanation": "Post-increment has higher precedence but yields the original pointer for dereference before incrementing. Pre-increment increments the pointer first before dereferencing.",
+          "sourceRef": "Chapter 3.pdf, slide 28, 30",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s1-q06",
+          "question": "Consider the code: `int *p1 = new int; int *p2 = new int; *p1 = 10; *p2 = 20; p1 = p2; *p1 = 30;`. What values are printed by `cout << *p1 << \" \" << *p2;`?",
+          "options": [
+            "30 20",
+            "10 30",
+            "30 30",
+            "20 20"
+          ],
+          "correctIndex": 2,
+          "explanation": "After pointer assignment p1 = p2, both p1 and p2 point to the exact same dynamic integer. Changing *p1 to 30 modifies that shared location, so both print 30.",
+          "sourceRef": "Chapter 3.pdf, slide 47",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s1-q07",
+          "question": "How does data storage fundamentally differ between text files and binary files in C++?",
+          "options": [
+            "Text files write out data as formatted ASCII character sequences, while binary files write raw data in the exact representation used in main memory",
+            "Text files can only be accessed using seekg(), while binary files only support sequential reading",
+            "Binary files are universally portable across all operating systems, while text files are machine-dependent",
+            "Binary files format numbers with commas and newlines, while text files use raw bit streams"
+          ],
+          "correctIndex": 0,
+          "explanation": "Text files store numbers converted into sequences of ASCII characters, whereas binary files store data compactly in the identical binary format used in RAM.",
+          "sourceRef": "Chapter 4.pdf, slide 45, 46",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s1-q08",
+          "question": "In a program reading a file backwards character by character, after reading one character forward with `indata >> inchar;`, how should `seekg()` be invoked to move to the preceding character?",
+          "options": [
+            "indata.seekg(-1L, ios::cur);",
+            "indata.seekg(-1L, ios::beg);",
+            "indata.seekg(-2L, ios::cur);",
+            "indata.seekg(0L, ios::beg);"
+          ],
+          "correctIndex": 2,
+          "explanation": "Because reading the character advanced the stream pointer forward by 1 byte, the program must seek backward by 2 bytes relative to the current position (ios::cur) to reach the preceding byte.",
+          "sourceRef": "Chapter 4.pdf, slide 43, 44",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s1-q09",
+          "question": "Given the statement `YourClass yetAnotherObject();`, how does the C++ compiler actually interpret this declaration?",
+          "options": [
+            "As a function prototype declaration for a function named yetAnotherObject returning a YourClass object",
+            "As a syntax error because empty parentheses are disallowed in C++",
+            "As an object instantiation calling the default constructor",
+            "As an array declaration of zero elements"
+          ],
+          "correctIndex": 0,
+          "explanation": "In C++, declaring an object with empty parentheses is parsed as a function declaration that takes no arguments and returns an object of type YourClass.",
+          "sourceRef": "Chapter 5.pdf, slide 35",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s1-q10",
+          "question": "At what point is memory actually allocated for class data members in C++?",
+          "options": [
+            "When an object instance of the class is created/instantiated",
+            "During the preprocessing phase",
+            "When the class definition is compiled",
+            "When member function prototypes are declared"
+          ],
+          "correctIndex": 0,
+          "explanation": "Defining a class creates a user-defined blueprint without allocating memory; storage for data members is allocated only when an object of the class is instantiated.",
+          "sourceRef": "Chapter 5.pdf, slide 15",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "advanced-programming-hard-s2-q01",
+          "question": "In physical memory, how does C++ store a two-dimensional array declared as `int matrix[3][5]`?",
+          "options": [
+            "As a binary search tree of integers",
+            "As a single contiguous sequence of 15 integers arranged in row-major order",
+            "As 5 vertical column vectors stored separately in the heap",
+            "As three non-contiguous arrays linked together through pointer tables"
+          ],
+          "correctIndex": 1,
+          "explanation": "Multidimensional arrays in C++ are an abstraction stored in contiguous memory in row-major order, equivalent to a flat array of 15 elements (3 * 5 = 15).",
+          "sourceRef": "Chapter 1.pdf, slide 34",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s2-q02",
+          "question": "Given `int a = 1; int day[5] = {10, 20, 30, 40, 50}; day[a] = 5;`, what occurs when evaluating the expression `day[day[a]]`?",
+          "options": [
+            "It returns day[0] which equals 10",
+            "It accesses day[5], which exceeds the valid array bounds [0, 4]",
+            "It returns day[1] which equals 20",
+            "It causes a compilation syntax error during index evaluation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Since day[a] (day[1]) is assigned 5, the expression day[day[a]] evaluates to day[5], which is out of bounds for an array of size 5.",
+          "sourceRef": "Chapter 1.pdf, slide 10, 11",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s2-q03",
+          "question": "Why does recursion generally involve higher memory consumption and processor overhead than an equivalent iterative loop?",
+          "options": [
+            "Each recursive call creates an activation record (stack frame) on the runtime stack storing parameters and local variables",
+            "Iteration requires allocating memory on the heap, whereas recursion does not",
+            "Recursion prevents the compiler from optimizing variable names",
+            "Recursive functions are executed in an external virtual machine"
+          ],
+          "correctIndex": 0,
+          "explanation": "Each recursive call pushes a stack frame with its local variables and parameters onto the runtime stack, incurring processor call overhead and substantial memory use.",
+          "sourceRef": "Chapter 2.pdf, slide 49, 54",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s2-q04",
+          "question": "Given `void Mult_Display(int x, char y);`, why is the function call `Mult_Display('A', 5);` valid and executable in C++?",
+          "options": [
+            "Single quotes and numeric literals are considered identical types in C++",
+            "The compiler creates a duplicate overloaded function at runtime",
+            "The compiler strips character data and substitutes 0",
+            "Characters in C++ are integral types with numeric ASCII values, allowing implicit type promotion to match function parameter types"
+          ],
+          "correctIndex": 3,
+          "explanation": "In C++, char is an integral type (e.g. 'A' has ASCII value 65), so the arguments ('A' and 5) undergo implicit conversions to match the parameter types int and char.",
+          "sourceRef": "Chapter 2.pdf, slide 40",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s2-q05",
+          "question": "If `int Numbers[20]; int *p;`, why is `p = Numbers;` valid while `Numbers = p;` causes a compilation error?",
+          "options": [
+            "Pointers cannot be assigned to arrays without explicit void* casting",
+            "Numbers is stored on the heap, whereas p is stored on the stack",
+            "Numbers is a constant pointer representing the array's fixed base address, and constant identifiers cannot be assigned to",
+            "p has 20 elements while Numbers has only 1"
+          ],
+          "correctIndex": 2,
+          "explanation": "An array name is a constant pointer pointing to the array's first element; because it is a constant identifier, it cannot be reassigned.",
+          "sourceRef": "Chapter 3.pdf, slide 16, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s2-q06",
+          "question": "Consider the code: `int *p1 = new int; int *p2 = new int; *p1 = 10; *p2 = 20; *p1 = *p2; *p1 = 30;`. What values are printed by `cout << *p1 << \" \" << *p2;`?",
+          "options": [
+            "20 30",
+            "10 20",
+            "30 30",
+            "30 20"
+          ],
+          "correctIndex": 3,
+          "explanation": "The statement *p1 = *p2 copies the integer value 20 into the memory location of p1. Then *p1 = 30 updates only p1's memory, leaving *p2 unchanged at 20.",
+          "sourceRef": "Chapter 3.pdf, slide 48",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s2-q07",
+          "question": "When a file is opened in append access mode (`ios::app`), where is the writing pointer placed and how does writing behave?",
+          "options": [
+            "The writing pointer is automatically placed at the end of the file, and any new data is appended to existing content",
+            "The file is cleared to 0 bytes and the pointer starts at byte 0",
+            "The writing pointer is locked until seekp() is called",
+            "The writing pointer starts at byte 0 and overwrites existing characters"
+          ],
+          "correctIndex": 0,
+          "explanation": "In append mode (ios::app), the writing pointer is automatically positioned at the end of the file, ensuring all output is appended.",
+          "sourceRef": "Chapter 4.pdf, slide 27, 37",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s2-q08",
+          "question": "What is the primary operational advantage of binary files over text files when storing large amounts of numerical data?",
+          "options": [
+            "Binary files can be opened without using file streams",
+            "Binary files eliminate character conversion overhead and store data in compact internal format without line-formatting characters",
+            "Binary files can only be accessed sequentially",
+            "Binary files are directly human-readable in standard text editors"
+          ],
+          "correctIndex": 1,
+          "explanation": "Binary files store data in the exact binary format used in RAM, avoiding costly character-to-number conversions and saving disk space.",
+          "sourceRef": "Chapter 4.pdf, slide 45, 47",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s2-q09",
+          "question": "How does calling an object's member function differ syntactically from defining that member function outside the class?",
+          "options": [
+            "Calling uses the dot operator (.) on an object instance, while defining uses the scope resolution operator (::) with the class name",
+            "Calling requires the class name, while defining requires only the object identifier",
+            "Calling requires the -> operator, while defining requires the * operator",
+            "Calling uses the scope resolution operator (::), while defining uses the dot operator (.)"
+          ],
+          "correctIndex": 0,
+          "explanation": "The dot operator specifies a member of an object instance (e.g. today.output()), while the scope resolution operator connects the class name to the function header (e.g. Year::output()).",
+          "sourceRef": "Chapter 5.pdf, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s2-q10",
+          "question": "Why does C++ provide support for constructor overloading in class definitions?",
+          "options": [
+            "To allow private member variables to become publicly accessible",
+            "To automatically free memory when an object goes out of scope",
+            "To permit objects of the same class to be initialized in different ways according to the arguments supplied",
+            "To allow constructors to return error codes of varying types"
+          ],
+          "correctIndex": 2,
+          "explanation": "Constructor overloading allows a class to have multiple constructors with different parameter lists, enabling flexible object initialization.",
+          "sourceRef": "Chapter 5.pdf, slide 31, 33",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "advanced-programming-hard-s3-q01",
+          "question": "Why does C++ prohibit assigning one array directly to another using `arr1 = arr2;` even when their data types and dimensions are identical?",
+          "options": [
+            "The assignment operator is reserved exclusively for pointer-to-pointer types",
+            "Array identifiers are constant pointers representing fixed memory blocks, and constant identifiers cannot be assigned to",
+            "Arrays in C++ can only be copied using recursive procedures",
+            "Arrays are allocated in read-only program memory"
+          ],
+          "correctIndex": 1,
+          "explanation": "An array name is a constant pointer to allocated memory; because constant pointers cannot be reassigned, whole-array assignment is disallowed.",
+          "sourceRef": "Chapter 1.pdf, slide 8, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s3-q02",
+          "question": "If the user enters 'AB', presses Enter, and then enters 'CD', what character value does `c3` hold after `cin.get(c1); cin.get(c2); cin.get(c3);`?",
+          "options": [
+            "'\\n' because cin.get() reads every character including the newline character produced by the Enter key",
+            "' ' (space) because the buffer replaces newlines with blanks",
+            "A null character '\\0'",
+            "'C' because newline characters are automatically bypassed by cin.get()"
+          ],
+          "correctIndex": 0,
+          "explanation": "Unlike >>, cin.get() does not skip whitespace or newlines. c1 receives 'A', c2 receives 'B', and c3 receives the newline character '\\n'.",
+          "sourceRef": "Chapter 4.pdf, slide 23",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s3-q03",
+          "question": "What happens if a function is called before its definition in a C++ file without any prior function prototype?",
+          "options": [
+            "The linker links the function dynamically at runtime",
+            "The call is ignored and returns void",
+            "The compiler assumes the function returns an int and compiles with a warning",
+            "A compilation error occurs because the function name has not been declared"
+          ],
+          "correctIndex": 3,
+          "explanation": "In C++, an identifier must be declared before it is referenced; calling a function before defining it without a prototype produces a compilation error.",
+          "sourceRef": "Chapter 2.pdf, slide 12",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s3-q04",
+          "question": "In the recursive implementation `unsigned int factorial(unsigned int n) { return n == 0 ? 1 : n * factorial(n - 1); }`, what is the role of `n == 0 ? 1`?",
+          "options": [
+            "It is an exception handler for invalid unsigned parameters",
+            "It is the recursive step that continues function calls",
+            "It is the base case condition that terminates recursion and initiates stack unwinding",
+            "It is an inline expansion hint for the compiler"
+          ],
+          "correctIndex": 2,
+          "explanation": "The condition n == 0 is the base case that terminates recursion, returning 1 and allowing previous recursive calls to compute their products.",
+          "sourceRef": "Chapter 2.pdf, slide 46, 50",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s3-q05",
+          "question": "What does the statement `*p++ = *q++;` accomplish in C++?",
+          "options": [
+            "It assigns the address of q to p and increments the dereferenced value",
+            "It increments *p and *q before performing the assignment",
+            "It causes a compilation syntax error due to conflicting post-increment operators",
+            "It assigns the value pointed to by q to the location pointed to by p, and then increments both pointers p and q"
+          ],
+          "correctIndex": 3,
+          "explanation": "Because post-increment is applied after value evaluation, the value of *q is copied to *p, and then both pointer addresses are incremented by one unit.",
+          "sourceRef": "Chapter 3.pdf, slide 27",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s3-q06",
+          "question": "What is the consequence of failing to check if a pointer returned by `new` is `NULL` before using it in C++?",
+          "options": [
+            "The dynamic allocation is automatically deferred until memory becomes free",
+            "If heap memory is exhausted, the pointer is null, and dereferencing it causes undefined behavior or a program crash",
+            "The operating system reclaims stack memory to satisfy the allocation",
+            "The compiler issues a warning and converts the pointer into a static variable"
+          ],
+          "correctIndex": 1,
+          "explanation": "If dynamic memory allocation fails, new returns a null pointer; dereferencing a null pointer causes severe runtime faults or system crashes.",
+          "sourceRef": "Chapter 3.pdf, slide 42, 45",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s3-q07",
+          "question": "How does reading data from a binary file using `read()` differ from reading from a text file using `>>`?",
+          "options": [
+            "read() can only be called on character variables, whereas >> works on all types",
+            "read() processes formatted ASCII numbers, while >> reads raw unformatted bytes",
+            "read() reads an entire contiguous block of bytes directly into memory at once, whereas >> parses individual values separated by whitespace",
+            "read() requires the file to be closed after every read operation"
+          ],
+          "correctIndex": 2,
+          "explanation": "Binary I/O uses read() to transfer an entire record's memory representation at once, whereas text I/O uses >> to read and parse values piece by piece.",
+          "sourceRef": "Chapter 4.pdf, slide 48, 49",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s3-q08",
+          "question": "What occurs when a C++ program attempts to open a non-existent file for reading using `ios::in`?",
+          "options": [
+            "The open operation fails, the stream object evaluates to null/zero, and fail() returns true",
+            "The stream waits until another program creates the file",
+            "C++ automatically creates an empty file on disk",
+            "The file pointer is initialized at ios::end"
+          ],
+          "correctIndex": 0,
+          "explanation": "A file opened for reading must already exist; if it does not, open() fails to create a valid stream object and fail() returns true.",
+          "sourceRef": "Chapter 4.pdf, slide 18, 29",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s3-q09",
+          "question": "What is the specific visibility rule for class members declared under the `protected` access specifier?",
+          "options": [
+            "They are accessible only to global functions",
+            "They are accessible to all functions in the program",
+            "They are accessible only to member functions of the class and to classes derived from that class",
+            "They can only be accessed from within constructors"
+          ],
+          "correctIndex": 2,
+          "explanation": "Protected members cannot be accessed by external code, but remain accessible to methods of the class itself and to derived subclasses.",
+          "sourceRef": "Chapter 5.pdf, slide 20",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-hard-s3-q10",
+          "question": "In C++, why is a constructor definition prohibited from specifying any return type, not even `void`?",
+          "options": [
+            "Because constructors are called automatically upon object creation to initialize state and by language design cannot return values",
+            "Because constructors must always return an integer status code to the operating system",
+            "Because constructors are only executed during compile-time optimization",
+            "Because specifying a return type converts the constructor into a destructor"
+          ],
+          "correctIndex": 0,
+          "explanation": "Constructors are dedicated to object initialization upon declaration; language semantics forbid specifying any return type, including void.",
+          "sourceRef": "Chapter 5.pdf, slide 29",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

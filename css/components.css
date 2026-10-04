@@ -1,0 +1,813 @@
+/* Component styles: Hero paper index card, tactile buttons, ribbon progress, and dialog */
+
+/* Select dropdown */
+.select-wrapper {
+  position: relative;
+}
+
+#deck-select {
+  height: 44px;
+  padding: 0 1.85rem 0 0.85rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232F4156" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.65rem center;
+}
+
+[data-theme="dark"] #deck-select {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23F2E6D6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');
+}
+
+#deck-select:hover {
+  border-color: var(--color-ink);
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+#theme-toggle:hover {
+  border-color: var(--color-ink);
+  background-color: var(--color-surface-panel);
+}
+
+.theme-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Characterful progress ribbon and large friendly counter */
+.progress-info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.counter-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+#counter {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1;
+}
+
+.progress-bar-track {
+  width: 100%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-surface-panel);
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+#progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--palette-teal);
+  border-radius: 9999px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] #progress-fill {
+  background-color: var(--color-progress);
+}
+
+/* ==========================================================================
+   Hero Paper Index Card with Stack Effect, Ruled Lines, and 3D Flip
+   ========================================================================== */
+
+.card {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: min(92vw, 480px);
+  height: 310px;
+  padding: 0;
+  position: relative;
+  border-radius: var(--radius);
+}
+
+/* Offset stack effect edges behind card representing a physical card deck */
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--color-border);
+  pointer-events: none;
+  transition: transform 0.25s ease;
+}
+
+/* Bottom layer */
+.card::after {
+  background-color: var(--color-card-stack-2);
+  transform: rotate(-1.5deg) translate(-3px, 3px);
+  z-index: 0;
+}
+
+/* Middle layer */
+.card::before {
+  background-color: var(--color-card-stack-1);
+  transform: rotate(1.2deg) translate(3px, 4px);
+  z-index: 1;
+}
+
+/* Top card inner container with tactile hover lift and 1deg tilt */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.65s cubic-bezier(0.34, 1.25, 0.64, 1), box-shadow 0.25s ease;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transform: rotate(-0.85deg);
+  z-index: 2;
+}
+
+/* Lift on hover */
+.card:hover .card-inner {
+  transform: translateY(-4px) rotate(0deg);
+  box-shadow: 0 14px 26px rgba(47, 65, 86, 0.14), 0 3px 6px rgba(47, 65, 86, 0.08);
+}
+
+[data-theme="dark"] .card:hover .card-inner {
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.7), 0 4px 10px rgba(15, 23, 42, 0.4);
+}
+
+/* 3D Flip state with overshoot */
+.card.is-flipped .card-inner {
+  transform: rotateY(180deg) rotate(0.85deg);
+}
+
+.card:hover.is-flipped .card-inner {
+  transform: translateY(-4px) rotateY(180deg) rotate(0deg);
+}
+
+/* Slide in animation when advancing to another card */
+@keyframes cardTurnIn {
+  0% {
+    opacity: 0.55;
+    transform: translateY(8px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card.card-turn .card-inner {
+  animation: cardTurnIn 0.28s ease-out;
+}
+
+/* Card faces styled like physical ruled paper index cards */
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.6rem 1rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--color-border);
+  box-sizing: border-box;
+  overflow-y: auto;
+  /* Subtle ruled lines texture */
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    var(--color-card-ruled) 28px
+  );
+}
+
+/* Front face: Crisp White paper */
+.card-front {
+  background-color: var(--color-card-front);
+  color: var(--color-ink);
+}
+
+/* Back face: Soft Sky Blue paper */
+.card-back {
+  background-color: var(--color-card-back);
+  color: var(--color-ink);
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+/* Top color band strip */
+.card-top-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.card-front .card-top-strip {
+  background-color: var(--color-card-band-front);
+}
+
+.card-back .card-top-strip {
+  background-color: var(--color-card-band-back);
+}
+
+/* Card header metadata row */
+.card-header-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1);
+}
+
+.card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+  background-color: rgba(86, 124, 141, 0.12);
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .card-label {
+  background-color: rgba(200, 169, 157, 0.18);
+  color: var(--color-text);
+}
+
+.card-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  border: 1px dashed var(--color-border);
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme="dark"] .card-category {
+  background-color: rgba(30, 41, 59, 0.6);
+  border-color: var(--color-accent-teal);
+  color: var(--color-accent-rose);
+}
+
+/* Card question and answer serif typography */
+#card-question,
+#card-answer {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3.2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--color-ink);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin: auto 0;
+  max-width: 100%;
+  padding: 0.5rem 0;
+}
+
+.card-hint {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  opacity: 0.85;
+}
+
+/* Empty state message container */
+#empty-message[hidden] {
+  display: none !important;
+}
+
+#empty-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.6rem;
+  width: min(92vw, 480px);
+  height: 310px;
+  padding: var(--space-3);
+  background-color: var(--color-surface);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-muted);
+}
+
+.empty-doodle {
+  color: var(--color-ink);
+  margin-bottom: 0.25rem;
+}
+
+.empty-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.empty-desc {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  max-width: 320px;
+}
+
+/* ==========================================================================
+   Primary Navigation Buttons (Previous, Flip, Next)
+   ========================================================================== */
+
+.btn-primary-nav {
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-ink);
+  font-weight: 600;
+  min-height: 48px;
+  padding: 0 1.15rem;
+  box-shadow: 0 1px 3px rgba(47, 65, 86, 0.06);
+}
+
+.btn-primary-nav:hover:not(:disabled) {
+  border-color: var(--color-ink);
+  background-color: var(--color-surface-panel);
+}
+
+.btn-flip {
+  flex: 1;
+  max-width: 160px;
+  min-height: 48px;
+  background-color: var(--palette-sky-blue);
+  border: 1.5px solid var(--color-accent-blue-border);
+  color: var(--palette-navy);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 5px rgba(47, 65, 86, 0.08);
+}
+
+.btn-flip:hover:not(:disabled) {
+  background-color: #B4CCE0;
+  border-color: var(--color-ink);
+}
+
+[data-theme="dark"] .btn-flip {
+  background-color: var(--color-accent-rose);
+  color: #1E293B;
+  border-color: var(--color-accent-rose);
+}
+
+[data-theme="dark"] .btn-flip:hover:not(:disabled) {
+  background-color: #D6BCB2;
+  border-color: var(--color-ink);
+}
+
+.btn-arrow {
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Feedback Buttons (Known = Teal, Review = Blush)
+   ========================================================================== */
+
+.feedback {
+  display: flex;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.btn-known {
+  flex: 1;
+  background-color: var(--palette-teal);
+  border: 1.5px solid var(--color-sage-border);
+  color: #FFFFFF;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.btn-known:hover:not(:disabled) {
+  background-color: #476A7A;
+  border-color: var(--color-ink);
+}
+
+[data-theme="dark"] .btn-known {
+  background-color: var(--color-sage);
+  border-color: var(--color-sage-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .btn-known:hover:not(:disabled) {
+  background-color: #6C7D77;
+  border-color: var(--color-ink);
+}
+
+.btn-review {
+  flex: 1;
+  background-color: var(--color-blush);
+  border: 1.5px solid var(--color-blush-border);
+  color: var(--color-ink);
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.btn-review:hover:not(:disabled) {
+  background-color: #E2B2B6;
+  border-color: var(--color-ink);
+}
+
+[data-theme="dark"] .btn-review {
+  background-color: var(--color-blush);
+  border-color: var(--color-blush-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .btn-review:hover:not(:disabled) {
+  background-color: #9A8C8A;
+  border-color: var(--color-ink);
+}
+
+.btn-svg {
+  flex-shrink: 0;
+}
+
+/* Live score text with subtle bounce animation */
+#score {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-align: center;
+  margin-top: 0.15rem;
+}
+
+@keyframes scoreBump {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.score-bounce {
+  animation: scoreBump 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================================================
+   Secondary Buttons & Stationery Actions
+   ========================================================================== */
+
+.controls.secondary-controls,
+.manage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.btn-quiet {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-height: 40px;
+  padding: 0 0.75rem;
+}
+
+.btn-quiet:hover:not(:disabled) {
+  background-color: var(--color-surface-panel);
+  border-color: var(--color-ink);
+}
+
+.btn-add {
+  font-weight: 600;
+}
+
+.btn-delete {
+  color: var(--color-danger);
+}
+
+.btn-delete:hover:not(:disabled) {
+  background-color: rgba(155, 59, 54, 0.12);
+  border-color: var(--color-danger);
+}
+
+/* Custom styled review-only toggle checkbox */
+.toggle-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  min-height: 40px;
+  padding: 0 0.4rem;
+  user-select: none;
+}
+
+.toggle-container input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--palette-navy);
+  cursor: pointer;
+}
+
+[data-theme="dark"] .toggle-container input[type="checkbox"] {
+  accent-color: var(--color-accent-rose);
+}
+
+/* Import file button wrapper */
+.file-label {
+  cursor: pointer;
+  position: relative;
+}
+
+.file-label input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Polite status message */
+#status-message {
+  width: 100%;
+  min-height: 1.35rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  transition: opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   Add Card Modal Dialog
+   ========================================================================== */
+
+#add-dialog {
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-card);
+  width: min(92vw, 460px);
+  margin: auto;
+  padding: var(--space-3);
+}
+
+#add-dialog::backdrop {
+  background-color: rgba(47, 65, 86, 0.55);
+}
+
+[data-theme="dark"] #add-dialog::backdrop {
+  background-color: rgba(15, 23, 42, 0.75);
+}
+
+#add-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.dialog-header {
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 0.5rem;
+}
+
+.dialog-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.dialog-subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.form-group textarea:focus {
+  border-color: var(--color-ink);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(86, 124, 141, 0.25);
+}
+
+[data-theme="dark"] .form-group textarea:focus {
+  border-color: var(--color-ink);
+  box-shadow: 0 0 0 2px rgba(200, 169, 157, 0.35);
+}
+
+.error-message {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-danger);
+  min-height: 1.2rem;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  margin-top: 0.25rem;
+}
+
+.btn-dialog-secondary {
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.btn-dialog-secondary:hover {
+  background-color: var(--color-surface-panel);
+}
+
+.btn-dialog-primary {
+  background-color: var(--palette-navy);
+  border: 1.5px solid var(--palette-navy);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .btn-dialog-primary {
+  background-color: var(--color-accent-rose);
+  border-color: var(--color-accent-rose);
+  color: #1E293B;
+}
+
+.btn-dialog-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+[data-theme="dark"] .btn-dialog-primary:hover {
+  background-color: #D6BCB2;
+  border-color: var(--color-ink);
+}
+
+/* ==========================================================================
+   Academic Course Hierarchy Bar & Phase Tabs in Flashcard Study Stage
+   ========================================================================== */
+
+.study-hierarchy-bar {
+  width: min(92vw, 480px);
+  margin: 0 auto var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hierarchy-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.fc-crumb-sep {
+  color: var(--color-border);
+  user-select: none;
+}
+
+.fc-crumb-btn {
+  background: transparent;
+  border: 0;
+  padding: 0 0.15rem;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.fc-crumb-btn:hover {
+  color: var(--color-ink);
+}
+
+.fc-subject-tag {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.phase-tabs {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 3px;
+  scrollbar-width: thin;
+}
+
+.phase-tab {
+  flex: 1 0 auto;
+  min-height: 32px;
+  padding: 0 0.65rem;
+  font-size: 0.775rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phase-tab:hover {
+  color: var(--color-text);
+  border-color: var(--color-ink);
+}
+
+.phase-tab.is-active {
+  background-color: var(--color-surface-panel);
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .phase-tab.is-active {
+  background-color: rgba(200, 169, 157, 0.15);
+  border-color: var(--color-accent-rose);
+  color: var(--color-accent-rose);
+}
+
+.card-source-tag {
+  margin-top: 0.5rem;
+  font-size: 0.725rem;
+  color: var(--color-muted);
+  font-style: italic;
+  display: block;
+}

@@ -1,0 +1,440 @@
+{
+  "level": "medium",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "advanced-programming-medium-s1-q01",
+          "question": "If an array is declared as `int day[5] = {16, 2, 77};`, what value is stored in `day[3]`?",
+          "options": [
+            "Undetermined garbage value",
+            "Causes a compilation error",
+            "0",
+            "77"
+          ],
+          "correctIndex": 2,
+          "explanation": "When initializing an array with fewer values than its declared length, C++ automatically fills the remaining elements with zero.",
+          "sourceRef": "Chapter 1.pdf, slide 7",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s1-q02",
+          "question": "Why does using `cin >> mybuffer;` fail when attempting to read a user's full name like \"John Doe\"?",
+          "options": [
+            "The extraction operator >> only accepts numerical characters",
+            "The extraction operator >> treats spaces as delimiters and stops reading after 'John'",
+            "A character array cannot be passed to cin directly",
+            "The string must end with a semicolon to be accepted by cin"
+          ],
+          "correctIndex": 1,
+          "explanation": "The extraction operator >> treats any whitespace (including spaces and tabs) as a delimiter, capturing only the first word.",
+          "sourceRef": "Chapter 1.pdf, slide 26",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s1-q03",
+          "question": "What is the key difference between pass-by-value and pass-by-reference when passing an argument to a function?",
+          "options": [
+            "Pass-by-reference works only with constant expressions, while pass-by-value works with variables",
+            "Pass-by-value passes the memory address, whereas pass-by-reference creates a local copy",
+            "Pass-by-value is only permitted for structures, while pass-by-reference is for basic types",
+            "Pass-by-value makes a copy so changes do not affect the original variable, whereas pass-by-reference modifies the caller's variable directly"
+          ],
+          "correctIndex": 3,
+          "explanation": "Pass-by-value copies the argument value into a local parameter, whereas pass-by-reference binds directly to the caller's variable.",
+          "sourceRef": "Chapter 2.pdf, slide 21, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s1-q04",
+          "question": "Where must parameters with default values be placed in a C++ function declaration?",
+          "options": [
+            "At the end (right side) of the parameter list",
+            "At the beginning (left side) of the parameter list",
+            "In any order, provided parameter names are distinct",
+            "Alternating between standard parameters and default parameters"
+          ],
+          "correctIndex": 0,
+          "explanation": "In C++, all parameters with default arguments must always be positioned at the right side of the function declaration.",
+          "sourceRef": "Chapter 2.pdf, slide 41",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s1-q05",
+          "question": "Suppose `short *myshort;` points to memory address 2000. If `sizeof(short)` is 2 bytes, what address does `myshort` point to after executing `myshort++;`?",
+          "options": [
+            "2001",
+            "2004",
+            "2000",
+            "2002"
+          ],
+          "correctIndex": 3,
+          "explanation": "Pointer arithmetic increments by the size of the data type pointed to; adding 1 to a short pointer adds 2 bytes, yielding 2002.",
+          "sourceRef": "Chapter 3.pdf, slide 25",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s1-q06",
+          "question": "How does an array of character pointers (`char *name[5]`) optimize memory compared to a 2D array (`char names[5][20]`)?",
+          "options": [
+            "It stores all characters in CPU registers instead of RAM",
+            "It converts strings into integers using atoi() automatically",
+            "It allocates only the exact length needed for each string plus '\\0', eliminating wasted padding bytes",
+            "It prevents the compiler from allocating any memory until program termination"
+          ],
+          "correctIndex": 2,
+          "explanation": "A 2D char array allocates a fixed 20-byte block per row regardless of length, whereas an array of pointers points to strings sized to their actual contents.",
+          "sourceRef": "Chapter 3.pdf, slide 33",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s1-q07",
+          "question": "What happens if an `ofstream` object opens an existing file named \"data.txt\" with `open(\"data.txt\", ios::out)`?",
+          "options": [
+            "The existing contents of the file are discarded and overwritten",
+            "New output is automatically appended to existing content",
+            "The file is write-protected and opening fails",
+            "The file is automatically duplicated to a backup file"
+          ],
+          "correctIndex": 0,
+          "explanation": "Opening an existing file in `ios::out` mode discards all preexisting contents with no warning, leaving the file empty for new writes.",
+          "sourceRef": "Chapter 4.pdf, slide 15, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s1-q08",
+          "question": "In C++ file I/O, which pair of member functions is used to reposition and inspect the get pointer (input pointer)?",
+          "options": [
+            "rewind() to reposition and fpos() to inspect",
+            "seekg() to reposition and tellg() to inspect",
+            "seekp() to reposition and tellp() to inspect",
+            "move() to reposition and locate() to inspect"
+          ],
+          "correctIndex": 1,
+          "explanation": "The get pointer (input file pointer) is moved using seekg() and its current byte offset is inspected using tellg().",
+          "sourceRef": "Chapter 4.pdf, slide 30, 31",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s1-q09",
+          "question": "Why should data members of a class typically be declared `private` rather than `public`?",
+          "options": [
+            "To reduce the memory footprint of each instantiated object",
+            "To allow global functions to modify the variables directly",
+            "To enforce data hiding and protect the object's internal state from unintended external modification",
+            "To allow the compiler to inline all member functions automatically"
+          ],
+          "correctIndex": 2,
+          "explanation": "Declaring data members private enforces data hiding, ensuring data can only be accessed or altered through controlled public methods.",
+          "sourceRef": "Chapter 5.pdf, slide 17, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s1-q10",
+          "question": "What is the primary difference between an accessor function and a mutator function in a class?",
+          "options": [
+            "Accessors are always private, while mutators must be public",
+            "Accessors execute only during object destruction, while mutators execute during construction",
+            "Accessors work with classes, while mutators only work with structures",
+            "Accessors retrieve member values without modifying them, while mutators modify member values"
+          ],
+          "correctIndex": 3,
+          "explanation": "Accessor functions (often named get...) inspect private variables, whereas mutator functions (often named set...) update private variables.",
+          "sourceRef": "Chapter 5.pdf, slide 28",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "advanced-programming-medium-s2-q01",
+          "question": "In C++, what happens when an array name without brackets is passed to a function such as `mult(firstarray, 3)`?",
+          "options": [
+            "The entire array is duplicated by value onto the runtime stack",
+            "The array is passed by reference because the array identifier represents the address of its first element",
+            "A compilation error occurs because brackets are required in function calls",
+            "Only the first element of the array is passed as an integer"
+          ],
+          "correctIndex": 1,
+          "explanation": "Passing an array name passes the base address of the array, meaning modifications made inside the function directly alter the original array elements.",
+          "sourceRef": "Chapter 1.pdf, slide 13, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s2-q02",
+          "question": "What integer result is returned by `strcmp(\"apple\", \"banana\")`?",
+          "options": [
+            "A positive integer because 'banana' contains more letters",
+            "A negative integer because 'apple' is lexicographically less than 'banana'",
+            "Zero because both words are valid strings",
+            "The value 1 indicating a comparison error"
+          ],
+          "correctIndex": 1,
+          "explanation": "strcmp() returns a negative integer when the first string is lexicographically smaller than the second string ('a' comes before 'b').",
+          "sourceRef": "Chapter 1.pdf, slide 31",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s2-q03",
+          "question": "Why does declaring `int maximum(int x, y);` cause a compilation error in C++?",
+          "options": [
+            "Prototypes must specify default argument values for all parameters",
+            "Parameter names in prototypes cannot be single characters",
+            "A data type is required for each individual parameter in the parameter list",
+            "The function identifier maximum is a reserved compiler keyword"
+          ],
+          "correctIndex": 2,
+          "explanation": "In C++, writing int x, y in a parameter list is a syntax error; every parameter must explicitly include its data type (e.g. int x, int y).",
+          "sourceRef": "Chapter 2.pdf, slide 11",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s2-q04",
+          "question": "What is the behavior of a local variable declared with the `static` keyword inside a function?",
+          "options": [
+            "It retains its value across function calls and initializes only once during the first call",
+            "It can be accessed directly from any other function in the source file",
+            "It is allocated on the heap and requires manual deletion",
+            "It is destroyed and reallocated each time the function is invoked"
+          ],
+          "correctIndex": 0,
+          "explanation": "Static local variables persist in memory throughout program execution, retaining their values between calls and initializing only on the initial call.",
+          "sourceRef": "Chapter 2.pdf, slide 34",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s2-q05",
+          "question": "Why is the assignment statement `fp = &x;` illegal in C++ if `float *fp;` and `int x;`?",
+          "options": [
+            "The pointer type does not match the data type of the variable whose address is being assigned",
+            "The ampersand operator cannot be applied to an integer variable",
+            "The variable x has not been initialized with a constant value",
+            "The identifier fp is reserved exclusively for file pointers"
+          ],
+          "correctIndex": 0,
+          "explanation": "Pointers in C++ are strongly typed; a float* cannot point to an int variable without an explicit type conversion or void*.",
+          "sourceRef": "Chapter 3.pdf, slide 13",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s2-q06",
+          "question": "Given `int data = 15; int *p1 = &data; int **p2 = &p1;`, which expression evaluates to the integer value 15?",
+          "options": [
+            "*data",
+            "*p2",
+            "**p2",
+            "&p1"
+          ],
+          "correctIndex": 2,
+          "explanation": "p2 is a pointer to pointer p1. Dereferencing once (*p2) yields p1, and dereferencing twice (**p2) yields the value stored in data (15).",
+          "sourceRef": "Chapter 3.pdf, slide 37",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s2-q07",
+          "question": "Why is it unnecessary to `#include <iostream>` in a C++ program that already includes `<fstream>`?",
+          "options": [
+            "The classes in <fstream> are derived from the classes in <iostream>, providing all its stream functions",
+            "<fstream> is a preprocessor macro that replaces all stream objects",
+            "The C++ standard prohibits including both headers in the same source file",
+            "<fstream> disables standard console input and output completely"
+          ],
+          "correctIndex": 0,
+          "explanation": "Because fstream is derived from iostream (which in turn derives from ios), including <fstream> automatically provides the full functionality of <iostream>.",
+          "sourceRef": "Chapter 4.pdf, slide 5",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s2-q08",
+          "question": "What is the effect of calling `indata.seekg(-1L, ios::end);` on an open input file stream?",
+          "options": [
+            "It resets the get pointer back to byte 0",
+            "It moves the get pointer one byte past the end of the file",
+            "It deletes the last byte stored in the file",
+            "It positions the get pointer at the very last byte of the file"
+          ],
+          "correctIndex": 3,
+          "explanation": "Seeking with offset -1L relative to ios::end repositions the stream get pointer to point directly to the final byte of the file.",
+          "sourceRef": "Chapter 4.pdf, slide 44",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s2-q09",
+          "question": "In C++ inheritance terminology, what is a class that inherits attributes and methods from an existing class called?",
+          "options": [
+            "A base class or parent class",
+            "A subclass, derived class, or child class",
+            "An abstract template class",
+            "A superclass or ancestor class"
+          ],
+          "correctIndex": 1,
+          "explanation": "A class that derives properties from another class is known as a subclass, derived class, or child class.",
+          "sourceRef": "Chapter 5.pdf, slide 7, 21",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s2-q10",
+          "question": "What happens if a programmer defines a constructor with arguments for a class, does not define a default constructor, and then writes `SampleClass obj;`?",
+          "options": [
+            "The program compiles but crashes upon running",
+            "The compiler generates an implicit default constructor automatically",
+            "The object's members are all initialized to nullptr",
+            "A compilation error occurs because no matching zero-argument constructor exists"
+          ],
+          "correctIndex": 3,
+          "explanation": "When any constructor is explicitly defined, the compiler ceases to provide a default constructor; declaring an object without arguments then causes a compilation error.",
+          "sourceRef": "Chapter 5.pdf, slide 30",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "advanced-programming-medium-s3-q01",
+          "question": "Given two structure variables `store[44]` and `store[19]` of type `Company`, what does `store[44] = store[19];` do?",
+          "options": [
+            "It copies all member values from store[19] into store[44]",
+            "It converts store[44] into a pointer pointing to store[19]",
+            "It swaps the memory addresses of store[44] and store[19]",
+            "It results in a syntax error because structures cannot be assigned with ="
+          ],
+          "correctIndex": 0,
+          "explanation": "In C++, complete structure variables of identical types can be assigned using =, which copies all member values from one structure to the other.",
+          "sourceRef": "Chapter 1.pdf, slide 48",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s3-q02",
+          "question": "Which `<cstdlib>` library function converts a character array storing numeric characters into a value of type int?",
+          "options": [
+            "atof()",
+            "atol()",
+            "atoi()",
+            "itoa()"
+          ],
+          "correctIndex": 2,
+          "explanation": "The atoi() function parses an ASCII string of digits and returns its equivalent integer value.",
+          "sourceRef": "Chapter 1.pdf, slide 27",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s3-q03",
+          "question": "Why can two functions `int calc(int x)` and `double calc(int x)` NOT be overloaded in C++?",
+          "options": [
+            "Function names in C++ must never share the same prefix",
+            "C++ requires overloaded functions to be declared in separate namespaces",
+            "Overloaded functions must differ in their parameter lists, not solely in their return types",
+            "Overloading is only permitted for functions that return void"
+          ],
+          "correctIndex": 2,
+          "explanation": "C++ determines which overloaded function to call based solely on parameter types and counts; differing only by return type is not allowed.",
+          "sourceRef": "Chapter 2.pdf, slide 44",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s3-q04",
+          "question": "What happens if a recursive function does not include a valid termination condition or fails to converge on it?",
+          "options": [
+            "The compiler converts the recursion into an iterative while loop",
+            "The function automatically exits when local variables reach zero",
+            "The program returns 0 immediately without executing",
+            "The function calls itself indefinitely until the runtime stack overflows"
+          ],
+          "correctIndex": 3,
+          "explanation": "Without a base case, recursive calls continue allocating stack frames sequentially until the runtime stack exhausts available memory, causing stack overflow.",
+          "sourceRef": "Chapter 2.pdf, slide 49",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s3-q05",
+          "question": "Given `int arr[] = {11, 22, 33}; int *p = arr;`, what does `cout << *p++;` output and where does `p` point immediately afterward?",
+          "options": [
+            "Outputs 22 and advances p to point to 33",
+            "Outputs 11 and advances p to point to 22",
+            "Outputs 11 and leaves p pointing to 11",
+            "Outputs 12 and leaves p pointing to 11"
+          ],
+          "correctIndex": 1,
+          "explanation": "Because post-increment (p++) has higher precedence than *, the original address pointing to 11 is dereferenced first, and p is then incremented to point to 22.",
+          "sourceRef": "Chapter 3.pdf, slide 28, 29",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s3-q06",
+          "question": "Before dereferencing a void pointer `void *p;` storing the address of an integer variable, what action must be taken?",
+          "options": [
+            "It must be assigned to nullptr first",
+            "It must be converted into a character array",
+            "It must be typecast to an int* before dereferencing",
+            "It must be freed using the delete operator"
+          ],
+          "correctIndex": 2,
+          "explanation": "Void pointers cannot be dereferenced directly because they lack type information; they must be explicitly typecast (e.g. static_cast<int*>(p)) first.",
+          "sourceRef": "Chapter 3.pdf, slide 14, 49",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s3-q07",
+          "question": "Why does character reading using `cin.get(c)` differ from reading using `cin >> c`?",
+          "options": [
+            "cin.get(c) reads all characters including spaces and newlines, whereas cin >> c skips whitespace",
+            "cin.get(c) requires a delimiter character parameter, while cin >> c does not",
+            "cin.get(c) only accepts uppercase characters, while cin >> c accepts any character",
+            "cin.get(c) reads data directly into the heap, while cin >> c uses the stack"
+          ],
+          "correctIndex": 0,
+          "explanation": "The extraction operator >> skips leading whitespace automatically, whereas get() reads the very next raw character without skipping blanks or newlines.",
+          "sourceRef": "Chapter 4.pdf, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s3-q08",
+          "question": "In random-access file stream operations, what does the seek direction `ios::cur` indicate?",
+          "options": [
+            "Positioning backward relative to the end of the file",
+            "Positioning relative to the current position of the pointer",
+            "Positioning relative to the beginning of the file",
+            "Resetting the file pointer to byte 0"
+          ],
+          "correctIndex": 1,
+          "explanation": "ios::cur specifies that the seek offset is calculated relative to the stream pointer's current location.",
+          "sourceRef": "Chapter 4.pdf, slide 40, 41",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s3-q09",
+          "question": "What is the only fundamental distinction between a `class` and a `struct` in C++?",
+          "options": [
+            "Struct members default to public, while class members default to private",
+            "Classes can be instantiated, while structures cannot",
+            "Classes allow member functions, while structures can only contain data members",
+            "Structures are stored in the heap, while classes are stored in registers"
+          ],
+          "correctIndex": 0,
+          "explanation": "In C++, both classes and structs can have data members and member functions; the distinction is that struct members default to public, while class members default to private.",
+          "sourceRef": "Chapter 5.pdf, slide 12, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "advanced-programming-medium-s3-q10",
+          "question": "What is the purpose of constructor member initialization lists, such as `Coordinate(int xVal) : x(xVal) {}`?",
+          "options": [
+            "To declare external prototypes for accessor functions",
+            "To override default private access control specifiers",
+            "To dynamically allocate memory on the heap before the constructor executes",
+            "To initialize member variables directly upon object instantiation before the constructor body executes"
+          ],
+          "correctIndex": 3,
+          "explanation": "Member initialization lists directly initialize member variables with values prior to the execution of the constructor's body statements.",
+          "sourceRef": "Chapter 5.pdf, slide 33",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

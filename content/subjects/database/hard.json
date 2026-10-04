@@ -1,0 +1,440 @@
+{
+  "level": "hard",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "database-hard-s1-q01",
+          "question": "Consider a relation R with attributes (A, B, C, D) and functional dependencies: A -> B, B -> C, and C -> D. Which of the following statements is correct regarding the normal forms of R?",
+          "options": [
+            "R is in BCNF because A is a candidate key",
+            "R is in 1NF and 2NF (since primary key is A), but violates 3NF due to transitive dependencies B -> C and C -> D",
+            "R violates 1NF because of repeating groups",
+            "R is in 3NF because all dependencies are single-attribute"
+          ],
+          "correctIndex": 1,
+          "explanation": "Since the key is A (single attribute), R is in 2NF (no partial dependencies). However, non-key attributes C and D depend on non-key determinants B and C, creating transitive dependencies that violate 3NF.",
+          "sourceRef": "Chapter 4.pdf, slide 3, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s1-q02",
+          "question": "In a relational schema `Enrollment(StudentID, CourseCode, Grade, Instructor, Office)` with primary key (StudentID, CourseCode), where `Instructor -> Office` holds. If this relation is decomposed to 3NF, what relations result?",
+          "options": [
+            "`Students(StudentID, Grade)` and `Instructors(CourseCode, Office)`",
+            "`Enrollment(StudentID, CourseCode, Grade, Instructor)` and `InstructorInfo(Instructor, Office)`",
+            "`Enrollment(StudentID, CourseCode, Grade, Office)` and `Instructor(Office)`",
+            "`Enrollment(StudentID, CourseCode)` and `Course(Grade, Instructor, Office)`"
+          ],
+          "correctIndex": 1,
+          "explanation": "To resolve the transitive dependency Instructor -> Office, the transitive determinant and its dependent attribute are placed into a separate relation InstructorInfo(Instructor, Office), leaving Instructor as a foreign key in Enrollment.",
+          "sourceRef": "Chapter 4.pdf, slide 35",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s1-q03",
+          "question": "In an ER diagram, Division has a 1..* relationship with Department, and Division has a 1..* relationship with Project. If a query seeks to determine which Department works on which Project, why does a Fan Trap occur?",
+          "options": [
+            "Because the multiplicity between Department and Project is 0..1",
+            "Because Division is an optional entity in the schema",
+            "Because the two 1..* relationships fan out from Division, making it impossible to deduce direct Department-Project associations from Division records",
+            "Because Projects cannot be assigned to Departments without an SQL trigger"
+          ],
+          "correctIndex": 2,
+          "explanation": "A fan trap occurs when two 1..* relationships fan out from a single entity (Division), leaving the pathway between the outer entities (Department and Project) ambiguous.",
+          "sourceRef": "Chapter 3.pdf, slide 19",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s1-q04",
+          "question": "Suppose relation R has degree 3 and cardinality 10, while relation S has degree 4 and cardinality 5. What are the degree and cardinality of the Cartesian Product (R × S)?",
+          "options": [
+            "Degree 12, Cardinality 15",
+            "Degree 7, Cardinality 15",
+            "Degree 7, Cardinality 50",
+            "Degree 12, Cardinality 50"
+          ],
+          "correctIndex": 2,
+          "explanation": "The degree of a Cartesian product is the sum of the degrees (3 + 4 = 7 attributes), while the cardinality is the product of cardinalities (10 × 5 = 50 tuples).",
+          "sourceRef": "Chapter 2.pdf, slide 4, Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s1-q05",
+          "question": "Why is the Relational Calculus considered non-procedural compared to Relational Algebra?",
+          "options": [
+            "Because Relational Calculus relies on mathematical logic (first-order predicate calculus) to define what the result relation must satisfy, without describing an operational evaluation sequence",
+            "Because Relational Calculus cannot be translated into machine instructions",
+            "Because Relational Calculus does not allow filtering by attributes",
+            "Because Relational Calculus only applies to network data models"
+          ],
+          "correctIndex": 0,
+          "explanation": "Relational calculus uses predicate logic to describe the properties that the resulting data must satisfy (declarative), without specifying the sequence of retrieval operations.",
+          "sourceRef": "Chapter 6.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s1-q06",
+          "question": "In the relational model, what is the fundamental difference between an alternate key and a primary key?",
+          "options": [
+            "A primary key can contain null values, whereas an alternate key cannot",
+            "Both are candidate keys, but the primary key is chosen to uniquely identify tuples in the base relation, while alternate keys are the remaining candidate keys",
+            "Alternate keys only exist in unnormalized relations",
+            "An alternate key is always a foreign key pointing to another table"
+          ],
+          "correctIndex": 1,
+          "explanation": "Both are valid candidate keys; the primary key is explicitly designated as the primary row identifier, while unselected candidate keys become alternate keys.",
+          "sourceRef": "Chapter 2.pdf, slide 16",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s1-q07",
+          "question": "If an organization requires that the salary of an employee cannot exceed $150,000 and the hire date must be after 2000-01-01, what category of integrity constraints do these rules represent?",
+          "options": [
+            "Domain and general enterprise integrity constraints",
+            "Entity integrity constraints",
+            "Referential integrity constraints",
+            "Physical disk sector constraints"
+          ],
+          "correctIndex": 0,
+          "explanation": "Rules restricting value ranges and enforcing business policies are domain and general enterprise constraints (business rules).",
+          "sourceRef": "Chapter 2.pdf, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s1-q08",
+          "question": "What is the primary cause of a 'Chasm Trap' when navigating between entities in an ER model?",
+          "options": [
+            "Enforcing mandatory 1..1 multiplicity on all relationships",
+            "Using composite primary keys in base relations",
+            "The presence of optional participation (multiplicity 0..*) in intermediate relationships, breaking the navigational pathway between entities",
+            "Having more than five entity types in a single diagram"
+          ],
+          "correctIndex": 2,
+          "explanation": "A chasm trap occurs when optional relationships (min multiplicity 0) exist along the pathway between entities, causing some entity instances to have no connecting link.",
+          "sourceRef": "Chapter 3.pdf, slide 20",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s1-q09",
+          "question": "Why does a table with functional dependencies `(StudentID, Activity) -> Fee` and `Activity -> Fee` violate Second Normal Form (2NF) if the primary key is `(StudentID, Activity)`?",
+          "options": [
+            "Because `Fee` is transitively dependent on `StudentID`",
+            "Because composite keys are prohibited in 2NF",
+            "Because `Fee` contains repeating values across students",
+            "Because `Fee` depends on only a part (`Activity`) of the composite primary key, creating a partial functional dependency"
+          ],
+          "correctIndex": 3,
+          "explanation": "Since `Activity -> Fee` holds and `Activity` is a strict subset of the candidate key `(StudentID, Activity)`, `Fee` is partially dependent on the key, which violates 2NF.",
+          "sourceRef": "Chapter 4.pdf, slide 33",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s1-q10",
+          "question": "In relational query languages, what does the relational algebra Division operator (R ÷ S) compute?",
+          "options": [
+            "The Cartesian product divided into equal halves",
+            "The intersection of all numeric columns in R and S",
+            "The quotient of integer primary key values in relation R divided by S",
+            "A relation consisting of tuples in R that match ALL combinations of tuples in relation S across their shared attributes"
+          ],
+          "correctIndex": 3,
+          "explanation": "Division (R ÷ S) identifies tuples in R that are associated with all tuples in S (useful for queries like 'Find clients who viewed all properties').",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "database-hard-s2-q01",
+          "question": "In relational database theory, what constitutes an insertion anomaly in an unnormalized table?",
+          "options": [
+            "The automatic execution of DCL GRANT statements upon inserting data",
+            "An error caused by insufficient physical disk storage during insertion",
+            "A primary key collision when inserting identical records into different tables",
+            "An inability to insert details of a new entity (e.g. a new department) without simultaneously creating a dummy record for an associated entity (e.g. an employee)"
+          ],
+          "correctIndex": 3,
+          "explanation": "An insertion anomaly occurs when a fact cannot be recorded because it requires entering unrelated or nonexistent data for other key attributes.",
+          "sourceRef": "Chapter 4.pdf, slide 2, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s2-q02",
+          "question": "Why does First Normal Form (1NF) disallow multi-valued attributes and composite attributes in relational tables?",
+          "options": [
+            "Because composite attributes can only be stored in binary mode files",
+            "Because views cannot be defined on tables with multi-valued attributes",
+            "Because multi-valued attributes consume more than 256 bytes of RAM",
+            "Because relational algebra and standard SQL require every column value in every tuple to be atomic (indivisible)"
+          ],
+          "correctIndex": 3,
+          "explanation": "The relational model is built on first-order logic where each attribute domain contains only atomic, single values per cell, precluding repeating groups.",
+          "sourceRef": "Chapter 2.pdf, slide 13, Chapter 4.pdf, slide 33",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s2-q03",
+          "question": "In ER-to-Relational logical mapping, how is a Many-to-Many (M:N) binary relationship between Entity A and Entity B represented in the relational schema?",
+          "options": [
+            "By defining a recursive view on Entity A",
+            "By combining both entities into a single unnormalized table",
+            "By creating a new intermediate relation whose primary key includes the primary keys of both A and B as foreign keys",
+            "By placing the primary key of A into B as a foreign key"
+          ],
+          "correctIndex": 2,
+          "explanation": "M:N relationships map to a distinct associative (junction) table containing foreign keys referencing both participating entities, forming a composite key.",
+          "sourceRef": "Chapter 4.pdf, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s2-q04",
+          "question": "If a transaction updates an employee's address in one tuple of an unnormalized table but misses duplicate tuples of the same employee, what anomaly has occurred?",
+          "options": [
+            "Modification (or update) anomaly resulting in data inconsistency",
+            "Referential cascade anomaly",
+            "Deletion anomaly",
+            "Connection trap"
+          ],
+          "correctIndex": 0,
+          "explanation": "A modification anomaly occurs when redundant copies of the same data item are updated inconsistently across the database.",
+          "sourceRef": "Chapter 4.pdf, slide 2, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s2-q05",
+          "question": "What is the difference between a Theta Join (⨝_θ) and an Equijoin in relational algebra?",
+          "options": [
+            "Equijoin eliminates duplicate columns, while Theta Join duplicates all rows",
+            "Theta Join allows any comparison operator (<, <=, >, >=, =, ≠) in the join condition, whereas Equijoin exclusively uses the equality operator (=)",
+            "Theta Join only joins union-compatible tables, while Equijoin does not",
+            "Theta Join is evaluated only during physical database design"
+          ],
+          "correctIndex": 1,
+          "explanation": "Theta join uses general predicate comparisons (such as <, >, =), whereas Equijoin is a specific case of theta join where the predicate involves only equality (=).",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s2-q06",
+          "question": "How does an outer join (Left, Right, Full) differ from an inner join in relational query processing?",
+          "options": [
+            "An outer join produces a Cartesian product without evaluating predicates",
+            "An outer join can only be expressed in Tuple Relational Calculus",
+            "An outer join preserves unmatched tuples from one or both participating relations by padding non-matching attributes with null values",
+            "An outer join deletes all tuples that do not satisfy referential integrity"
+          ],
+          "correctIndex": 2,
+          "explanation": "Outer joins retain rows from the specified table(s) even if no matching row exists in the joined table, filling missing columns with nulls.",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s2-q07",
+          "question": "Why is the three-level ANSI-SPARC architecture designed with explicit mappings between levels?",
+          "options": [
+            "To allow schema transformations so that changes at one level do not propagate to higher levels, achieving data independence",
+            "To reduce the number of users who can connect to the database",
+            "To eliminate the need for secondary indexing structures",
+            "To convert SQL queries into procedural assembly routines"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mappings between External-Conceptual and Conceptual-Internal levels decouple the representations, allowing lower-level changes without affecting higher-level schemas.",
+          "sourceRef": "Chapter 1.pdf, slide 43",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s2-q08",
+          "question": "In a relation schema `PropertyForRent(propertyNo, street, city, postcode, type, rooms, rent, ownerNo)`, if `propertyNo -> postcode` and `postcode -> city` hold, why is the relation not in 3NF?",
+          "options": [
+            "Because `postcode` is a multi-valued repeating group",
+            "Because `ownerNo` is not defined as a candidate key",
+            "Because `propertyNo` is a composite primary key",
+            "Because `city` is transitively dependent on `propertyNo` via the non-key attribute `postcode`"
+          ],
+          "correctIndex": 3,
+          "explanation": "`propertyNo -> postcode` and `postcode -> city` create a transitive dependency where non-key attribute `city` depends on non-key determinant `postcode`, violating 3NF.",
+          "sourceRef": "Chapter 4.pdf, slide 35",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s2-q09",
+          "question": "In physical database design, what is the impact of placing a heavily updated table into a clustered index structure?",
+          "options": [
+            "It prevents all other users from defining views on the table",
+            "It converts all character fields into fixed-length binary integers",
+            "It speeds up range queries on the clustered key, but can slow down INSERT/UPDATE operations due to physical page reorganizations",
+            "It violates Third Normal Form automatically"
+          ],
+          "correctIndex": 2,
+          "explanation": "Clustering physically sorts data rows on disk by the cluster key, accelerating searches on that key while adding overhead to inserts that require page splits.",
+          "sourceRef": "Chapter 5.pdf, slide 3, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s2-q10",
+          "question": "In ER diagram analysis, what is the difference between a Strong Entity Type and a Weak Entity Type?",
+          "options": [
+            "Weak entities cannot contain any attributes",
+            "A strong entity's existence does not depend on another entity and it possesses its own primary key, whereas a weak entity is existence-dependent on an owner entity",
+            "A strong entity can only participate in 1..1 relationships",
+            "A strong entity is stored on solid-state drives, while a weak entity is stored on magnetic tapes"
+          ],
+          "correctIndex": 1,
+          "explanation": "A strong entity has independent existence and an intrinsic primary key; a weak entity depends on a parent entity for its existence and identification.",
+          "sourceRef": "Chapter 3.pdf, slide 2",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "database-hard-s3-q01",
+          "question": "Given relation R with candidate keys {A, B} and {A, C}, and functional dependency C -> D. What is the minimal condition to achieve BCNF?",
+          "options": [
+            "The relation must be denormalized into First Normal Form",
+            "All candidate keys must be merged into a single composite key",
+            "Every determinant in the relation, including C, must be a candidate key",
+            "Attribute D must be converted into a primary key"
+          ],
+          "correctIndex": 2,
+          "explanation": "BCNF requires every determinant of a functional dependency to be a candidate key (or superkey). If C -> D holds and C is not a superkey, BCNF is violated.",
+          "sourceRef": "Chapter 4.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s3-q02",
+          "question": "Why is the projection operator (π) in relational algebra defined to automatically eliminate duplicate tuples in the result relation?",
+          "options": [
+            "Because duplicate tuples crash the operating system storage controller",
+            "Because projection is restricted to single-row outputs",
+            "Because projection can only be executed on primary key columns",
+            "Because in mathematical set theory, a relation is defined as a set of unique tuples, and sets cannot contain duplicate elements"
+          ],
+          "correctIndex": 3,
+          "explanation": "Relational algebra adheres strictly to set theory; relations are sets, so the projection operator eliminates duplicate rows from its output.",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s3-q03",
+          "question": "What is the primary operational consequence if a database system lacks concurrency control services?",
+          "options": [
+            "Concurrent transactions can cause anomalies such as lost updates, uncommitted dependency (dirty reads), and inconsistent analysis",
+            "All queries are converted into Cartesian products",
+            "The database automatically reverts to a manual paper card system",
+            "The system catalog becomes read-only permanently"
+          ],
+          "correctIndex": 0,
+          "explanation": "Without concurrency control, interleaved execution of transactions leads to data corruption, including lost updates, dirty reads, and inconsistent analysis.",
+          "sourceRef": "Chapter 1.pdf, slide 20, 59",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s3-q04",
+          "question": "In relational database design, why does 3NF allow a transitive dependency `X -> Y` if attribute Y is a prime attribute (part of a candidate key)?",
+          "options": [
+            "Because prime attributes are never stored on physical disks",
+            "Standard 3NF permits non-superkey determinants if the dependent attribute is prime (part of a candidate key), a relaxation that BCNF eliminates",
+            "Because 3NF only applies to single-attribute relations",
+            "Because prime attributes cannot participate in foreign key relationships"
+          ],
+          "correctIndex": 1,
+          "explanation": "In 3NF, a dependency X -> Y is allowed if X is a superkey OR Y is a prime attribute. BCNF is stricter and requires X to be a superkey regardless of Y.",
+          "sourceRef": "Chapter 4.pdf, slide 3, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s3-q05",
+          "question": "In physical database design, under what circumstance is a hash file organization preferable over an indexed sequential file organization?",
+          "options": [
+            "When queries frequently scan ranges of values using BETWEEN or < operators",
+            "When the table contains only composite candidate keys",
+            "When the dominant workload consists of direct exact-match lookups on the key, rather than range queries or sequential scans",
+            "When the database is stored in unnormalized first normal form"
+          ],
+          "correctIndex": 2,
+          "explanation": "Hashing computes direct bucket addresses in O(1) time for exact key lookups, but is inefficient for range searches where indexed sequential files excel.",
+          "sourceRef": "Chapter 5.pdf, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s3-q06",
+          "question": "Suppose relation R has attributes (A, B) and relation S has attributes (B, C). What expression represents the Semijoin (R ⋉ S)?",
+          "options": [
+            "The set difference of R and S",
+            "The projection of the natural join of R and S back onto the attributes of relation R: π_A,B (R ⨝ S)",
+            "The Cartesian product of R and S minus their union",
+            "A full outer join with duplicate rows preserved"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Semijoin R ⋉ S returns tuples of R that participate in the join with S, defined formally as π_R(R ⨝ S).",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s3-q07",
+          "question": "How does Domain Relational Calculus (DRC) differ from Tuple Relational Calculus (TRC)?",
+          "options": [
+            "DRC only works on first-generation network databases",
+            "DRC is a procedural language, whereas TRC is an object-oriented language",
+            "DRC uses variables that range over individual attribute domains, whereas TRC uses variables that range over entire tuples of a relation",
+            "TRC cannot express selection operations, while DRC can"
+          ],
+          "correctIndex": 2,
+          "explanation": "In Tuple Relational Calculus (TRC), variables range over tuples (rows), whereas in Domain Relational Calculus (DRC), variables range over attribute domain values.",
+          "sourceRef": "Chapter 6.pdf, slide 2, 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s3-q08",
+          "question": "Why does decomposing a relation into higher normal forms require ensuring the decomposition is both 'lossless-join' and 'dependency-preserving'?",
+          "options": [
+            "Because DCL GRANT commands fail on non-lossless tables",
+            "Because without them, the database file cannot be written to disk",
+            "To prevent the system catalog from exceeding memory limits",
+            "Lossless-join ensures the original relation can be reconstructed exactly without phantom tuples, and dependency preservation allows integrity constraints to be verified within single relations"
+          ],
+          "correctIndex": 3,
+          "explanation": "A lossless join guarantees that joining decomposed tables reproduces the exact original data, and dependency preservation allows checking dependencies without expensive cross-table joins.",
+          "sourceRef": "Chapter 4.pdf, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s3-q09",
+          "question": "In the Database System Development Life Cycle (DSDLC), what is the key output of the conceptual database design phase?",
+          "options": [
+            "A compiled set of user-interface frontend forms",
+            "A set of SQL DDL scripts tailored to a specific commercial DBMS engine",
+            "A physical disk partitioning specification and backup schedule",
+            "A DBMS-independent conceptual data model (such as an ER diagram) representing the organization's information requirements"
+          ],
+          "correctIndex": 3,
+          "explanation": "Conceptual database design produces a high-level, DBMS-independent conceptual data model (like an ER schema) capturing all entities, relationships, and business rules.",
+          "sourceRef": "Chapter 1.pdf, slide 57, Chapter 3.pdf, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "database-hard-s3-q10",
+          "question": "When mapping a 1..1 recursive relationship in relational design, why must the foreign key referencing the primary key within the same table allow null values?",
+          "options": [
+            "To prevent an infinite reference cycle and allow the root or initial entity occurrence (e.g. top manager) to have no predecessor",
+            "Because primary keys in recursive tables must be composite",
+            "Because recursive relationships violate Second Normal Form",
+            "Because foreign keys in relational tables can never reference their own table"
+          ],
+          "correctIndex": 0,
+          "explanation": "In unary/recursive relationships (like employee-manages-employee), the top of the hierarchy has no supervisor, requiring the self-referencing foreign key to allow nulls.",
+          "sourceRef": "Chapter 2.pdf, slide 16, 18, Chapter 4.pdf, slide 2",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "advanced-programming",
+  "name": "Advanced Programming",
+  "department": "Information System",
+  "year": "Year 2",
+  "semester": "Semester 1",
+  "sourceFiles": [
+    "Chapter 1.pdf",
+    "Chapter 2.pdf",
+    "Chapter 3.pdf",
+    "Chapter 4.pdf",
+    "Chapter 5.pdf"
+  ],
+  "generatedAt": "2026-10-03",
+  "reviewStatus": "pending_review",
+  "questionCount": 90,
+  "lowConfidenceCount": 0
+}

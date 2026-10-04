@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <filter id="navyShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#2F4156" flood-opacity="0.18" />
+    </filter>
+  </defs>
+  <!-- Background tilted card (Sky Blue #C8D9E6) -->
+  <rect x="14" y="10" width="40" height="34" rx="4" fill="#C8D9E6" stroke="#2F4156" stroke-width="2" transform="rotate(7 34 27)" />
+  <!-- Front card (White #FFFFFF) -->
+  <rect x="10" y="18" width="42" height="34" rx="4" fill="#FFFFFF" stroke="#2F4156" stroke-width="2" filter="url(#navyShadow)" />
+  <!-- Top color band (Teal #567C8D) -->
+  <path d="M10 22a4 4 0 0 1 4-4h34a4 4 0 0 1 4 4v2H10z" fill="#567C8D" />
+  <!-- Ruled line accents (Navy #2F4156) -->
+  <line x1="16" y1="32" x2="32" y2="32" stroke="#2F4156" stroke-width="2" stroke-linecap="round" />
+  <line x1="16" y1="39" x2="44" y2="39" stroke="#567C8D" stroke-width="1.8" stroke-linecap="round" />
+  <line x1="16" y1="45" x2="28" y2="45" stroke="#567C8D" stroke-width="1.8" stroke-linecap="round" />
+</svg>

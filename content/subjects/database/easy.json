@@ -1,0 +1,440 @@
+{
+  "level": "easy",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "database-easy-s1-q01",
+          "question": "What is a database defined as in the database approach?",
+          "options": [
+            "An operating system utility that converts text files into spreadsheet tables",
+            "A hardware cabinet used for storing physical index cards",
+            "A collection of isolated application programs storing private binary files",
+            "A shared collection of logically related data and its description, designed to meet an organization's information needs"
+          ],
+          "correctIndex": 3,
+          "explanation": "A database is defined as a shared collection of logically related data and a description of this data (metadata) designed to meet organizational requirements.",
+          "sourceRef": "Chapter 1.pdf, slide 14",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s1-q02",
+          "question": "In the relational model, what is a row in a relation called?",
+          "options": [
+            "A tuple",
+            "A domain",
+            "An attribute",
+            "A schema"
+          ],
+          "correctIndex": 0,
+          "explanation": "In relational model terminology, a tuple is a row of a relation, representing a single record.",
+          "sourceRef": "Chapter 2.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s1-q03",
+          "question": "What does the degree of a relation represent in the relational model?",
+          "options": [
+            "The number of attributes (columns) in the relation",
+            "The count of foreign keys defined on the relation",
+            "The storage size of the relation in megabytes",
+            "The total number of tuples in the relation"
+          ],
+          "correctIndex": 0,
+          "explanation": "The degree of a relation is the number of attributes (columns) it contains, whereas cardinality is the number of tuples.",
+          "sourceRef": "Chapter 2.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s1-q04",
+          "question": "In Entity-Relationship (ER) modelling, what represents an association among entities?",
+          "options": [
+            "An attribute",
+            "A domain",
+            "A transaction",
+            "A relationship"
+          ],
+          "correctIndex": 3,
+          "explanation": "A relationship in an ER model represents a meaningful association among entities in an organization.",
+          "sourceRef": "Chapter 3.pdf, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s1-q05",
+          "question": "What is the primary purpose of database normalization in logical design?",
+          "options": [
+            "To increase disk fragmentation for faster parallel reads",
+            "To minimize data redundancy and prevent update anomalies in base relations",
+            "To generate automated user interface forms for data entry",
+            "To encrypt database passwords using hashing algorithms"
+          ],
+          "correctIndex": 1,
+          "explanation": "Normalization is a technique for producing a set of relations with desirable properties to minimize redundancy and avoid insertion, deletion, and modification anomalies.",
+          "sourceRef": "Chapter 4.pdf, slide 2, 14",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s1-q06",
+          "question": "Which normal form requires that every attribute value in each cell of a relation be atomic (single-valued)?",
+          "options": [
+            "First Normal Form (1NF)",
+            "Third Normal Form (3NF)",
+            "Boyce-Codd Normal Form (BCNF)",
+            "Second Normal Form (2NF)"
+          ],
+          "correctIndex": 0,
+          "explanation": "First Normal Form (1NF) requires that the intersection of each row and column contains one and only one value (no repeating groups).",
+          "sourceRef": "Chapter 4.pdf, slide 3, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s1-q07",
+          "question": "Which database role is technically oriented and responsible for physical design, implementation, and integrity control?",
+          "options": [
+            "Data Administrator (DA)",
+            "System Analyst",
+            "Database Administrator (DBA)",
+            "Naïve End User"
+          ],
+          "correctIndex": 2,
+          "explanation": "The Database Administrator (DBA) is responsible for the physical realization of the database, including physical design, implementation, security, and integrity control.",
+          "sourceRef": "Chapter 1.pdf, slide 26",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s1-q08",
+          "question": "In relational algebra, which operator selects rows that satisfy a specified predicate condition?",
+          "options": [
+            "Intersection (∩)",
+            "Cartesian Product (×)",
+            "Selection (σ)",
+            "Projection (π)"
+          ],
+          "correctIndex": 2,
+          "explanation": "The Selection operation (denoted by the Greek letter sigma, σ) selects tuples from a relation that satisfy a given predicate.",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s1-q09",
+          "question": "In relational algebra, which operator extracts specified columns (attributes) from a relation?",
+          "options": [
+            "Selection (σ)",
+            "Projection (π)",
+            "Difference (-)",
+            "Union (∪)"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Projection operation (denoted by the Greek letter pi, π) filters attributes and returns only the specified columns.",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s1-q10",
+          "question": "What is the entity integrity rule in the relational data model?",
+          "options": [
+            "Every relation must contain at least ten tuples",
+            "A foreign key cannot contain null values under any condition",
+            "No primary key attribute can be null",
+            "All character fields must use variable length encoding"
+          ],
+          "correctIndex": 2,
+          "explanation": "Entity integrity states that in a base relation, no attribute of a primary key can be null, ensuring every entity can be identified.",
+          "sourceRef": "Chapter 2.pdf, slide 18",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "database-easy-s2-q01",
+          "question": "What are the three levels of the ANSI-SPARC database architecture?",
+          "options": [
+            "Hardware, Operating System, and Application levels",
+            "Manual, File-based, and Database levels",
+            "Input, Processing, and Output levels",
+            "External, Conceptual, and Internal levels"
+          ],
+          "correctIndex": 3,
+          "explanation": "The ANSI-SPARC architecture defines three distinct levels: External (user views), Conceptual (community logical view), and Internal (physical computer storage view).",
+          "sourceRef": "Chapter 1.pdf, slide 36, 37",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s2-q02",
+          "question": "What is the cardinality of a database relation defined as?",
+          "options": [
+            "The number of tuples (rows) currently in the relation",
+            "The count of index files attached to the table",
+            "The storage size in kilobytes",
+            "The number of attributes in the relation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Cardinality is the total number of tuples (rows) in a relation, which changes dynamically as data is inserted or deleted.",
+          "sourceRef": "Chapter 2.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s2-q03",
+          "question": "What is an attribute or minimal set of attributes that uniquely identifies each tuple in a relation called?",
+          "options": [
+            "Domain Constraint",
+            "Secondary Index",
+            "Candidate Key",
+            "Foreign Key"
+          ],
+          "correctIndex": 2,
+          "explanation": "A Candidate Key is an irreducible superkey whose values uniquely identify each tuple in a relation (satisfying uniqueness and irreducibility).",
+          "sourceRef": "Chapter 2.pdf, slide 15",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s2-q04",
+          "question": "What type of key is chosen from candidate keys to uniquely identify tuples in a relation?",
+          "options": [
+            "Primary Key",
+            "Composite Key",
+            "Foreign Key",
+            "Alternate Key"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Primary Key is the specific candidate key selected by the database designer to uniquely identify tuples within a relation.",
+          "sourceRef": "Chapter 2.pdf, slide 16",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s2-q05",
+          "question": "Which stage of database design is concerned with 'what' data to store independently of any physical DBMS implementation?",
+          "options": [
+            "Physical Database Design",
+            "Logical and Conceptual Database Design",
+            "Disk Storage Partitioning",
+            "Network Topology Design"
+          ],
+          "correctIndex": 1,
+          "explanation": "Logical and conceptual database design is concerned with 'what' data and relationships exist, while physical design is concerned with 'how' it is stored on disk.",
+          "sourceRef": "Chapter 5.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s2-q06",
+          "question": "Which SQL statement category includes commands like CREATE, ALTER, and DROP to manage database structure?",
+          "options": [
+            "Transaction Control Language (TCL)",
+            "Data Definition Language (DDL)",
+            "Data Manipulation Language (DML)",
+            "Data Control Language (DCL)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Data Definition Language (DDL) statements allow specification, creation, modification, and removal of database objects and schemas.",
+          "sourceRef": "Chapter 1.pdf, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s2-q07",
+          "question": "In the relational model, what is referential integrity defined as?",
+          "options": [
+            "All relations must have the same number of rows",
+            "No table can contain more than 1,000 records",
+            "Every column in a table must store integer data",
+            "If a foreign key exists in a relation, its value must match a candidate key of its home relation or be null"
+          ],
+          "correctIndex": 3,
+          "explanation": "Referential integrity ensures that if a relation contains a foreign key, the foreign key value must match an existing candidate key in the referenced relation, or be null.",
+          "sourceRef": "Chapter 2.pdf, slide 14, 18",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s2-q08",
+          "question": "What is the repository of metadata describing the schemas and structures of a database called?",
+          "options": [
+            "Query Optimizer",
+            "Log Buffer",
+            "System Catalog or Data Dictionary",
+            "Application Cache"
+          ],
+          "correctIndex": 2,
+          "explanation": "The System Catalog (or data dictionary) is the central repository containing metadata that describes the data and schema in the database.",
+          "sourceRef": "Chapter 1.pdf, slide 14, 61",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s2-q09",
+          "question": "Which relational algebra set operation produces a relation containing all tuples present in either relation R, relation S, or both?",
+          "options": [
+            "Set Difference (-)",
+            "Union (∪)",
+            "Intersection (∩)",
+            "Semijoin"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Union operation (∪) combines tuples from two union-compatible relations, eliminating duplicate rows in the result.",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s2-q10",
+          "question": "What is a relation that is in 1NF and contains no partial functional dependencies on a composite primary key classified as?",
+          "options": [
+            "Boyce-Codd Normal Form (BCNF)",
+            "Third Normal Form (3NF)",
+            "Second Normal Form (2NF)",
+            "Unnormalized Form (UNF)"
+          ],
+          "correctIndex": 2,
+          "explanation": "Second Normal Form (2NF) requires that a relation is in 1NF and every non-primary-key attribute is fully functionally dependent on the primary key.",
+          "sourceRef": "Chapter 4.pdf, slide 3, 33",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "database-easy-s3-q01",
+          "question": "What is logical data independence in the ANSI-SPARC architecture?",
+          "options": [
+            "Ability to run SQL queries without an operating system",
+            "Immunity of external schemas to changes in the conceptual schema",
+            "Immunity of the internal schema to changes in disk drives",
+            "Automatic conversion of relational tables into network structures"
+          ],
+          "correctIndex": 1,
+          "explanation": "Logical data independence refers to the immunity of external schemas and application programs to modifications made in the conceptual schema.",
+          "sourceRef": "Chapter 1.pdf, slide 41",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s3-q02",
+          "question": "What is physical data independence in the ANSI-SPARC architecture?",
+          "options": [
+            "Immunity of database users to software licensing fees",
+            "Separation of SQL queries into separate client programs",
+            "Ability to store data without using hard drives",
+            "Immunity of the conceptual schema to changes in internal storage structures or file organizations"
+          ],
+          "correctIndex": 3,
+          "explanation": "Physical data independence refers to the immunity of the conceptual schema to changes made at the internal (physical storage) level.",
+          "sourceRef": "Chapter 1.pdf, slide 42",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s3-q03",
+          "question": "Which SQL statement category includes commands such as GRANT and REVOKE to control user access privileges?",
+          "options": [
+            "Data Manipulation Language (DML)",
+            "Data Definition Language (DDL)",
+            "Transaction Control Language (TCL)",
+            "Data Control Language (DCL)"
+          ],
+          "correctIndex": 3,
+          "explanation": "Data Control Language (DCL) statements like GRANT and REVOKE manage user permissions and access rights on database objects.",
+          "sourceRef": "Chapter 1.pdf, slide 19",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s3-q04",
+          "question": "What is a virtual relation that does not necessarily exist as stored data on disk, but is derived on request, called?",
+          "options": [
+            "A view",
+            "A system catalog",
+            "A candidate key",
+            "A base relation"
+          ],
+          "correctIndex": 0,
+          "explanation": "A view is a virtual relation that is dynamically generated from base relations upon request, providing customized and secure sub-schemas.",
+          "sourceRef": "Chapter 1.pdf, slide 21",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s3-q05",
+          "question": "What is a relation that is in 2NF and contains no transitive dependencies on the primary key classified as?",
+          "options": [
+            "Non-relational View",
+            "Third Normal Form (3NF)",
+            "Unnormalized Relation (UNF)",
+            "First Normal Form (1NF)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Third Normal Form (3NF) requires that a relation is in 2NF and no non-primary-key attribute is transitively dependent on the primary key.",
+          "sourceRef": "Chapter 4.pdf, slide 3, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s3-q06",
+          "question": "In relational model properties, what is true regarding duplicate tuples in a valid relation?",
+          "options": [
+            "Each tuple in a relation must be distinct; duplicate tuples are not permitted",
+            "A relation must contain at least two identical rows for redundancy",
+            "Duplicate tuples are only allowed in view definitions",
+            "Duplicate tuples are allowed if they have different timestamps"
+          ],
+          "correctIndex": 0,
+          "explanation": "In formal relational theory, a relation is a mathematical set of tuples, meaning all tuples are distinct and duplicate rows cannot exist.",
+          "sourceRef": "Chapter 2.pdf, slide 14",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s3-q07",
+          "question": "Which generation of DBMS development is represented by the Relational Data Model introduced by Dr. E. F. Codd?",
+          "options": [
+            "First generation",
+            "Third generation",
+            "Fourth generation",
+            "Second generation"
+          ],
+          "correctIndex": 3,
+          "explanation": "First-generation DBMSs were Hierarchical and Network; second-generation DBMSs are Relational (RDBMS); third-generation are Object-Relational and Object-Oriented.",
+          "sourceRef": "Chapter 1.pdf, slide 31, 54",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s3-q08",
+          "question": "What does union-compatibility between two relations require in relational algebra?",
+          "options": [
+            "Both relations must contain the exact same number of tuples",
+            "Both relations must be stored on the same physical hard drive partition",
+            "Both relations must have the same number of attributes and corresponding attributes must have identical domains",
+            "Both relations must have identical relation names"
+          ],
+          "correctIndex": 2,
+          "explanation": "Two relations are union-compatible if they have the same degree (same number of columns) and the corresponding attributes share compatible domains.",
+          "sourceRef": "Chapter 6.pdf, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s3-q09",
+          "question": "What is a major disadvantage of traditional file-based systems that the database approach was designed to solve?",
+          "options": [
+            "Inability to run on personal computers",
+            "Excessive use of automated SQL optimization",
+            "Data redundancy and program-data dependence",
+            "Over-reliance on centralized data administrators"
+          ],
+          "correctIndex": 2,
+          "explanation": "Traditional file-based systems suffered from uncontrolled data redundancy, data isolation, and tight program-data dependence.",
+          "sourceRef": "Chapter 1.pdf, slide 11, 12",
+          "confidence": "high"
+        },
+        {
+          "id": "database-easy-s3-q10",
+          "question": "What is the primary role of the Data Administrator (DA) in an organization?",
+          "options": [
+            "Managing data planning, policies, standards, and conceptual/logical design",
+            "Monitoring physical disk spindle speeds and hardware fans",
+            "Writing low-level assembly language device drivers for storage units",
+            "Entering daily customer records as a naïve end user"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Data Administrator (DA) manages the organization's data resources, focusing on database planning, standards, policies, and conceptual/logical design.",
+          "sourceRef": "Chapter 1.pdf, slide 26",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}
