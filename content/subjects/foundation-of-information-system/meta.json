@@ -1,0 +1,19 @@
+{
+  "id": "foundation-of-information-system",
+  "name": "Foundation of Information System",
+  "department": "Information System",
+  "year": "Year 2",
+  "semester": "Semester 1",
+  "courseCode": "INSY2011",
+  "sourceFiles": [
+    "Chapter 1.pdf",
+    "Chapter 2.pdf",
+    "Chapter 3.pdf",
+    "Chapter 4.pdf",
+    "Chapter 5.pdf"
+  ],
+  "generatedAt": "2026-10-06",
+  "reviewStatus": "pending_review",
+  "questionCount": 90,
+  "lowConfidenceCount": 0
+}

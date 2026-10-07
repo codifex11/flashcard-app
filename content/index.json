@@ -20,6 +20,12 @@
                   "name": "Database",
                   "questionCount": 90,
                   "reviewStatus": "pending_review"
+                },
+                {
+                  "id": "foundation-of-information-system",
+                  "name": "Foundation of Information System",
+                  "questionCount": 90,
+                  "reviewStatus": "pending_review"
                 }
               ]
             }

@@ -1,0 +1,440 @@
+{
+  "level": "hard",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "foundation-is-hard-s1-q01",
+          "question": "At which layer of the OSI model does logical IP packet addressing, fragmentation, and dynamic route selection across autonomous networks occur?",
+          "options": [
+            "Session Layer (Layer 5)",
+            "Network Layer (Layer 3)",
+            "Data Link Layer (Layer 2)",
+            "Transport Layer (Layer 4)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Layer 3 (Network layer) manages logical device addressing (IP addresses), packet routing across multiple networks, and path determination.",
+          "sourceRef": "Chapter 2.pdf, slide 54",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s1-q02",
+          "question": "What is the primary protocol data unit (PDU) name at the Data Link layer (Layer 2) of the OSI model?",
+          "options": [
+            "Packet",
+            "Frame",
+            "Segment",
+            "Bit"
+          ],
+          "correctIndex": 1,
+          "explanation": "PDUs are named specifically per layer: Physical (Bits), Data Link (Frames), Network (Packets), Transport (Segments), and Upper layers (Data).",
+          "sourceRef": "Chapter 2.pdf, slide 53",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s1-q03",
+          "question": "In comparing the TCP/IP model with the OSI reference model, which OSI layers correspond directly to the single Application layer of the TCP/IP suite?",
+          "options": [
+            "Data Link and Physical layers (Layers 2 and 1)",
+            "Session and Transport layers (Layers 5 and 4)",
+            "Application, Presentation, and Session layers (Layers 7, 6, and 5)",
+            "Transport and Network layers (Layers 4 and 3)"
+          ],
+          "correctIndex": 2,
+          "explanation": "The 4-layer TCP/IP suite combines the functionality of the OSI Session (5), Presentation (6), and Application (7) layers into its single Application layer.",
+          "sourceRef": "Chapter 2.pdf, slide 64, 65",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s1-q04",
+          "question": "Which computer architecture component is responsible for holding the memory address of the next instruction to be fetched and executed by the CPU?",
+          "options": [
+            "Memory Buffer Register (MBR)",
+            "Accumulator (ACC)",
+            "Program Counter (PC) register",
+            "Instruction Register (IR)"
+          ],
+          "correctIndex": 2,
+          "explanation": "The Program Counter (PC) register holds the address in memory of the next instruction to be fetched for processing.",
+          "sourceRef": "Chapter 1.pdf, slide 40",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s1-q05",
+          "question": "In a Hybrid Cloud architecture, what is a primary technical and strategic motivation for an enterprise to deploy it?",
+          "options": [
+            "Ensuring that all enterprise software is rewritten entirely in assembly language",
+            "Eliminating the need for internet connectivity by relying solely on satellite broadcasts",
+            "Preventing any encryption from being applied to internal network communication",
+            "Running sensitive, core mission-critical workloads in a private cloud while bursting non-sensitive or compute-intensive workloads to a public cloud"
+          ],
+          "correctIndex": 3,
+          "explanation": "Hybrid clouds combine private and public clouds, offering cloud bursting, high scalability for spikes, while retaining strict control over sensitive data.",
+          "sourceRef": "Chapter 2.pdf, slide 89, 90",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s1-q06",
+          "question": "What is the function of the Presentation Layer (Layer 6) in the OSI 7-layer model?",
+          "options": [
+            "Data translation, format conversion, character code translation (e.g. ASCII/Unicode), data compression, and encryption/decryption",
+            "Physical voltage modulation and synchronization of raw bit streams on copper wire",
+            "Determining the shortest path for packet delivery through routing algorithms",
+            "Establishing, maintaining, and terminating network dialog sessions between applications"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Presentation Layer ensures that data sent from the application layer of one system is readable by the application layer of another system via formatting, compression, and encryption.",
+          "sourceRef": "Chapter 2.pdf, slide 57",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s1-q07",
+          "question": "Which of the following correctly describes the relationship between the machine cycle steps: Fetch, Decode, Execute, and Store?",
+          "options": [
+            "The control unit fetches an instruction from memory, decodes it into commands, the ALU executes the commands, and the result is stored back into memory or registers",
+            "The storage drive decodes the data, the monitor executes it, and the ROM fetches the answer",
+            "Instructions are executed first, decoded during output, and fetched only if an error occurs",
+            "The ALU fetches the instruction, the operating system stores it, and the keyboard executes the code"
+          ],
+          "correctIndex": 0,
+          "explanation": "The instruction cycle (machine cycle) executed by the CPU consists of: 1. Fetching instruction, 2. Decoding instruction, 3. Executing operation, 4. Storing result.",
+          "sourceRef": "Chapter 1.pdf, slide 39",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s1-q08",
+          "question": "Why does a Multi-tier Client-Server architecture offer better scalability and maintenance compared to a 2-Tier Client-Server architecture?",
+          "options": [
+            "It forces all network traffic to travel exclusively over peer-to-peer wireless connections",
+            "It prevents databases from using indexes or primary keys to increase transaction speed",
+            "It eliminates all client computers and requires users to interact with servers using punch cards",
+            "Business logic and application processing are decoupled into a dedicated middle tier, separating user presentation from database access"
+          ],
+          "correctIndex": 3,
+          "explanation": "3-tier/n-tier architectures separate presentation (client), application processing/business logic (application server), and data storage (database server), improving modularity and scalability.",
+          "sourceRef": "Chapter 2.pdf, slide 18, 19",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s1-q09",
+          "question": "In computer storage systems, what is the primary operational difference between volatile RAM and non-volatile Flash/ROM storage?",
+          "options": [
+            "Flash memory can only store text documents whereas RAM can only store operating system code",
+            "RAM relies on continuous electrical charge to maintain state (losing data on power loss), whereas Flash/ROM utilizes floating-gate transistors to retain state indefinitely",
+            "RAM stores data magnetically on rotating iron platters while Flash storage uses optical lasers",
+            "RAM operates at kilohertz frequencies while Flash memory operates at petahertz frequencies"
+          ],
+          "correctIndex": 1,
+          "explanation": "RAM is dynamic volatile storage that requires constant power and refresh cycles, while non-volatile Flash and ROM retain bit patterns even when unpowered.",
+          "sourceRef": "Chapter 1.pdf, slide 43, 44, 49",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s1-q10",
+          "question": "How does CSMA/CD (Carrier Sense Multiple Access with Collision Detection) handle network collisions on shared Ethernet media?",
+          "options": [
+            "Nodes listen before transmitting; if two nodes transmit simultaneously causing a collision, they send a jam signal and wait a randomized backoff time before retransmitting",
+            "Nodes increase their transmission voltage until the competing node's signal is completely overpowered",
+            "Collisions are automatically merged using bitwise XOR operations to create a single packet",
+            "The central server permanently disconnects all colliding nodes from the network domain"
+          ],
+          "correctIndex": 0,
+          "explanation": "CSMA/CD senses carrier activity before transmission, detects collisions during transmission, emits a jam signal, and utilizes a binary exponential backoff algorithm before retry.",
+          "sourceRef": "Chapter 2.pdf, slide 30",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "foundation-is-hard-s2-q01",
+          "question": "In decision analysis, which tool within a DSS determines the necessary input value required to achieve a specific target output (e.g., finding the sales volume needed to reach $1M profit)?",
+          "options": [
+            "Statistical Regression Analysis",
+            "What-If Analysis",
+            "Goal-Seeking Analysis",
+            "Sensitivity Analysis"
+          ],
+          "correctIndex": 2,
+          "explanation": "Goal-seeking analysis works backward from a desired target outcome to determine the required input values or decisions to achieve that specific goal.",
+          "sourceRef": "Chapter 3.pdf, slide 28",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s2-q02",
+          "question": "What is the primary architectural role of the 'Model Base' in a Decision Support System (DSS)?",
+          "options": [
+            "Providing the physical cable connections between client workstations and the LAN switch",
+            "Holding the raw physical inventory counts entered by warehouse forklift drivers",
+            "Managing the user interface styling and visual window rendering in the operating system",
+            "Storing mathematical, financial, statistical, and quantitative simulation models that analyze data from the database"
+          ],
+          "correctIndex": 3,
+          "explanation": "A DSS consists of a Database, a Model Base (containing analytical models like optimization, forecasting, and linear programming), and a User Interface.",
+          "sourceRef": "Chapter 3.pdf, slide 25",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s2-q03",
+          "question": "How does an Online Analytical Processing (OLAP) system differ from an Online Transaction Processing (OLTP) system?",
+          "options": [
+            "OLTP requires specialized mainframe computers while OLAP runs only on mobile smartphones",
+            "OLAP is optimized for complex multidimensional analysis and querying of historical data, whereas OLTP is optimized for rapid, real-time recording of daily transactions",
+            "OLAP is used exclusively by cashiers while OLTP is used exclusively by corporate attorneys",
+            "OLTP processes data only in annual batches while OLAP executes instructions in hardware microcode"
+          ],
+          "correctIndex": 1,
+          "explanation": "OLTP systems focus on high-throughput, low-latency transaction processing (TPS), while OLAP systems focus on aggregating and analyzing historical multidimensional data for management.",
+          "sourceRef": "Chapter 3.pdf, slide 12, 13",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s2-q04",
+          "question": "In expert systems, which reasoning method begins with known factual data and applies inference rules forward to extract new conclusions?",
+          "options": [
+            "Forward Chaining (data-driven reasoning)",
+            "Binary Division Algorithm",
+            "Recursive Backtracking",
+            "Backward Chaining (goal-driven reasoning)"
+          ],
+          "correctIndex": 0,
+          "explanation": "Forward chaining starts with available facts and proceeds forward through rules to deduce conclusions. Backward chaining starts with a hypothesis and searches backward for supporting facts.",
+          "sourceRef": "Chapter 3.pdf, slide 68",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s2-q05",
+          "question": "Why is Master Data Management (MDM) a critical prerequisite for achieving data consistency in Enterprise Resource Planning (ERP) integrations?",
+          "options": [
+            "It creates a single, authoritative, trusted master source of core enterprise business entities (e.g. customers, products, accounts) shared across all modules",
+            "It eliminates the need for user passwords by replacing them with hardware serial numbers",
+            "It forces all network routers to reboot at midnight to prevent memory leaks",
+            "It automatically translates all enterprise database text into foreign languages"
+          ],
+          "correctIndex": 0,
+          "explanation": "Master Data Management establishes a consistent, single source of truth across disparate functional departments, preventing conflicting customer or inventory records.",
+          "sourceRef": "Chapter 3.pdf, slide 44, 45",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s2-q06",
+          "question": "What is 'Sensitivity Analysis' in the context of decision support systems?",
+          "options": [
+            "Evaluating the light sensitivity of optical document scanner sensors",
+            "Detecting emotional tone and sentiment in incoming customer support emails",
+            "Studying how sensitive the final model recommendations are to small repeated variations in one or more input parameters",
+            "Measuring the thermal temperature threshold of server room air conditioning units"
+          ],
+          "correctIndex": 2,
+          "explanation": "Sensitivity analysis examines how changes in one key variable affect other variables or outcomes, revealing which assumptions are most critical to a decision.",
+          "sourceRef": "Chapter 3.pdf, slide 29",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s2-q07",
+          "question": "Which of the following best explains why Executive Information Systems (EIS) rely heavily on external data sources compared to Transaction Processing Systems (TPS)?",
+          "options": [
+            "Executive strategic decisions require macroeconomic trends, competitor intelligence, regulatory updates, and industry forecasts not found in internal operational logs",
+            "External data is always completely free of charge and requires no processing",
+            "TPS systems are technically blocked from reading data from internal company hard drives",
+            "Executives are prohibited by corporate governance laws from accessing internal financial ledgers"
+          ],
+          "correctIndex": 0,
+          "explanation": "Strategic long-range planning requires broad environmental scanning (competitors, government regulations, market trends), whereas TPS focuses on internal operational facts.",
+          "sourceRef": "Chapter 3.pdf, slide 34",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s2-q08",
+          "question": "How does an ERP system achieve real-time synchronization between financial accounting and warehouse inventory management?",
+          "options": [
+            "By storing financial data in RAM and inventory data exclusively on magnetic tape drives",
+            "By requiring accountants to manually re-enter warehouse packing slips into standalone spreadsheets",
+            "Through a unified central database where a physical inventory receipt transaction automatically updates general ledger asset accounts and accounts payable simultaneously",
+            "By printing paper receipts that are physically mailed between corporate offices every month"
+          ],
+          "correctIndex": 2,
+          "explanation": "A central shared database in ERP ensures that when a transaction occurs in one module (e.g. shipping inventory), financial and accounting records are updated immediately in real time.",
+          "sourceRef": "Chapter 3.pdf, slide 43, 44",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s2-q09",
+          "question": "What is the primary role of a 'Knowledge Engineer' in developing an AI Expert System?",
+          "options": [
+            "Managing the corporate stock portfolio and filing tax returns with government authorities",
+            "Writing legal contracts for enterprise software licensing agreements",
+            "Crimping Ethernet cables and replacing faulty server cooling fans in data centers",
+            "Interviewing domain human experts to extract their specialized heuristics, rules of thumb, and structured knowledge to build the knowledge base"
+          ],
+          "correctIndex": 3,
+          "explanation": "A knowledge engineer bridges the gap between human subject-matter experts and the AI system, translating human expertise into explicit rules and facts.",
+          "sourceRef": "Chapter 3.pdf, slide 69, 70",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s2-q10",
+          "question": "Which analytical method allows Supply Chain Management systems to calculate optimal reorder points and safety stock levels?",
+          "options": [
+            "Random number generation based on ambient CPU temperature fluctuations",
+            "Economic Order Quantity (EOQ) and probabilistic lead-time demand forecasting models",
+            "Linear search across unindexed text files stored on optical discs",
+            "Alphabetical sorting of supplier names in descending order"
+          ],
+          "correctIndex": 1,
+          "explanation": "SCM systems use mathematical inventory models (EOQ, safety stock formulas, reorder points) to balance holding costs against ordering and stockout costs.",
+          "sourceRef": "Chapter 3.pdf, slide 50",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "foundation-is-hard-s3-q01",
+          "question": "According to General System Theory, what is 'Entropy' in an information system?",
+          "options": [
+            "The mathematical measure of optical bandwidth speed in single-mode fiber cables",
+            "The maximum number of simultaneous TCP socket connections supported by an operating system",
+            "The process of converting plain text into encrypted ciphertext using public key algorithms",
+            "The natural tendency of a system to degrade, lose organization, and move toward disorder unless energy and maintenance are continuously supplied"
+          ],
+          "correctIndex": 3,
+          "explanation": "Entropy represents the natural tendency toward decay and chaos. Open systems counteract entropy by importing energy, information, and maintenance from the environment.",
+          "sourceRef": "Chapter 4.pdf, slide 11, 12",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s3-q02",
+          "question": "In the Systems Development Life Cycle (SDLC), why are errors identified during the 'Planning and Analysis' phases substantially less costly to fix than errors discovered during 'Implementation'?",
+          "options": [
+            "Fixing design flaws in requirements only requires document updates, whereas post-deployment fixes require rewriting code, re-architecting databases, and retraining users",
+            "Operating systems permanently lock software source code once compiled, preventing any edits",
+            "Hardware manufacturers charge monetary fines for every bug found after server installation",
+            "Programmers work for free during implementation while analysts charge legal fees per minute"
+          ],
+          "correctIndex": 0,
+          "explanation": "Cost of change rises exponentially throughout the SDLC. A requirement bug fixed during analysis costs a fraction of the cost required to fix it after enterprise rollout.",
+          "sourceRef": "Chapter 4.pdf, slide 15, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s3-q03",
+          "question": "In the economics of information products, why do information goods exhibit 'high fixed costs and near-zero marginal costs'?",
+          "options": [
+            "Creating the initial first copy of information requires substantial capital and effort, but reproducing and distributing additional digital copies costs virtually nothing",
+            "Government regulations mandate that digital information products must always be sold below production cost",
+            "Information products degrade physically with every user view and must be reconstructed from raw iron",
+            "Information goods can only be stored on physical optical media manufactured by government monopolies"
+          ],
+          "correctIndex": 0,
+          "explanation": "Information exhibits unique economics: high first-copy fixed costs (R&D, authoring, software development) and near-zero marginal costs of digital reproduction and delivery.",
+          "sourceRef": "Chapter 5.pdf, slide 67, 69, 70",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s3-q04",
+          "question": "Which of the following scenarios would most likely fail to qualify as legal 'Fair Use' under copyright law?",
+          "options": [
+            "A university professor quoting two sentences from a published research paper in an academic article citation",
+            "A commercial training company copying an entire proprietary software textbook and selling it to enrolled students for profit",
+            "A student quoting a short paragraph from a textbook in an individual homework essay assignment",
+            "A newspaper tech journalist publishing a 15-second screenshot clip during a televised product review"
+          ],
+          "correctIndex": 1,
+          "explanation": "Fair use considers the commercial nature, amount copied (entire work), and negative market impact on the copyright owner. Selling whole copied textbooks for profit is infringement.",
+          "sourceRef": "Chapter 5.pdf, slide 59, 60",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s3-q05",
+          "question": "In Public Key Cryptography (Asymmetric Encryption), if Alice wants to send a confidential encrypted message to Bob that only Bob can read, which key must Alice use to encrypt the message?",
+          "options": [
+            "Bob's Public Key",
+            "Bob's Private Key",
+            "Alice's Public Key",
+            "Alice's Private Key"
+          ],
+          "correctIndex": 0,
+          "explanation": "To send a confidential message, Alice encrypts it with Bob's Public Key. Only Bob possesses the corresponding Private Key necessary to decrypt it.",
+          "sourceRef": "Chapter 5.pdf, slide 37, 38",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s3-q06",
+          "question": "In digital signatures, how does the sender achieve non-repudiation and authentication of message integrity?",
+          "options": [
+            "The sender requests an authorization signature from the domain registrar over telephone",
+            "The sender encrypts a cryptographic hash of the message using their own Private Key, which the recipient verifies using the sender's Public Key",
+            "The sender changes the file extension of the document to .exe before sending",
+            "The sender sends their secret private key over plaintext email to the recipient"
+          ],
+          "correctIndex": 1,
+          "explanation": "A digital signature encrypts a message hash with the sender's Private Key. Because only the sender has that private key, anyone with the public key can verify authenticity and integrity.",
+          "sourceRef": "Chapter 5.pdf, slide 38",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s3-q07",
+          "question": "According to digital inequality research, which five dimensions characterize modern disparities beyond basic physical hardware access?",
+          "options": [
+            "Electricity voltage, room temperature, ambient lighting, desk height, and chair ergonomics",
+            "Keyboard language layout, font size, printer resolution, browser bookmark count, and wallpaper",
+            "CPU clock speed, RAM capacity, monitor bezel width, mouse cord length, and case color",
+            "Equipment quality, autonomy of use, digital skills, social support networks, and purpose of internet use"
+          ],
+          "correctIndex": 3,
+          "explanation": "Digital inequality encompasses multidimensional factors: quality of equipment, autonomy/location of access, technical skills, social support networks, and beneficial use.",
+          "sourceRef": "Chapter 5.pdf, slide 77, 78",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s3-q08",
+          "question": "In software development methodology, why is the 'Waterfall' model considered less suitable for projects with rapidly changing or uncertain user requirements compared to 'Agile' approaches?",
+          "options": [
+            "Waterfall can only be used on projects with fewer than three lines of source code",
+            "Waterfall prevents developers from writing unit tests or running automated compilers",
+            "Waterfall enforces strict linear sequential phases where working software is only delivered at the very end, making mid-course requirement changes difficult and expensive",
+            "Waterfall requires all programmers to use analog chalkboards instead of computer monitors"
+          ],
+          "correctIndex": 2,
+          "explanation": "Waterfall's rigid linear progression requires full upfront requirement definition and delays working software delivery to the end, making it inflexible to evolving requirements.",
+          "sourceRef": "Chapter 4.pdf, slide 24, 25",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s3-q09",
+          "question": "What is the technical definition of a 'Man-in-the-Middle' (MitM) cyber attack?",
+          "options": [
+            "A distributed attack that floods a web server with dummy traffic to exhaust its bandwidth",
+            "A malicious employee stealing backup hard drives from a server room cabinet",
+            "An attacker secretly intercepts, relays, and potentially alters communication between two parties who believe they are communicating directly with each other",
+            "An unauthorized person physically standing between two computer desks in an office"
+          ],
+          "correctIndex": 2,
+          "explanation": "In a MitM attack, the perpetrator intercepts and manipulates communication packets between two legitimate communicating endpoints without their knowledge.",
+          "sourceRef": "Chapter 5.pdf, slide 31, 32",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-hard-s3-q10",
+          "question": "In system theory, what is 'Equifinality'?",
+          "options": [
+            "The total amount of electrical energy consumed by a data center during peak operating hours",
+            "The principle that an open system can reach the same final state or goal from different initial conditions and via different pathways",
+            "The rule that all computer systems must shut down simultaneously when a network error occurs",
+            "The mathematical condition where a database transaction cannot be rolled back"
+          ],
+          "correctIndex": 1,
+          "explanation": "Equifinality states that open systems can achieve the same desired end goal through diverse starting points and alternative processing routes.",
+          "sourceRef": "Chapter 4.pdf, slide 12",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

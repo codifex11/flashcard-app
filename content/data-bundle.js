@@ -23,6 +23,12 @@ window.APP_DATA_BUNDLE = {
                     "name": "Database",
                     "questionCount": 90,
                     "reviewStatus": "pending_review"
+                  },
+                  {
+                    "id": "foundation-of-information-system",
+                    "name": "Foundation of Information System",
+                    "questionCount": 90,
+                    "reviewStatus": "pending_review"
                   }
                 ]
               }
@@ -3577,6 +3583,1782 @@ window.APP_DATA_BUNDLE = {
                 "answer": "A query language is relationally complete if it can express any query expressible in relational calculus or relational algebra.",
                 "category": "Query Languages",
                 "sourceRef": "Chapter 6.pdf, slide 3",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "foundation-of-information-system": {
+      "meta": {
+        "id": "foundation-of-information-system",
+        "name": "Foundation of Information System",
+        "department": "Information System",
+        "year": "Year 2",
+        "semester": "Semester 1",
+        "courseCode": "INSY2011",
+        "sourceFiles": [
+          "Chapter 1.pdf",
+          "Chapter 2.pdf",
+          "Chapter 3.pdf",
+          "Chapter 4.pdf",
+          "Chapter 5.pdf"
+        ],
+        "generatedAt": "2026-10-06",
+        "reviewStatus": "pending_review",
+        "questionCount": 90,
+        "lowConfidenceCount": 0
+      },
+      "easy": {
+        "level": "easy",
+        "sets": [
+          {
+            "setNumber": 1,
+            "questions": [
+              {
+                "id": "foundation-is-easy-s1-q01",
+                "question": "What is the primary definition of data in the context of information systems?",
+                "options": [
+                  "A collection of software procedures that manage database transactions",
+                  "The physical hardware units that execute machine instructions inside the CPU",
+                  "Information that has been analyzed and formatted into actionable business reports",
+                  "Raw, unorganized facts, figures, and symbols that have not yet been processed into meaningful form"
+                ],
+                "correctIndex": 3,
+                "explanation": "Data consists of raw, unprocessed facts, figures, and symbols. Once processed and structured in a meaningful context, it becomes information.",
+                "sourceRef": "Chapter 1.pdf, slide 9, 10",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s1-q02",
+                "question": "Which of the following is considered volatile primary memory in a computer system?",
+                "options": [
+                  "Flash Memory Drive",
+                  "ROM (Read-Only Memory)",
+                  "RAM (Random Access Memory)",
+                  "Hard Disk Drive (HDD)"
+                ],
+                "correctIndex": 2,
+                "explanation": "RAM is volatile memory whose contents are lost when electrical power is turned off, whereas ROM and secondary storage retain data permanently.",
+                "sourceRef": "Chapter 1.pdf, slide 43, 44",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s1-q03",
+                "question": "What are the four basic operations of the Information Processing Cycle performed by computers?",
+                "options": [
+                  "Encoding, Compiling, Executing, and Debugging",
+                  "Input, Processing, Output, and Storage",
+                  "Planning, Analysis, Design, and Implementation",
+                  "Transmission, Switching, Routing, and Bridging"
+                ],
+                "correctIndex": 1,
+                "explanation": "The information processing cycle comprises four core operations: Input (data entry), Processing (manipulation), Output (result generation), and Storage (saving for future use).",
+                "sourceRef": "Chapter 1.pdf, slide 7, 8",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s1-q04",
+                "question": "What is the main function of the Control Unit (CU) inside the Central Processing Unit (CPU)?",
+                "options": [
+                  "Converting analog signals from input devices into digital video output",
+                  "Directing and coordinating most of the operations in the computer by fetching and decoding instructions",
+                  "Performing arithmetic calculations and logical comparisons",
+                  "Permanently storing user files and operating system programs"
+                ],
+                "correctIndex": 1,
+                "explanation": "The Control Unit (CU) directs and coordinates operations within the CPU by fetching, decoding, and managing instruction execution.",
+                "sourceRef": "Chapter 1.pdf, slide 38, 39",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s1-q05",
+                "question": "Which computer network type is designed to connect personal devices within a very short range of an individual (typically up to 10 meters)?",
+                "options": [
+                  "PAN (Personal Area Network)",
+                  "WAN (Wide Area Network)",
+                  "MAN (Metropolitan Area Network)",
+                  "LAN (Local Area Network)"
+                ],
+                "correctIndex": 0,
+                "explanation": "A Personal Area Network (PAN) connects personal devices (such as Bluetooth headsets and smartphones) within the workspace of a single individual.",
+                "sourceRef": "Chapter 2.pdf, slide 12, 13",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s1-q06",
+                "question": "In a Star network topology, how are all network devices connected?",
+                "options": [
+                  "All devices share a single central backbone cable with terminators at both ends",
+                  "Every device is directly interconnected with every other device in the network",
+                  "Each device connects to exactly two neighboring devices in a closed continuous loop",
+                  "Each device connects directly to a central connecting point such as a switch or hub"
+                ],
+                "correctIndex": 3,
+                "explanation": "In a Star topology, every network node connects directly to a central hub or switch, ensuring that the failure of one cable does not disable the entire network.",
+                "sourceRef": "Chapter 2.pdf, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s1-q07",
+                "question": "Which transmission medium transmits data as pulses of light through thin strands of glass or plastic?",
+                "options": [
+                  "Coaxial cable",
+                  "Fiber-optic cable",
+                  "Infrared wireless link",
+                  "Unshielded Twisted Pair (UTP) cable"
+                ],
+                "correctIndex": 1,
+                "explanation": "Fiber-optic cables use light pulses generated by lasers or LEDs to transmit data at very high speeds with minimal interference.",
+                "sourceRef": "Chapter 2.pdf, slide 34, 35",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s1-q08",
+                "question": "What is the primary role of a Network Interface Card (NIC)?",
+                "options": [
+                  "Assigning public IP addresses to wide area network domain names",
+                  "Translating high-level programming code into machine instructions",
+                  "Providing the physical hardware interface and connection between a computer and a network medium",
+                  "Filtering spam and malware from incoming email attachments"
+                ],
+                "correctIndex": 2,
+                "explanation": "A Network Interface Card (NIC) enables a computer or device to communicate over a network by converting internal data into signals for the network medium.",
+                "sourceRef": "Chapter 2.pdf, slide 43",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s1-q09",
+                "question": "How many layers are defined in the standard Open Systems Interconnection (OSI) reference model?",
+                "options": [
+                  "7 layers",
+                  "4 layers",
+                  "5 layers",
+                  "6 layers"
+                ],
+                "correctIndex": 0,
+                "explanation": "The OSI model specifies 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application.",
+                "sourceRef": "Chapter 2.pdf, slide 50, 51",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s1-q10",
+                "question": "Which cloud computing service model delivers complete, ready-to-use software applications over the internet to end users?",
+                "options": [
+                  "IaaS (Infrastructure as a Service)",
+                  "DaaS (Database as a Service)",
+                  "PaaS (Platform as a Service)",
+                  "SaaS (Software as a Service)"
+                ],
+                "correctIndex": 3,
+                "explanation": "Software as a Service (SaaS) provides fully functioning software applications hosted and managed in the cloud (such as Google Workspace or Microsoft 365).",
+                "sourceRef": "Chapter 2.pdf, slide 81, 82",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 2,
+            "questions": [
+              {
+                "id": "foundation-is-easy-s2-q01",
+                "question": "What is the lowest layer (Layer 1) of the OSI 7-layer reference model?",
+                "options": [
+                  "Data Link Layer",
+                  "Physical Layer",
+                  "Transport Layer",
+                  "Network Layer"
+                ],
+                "correctIndex": 1,
+                "explanation": "The Physical Layer is Layer 1 of the OSI model; it handles the transmission and reception of raw unstructured bit streams over a physical medium.",
+                "sourceRef": "Chapter 2.pdf, slide 52",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s2-q02",
+                "question": "Which network device operates at the Network Layer (Layer 3) to forward data packets between different networks?",
+                "options": [
+                  "Bridge",
+                  "Hub",
+                  "Router",
+                  "Repeater"
+                ],
+                "correctIndex": 2,
+                "explanation": "Routers operate at OSI Layer 3 (Network layer) using logical IP addresses to direct data packets across interconnected networks.",
+                "sourceRef": "Chapter 2.pdf, slide 46, 47",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s2-q03",
+                "question": "What type of information system is designed to record and process daily routine business transactions such as sales, payroll, and receipts?",
+                "options": [
+                  "EIS (Executive Information System)",
+                  "DSS (Decision Support System)",
+                  "TPS (Transaction Processing System)",
+                  "ES (Expert System)"
+                ],
+                "correctIndex": 2,
+                "explanation": "A Transaction Processing System (TPS) handles the routine, day-to-day operational transactions necessary to conduct business.",
+                "sourceRef": "Chapter 3.pdf, slide 7, 8",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s2-q04",
+                "question": "Which organizational level is primarily served by a Management Information System (MIS)?",
+                "options": [
+                  "External customers and suppliers",
+                  "Senior executives and board of directors",
+                  "Operational workers and clerks",
+                  "Middle management (tactical managers)"
+                ],
+                "correctIndex": 3,
+                "explanation": "MIS provides regular summary reports and performance metrics to middle-level managers to support tactical planning and control.",
+                "sourceRef": "Chapter 3.pdf, slide 15, 16",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s2-q05",
+                "question": "What is the primary focus of an Executive Support System (ESS) / Executive Information System (EIS)?",
+                "options": [
+                  "Compiling source code into binary executable programs",
+                  "Automating machine tool operations on a factory manufacturing floor",
+                  "Managing low-level barcode scanning at supermarket checkout counters",
+                  "Providing senior executives with summary data, high-level dashboards, and drill-down analysis for strategic decisions"
+                ],
+                "correctIndex": 3,
+                "explanation": "EIS/ESS assists senior executives by providing summarized, strategic visual dashboards with drill-down capabilities into enterprise data.",
+                "sourceRef": "Chapter 3.pdf, slide 32, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s2-q06",
+                "question": "What is an Enterprise Resource Planning (ERP) system?",
+                "options": [
+                  "A dedicated hardware router used exclusively for wide-area telecom connections",
+                  "An integrated enterprise-wide software suite that connects and automates key business functions across the entire organization",
+                  "A single-user desktop spreadsheet program designed for budget calculations",
+                  "A standalone word processing application used for generating office memos"
+                ],
+                "correctIndex": 1,
+                "explanation": "ERP is an integrated software system that manages and coordinates information across all core functional departments (finance, HR, supply chain, manufacturing).",
+                "sourceRef": "Chapter 3.pdf, slide 42, 43",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s2-q07",
+                "question": "Which system focuses on managing all aspects of customer interactions, sales leads, marketing campaigns, and customer retention?",
+                "options": [
+                  "CRM (Customer Relationship Management)",
+                  "SCM (Supply Chain Management)",
+                  "TPS (Transaction Processing System)",
+                  "CAD (Computer-Aided Design)"
+                ],
+                "correctIndex": 0,
+                "explanation": "Customer Relationship Management (CRM) systems organize and automate customer sales, service, support, and marketing interactions.",
+                "sourceRef": "Chapter 3.pdf, slide 52, 53",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s2-q08",
+                "question": "What are the two core components that make up an Expert System?",
+                "options": [
+                  "A Compiler and a Linker",
+                  "A Knowledge Base and an Inference Engine",
+                  "A Modem and an Ethernet Hub",
+                  "A Graphic Card and a Sound Card"
+                ],
+                "correctIndex": 1,
+                "explanation": "An Expert System contains a Knowledge Base (facts and rules provided by human experts) and an Inference Engine (reasoning logic that derives conclusions).",
+                "sourceRef": "Chapter 3.pdf, slide 64, 65",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s2-q09",
+                "question": "Which system manages the flow of materials, information, and finances across suppliers, manufacturers, wholesalers, and retailers?",
+                "options": [
+                  "MIS (Management Information System)",
+                  "OAS (Office Automation System)",
+                  "EIS (Executive Information System)",
+                  "SCM (Supply Chain Management)"
+                ],
+                "correctIndex": 3,
+                "explanation": "Supply Chain Management (SCM) oversees the end-to-end movement of goods, information, and finances from raw material suppliers to final delivery.",
+                "sourceRef": "Chapter 3.pdf, slide 48, 49",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s2-q10",
+                "question": "What is the primary purpose of an Office Automation System (OAS)?",
+                "options": [
+                  "Enhancing the productivity of clerical and knowledge workers through tools like word processors, spreadsheets, and email",
+                  "Controlling high-voltage power generation turbines at electrical substations",
+                  "Executing complex algorithmic stock trading transactions on global markets",
+                  "Managing relational database schemas and SQL table normalization"
+                ],
+                "correctIndex": 0,
+                "explanation": "Office Automation Systems (OAS) provide software tools (word processing, scheduling, communication) to boost office worker efficiency.",
+                "sourceRef": "Chapter 3.pdf, slide 72, 73",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 3,
+            "questions": [
+              {
+                "id": "foundation-is-easy-s3-q01",
+                "question": "What is defined as a collection of interrelated components working together toward a common goal?",
+                "options": [
+                  "A Gateway",
+                  "A Peripheral",
+                  "A System",
+                  "A Topology"
+                ],
+                "correctIndex": 2,
+                "explanation": "A system is an organized collection of interacting components that accept inputs, process them, and produce outputs to achieve a shared objective.",
+                "sourceRef": "Chapter 4.pdf, slide 4, 5",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s3-q02",
+                "question": "In system concepts, what role does 'Feedback' play in a system?",
+                "options": [
+                  "Serving as the physical boundary that separates the system from external entities",
+                  "Supplying raw raw material input from the external environment",
+                  "Formatting final results into high-resolution graphic printouts",
+                  "Measuring output performance and providing data to evaluate and adjust system operations"
+                ],
+                "correctIndex": 3,
+                "explanation": "Feedback is data about system performance that is compared against standards so that corrective control actions can be taken.",
+                "sourceRef": "Chapter 4.pdf, slide 6, 7",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s3-q03",
+                "question": "What does SDLC stand for in information systems development?",
+                "options": [
+                  "System Distribution Logic Controller",
+                  "Systems Development Life Cycle",
+                  "Software Data Link Connection",
+                  "Structured Database Language Code"
+                ],
+                "correctIndex": 1,
+                "explanation": "SDLC stands for Systems Development Life Cycle, the structured framework used to plan, analyze, design, build, and maintain information systems.",
+                "sourceRef": "Chapter 4.pdf, slide 14, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s3-q04",
+                "question": "What is the primary objective of the 'Systems Analysis' phase in SDLC?",
+                "options": [
+                  "Decommissioning legacy servers and archiving old backup tapes",
+                  "Understanding the existing system in detail and determining end-user requirements for the new system",
+                  "Purchasing server hardware racks and laying underground fiber cables",
+                  "Writing source code in C++ or Python for all database modules"
+                ],
+                "correctIndex": 1,
+                "explanation": "Systems Analysis focuses on studying the current system and defining what the new system must do to satisfy user and organizational needs.",
+                "sourceRef": "Chapter 4.pdf, slide 18, 19",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s3-q05",
+                "question": "What is Computer Ethics primarily concerned with?",
+                "options": [
+                  "Maximizing computational clock speed through hardware overclocking",
+                  "The mathematical proofs behind relational algebra operations",
+                  "Moral principles and ethical standards that govern the responsible use of computers and information technologies",
+                  "Electrical safety standards for computer power supplies and cables"
+                ],
+                "correctIndex": 2,
+                "explanation": "Computer ethics involves analyzing the moral principles and societal rules governing the acceptable and responsible use of computing resources.",
+                "sourceRef": "Chapter 5.pdf, slide 10, 17",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s3-q06",
+                "question": "How does a Computer Worm differ fundamentally from a Computer Virus?",
+                "options": [
+                  "A worm requires user intervention to execute while a virus spreads purely in hardware",
+                  "A worm always improves system speed while a virus slows down execution",
+                  "A worm only infects mobile phones whereas viruses only infect mainframe computers",
+                  "A worm can replicate and spread autonomously across networks without attaching itself to a host file or program"
+                ],
+                "correctIndex": 3,
+                "explanation": "Unlike a virus (which needs a host program to infect), a worm is a standalone malicious program that replicates across network connections on its own.",
+                "sourceRef": "Chapter 5.pdf, slide 25, 26",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s3-q07",
+                "question": "What is a Trojan Horse in computer security terminology?",
+                "options": [
+                  "A network switch that has run out of physical Ethernet ports",
+                  "A protocol analyzer used for measuring internet bandwidth",
+                  "A malicious program disguised as a useful or benign application to trick users into executing it",
+                  "A hardware firewall that automatically encrypts wireless transmissions"
+                ],
+                "correctIndex": 2,
+                "explanation": "A Trojan horse hides malicious code inside what appears to be legitimate or entertaining software, executing harmful actions once launched.",
+                "sourceRef": "Chapter 5.pdf, slide 27, 28",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s3-q08",
+                "question": "Which security mechanism acts as a protective barrier to monitor and filter incoming and outgoing network traffic based on security rules?",
+                "options": [
+                  "Firewall",
+                  "Repeater",
+                  "Defragmenter",
+                  "Modem"
+                ],
+                "correctIndex": 0,
+                "explanation": "A firewall enforces access control policies by blocking unauthorized network traffic while permitting authorized communications.",
+                "sourceRef": "Chapter 5.pdf, slide 36",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s3-q09",
+                "question": "What legal form of intellectual property protection grants exclusive rights to creators of original literary, artistic, or software works?",
+                "options": [
+                  "Copyright",
+                  "Patent",
+                  "Trademark",
+                  "Trade Secret"
+                ],
+                "correctIndex": 0,
+                "explanation": "Copyright protects original creative and authorial expressions (including written computer programs, books, and music) from unauthorized copying.",
+                "sourceRef": "Chapter 5.pdf, slide 54, 57",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-easy-s3-q10",
+                "question": "What does the term 'Digital Divide' describe?",
+                "options": [
+                  "The boundary between high-level programming languages and machine bytecode",
+                  "The socioeconomic gap between individuals, households, and regions that have access to modern ICT and those that do not",
+                  "The mathematical division algorithm executed inside the arithmetic logic unit",
+                  "The separation of physical cables and wireless signals inside a router"
+                ],
+                "correctIndex": 1,
+                "explanation": "The Digital Divide refers to disparities in access to, use of, or knowledge of information and communication technologies among demographic groups.",
+                "sourceRef": "Chapter 5.pdf, slide 71, 72",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      },
+      "medium": {
+        "level": "medium",
+        "sets": [
+          {
+            "setNumber": 1,
+            "questions": [
+              {
+                "id": "foundation-is-medium-s1-q01",
+                "question": "Which of the following describes the functional difference between an Ethernet Switch and an Ethernet Hub?",
+                "options": [
+                  "A switch forwards data frames specifically to the destination port using MAC addresses, whereas a hub broadcasts data out to all ports",
+                  "A hub is an active Layer 3 device while a switch is a passive physical cable connector",
+                  "A hub routes packets between different IP subnets while a switch only operates on fiber optic cables",
+                  "A switch amplifies analog radio frequencies while a hub performs symmetric data encryption"
+                ],
+                "correctIndex": 0,
+                "explanation": "Hubs operate at Layer 1 and broadcast incoming signals to all ports, creating collision domains. Switches operate at Layer 2 and intelligently forward frames only to the target device.",
+                "sourceRef": "Chapter 2.pdf, slide 44, 45",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s1-q02",
+                "question": "In the computer memory hierarchy, which memory type provides the fastest access speed to the CPU?",
+                "options": [
+                  "Main Memory (Dynamic RAM)",
+                  "Optical Disc (Blu-ray/DVD)",
+                  "CPU Registers and Cache Memory (L1/L2/L3)",
+                  "Solid State Drive (SSD)"
+                ],
+                "correctIndex": 2,
+                "explanation": "Internal CPU registers and on-chip SRAM cache memory provide the highest speed access to data and instructions, faster than main RAM or secondary storage.",
+                "sourceRef": "Chapter 1.pdf, slide 41, 46",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s1-q03",
+                "question": "Which cloud service model would be most appropriate for a software development team needing managed runtime environments, operating systems, and database engines without managing underlying physical servers?",
+                "options": [
+                  "SaaS (Software as a Service)",
+                  "IaaS (Infrastructure as a Service)",
+                  "DaaS (Desktop as a Service)",
+                  "PaaS (Platform as a Service)"
+                ],
+                "correctIndex": 3,
+                "explanation": "PaaS provides developers with computing platforms, web servers, databases, and runtime tools to build applications without provisioning physical hardware or OS maintenance.",
+                "sourceRef": "Chapter 2.pdf, slide 83, 84",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s1-q04",
+                "question": "In the OSI model, which layer is responsible for end-to-end communication, flow control, segmentation, and error-recovery (e.g. TCP)?",
+                "options": [
+                  "Network Layer (Layer 3)",
+                  "Data Link Layer (Layer 2)",
+                  "Transport Layer (Layer 4)",
+                  "Session Layer (Layer 5)"
+                ],
+                "correctIndex": 2,
+                "explanation": "The Transport Layer (Layer 4) handles reliable host-to-host data delivery, flow control, reassembly of segments, and error recovery.",
+                "sourceRef": "Chapter 2.pdf, slide 55",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s1-q05",
+                "question": "What is the key advantage of a Mesh network topology over Bus and Ring topologies?",
+                "options": [
+                  "It operates exclusively over free satellite radio frequencies without cables",
+                  "High fault tolerance and redundancy because multiple alternative communication paths exist between nodes",
+                  "It requires the lowest amount of cabling and has the simplest installation process",
+                  "It eliminates the need for any network interface cards or IP configuration"
+                ],
+                "correctIndex": 1,
+                "explanation": "Mesh topology features redundant physical links between nodes, allowing communication to continue even if one or more connections fail.",
+                "sourceRef": "Chapter 2.pdf, slide 26, 27",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s1-q06",
+                "question": "Which characteristic of valuable information ensures that the information is free from errors and can be relied upon for decision-making?",
+                "options": [
+                  "Accessibility",
+                  "Completeness",
+                  "Timeliness",
+                  "Accuracy"
+                ],
+                "correctIndex": 3,
+                "explanation": "Accuracy means the information is correct and free of errors. Inaccurate information can lead to flawed and costly organizational decisions.",
+                "sourceRef": "Chapter 1.pdf, slide 12, 13",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s1-q07",
+                "question": "What distinguishes System Software from Application Software?",
+                "options": [
+                  "System software manages and controls computer hardware and background operations (like operating systems), while application software performs specific user tasks",
+                  "System software is only written by end users whereas application software is built into hardware chips",
+                  "System software is always open-source whereas application software is always proprietary",
+                  "System software cannot run on personal computers while application software runs only on supercomputers"
+                ],
+                "correctIndex": 0,
+                "explanation": "System software (OS, device drivers, utilities) serves as the base platform managing computer hardware, enabling application software (spreadsheets, browsers) to execute user tasks.",
+                "sourceRef": "Chapter 1.pdf, slide 62, 63",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s1-q08",
+                "question": "Which cloud deployment model is operated solely for a single organization and hosted either internally or by a third party?",
+                "options": [
+                  "Public Cloud",
+                  "Private Cloud",
+                  "Hybrid Cloud",
+                  "Community Cloud"
+                ],
+                "correctIndex": 1,
+                "explanation": "A Private Cloud is dedicated exclusively to one enterprise, offering greater control, customization, and security for sensitive organizational data.",
+                "sourceRef": "Chapter 2.pdf, slide 87, 88",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s1-q09",
+                "question": "What is the primary role of the Domain Name System (DNS) in computer networks?",
+                "options": [
+                  "Formatting HTML text documents with cascading style sheets",
+                  "Encrypting email communications between senders and mail servers",
+                  "Translating human-readable domain names (like www.google.com) into numerical IP addresses",
+                  "Assigning physical MAC addresses to network interface cards during manufacturing"
+                ],
+                "correctIndex": 2,
+                "explanation": "DNS acts like the internet's phonebook, mapping human-friendly alphanumeric domain names to machine-readable IP addresses.",
+                "sourceRef": "Chapter 2.pdf, slide 71, 72",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s1-q10",
+                "question": "In unguided (wireless) transmission, which medium is line-of-sight and widely used for long-distance terrestrial telecommunications and satellite links?",
+                "options": [
+                  "Microwave transmission",
+                  "Twisted pair cable",
+                  "Infrared transmission",
+                  "Coaxial cable"
+                ],
+                "correctIndex": 0,
+                "explanation": "Microwave signals travel in straight line-of-sight paths and are widely employed in high-capacity terrestrial relay towers and satellite communications.",
+                "sourceRef": "Chapter 2.pdf, slide 38, 39",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 2,
+            "questions": [
+              {
+                "id": "foundation-is-medium-s2-q01",
+                "question": "Which type of decision is most effectively supported by a Decision Support System (DSS)?",
+                "options": [
+                  "Highly repetitive, fully programmed structured transactions like calculating overtime pay",
+                  "Low-level clock-in timestamp recording on biometric attendance machines",
+                  "Semistructured and unstructured decisions where human judgment combines with quantitative models",
+                  "Routine barcode lookup at supermarket inventory checkouts"
+                ],
+                "correctIndex": 2,
+                "explanation": "DSS is specifically designed to help decision-makers analyze semistructured and unstructured problems using analytical models and interactive data exploration.",
+                "sourceRef": "Chapter 3.pdf, slide 23, 24",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s2-q02",
+                "question": "How do Management Information Systems (MIS) typically obtain their primary operational data?",
+                "options": [
+                  "Through manual keyboard data entry performed directly by board directors",
+                  "By summarizing, aggregating, and filtering raw transaction data captured by Transaction Processing Systems (TPS)",
+                  "By querying external web crawlers on the public internet",
+                  "By inspecting CPU register contents using hardware logic probes"
+                ],
+                "correctIndex": 1,
+                "explanation": "MIS extracts, aggregates, and summarizes underlying data produced by TPS to generate structured operational and management reports.",
+                "sourceRef": "Chapter 3.pdf, slide 17, 18",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s2-q03",
+                "question": "What is a 'What-If Analysis' capability commonly provided by Decision Support Systems?",
+                "options": [
+                  "Evaluating how changes in key input variables or assumptions impact final outcomes and profitability",
+                  "Preventing unauthorized users from viewing public website homepages",
+                  "Detecting physical fiber optic cable breaks using optical time-domain reflectometers",
+                  "Automatically generating payroll checks whenever an employee logs into the network"
+                ],
+                "correctIndex": 0,
+                "explanation": "What-If analysis allows managers to change certain assumptions or numbers (e.g. price change, supply cost) to observe the resulting impact on performance.",
+                "sourceRef": "Chapter 3.pdf, slide 26, 27",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s2-q04",
+                "question": "In an Expert System, what is the role of the 'Inference Engine'?",
+                "options": [
+                  "Storing the raw historical records of past database backups",
+                  "Formatting high-level database SQL queries into assembly code",
+                  "Applying logical rules and reasoning strategies to the knowledge base to derive recommendations or answers",
+                  "Encrypting network packets before transmission over the internet"
+                ],
+                "correctIndex": 2,
+                "explanation": "The Inference Engine is the brain of an expert system; it processes facts and rules stored in the knowledge base to simulate human expert reasoning.",
+                "sourceRef": "Chapter 3.pdf, slide 66, 67",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s2-q05",
+                "question": "Which business benefit is most directly achieved by implementing a Customer Relationship Management (CRM) system?",
+                "options": [
+                  "Elimination of physical computer RAM requirements in branch offices",
+                  "Direct physical manufacturing of silicon semiconductor chips",
+                  "Automated compilation of C++ device driver source code",
+                  "Improved customer retention, personalized marketing, and unified tracking of customer service history"
+                ],
+                "correctIndex": 3,
+                "explanation": "CRM systems help organizations capture 360-degree customer views, streamline customer service, increase customer loyalty, and enhance sales conversions.",
+                "sourceRef": "Chapter 3.pdf, slide 54, 55",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s2-q06",
+                "question": "What is the 'Bullwhip Effect' in supply chain management that SCM systems help mitigate?",
+                "options": [
+                  "The distortion and amplification of demand fluctuations as information moves up the supply chain from retailer to raw supplier",
+                  "A hardware malfunction where fiber optic laser light overheats network switches",
+                  "A cyber attack where hackers delete customer transaction logs simultaneously",
+                  "The delay that occurs when converting analog signals into digital pulses"
+                ],
+                "correctIndex": 0,
+                "explanation": "The bullwhip effect occurs when small changes in retail consumer demand cause increasingly large swings in inventory orders up the supply chain.",
+                "sourceRef": "Chapter 3.pdf, slide 50, 51",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s2-q07",
+                "question": "What is the primary distinguishing feature of a Knowledge Management System (KMS)?",
+                "options": [
+                  "Formatting raw hard disk sectors during initial operating system installation",
+                  "Calculating monthly employee income tax deductions for payroll",
+                  "Scanning barcode labels on supermarket shipping cartons",
+                  "Capturing, organizing, storing, and sharing both explicit and tacit organizational expertise and intellectual assets"
+                ],
+                "correctIndex": 3,
+                "explanation": "KMS facilitates the creation, storage, and sharing of organizational knowledge, best practices, and expert insights across employees.",
+                "sourceRef": "Chapter 3.pdf, slide 60, 61",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s2-q08",
+                "question": "In executive dashboards (EIS), what does the 'Drill-Down' feature allow a senior manager to do?",
+                "options": [
+                  "Force the operating system to shut down all running background processes",
+                  "Bypass all network firewalls without requiring authentication credentials",
+                  "Physically bore holes into computer motherboards to install cooling fans",
+                  "Navigate from high-level summary figures down to progressively more detailed underlying operational data"
+                ],
+                "correctIndex": 3,
+                "explanation": "Drill-down capabilities allow executives to click on a summary metric (e.g. total monthly sales drop) to inspect regional, store-level, or product-level details.",
+                "sourceRef": "Chapter 3.pdf, slide 35, 36",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s2-q09",
+                "question": "What is a major challenge organizations frequently face during the implementation of an Enterprise Resource Planning (ERP) system?",
+                "options": [
+                  "High cost, complex business process reengineering (BPR), and organizational resistance to change",
+                  "The complete absence of database systems in modern commercial computing",
+                  "Lack of available Ethernet cables in retail technology stores",
+                  "Inability of modern CPUs to perform basic addition and subtraction"
+                ],
+                "correctIndex": 0,
+                "explanation": "ERP implementations are large, costly projects that demand substantial business process change, employee retraining, and cultural adaptation.",
+                "sourceRef": "Chapter 3.pdf, slide 45, 46",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s2-q10",
+                "question": "How do structured decisions differ from unstructured decisions in managerial hierarchy?",
+                "options": [
+                  "Structured decisions require millions of dollars while unstructured decisions cost nothing",
+                  "Structured decisions follow standard, repetitive established procedures, while unstructured decisions involve novel, non-routine situations requiring intuition",
+                  "Structured decisions only occur in hospitals while unstructured decisions only occur in banks",
+                  "Structured decisions are made exclusively by computers while unstructured decisions are forbidden by law"
+                ],
+                "correctIndex": 1,
+                "explanation": "Structured decisions are routine and follow defined procedures (operational level). Unstructured decisions are novel and require judgment and insight (executive level).",
+                "sourceRef": "Chapter 3.pdf, slide 5, 6",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 3,
+            "questions": [
+              {
+                "id": "foundation-is-medium-s3-q01",
+                "question": "In system concepts, what characterizes an 'Open System' compared to a 'Closed System'?",
+                "options": [
+                  "An open system cannot be connected to electrical power supplies",
+                  "An open system is isolated from all outside forces and does not adapt to changes",
+                  "An open system has no source code while a closed system has free public documentation",
+                  "An open system actively interacts with and exchanges information, matter, or energy with its external environment"
+                ],
+                "correctIndex": 3,
+                "explanation": "An open system interacts dynamically with its external environment, receiving inputs and adapting, whereas a closed system is self-contained and isolated.",
+                "sourceRef": "Chapter 4.pdf, slide 9, 10",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s3-q02",
+                "question": "During the Planning phase of the SDLC, what is the primary purpose of conducting a 'Feasibility Study'?",
+                "options": [
+                  "Writing unit tests for individual database query functions",
+                  "Evaluating whether a proposed system is technically, economically, operationally, and legally viable before investing significant resources",
+                  "Installing antivirus definition updates on desktop workstations",
+                  "Formatting end-user training manuals and visual slide presentations"
+                ],
+                "correctIndex": 1,
+                "explanation": "A feasibility study analyzes technical, financial/economic, organizational/operational, and legal viability to ensure the project is worth pursuing.",
+                "sourceRef": "Chapter 4.pdf, slide 16, 17",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s3-q03",
+                "question": "Which system conversion strategy involves running both the old legacy system and the new system concurrently until the new system is proven reliable?",
+                "options": [
+                  "Pilot Conversion",
+                  "Direct Cutover (Plunge Conversion)",
+                  "Parallel Conversion",
+                  "Phased Conversion"
+                ],
+                "correctIndex": 2,
+                "explanation": "In parallel conversion, both old and new systems run simultaneously, providing high safety and a fallback mechanism at the cost of duplicate effort.",
+                "sourceRef": "Chapter 4.pdf, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s3-q04",
+                "question": "In cryptography, what is the main distinction between Symmetric Encryption and Asymmetric Encryption?",
+                "options": [
+                  "Symmetric encryption is only used by web browsers while asymmetric is used only by printers",
+                  "Symmetric encryption can only encrypt numbers while asymmetric encryption only encrypts images",
+                  "Symmetric encryption uses a single shared key for both encryption and decryption, whereas asymmetric encryption uses a public key and a private key pair",
+                  "Symmetric encryption does not require mathematical formulas while asymmetric uses binary addition"
+                ],
+                "correctIndex": 2,
+                "explanation": "Symmetric key cryptography uses the same secret key to encrypt and decrypt. Asymmetric (public-key) cryptography uses a public key to encrypt and a matching private key to decrypt.",
+                "sourceRef": "Chapter 5.pdf, slide 37, 38",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s3-q05",
+                "question": "What is a 'Logic Bomb' in malware classification?",
+                "options": [
+                  "Malicious code embedded in software that remains dormant until triggered by a specific event, condition, or date",
+                  "A mathematical bug inside the ALU that causes rounding discrepancies",
+                  "A network cable that fails when high bandwidth traffic passes through it",
+                  "A physical explosive detonated inside a server cooling unit"
+                ],
+                "correctIndex": 0,
+                "explanation": "A logic bomb lies dormant until a specific trigger event (such as a specific calendar date or an employee termination) activates its payload.",
+                "sourceRef": "Chapter 5.pdf, slide 29",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s3-q06",
+                "question": "What form of intellectual property protects commercial symbols, logos, brand names, or designs that distinguish goods/services of one company from competitors?",
+                "options": [
+                  "Copyright",
+                  "Patent",
+                  "Trademark",
+                  "Trade Secret"
+                ],
+                "correctIndex": 2,
+                "explanation": "A trademark protects distinctive brand symbols, names, logos, and slogans (e.g. Nike Swoosh, Apple logo) that identify the commercial source of goods.",
+                "sourceRef": "Chapter 5.pdf, slide 61, 62",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s3-q07",
+                "question": "What does a Patent protect that Copyright does not?",
+                "options": [
+                  "General intangible ideas, mathematical concepts, and unapplied formulas",
+                  "Novel, useful, and non-obvious functional inventions, technical processes, and mechanical/scientific implementations",
+                  "Original literary expressions, poems, and recorded musical songs",
+                  "Historical facts and public domain demographic statistics"
+                ],
+                "correctIndex": 1,
+                "explanation": "Patents protect functional inventions and technological processes, whereas copyrights protect original forms of creative expression.",
+                "sourceRef": "Chapter 5.pdf, slide 52, 53",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s3-q08",
+                "question": "Under intellectual property law, what is the 'Fair Use' doctrine?",
+                "options": [
+                  "A legal exception allowing limited reproduction of copyrighted material for purposes such as criticism, education, research, and news reporting without permission",
+                  "The right to copy and sell commercial software programs for full retail profit",
+                  "A rule stating that all software becomes public property after 30 days of release",
+                  "An authorization permitting employees to share company trade secrets with competitors"
+                ],
+                "correctIndex": 0,
+                "explanation": "Fair Use allows reasonable, limited reproduction of copyrighted material for educational, critical, scholarly, or journalistic purposes without copyright infringement.",
+                "sourceRef": "Chapter 5.pdf, slide 59, 60",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s3-q09",
+                "question": "Why is 'Trade Secret' protection often chosen over Patent protection for certain formulas (e.g. Coca-Cola formula)?",
+                "options": [
+                  "Trade secrets can only be held by non-profit academic institutions",
+                  "Trade secrets are granted automatically by government patent offices free of charge",
+                  "Trade secrets prevent anyone from independently discovering or reverse-engineering the product",
+                  "Trade secret protection lasts indefinitely as long as the information remains secret, without requiring public disclosure of technical details"
+                ],
+                "correctIndex": 3,
+                "explanation": "Unlike patents (which require full public technical disclosure and expire after ~20 years), trade secrets can last forever as long as secrecy is maintained.",
+                "sourceRef": "Chapter 5.pdf, slide 50, 51",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-medium-s3-q10",
+                "question": "Which of the following represents an effective Procedural Security Control in an organization?",
+                "options": [
+                  "Using solid state drives instead of traditional magnetic rotating hard disks",
+                  "Deploying deep packet inspection firewalls and intrusion detection hardware",
+                  "Installing physical steel server cages and biometric door locks",
+                  "Mandating periodic security awareness training, password change policies, and formal separation of duties"
+                ],
+                "correctIndex": 3,
+                "explanation": "Procedural controls are administrative policies, operational procedures, training regimens, and security guidelines established by management.",
+                "sourceRef": "Chapter 5.pdf, slide 38, 39",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      },
+      "hard": {
+        "level": "hard",
+        "sets": [
+          {
+            "setNumber": 1,
+            "questions": [
+              {
+                "id": "foundation-is-hard-s1-q01",
+                "question": "At which layer of the OSI model does logical IP packet addressing, fragmentation, and dynamic route selection across autonomous networks occur?",
+                "options": [
+                  "Session Layer (Layer 5)",
+                  "Network Layer (Layer 3)",
+                  "Data Link Layer (Layer 2)",
+                  "Transport Layer (Layer 4)"
+                ],
+                "correctIndex": 1,
+                "explanation": "Layer 3 (Network layer) manages logical device addressing (IP addresses), packet routing across multiple networks, and path determination.",
+                "sourceRef": "Chapter 2.pdf, slide 54",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s1-q02",
+                "question": "What is the primary protocol data unit (PDU) name at the Data Link layer (Layer 2) of the OSI model?",
+                "options": [
+                  "Packet",
+                  "Frame",
+                  "Segment",
+                  "Bit"
+                ],
+                "correctIndex": 1,
+                "explanation": "PDUs are named specifically per layer: Physical (Bits), Data Link (Frames), Network (Packets), Transport (Segments), and Upper layers (Data).",
+                "sourceRef": "Chapter 2.pdf, slide 53",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s1-q03",
+                "question": "In comparing the TCP/IP model with the OSI reference model, which OSI layers correspond directly to the single Application layer of the TCP/IP suite?",
+                "options": [
+                  "Data Link and Physical layers (Layers 2 and 1)",
+                  "Session and Transport layers (Layers 5 and 4)",
+                  "Application, Presentation, and Session layers (Layers 7, 6, and 5)",
+                  "Transport and Network layers (Layers 4 and 3)"
+                ],
+                "correctIndex": 2,
+                "explanation": "The 4-layer TCP/IP suite combines the functionality of the OSI Session (5), Presentation (6), and Application (7) layers into its single Application layer.",
+                "sourceRef": "Chapter 2.pdf, slide 64, 65",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s1-q04",
+                "question": "Which computer architecture component is responsible for holding the memory address of the next instruction to be fetched and executed by the CPU?",
+                "options": [
+                  "Memory Buffer Register (MBR)",
+                  "Accumulator (ACC)",
+                  "Program Counter (PC) register",
+                  "Instruction Register (IR)"
+                ],
+                "correctIndex": 2,
+                "explanation": "The Program Counter (PC) register holds the address in memory of the next instruction to be fetched for processing.",
+                "sourceRef": "Chapter 1.pdf, slide 40",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s1-q05",
+                "question": "In a Hybrid Cloud architecture, what is a primary technical and strategic motivation for an enterprise to deploy it?",
+                "options": [
+                  "Ensuring that all enterprise software is rewritten entirely in assembly language",
+                  "Eliminating the need for internet connectivity by relying solely on satellite broadcasts",
+                  "Preventing any encryption from being applied to internal network communication",
+                  "Running sensitive, core mission-critical workloads in a private cloud while bursting non-sensitive or compute-intensive workloads to a public cloud"
+                ],
+                "correctIndex": 3,
+                "explanation": "Hybrid clouds combine private and public clouds, offering cloud bursting, high scalability for spikes, while retaining strict control over sensitive data.",
+                "sourceRef": "Chapter 2.pdf, slide 89, 90",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s1-q06",
+                "question": "What is the function of the Presentation Layer (Layer 6) in the OSI 7-layer model?",
+                "options": [
+                  "Data translation, format conversion, character code translation (e.g. ASCII/Unicode), data compression, and encryption/decryption",
+                  "Physical voltage modulation and synchronization of raw bit streams on copper wire",
+                  "Determining the shortest path for packet delivery through routing algorithms",
+                  "Establishing, maintaining, and terminating network dialog sessions between applications"
+                ],
+                "correctIndex": 0,
+                "explanation": "The Presentation Layer ensures that data sent from the application layer of one system is readable by the application layer of another system via formatting, compression, and encryption.",
+                "sourceRef": "Chapter 2.pdf, slide 57",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s1-q07",
+                "question": "Which of the following correctly describes the relationship between the machine cycle steps: Fetch, Decode, Execute, and Store?",
+                "options": [
+                  "The control unit fetches an instruction from memory, decodes it into commands, the ALU executes the commands, and the result is stored back into memory or registers",
+                  "The storage drive decodes the data, the monitor executes it, and the ROM fetches the answer",
+                  "Instructions are executed first, decoded during output, and fetched only if an error occurs",
+                  "The ALU fetches the instruction, the operating system stores it, and the keyboard executes the code"
+                ],
+                "correctIndex": 0,
+                "explanation": "The instruction cycle (machine cycle) executed by the CPU consists of: 1. Fetching instruction, 2. Decoding instruction, 3. Executing operation, 4. Storing result.",
+                "sourceRef": "Chapter 1.pdf, slide 39",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s1-q08",
+                "question": "Why does a Multi-tier Client-Server architecture offer better scalability and maintenance compared to a 2-Tier Client-Server architecture?",
+                "options": [
+                  "It forces all network traffic to travel exclusively over peer-to-peer wireless connections",
+                  "It prevents databases from using indexes or primary keys to increase transaction speed",
+                  "It eliminates all client computers and requires users to interact with servers using punch cards",
+                  "Business logic and application processing are decoupled into a dedicated middle tier, separating user presentation from database access"
+                ],
+                "correctIndex": 3,
+                "explanation": "3-tier/n-tier architectures separate presentation (client), application processing/business logic (application server), and data storage (database server), improving modularity and scalability.",
+                "sourceRef": "Chapter 2.pdf, slide 18, 19",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s1-q09",
+                "question": "In computer storage systems, what is the primary operational difference between volatile RAM and non-volatile Flash/ROM storage?",
+                "options": [
+                  "Flash memory can only store text documents whereas RAM can only store operating system code",
+                  "RAM relies on continuous electrical charge to maintain state (losing data on power loss), whereas Flash/ROM utilizes floating-gate transistors to retain state indefinitely",
+                  "RAM stores data magnetically on rotating iron platters while Flash storage uses optical lasers",
+                  "RAM operates at kilohertz frequencies while Flash memory operates at petahertz frequencies"
+                ],
+                "correctIndex": 1,
+                "explanation": "RAM is dynamic volatile storage that requires constant power and refresh cycles, while non-volatile Flash and ROM retain bit patterns even when unpowered.",
+                "sourceRef": "Chapter 1.pdf, slide 43, 44, 49",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s1-q10",
+                "question": "How does CSMA/CD (Carrier Sense Multiple Access with Collision Detection) handle network collisions on shared Ethernet media?",
+                "options": [
+                  "Nodes listen before transmitting; if two nodes transmit simultaneously causing a collision, they send a jam signal and wait a randomized backoff time before retransmitting",
+                  "Nodes increase their transmission voltage until the competing node's signal is completely overpowered",
+                  "Collisions are automatically merged using bitwise XOR operations to create a single packet",
+                  "The central server permanently disconnects all colliding nodes from the network domain"
+                ],
+                "correctIndex": 0,
+                "explanation": "CSMA/CD senses carrier activity before transmission, detects collisions during transmission, emits a jam signal, and utilizes a binary exponential backoff algorithm before retry.",
+                "sourceRef": "Chapter 2.pdf, slide 30",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 2,
+            "questions": [
+              {
+                "id": "foundation-is-hard-s2-q01",
+                "question": "In decision analysis, which tool within a DSS determines the necessary input value required to achieve a specific target output (e.g., finding the sales volume needed to reach $1M profit)?",
+                "options": [
+                  "Statistical Regression Analysis",
+                  "What-If Analysis",
+                  "Goal-Seeking Analysis",
+                  "Sensitivity Analysis"
+                ],
+                "correctIndex": 2,
+                "explanation": "Goal-seeking analysis works backward from a desired target outcome to determine the required input values or decisions to achieve that specific goal.",
+                "sourceRef": "Chapter 3.pdf, slide 28",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s2-q02",
+                "question": "What is the primary architectural role of the 'Model Base' in a Decision Support System (DSS)?",
+                "options": [
+                  "Providing the physical cable connections between client workstations and the LAN switch",
+                  "Holding the raw physical inventory counts entered by warehouse forklift drivers",
+                  "Managing the user interface styling and visual window rendering in the operating system",
+                  "Storing mathematical, financial, statistical, and quantitative simulation models that analyze data from the database"
+                ],
+                "correctIndex": 3,
+                "explanation": "A DSS consists of a Database, a Model Base (containing analytical models like optimization, forecasting, and linear programming), and a User Interface.",
+                "sourceRef": "Chapter 3.pdf, slide 25",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s2-q03",
+                "question": "How does an Online Analytical Processing (OLAP) system differ from an Online Transaction Processing (OLTP) system?",
+                "options": [
+                  "OLTP requires specialized mainframe computers while OLAP runs only on mobile smartphones",
+                  "OLAP is optimized for complex multidimensional analysis and querying of historical data, whereas OLTP is optimized for rapid, real-time recording of daily transactions",
+                  "OLAP is used exclusively by cashiers while OLTP is used exclusively by corporate attorneys",
+                  "OLTP processes data only in annual batches while OLAP executes instructions in hardware microcode"
+                ],
+                "correctIndex": 1,
+                "explanation": "OLTP systems focus on high-throughput, low-latency transaction processing (TPS), while OLAP systems focus on aggregating and analyzing historical multidimensional data for management.",
+                "sourceRef": "Chapter 3.pdf, slide 12, 13",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s2-q04",
+                "question": "In expert systems, which reasoning method begins with known factual data and applies inference rules forward to extract new conclusions?",
+                "options": [
+                  "Forward Chaining (data-driven reasoning)",
+                  "Binary Division Algorithm",
+                  "Recursive Backtracking",
+                  "Backward Chaining (goal-driven reasoning)"
+                ],
+                "correctIndex": 0,
+                "explanation": "Forward chaining starts with available facts and proceeds forward through rules to deduce conclusions. Backward chaining starts with a hypothesis and searches backward for supporting facts.",
+                "sourceRef": "Chapter 3.pdf, slide 68",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s2-q05",
+                "question": "Why is Master Data Management (MDM) a critical prerequisite for achieving data consistency in Enterprise Resource Planning (ERP) integrations?",
+                "options": [
+                  "It creates a single, authoritative, trusted master source of core enterprise business entities (e.g. customers, products, accounts) shared across all modules",
+                  "It eliminates the need for user passwords by replacing them with hardware serial numbers",
+                  "It forces all network routers to reboot at midnight to prevent memory leaks",
+                  "It automatically translates all enterprise database text into foreign languages"
+                ],
+                "correctIndex": 0,
+                "explanation": "Master Data Management establishes a consistent, single source of truth across disparate functional departments, preventing conflicting customer or inventory records.",
+                "sourceRef": "Chapter 3.pdf, slide 44, 45",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s2-q06",
+                "question": "What is 'Sensitivity Analysis' in the context of decision support systems?",
+                "options": [
+                  "Evaluating the light sensitivity of optical document scanner sensors",
+                  "Detecting emotional tone and sentiment in incoming customer support emails",
+                  "Studying how sensitive the final model recommendations are to small repeated variations in one or more input parameters",
+                  "Measuring the thermal temperature threshold of server room air conditioning units"
+                ],
+                "correctIndex": 2,
+                "explanation": "Sensitivity analysis examines how changes in one key variable affect other variables or outcomes, revealing which assumptions are most critical to a decision.",
+                "sourceRef": "Chapter 3.pdf, slide 29",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s2-q07",
+                "question": "Which of the following best explains why Executive Information Systems (EIS) rely heavily on external data sources compared to Transaction Processing Systems (TPS)?",
+                "options": [
+                  "Executive strategic decisions require macroeconomic trends, competitor intelligence, regulatory updates, and industry forecasts not found in internal operational logs",
+                  "External data is always completely free of charge and requires no processing",
+                  "TPS systems are technically blocked from reading data from internal company hard drives",
+                  "Executives are prohibited by corporate governance laws from accessing internal financial ledgers"
+                ],
+                "correctIndex": 0,
+                "explanation": "Strategic long-range planning requires broad environmental scanning (competitors, government regulations, market trends), whereas TPS focuses on internal operational facts.",
+                "sourceRef": "Chapter 3.pdf, slide 34",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s2-q08",
+                "question": "How does an ERP system achieve real-time synchronization between financial accounting and warehouse inventory management?",
+                "options": [
+                  "By storing financial data in RAM and inventory data exclusively on magnetic tape drives",
+                  "By requiring accountants to manually re-enter warehouse packing slips into standalone spreadsheets",
+                  "Through a unified central database where a physical inventory receipt transaction automatically updates general ledger asset accounts and accounts payable simultaneously",
+                  "By printing paper receipts that are physically mailed between corporate offices every month"
+                ],
+                "correctIndex": 2,
+                "explanation": "A central shared database in ERP ensures that when a transaction occurs in one module (e.g. shipping inventory), financial and accounting records are updated immediately in real time.",
+                "sourceRef": "Chapter 3.pdf, slide 43, 44",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s2-q09",
+                "question": "What is the primary role of a 'Knowledge Engineer' in developing an AI Expert System?",
+                "options": [
+                  "Managing the corporate stock portfolio and filing tax returns with government authorities",
+                  "Writing legal contracts for enterprise software licensing agreements",
+                  "Crimping Ethernet cables and replacing faulty server cooling fans in data centers",
+                  "Interviewing domain human experts to extract their specialized heuristics, rules of thumb, and structured knowledge to build the knowledge base"
+                ],
+                "correctIndex": 3,
+                "explanation": "A knowledge engineer bridges the gap between human subject-matter experts and the AI system, translating human expertise into explicit rules and facts.",
+                "sourceRef": "Chapter 3.pdf, slide 69, 70",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s2-q10",
+                "question": "Which analytical method allows Supply Chain Management systems to calculate optimal reorder points and safety stock levels?",
+                "options": [
+                  "Random number generation based on ambient CPU temperature fluctuations",
+                  "Economic Order Quantity (EOQ) and probabilistic lead-time demand forecasting models",
+                  "Linear search across unindexed text files stored on optical discs",
+                  "Alphabetical sorting of supplier names in descending order"
+                ],
+                "correctIndex": 1,
+                "explanation": "SCM systems use mathematical inventory models (EOQ, safety stock formulas, reorder points) to balance holding costs against ordering and stockout costs.",
+                "sourceRef": "Chapter 3.pdf, slide 50",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 3,
+            "questions": [
+              {
+                "id": "foundation-is-hard-s3-q01",
+                "question": "According to General System Theory, what is 'Entropy' in an information system?",
+                "options": [
+                  "The mathematical measure of optical bandwidth speed in single-mode fiber cables",
+                  "The maximum number of simultaneous TCP socket connections supported by an operating system",
+                  "The process of converting plain text into encrypted ciphertext using public key algorithms",
+                  "The natural tendency of a system to degrade, lose organization, and move toward disorder unless energy and maintenance are continuously supplied"
+                ],
+                "correctIndex": 3,
+                "explanation": "Entropy represents the natural tendency toward decay and chaos. Open systems counteract entropy by importing energy, information, and maintenance from the environment.",
+                "sourceRef": "Chapter 4.pdf, slide 11, 12",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s3-q02",
+                "question": "In the Systems Development Life Cycle (SDLC), why are errors identified during the 'Planning and Analysis' phases substantially less costly to fix than errors discovered during 'Implementation'?",
+                "options": [
+                  "Fixing design flaws in requirements only requires document updates, whereas post-deployment fixes require rewriting code, re-architecting databases, and retraining users",
+                  "Operating systems permanently lock software source code once compiled, preventing any edits",
+                  "Hardware manufacturers charge monetary fines for every bug found after server installation",
+                  "Programmers work for free during implementation while analysts charge legal fees per minute"
+                ],
+                "correctIndex": 0,
+                "explanation": "Cost of change rises exponentially throughout the SDLC. A requirement bug fixed during analysis costs a fraction of the cost required to fix it after enterprise rollout.",
+                "sourceRef": "Chapter 4.pdf, slide 15, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s3-q03",
+                "question": "In the economics of information products, why do information goods exhibit 'high fixed costs and near-zero marginal costs'?",
+                "options": [
+                  "Creating the initial first copy of information requires substantial capital and effort, but reproducing and distributing additional digital copies costs virtually nothing",
+                  "Government regulations mandate that digital information products must always be sold below production cost",
+                  "Information products degrade physically with every user view and must be reconstructed from raw iron",
+                  "Information goods can only be stored on physical optical media manufactured by government monopolies"
+                ],
+                "correctIndex": 0,
+                "explanation": "Information exhibits unique economics: high first-copy fixed costs (R&D, authoring, software development) and near-zero marginal costs of digital reproduction and delivery.",
+                "sourceRef": "Chapter 5.pdf, slide 67, 69, 70",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s3-q04",
+                "question": "Which of the following scenarios would most likely fail to qualify as legal 'Fair Use' under copyright law?",
+                "options": [
+                  "A university professor quoting two sentences from a published research paper in an academic article citation",
+                  "A commercial training company copying an entire proprietary software textbook and selling it to enrolled students for profit",
+                  "A student quoting a short paragraph from a textbook in an individual homework essay assignment",
+                  "A newspaper tech journalist publishing a 15-second screenshot clip during a televised product review"
+                ],
+                "correctIndex": 1,
+                "explanation": "Fair use considers the commercial nature, amount copied (entire work), and negative market impact on the copyright owner. Selling whole copied textbooks for profit is infringement.",
+                "sourceRef": "Chapter 5.pdf, slide 59, 60",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s3-q05",
+                "question": "In Public Key Cryptography (Asymmetric Encryption), if Alice wants to send a confidential encrypted message to Bob that only Bob can read, which key must Alice use to encrypt the message?",
+                "options": [
+                  "Bob's Public Key",
+                  "Bob's Private Key",
+                  "Alice's Public Key",
+                  "Alice's Private Key"
+                ],
+                "correctIndex": 0,
+                "explanation": "To send a confidential message, Alice encrypts it with Bob's Public Key. Only Bob possesses the corresponding Private Key necessary to decrypt it.",
+                "sourceRef": "Chapter 5.pdf, slide 37, 38",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s3-q06",
+                "question": "In digital signatures, how does the sender achieve non-repudiation and authentication of message integrity?",
+                "options": [
+                  "The sender requests an authorization signature from the domain registrar over telephone",
+                  "The sender encrypts a cryptographic hash of the message using their own Private Key, which the recipient verifies using the sender's Public Key",
+                  "The sender changes the file extension of the document to .exe before sending",
+                  "The sender sends their secret private key over plaintext email to the recipient"
+                ],
+                "correctIndex": 1,
+                "explanation": "A digital signature encrypts a message hash with the sender's Private Key. Because only the sender has that private key, anyone with the public key can verify authenticity and integrity.",
+                "sourceRef": "Chapter 5.pdf, slide 38",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s3-q07",
+                "question": "According to digital inequality research, which five dimensions characterize modern disparities beyond basic physical hardware access?",
+                "options": [
+                  "Electricity voltage, room temperature, ambient lighting, desk height, and chair ergonomics",
+                  "Keyboard language layout, font size, printer resolution, browser bookmark count, and wallpaper",
+                  "CPU clock speed, RAM capacity, monitor bezel width, mouse cord length, and case color",
+                  "Equipment quality, autonomy of use, digital skills, social support networks, and purpose of internet use"
+                ],
+                "correctIndex": 3,
+                "explanation": "Digital inequality encompasses multidimensional factors: quality of equipment, autonomy/location of access, technical skills, social support networks, and beneficial use.",
+                "sourceRef": "Chapter 5.pdf, slide 77, 78",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s3-q08",
+                "question": "In software development methodology, why is the 'Waterfall' model considered less suitable for projects with rapidly changing or uncertain user requirements compared to 'Agile' approaches?",
+                "options": [
+                  "Waterfall can only be used on projects with fewer than three lines of source code",
+                  "Waterfall prevents developers from writing unit tests or running automated compilers",
+                  "Waterfall enforces strict linear sequential phases where working software is only delivered at the very end, making mid-course requirement changes difficult and expensive",
+                  "Waterfall requires all programmers to use analog chalkboards instead of computer monitors"
+                ],
+                "correctIndex": 2,
+                "explanation": "Waterfall's rigid linear progression requires full upfront requirement definition and delays working software delivery to the end, making it inflexible to evolving requirements.",
+                "sourceRef": "Chapter 4.pdf, slide 24, 25",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s3-q09",
+                "question": "What is the technical definition of a 'Man-in-the-Middle' (MitM) cyber attack?",
+                "options": [
+                  "A distributed attack that floods a web server with dummy traffic to exhaust its bandwidth",
+                  "A malicious employee stealing backup hard drives from a server room cabinet",
+                  "An attacker secretly intercepts, relays, and potentially alters communication between two parties who believe they are communicating directly with each other",
+                  "An unauthorized person physically standing between two computer desks in an office"
+                ],
+                "correctIndex": 2,
+                "explanation": "In a MitM attack, the perpetrator intercepts and manipulates communication packets between two legitimate communicating endpoints without their knowledge.",
+                "sourceRef": "Chapter 5.pdf, slide 31, 32",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-hard-s3-q10",
+                "question": "In system theory, what is 'Equifinality'?",
+                "options": [
+                  "The total amount of electrical energy consumed by a data center during peak operating hours",
+                  "The principle that an open system can reach the same final state or goal from different initial conditions and via different pathways",
+                  "The rule that all computer systems must shut down simultaneously when a network error occurs",
+                  "The mathematical condition where a database transaction cannot be rolled back"
+                ],
+                "correctIndex": 1,
+                "explanation": "Equifinality states that open systems can achieve the same desired end goal through diverse starting points and alternative processing routes.",
+                "sourceRef": "Chapter 4.pdf, slide 12",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      },
+      "flashcards": {
+        "subjectId": "foundation-of-information-system",
+        "phases": [
+          {
+            "phaseNumber": 1,
+            "title": "Computers & Information Concepts",
+            "cards": [
+              {
+                "id": "foundation-is-fc-p1-c01",
+                "question": "What is the fundamental difference between data and information?",
+                "answer": "Data is raw, unorganized facts and figures; information is data that has been processed, organized, and structured in a meaningful context for decision-making.",
+                "category": "Data vs Information",
+                "sourceRef": "Chapter 1.pdf, slide 9, 10",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p1-c02",
+                "question": "What are the four core operations of the Information Processing Cycle?",
+                "answer": "Input (entering data), Processing (manipulating data), Output (presenting results), and Storage (saving data for future use).",
+                "category": "Processing Cycle",
+                "sourceRef": "Chapter 1.pdf, slide 7, 8",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p1-c03",
+                "question": "What are the primary functional components of a Central Processing Unit (CPU)?",
+                "answer": "The Control Unit (CU) which orchestrates operations, the Arithmetic Logic Unit (ALU) which executes calculations/logic, and Registers for high-speed temporary storage.",
+                "category": "CPU Architecture",
+                "sourceRef": "Chapter 1.pdf, slide 38, 39",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p1-c04",
+                "question": "How does RAM differ fundamentally from ROM?",
+                "answer": "RAM is volatile read-write memory that loses its contents when powered down; ROM is non-volatile read-only memory that permanently stores startup instructions (BIOS).",
+                "category": "Computer Memory",
+                "sourceRef": "Chapter 1.pdf, slide 43, 44",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p1-c05",
+                "question": "What is Cache Memory and why is it used?",
+                "answer": "Extremely fast SRAM built into or near the CPU that stores frequently accessed instructions and data to reduce latency and speed up processing.",
+                "category": "Memory Hierarchy",
+                "sourceRef": "Chapter 1.pdf, slide 46",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p1-c06",
+                "question": "What is the Motherboard in a computer system?",
+                "answer": "The main circuit board of the system unit that physically connects and enables communication between the CPU, memory, storage, expansion cards, and peripherals.",
+                "category": "Hardware Components",
+                "sourceRef": "Chapter 1.pdf, slide 36",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p1-c07",
+                "question": "What is the difference between System Software and Application Software?",
+                "answer": "System software (operating systems, device drivers) manages computer hardware and operations; application software (word processors, browsers) performs user tasks.",
+                "category": "Software Classification",
+                "sourceRef": "Chapter 1.pdf, slide 62, 63",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p1-c08",
+                "question": "What are three key characteristics of high-quality, valuable information?",
+                "answer": "Accuracy (error-free), Timeliness (available when needed), and Completeness (contains all essential facts).",
+                "category": "Information Quality",
+                "sourceRef": "Chapter 1.pdf, slide 12, 13",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p1-c09",
+                "question": "What are the four steps of the CPU Machine (Instruction) Cycle?",
+                "answer": "1. Fetch instruction from memory; 2. Decode instruction into commands; 3. Execute commands in ALU; 4. Store result in memory/registers.",
+                "category": "Machine Cycle",
+                "sourceRef": "Chapter 1.pdf, slide 39",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p1-c10",
+                "question": "What is the role of Secondary Storage devices compared to Primary Memory?",
+                "answer": "Secondary storage (HDDs, SSDs, optical discs) provides non-volatile, high-capacity, permanent data retention at lower cost and speed than primary RAM.",
+                "category": "Storage Devices",
+                "sourceRef": "Chapter 1.pdf, slide 49, 50",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 2,
+            "title": "Networks & Cloud Computing",
+            "cards": [
+              {
+                "id": "foundation-is-fc-p2-c01",
+                "question": "What are the four major geographic classifications of computer networks?",
+                "answer": "PAN (Personal Area Network), LAN (Local Area Network), MAN (Metropolitan Area Network), and WAN (Wide Area Network).",
+                "category": "Network Types",
+                "sourceRef": "Chapter 2.pdf, slide 10, 11",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p2-c02",
+                "question": "What is a Star Network Topology and what is its main advantage?",
+                "answer": "A topology where all nodes connect to a central switch/hub; its main advantage is that failure of a single device or cable does not disrupt the rest of the network.",
+                "category": "Topologies",
+                "sourceRef": "Chapter 2.pdf, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p2-c03",
+                "question": "How does an Ethernet Switch differ functionally from an Ethernet Hub?",
+                "answer": "A hub broadcasts data to all connected ports (Layer 1); a switch reads MAC addresses and forwards data frames only to the specific destination port (Layer 2).",
+                "category": "Network Hardware",
+                "sourceRef": "Chapter 2.pdf, slide 44, 45",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p2-c04",
+                "question": "What is the primary function of a Router in networking?",
+                "answer": "A Layer 3 device that uses logical IP addresses and routing algorithms to forward data packets across different interconnected networks.",
+                "category": "Routing & Internetworking",
+                "sourceRef": "Chapter 2.pdf, slide 46, 47",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p2-c05",
+                "question": "What are the 7 layers of the OSI Reference Model from Layer 1 to Layer 7?",
+                "answer": "1. Physical, 2. Data Link, 3. Network, 4. Transport, 5. Session, 6. Presentation, 7. Application.",
+                "category": "OSI Reference Model",
+                "sourceRef": "Chapter 2.pdf, slide 50, 51",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p2-c06",
+                "question": "What is the Domain Name System (DNS) and why is it necessary?",
+                "answer": "A distributed directory service that translates human-readable domain names (e.g. google.com) into numerical IP addresses needed by computers to locate servers.",
+                "category": "Network Protocols",
+                "sourceRef": "Chapter 2.pdf, slide 71, 72",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p2-c07",
+                "question": "What are the three core service models of Cloud Computing?",
+                "answer": "IaaS (Infrastructure as a Service), PaaS (Platform as a Service), and SaaS (Software as a Service).",
+                "category": "Cloud Service Models",
+                "sourceRef": "Chapter 2.pdf, slide 80, 81",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p2-c08",
+                "question": "What is the distinction between Public Cloud and Private Cloud?",
+                "answer": "Public cloud resources are owned by third-party providers and shared among multiple tenants; private clouds are dedicated exclusively to a single organization.",
+                "category": "Cloud Deployment",
+                "sourceRef": "Chapter 2.pdf, slide 86, 87",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p2-c09",
+                "question": "Why is Fiber-Optic cable preferred over copper twisted-pair for high-speed backbones?",
+                "answer": "It transmits data via pulses of light, offering vastly higher bandwidth, longer transmission distances, and complete immunity to electromagnetic interference (EMI).",
+                "category": "Transmission Media",
+                "sourceRef": "Chapter 2.pdf, slide 34, 35",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p2-c10",
+                "question": "What is the role of the Transport Layer in networking?",
+                "answer": "Providing transparent, reliable host-to-host data transfer, end-to-end flow control, packet segmentation, and error-recovery services (e.g. TCP).",
+                "category": "Transport Protocols",
+                "sourceRef": "Chapter 2.pdf, slide 55",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 3,
+            "title": "Major Areas of Information Systems",
+            "cards": [
+              {
+                "id": "foundation-is-fc-p3-c01",
+                "question": "What is a Transaction Processing System (TPS) and what is its role?",
+                "answer": "An operational-level system that captures, records, and processes routine day-to-day business events such as sales receipts, deposits, and payroll.",
+                "category": "TPS",
+                "sourceRef": "Chapter 3.pdf, slide 7, 8",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p3-c02",
+                "question": "What is a Management Information System (MIS) and who does it serve?",
+                "answer": "A system that provides middle-level tactical managers with scheduled summary reports, key metrics, and exception reports derived from TPS data.",
+                "category": "MIS",
+                "sourceRef": "Chapter 3.pdf, slide 15, 16",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p3-c03",
+                "question": "What is a Decision Support System (DSS) and what type of decisions does it aid?",
+                "answer": "An interactive, model-driven system that helps managers analyze semistructured and unstructured problems using quantitative models and What-If analysis.",
+                "category": "DSS",
+                "sourceRef": "Chapter 3.pdf, slide 23, 24",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p3-c04",
+                "question": "What is an Executive Information System (EIS / ESS)?",
+                "answer": "A high-level system tailored for senior executives that integrates internal summaries with external intelligence via customizable graphical dashboards and drill-down tools.",
+                "category": "EIS",
+                "sourceRef": "Chapter 3.pdf, slide 32, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p3-c05",
+                "question": "What is an Enterprise Resource Planning (ERP) system?",
+                "answer": "A unified, integrated enterprise-wide software suite that connects and automates cross-functional business processes across finance, HR, manufacturing, and supply chain.",
+                "category": "ERP Systems",
+                "sourceRef": "Chapter 3.pdf, slide 42, 43",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p3-c06",
+                "question": "What is Customer Relationship Management (CRM) software?",
+                "answer": "An enterprise application that manages and coordinates all customer interactions, sales automation, marketing campaigns, and customer support history.",
+                "category": "CRM Systems",
+                "sourceRef": "Chapter 3.pdf, slide 52, 53",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p3-c07",
+                "question": "What is Supply Chain Management (SCM) and what is its goal?",
+                "answer": "An integrated system that manages the end-to-end flow of materials, data, and finances across suppliers, manufacturers, distributors, and customers to reduce costs and delays.",
+                "category": "SCM Systems",
+                "sourceRef": "Chapter 3.pdf, slide 48, 49",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p3-c08",
+                "question": "What are the two essential components of an AI Expert System?",
+                "answer": "The Knowledge Base (containing facts, heuristics, and domain rules) and the Inference Engine (the reasoning mechanism that applies rules to draw conclusions).",
+                "category": "Expert Systems",
+                "sourceRef": "Chapter 3.pdf, slide 64, 65",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p3-c09",
+                "question": "What is a Knowledge Management System (KMS)?",
+                "answer": "A system that captures, organizes, stores, and shares both explicit and tacit organizational expertise, best practices, and insights among employees.",
+                "category": "Knowledge Management",
+                "sourceRef": "Chapter 3.pdf, slide 60, 61",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p3-c10",
+                "question": "How do structured decisions differ from unstructured decisions?",
+                "answer": "Structured decisions are routine, repetitive, and follow definite procedures (operational level); unstructured decisions are novel, complex, and require judgment/intuition (strategic level).",
+                "category": "Decision Levels",
+                "sourceRef": "Chapter 3.pdf, slide 5, 6",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 4,
+            "title": "System Concepts & Development (SDLC)",
+            "cards": [
+              {
+                "id": "foundation-is-fc-p4-c01",
+                "question": "What is the technical definition of a System?",
+                "answer": "An organized collection of interrelated components working together toward a common goal by accepting inputs and producing outputs in an organized transformation process.",
+                "category": "System Theory",
+                "sourceRef": "Chapter 4.pdf, slide 4, 5",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p4-c02",
+                "question": "What are the five core components of any generic system?",
+                "answer": "Input (raw resources), Processing (transformation), Output (results), Feedback (performance metrics), and Control (corrective adjustments).",
+                "category": "System Components",
+                "sourceRef": "Chapter 4.pdf, slide 6, 7",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p4-c03",
+                "question": "What is the difference between an Open System and a Closed System?",
+                "answer": "An open system actively interacts and exchanges information/energy with its external environment; a closed system is self-contained and isolated from external influences.",
+                "category": "System Classifications",
+                "sourceRef": "Chapter 4.pdf, slide 9, 10",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p4-c04",
+                "question": "What is a System Boundary and Interface?",
+                "answer": "The boundary delineates the system from its environment; the interface is the point of contact and communication across the boundary between systems.",
+                "category": "System Boundaries",
+                "sourceRef": "Chapter 4.pdf, slide 8",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p4-c05",
+                "question": "What is the Systems Development Life Cycle (SDLC)?",
+                "answer": "A phased, systematic framework used by organizations to plan, analyze, design, build, test, deploy, and maintain information systems.",
+                "category": "SDLC Overview",
+                "sourceRef": "Chapter 4.pdf, slide 14, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p4-c06",
+                "question": "What is the primary objective of the Systems Planning phase and Feasibility Study?",
+                "answer": "Identifying organizational opportunities, defining project scope, and evaluating technical, economic, operational, and legal feasibility before committing resources.",
+                "category": "Planning & Feasibility",
+                "sourceRef": "Chapter 4.pdf, slide 16, 17",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p4-c07",
+                "question": "What occurs during the Systems Analysis phase of the SDLC?",
+                "answer": "Systems analysts study the current system in depth and define detailed end-user business requirements for the new proposed system.",
+                "category": "Systems Analysis",
+                "sourceRef": "Chapter 4.pdf, slide 18, 19",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p4-c08",
+                "question": "What is the focus of the Systems Design phase?",
+                "answer": "Specifying how the system will meet requirements, including database schemas, user interfaces, process workflows, network architecture, and security controls.",
+                "category": "Systems Design",
+                "sourceRef": "Chapter 4.pdf, slide 20, 21",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p4-c09",
+                "question": "What are four common system conversion (cutover) strategies in Implementation?",
+                "answer": "1. Direct (Plunge) cutover; 2. Parallel conversion; 3. Pilot conversion; 4. Phased (gradual) conversion.",
+                "category": "System Conversion",
+                "sourceRef": "Chapter 4.pdf, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p4-c10",
+                "question": "What takes place during Systems Maintenance and Review?",
+                "answer": "Auditing operational performance, fixing software bugs, updating features for evolving business needs, and performing post-implementation evaluations.",
+                "category": "Maintenance",
+                "sourceRef": "Chapter 4.pdf, slide 24",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 5,
+            "title": "Ethics, Security & Intellectual Property",
+            "cards": [
+              {
+                "id": "foundation-is-fc-p5-c01",
+                "question": "What is Computer Ethics?",
+                "answer": "A set of moral principles and ethical codes that govern the responsible behavior, design, and use of computer systems, data, and information technologies.",
+                "category": "Computer Ethics",
+                "sourceRef": "Chapter 5.pdf, slide 10, 17",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p5-c02",
+                "question": "How does a Computer Virus differ from a Computer Worm?",
+                "answer": "A virus must attach itself to an executable host file and requires user execution; a worm is a standalone program that self-replicates and spreads across networks autonomously.",
+                "category": "Malware Types",
+                "sourceRef": "Chapter 5.pdf, slide 23, 25",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p5-c03",
+                "question": "What is a Trojan Horse in information security?",
+                "answer": "Malicious code disguised as legitimate, harmless software that tricks the user into installing and running it, allowing backdoor access or attacks on the host.",
+                "category": "Malware Types",
+                "sourceRef": "Chapter 5.pdf, slide 27, 28",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p5-c04",
+                "question": "What is a Logic Bomb in cybersecurity?",
+                "answer": "Malicious code embedded in an application that remains dormant until triggered by a specific condition, date, or event, upon which it executes its destructive payload.",
+                "category": "Malware Types",
+                "sourceRef": "Chapter 5.pdf, slide 29",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p5-c05",
+                "question": "What is a Firewall and how does it protect a network?",
+                "answer": "A hardware device or software software that monitors and controls incoming and outgoing network traffic based on predefined security rules and access control lists.",
+                "category": "Security Controls",
+                "sourceRef": "Chapter 5.pdf, slide 36",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p5-c06",
+                "question": "What is the difference between Symmetric and Asymmetric Encryption?",
+                "answer": "Symmetric encryption uses a single shared secret key for encryption and decryption; asymmetric encryption uses a mathematically linked public key and private key pair.",
+                "category": "Cryptography",
+                "sourceRef": "Chapter 5.pdf, slide 37, 38",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p5-c07",
+                "question": "What does Copyright protect in intellectual property?",
+                "answer": "Exclusive legal rights granted to authors and creators of original literary, artistic, musical, and software expressions, prohibiting unauthorized copying and distribution.",
+                "category": "Intellectual Property",
+                "sourceRef": "Chapter 5.pdf, slide 54, 57",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p5-c08",
+                "question": "What is a Patent and what does it protect?",
+                "answer": "A government-granted exclusive right that protects novel, non-obvious, and useful functional inventions, technical processes, and mechanical designs for a limited period (~20 years).",
+                "category": "Intellectual Property",
+                "sourceRef": "Chapter 5.pdf, slide 52, 53",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p5-c09",
+                "question": "What is a Trade Secret and what is its primary advantage?",
+                "answer": "Confidential proprietary business information (formulas, algorithms, processes) that provides a competitive edge; its advantage is that protection lasts indefinitely without public disclosure.",
+                "category": "Intellectual Property",
+                "sourceRef": "Chapter 5.pdf, slide 50, 51",
+                "confidence": "high"
+              },
+              {
+                "id": "foundation-is-fc-p5-c10",
+                "question": "What is the Digital Divide and what are its key dimensions?",
+                "answer": "The social and economic gap in access to and use of modern ICT, encompassing disparities in physical equipment, connection quality, autonomy of use, digital skills, and social support.",
+                "category": "Digital Divide",
+                "sourceRef": "Chapter 5.pdf, slide 71, 77",
                 "confidence": "high"
               }
             ]

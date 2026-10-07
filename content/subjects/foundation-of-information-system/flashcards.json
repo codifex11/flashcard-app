@@ -1,0 +1,435 @@
+{
+  "subjectId": "foundation-of-information-system",
+  "phases": [
+    {
+      "phaseNumber": 1,
+      "title": "Computers & Information Concepts",
+      "cards": [
+        {
+          "id": "foundation-is-fc-p1-c01",
+          "question": "What is the fundamental difference between data and information?",
+          "answer": "Data is raw, unorganized facts and figures; information is data that has been processed, organized, and structured in a meaningful context for decision-making.",
+          "category": "Data vs Information",
+          "sourceRef": "Chapter 1.pdf, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p1-c02",
+          "question": "What are the four core operations of the Information Processing Cycle?",
+          "answer": "Input (entering data), Processing (manipulating data), Output (presenting results), and Storage (saving data for future use).",
+          "category": "Processing Cycle",
+          "sourceRef": "Chapter 1.pdf, slide 7, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p1-c03",
+          "question": "What are the primary functional components of a Central Processing Unit (CPU)?",
+          "answer": "The Control Unit (CU) which orchestrates operations, the Arithmetic Logic Unit (ALU) which executes calculations/logic, and Registers for high-speed temporary storage.",
+          "category": "CPU Architecture",
+          "sourceRef": "Chapter 1.pdf, slide 38, 39",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p1-c04",
+          "question": "How does RAM differ fundamentally from ROM?",
+          "answer": "RAM is volatile read-write memory that loses its contents when powered down; ROM is non-volatile read-only memory that permanently stores startup instructions (BIOS).",
+          "category": "Computer Memory",
+          "sourceRef": "Chapter 1.pdf, slide 43, 44",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p1-c05",
+          "question": "What is Cache Memory and why is it used?",
+          "answer": "Extremely fast SRAM built into or near the CPU that stores frequently accessed instructions and data to reduce latency and speed up processing.",
+          "category": "Memory Hierarchy",
+          "sourceRef": "Chapter 1.pdf, slide 46",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p1-c06",
+          "question": "What is the Motherboard in a computer system?",
+          "answer": "The main circuit board of the system unit that physically connects and enables communication between the CPU, memory, storage, expansion cards, and peripherals.",
+          "category": "Hardware Components",
+          "sourceRef": "Chapter 1.pdf, slide 36",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p1-c07",
+          "question": "What is the difference between System Software and Application Software?",
+          "answer": "System software (operating systems, device drivers) manages computer hardware and operations; application software (word processors, browsers) performs user tasks.",
+          "category": "Software Classification",
+          "sourceRef": "Chapter 1.pdf, slide 62, 63",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p1-c08",
+          "question": "What are three key characteristics of high-quality, valuable information?",
+          "answer": "Accuracy (error-free), Timeliness (available when needed), and Completeness (contains all essential facts).",
+          "category": "Information Quality",
+          "sourceRef": "Chapter 1.pdf, slide 12, 13",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p1-c09",
+          "question": "What are the four steps of the CPU Machine (Instruction) Cycle?",
+          "answer": "1. Fetch instruction from memory; 2. Decode instruction into commands; 3. Execute commands in ALU; 4. Store result in memory/registers.",
+          "category": "Machine Cycle",
+          "sourceRef": "Chapter 1.pdf, slide 39",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p1-c10",
+          "question": "What is the role of Secondary Storage devices compared to Primary Memory?",
+          "answer": "Secondary storage (HDDs, SSDs, optical discs) provides non-volatile, high-capacity, permanent data retention at lower cost and speed than primary RAM.",
+          "category": "Storage Devices",
+          "sourceRef": "Chapter 1.pdf, slide 49, 50",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 2,
+      "title": "Networks & Cloud Computing",
+      "cards": [
+        {
+          "id": "foundation-is-fc-p2-c01",
+          "question": "What are the four major geographic classifications of computer networks?",
+          "answer": "PAN (Personal Area Network), LAN (Local Area Network), MAN (Metropolitan Area Network), and WAN (Wide Area Network).",
+          "category": "Network Types",
+          "sourceRef": "Chapter 2.pdf, slide 10, 11",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p2-c02",
+          "question": "What is a Star Network Topology and what is its main advantage?",
+          "answer": "A topology where all nodes connect to a central switch/hub; its main advantage is that failure of a single device or cable does not disrupt the rest of the network.",
+          "category": "Topologies",
+          "sourceRef": "Chapter 2.pdf, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p2-c03",
+          "question": "How does an Ethernet Switch differ functionally from an Ethernet Hub?",
+          "answer": "A hub broadcasts data to all connected ports (Layer 1); a switch reads MAC addresses and forwards data frames only to the specific destination port (Layer 2).",
+          "category": "Network Hardware",
+          "sourceRef": "Chapter 2.pdf, slide 44, 45",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p2-c04",
+          "question": "What is the primary function of a Router in networking?",
+          "answer": "A Layer 3 device that uses logical IP addresses and routing algorithms to forward data packets across different interconnected networks.",
+          "category": "Routing & Internetworking",
+          "sourceRef": "Chapter 2.pdf, slide 46, 47",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p2-c05",
+          "question": "What are the 7 layers of the OSI Reference Model from Layer 1 to Layer 7?",
+          "answer": "1. Physical, 2. Data Link, 3. Network, 4. Transport, 5. Session, 6. Presentation, 7. Application.",
+          "category": "OSI Reference Model",
+          "sourceRef": "Chapter 2.pdf, slide 50, 51",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p2-c06",
+          "question": "What is the Domain Name System (DNS) and why is it necessary?",
+          "answer": "A distributed directory service that translates human-readable domain names (e.g. google.com) into numerical IP addresses needed by computers to locate servers.",
+          "category": "Network Protocols",
+          "sourceRef": "Chapter 2.pdf, slide 71, 72",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p2-c07",
+          "question": "What are the three core service models of Cloud Computing?",
+          "answer": "IaaS (Infrastructure as a Service), PaaS (Platform as a Service), and SaaS (Software as a Service).",
+          "category": "Cloud Service Models",
+          "sourceRef": "Chapter 2.pdf, slide 80, 81",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p2-c08",
+          "question": "What is the distinction between Public Cloud and Private Cloud?",
+          "answer": "Public cloud resources are owned by third-party providers and shared among multiple tenants; private clouds are dedicated exclusively to a single organization.",
+          "category": "Cloud Deployment",
+          "sourceRef": "Chapter 2.pdf, slide 86, 87",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p2-c09",
+          "question": "Why is Fiber-Optic cable preferred over copper twisted-pair for high-speed backbones?",
+          "answer": "It transmits data via pulses of light, offering vastly higher bandwidth, longer transmission distances, and complete immunity to electromagnetic interference (EMI).",
+          "category": "Transmission Media",
+          "sourceRef": "Chapter 2.pdf, slide 34, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p2-c10",
+          "question": "What is the role of the Transport Layer in networking?",
+          "answer": "Providing transparent, reliable host-to-host data transfer, end-to-end flow control, packet segmentation, and error-recovery services (e.g. TCP).",
+          "category": "Transport Protocols",
+          "sourceRef": "Chapter 2.pdf, slide 55",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 3,
+      "title": "Major Areas of Information Systems",
+      "cards": [
+        {
+          "id": "foundation-is-fc-p3-c01",
+          "question": "What is a Transaction Processing System (TPS) and what is its role?",
+          "answer": "An operational-level system that captures, records, and processes routine day-to-day business events such as sales receipts, deposits, and payroll.",
+          "category": "TPS",
+          "sourceRef": "Chapter 3.pdf, slide 7, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p3-c02",
+          "question": "What is a Management Information System (MIS) and who does it serve?",
+          "answer": "A system that provides middle-level tactical managers with scheduled summary reports, key metrics, and exception reports derived from TPS data.",
+          "category": "MIS",
+          "sourceRef": "Chapter 3.pdf, slide 15, 16",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p3-c03",
+          "question": "What is a Decision Support System (DSS) and what type of decisions does it aid?",
+          "answer": "An interactive, model-driven system that helps managers analyze semistructured and unstructured problems using quantitative models and What-If analysis.",
+          "category": "DSS",
+          "sourceRef": "Chapter 3.pdf, slide 23, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p3-c04",
+          "question": "What is an Executive Information System (EIS / ESS)?",
+          "answer": "A high-level system tailored for senior executives that integrates internal summaries with external intelligence via customizable graphical dashboards and drill-down tools.",
+          "category": "EIS",
+          "sourceRef": "Chapter 3.pdf, slide 32, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p3-c05",
+          "question": "What is an Enterprise Resource Planning (ERP) system?",
+          "answer": "A unified, integrated enterprise-wide software suite that connects and automates cross-functional business processes across finance, HR, manufacturing, and supply chain.",
+          "category": "ERP Systems",
+          "sourceRef": "Chapter 3.pdf, slide 42, 43",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p3-c06",
+          "question": "What is Customer Relationship Management (CRM) software?",
+          "answer": "An enterprise application that manages and coordinates all customer interactions, sales automation, marketing campaigns, and customer support history.",
+          "category": "CRM Systems",
+          "sourceRef": "Chapter 3.pdf, slide 52, 53",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p3-c07",
+          "question": "What is Supply Chain Management (SCM) and what is its goal?",
+          "answer": "An integrated system that manages the end-to-end flow of materials, data, and finances across suppliers, manufacturers, distributors, and customers to reduce costs and delays.",
+          "category": "SCM Systems",
+          "sourceRef": "Chapter 3.pdf, slide 48, 49",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p3-c08",
+          "question": "What are the two essential components of an AI Expert System?",
+          "answer": "The Knowledge Base (containing facts, heuristics, and domain rules) and the Inference Engine (the reasoning mechanism that applies rules to draw conclusions).",
+          "category": "Expert Systems",
+          "sourceRef": "Chapter 3.pdf, slide 64, 65",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p3-c09",
+          "question": "What is a Knowledge Management System (KMS)?",
+          "answer": "A system that captures, organizes, stores, and shares both explicit and tacit organizational expertise, best practices, and insights among employees.",
+          "category": "Knowledge Management",
+          "sourceRef": "Chapter 3.pdf, slide 60, 61",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p3-c10",
+          "question": "How do structured decisions differ from unstructured decisions?",
+          "answer": "Structured decisions are routine, repetitive, and follow definite procedures (operational level); unstructured decisions are novel, complex, and require judgment/intuition (strategic level).",
+          "category": "Decision Levels",
+          "sourceRef": "Chapter 3.pdf, slide 5, 6",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 4,
+      "title": "System Concepts & Development (SDLC)",
+      "cards": [
+        {
+          "id": "foundation-is-fc-p4-c01",
+          "question": "What is the technical definition of a System?",
+          "answer": "An organized collection of interrelated components working together toward a common goal by accepting inputs and producing outputs in an organized transformation process.",
+          "category": "System Theory",
+          "sourceRef": "Chapter 4.pdf, slide 4, 5",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p4-c02",
+          "question": "What are the five core components of any generic system?",
+          "answer": "Input (raw resources), Processing (transformation), Output (results), Feedback (performance metrics), and Control (corrective adjustments).",
+          "category": "System Components",
+          "sourceRef": "Chapter 4.pdf, slide 6, 7",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p4-c03",
+          "question": "What is the difference between an Open System and a Closed System?",
+          "answer": "An open system actively interacts and exchanges information/energy with its external environment; a closed system is self-contained and isolated from external influences.",
+          "category": "System Classifications",
+          "sourceRef": "Chapter 4.pdf, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p4-c04",
+          "question": "What is a System Boundary and Interface?",
+          "answer": "The boundary delineates the system from its environment; the interface is the point of contact and communication across the boundary between systems.",
+          "category": "System Boundaries",
+          "sourceRef": "Chapter 4.pdf, slide 8",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p4-c05",
+          "question": "What is the Systems Development Life Cycle (SDLC)?",
+          "answer": "A phased, systematic framework used by organizations to plan, analyze, design, build, test, deploy, and maintain information systems.",
+          "category": "SDLC Overview",
+          "sourceRef": "Chapter 4.pdf, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p4-c06",
+          "question": "What is the primary objective of the Systems Planning phase and Feasibility Study?",
+          "answer": "Identifying organizational opportunities, defining project scope, and evaluating technical, economic, operational, and legal feasibility before committing resources.",
+          "category": "Planning & Feasibility",
+          "sourceRef": "Chapter 4.pdf, slide 16, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p4-c07",
+          "question": "What occurs during the Systems Analysis phase of the SDLC?",
+          "answer": "Systems analysts study the current system in depth and define detailed end-user business requirements for the new proposed system.",
+          "category": "Systems Analysis",
+          "sourceRef": "Chapter 4.pdf, slide 18, 19",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p4-c08",
+          "question": "What is the focus of the Systems Design phase?",
+          "answer": "Specifying how the system will meet requirements, including database schemas, user interfaces, process workflows, network architecture, and security controls.",
+          "category": "Systems Design",
+          "sourceRef": "Chapter 4.pdf, slide 20, 21",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p4-c09",
+          "question": "What are four common system conversion (cutover) strategies in Implementation?",
+          "answer": "1. Direct (Plunge) cutover; 2. Parallel conversion; 3. Pilot conversion; 4. Phased (gradual) conversion.",
+          "category": "System Conversion",
+          "sourceRef": "Chapter 4.pdf, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p4-c10",
+          "question": "What takes place during Systems Maintenance and Review?",
+          "answer": "Auditing operational performance, fixing software bugs, updating features for evolving business needs, and performing post-implementation evaluations.",
+          "category": "Maintenance",
+          "sourceRef": "Chapter 4.pdf, slide 24",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 5,
+      "title": "Ethics, Security & Intellectual Property",
+      "cards": [
+        {
+          "id": "foundation-is-fc-p5-c01",
+          "question": "What is Computer Ethics?",
+          "answer": "A set of moral principles and ethical codes that govern the responsible behavior, design, and use of computer systems, data, and information technologies.",
+          "category": "Computer Ethics",
+          "sourceRef": "Chapter 5.pdf, slide 10, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p5-c02",
+          "question": "How does a Computer Virus differ from a Computer Worm?",
+          "answer": "A virus must attach itself to an executable host file and requires user execution; a worm is a standalone program that self-replicates and spreads across networks autonomously.",
+          "category": "Malware Types",
+          "sourceRef": "Chapter 5.pdf, slide 23, 25",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p5-c03",
+          "question": "What is a Trojan Horse in information security?",
+          "answer": "Malicious code disguised as legitimate, harmless software that tricks the user into installing and running it, allowing backdoor access or attacks on the host.",
+          "category": "Malware Types",
+          "sourceRef": "Chapter 5.pdf, slide 27, 28",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p5-c04",
+          "question": "What is a Logic Bomb in cybersecurity?",
+          "answer": "Malicious code embedded in an application that remains dormant until triggered by a specific condition, date, or event, upon which it executes its destructive payload.",
+          "category": "Malware Types",
+          "sourceRef": "Chapter 5.pdf, slide 29",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p5-c05",
+          "question": "What is a Firewall and how does it protect a network?",
+          "answer": "A hardware device or software software that monitors and controls incoming and outgoing network traffic based on predefined security rules and access control lists.",
+          "category": "Security Controls",
+          "sourceRef": "Chapter 5.pdf, slide 36",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p5-c06",
+          "question": "What is the difference between Symmetric and Asymmetric Encryption?",
+          "answer": "Symmetric encryption uses a single shared secret key for encryption and decryption; asymmetric encryption uses a mathematically linked public key and private key pair.",
+          "category": "Cryptography",
+          "sourceRef": "Chapter 5.pdf, slide 37, 38",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p5-c07",
+          "question": "What does Copyright protect in intellectual property?",
+          "answer": "Exclusive legal rights granted to authors and creators of original literary, artistic, musical, and software expressions, prohibiting unauthorized copying and distribution.",
+          "category": "Intellectual Property",
+          "sourceRef": "Chapter 5.pdf, slide 54, 57",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p5-c08",
+          "question": "What is a Patent and what does it protect?",
+          "answer": "A government-granted exclusive right that protects novel, non-obvious, and useful functional inventions, technical processes, and mechanical designs for a limited period (~20 years).",
+          "category": "Intellectual Property",
+          "sourceRef": "Chapter 5.pdf, slide 52, 53",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p5-c09",
+          "question": "What is a Trade Secret and what is its primary advantage?",
+          "answer": "Confidential proprietary business information (formulas, algorithms, processes) that provides a competitive edge; its advantage is that protection lasts indefinitely without public disclosure.",
+          "category": "Intellectual Property",
+          "sourceRef": "Chapter 5.pdf, slide 50, 51",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-fc-p5-c10",
+          "question": "What is the Digital Divide and what are its key dimensions?",
+          "answer": "The social and economic gap in access to and use of modern ICT, encompassing disparities in physical equipment, connection quality, autonomy of use, digital skills, and social support.",
+          "category": "Digital Divide",
+          "sourceRef": "Chapter 5.pdf, slide 71, 77",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

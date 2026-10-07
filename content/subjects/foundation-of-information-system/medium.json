@@ -1,0 +1,440 @@
+{
+  "level": "medium",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "foundation-is-medium-s1-q01",
+          "question": "Which of the following describes the functional difference between an Ethernet Switch and an Ethernet Hub?",
+          "options": [
+            "A switch forwards data frames specifically to the destination port using MAC addresses, whereas a hub broadcasts data out to all ports",
+            "A hub is an active Layer 3 device while a switch is a passive physical cable connector",
+            "A hub routes packets between different IP subnets while a switch only operates on fiber optic cables",
+            "A switch amplifies analog radio frequencies while a hub performs symmetric data encryption"
+          ],
+          "correctIndex": 0,
+          "explanation": "Hubs operate at Layer 1 and broadcast incoming signals to all ports, creating collision domains. Switches operate at Layer 2 and intelligently forward frames only to the target device.",
+          "sourceRef": "Chapter 2.pdf, slide 44, 45",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s1-q02",
+          "question": "In the computer memory hierarchy, which memory type provides the fastest access speed to the CPU?",
+          "options": [
+            "Main Memory (Dynamic RAM)",
+            "Optical Disc (Blu-ray/DVD)",
+            "CPU Registers and Cache Memory (L1/L2/L3)",
+            "Solid State Drive (SSD)"
+          ],
+          "correctIndex": 2,
+          "explanation": "Internal CPU registers and on-chip SRAM cache memory provide the highest speed access to data and instructions, faster than main RAM or secondary storage.",
+          "sourceRef": "Chapter 1.pdf, slide 41, 46",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s1-q03",
+          "question": "Which cloud service model would be most appropriate for a software development team needing managed runtime environments, operating systems, and database engines without managing underlying physical servers?",
+          "options": [
+            "SaaS (Software as a Service)",
+            "IaaS (Infrastructure as a Service)",
+            "DaaS (Desktop as a Service)",
+            "PaaS (Platform as a Service)"
+          ],
+          "correctIndex": 3,
+          "explanation": "PaaS provides developers with computing platforms, web servers, databases, and runtime tools to build applications without provisioning physical hardware or OS maintenance.",
+          "sourceRef": "Chapter 2.pdf, slide 83, 84",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s1-q04",
+          "question": "In the OSI model, which layer is responsible for end-to-end communication, flow control, segmentation, and error-recovery (e.g. TCP)?",
+          "options": [
+            "Network Layer (Layer 3)",
+            "Data Link Layer (Layer 2)",
+            "Transport Layer (Layer 4)",
+            "Session Layer (Layer 5)"
+          ],
+          "correctIndex": 2,
+          "explanation": "The Transport Layer (Layer 4) handles reliable host-to-host data delivery, flow control, reassembly of segments, and error recovery.",
+          "sourceRef": "Chapter 2.pdf, slide 55",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s1-q05",
+          "question": "What is the key advantage of a Mesh network topology over Bus and Ring topologies?",
+          "options": [
+            "It operates exclusively over free satellite radio frequencies without cables",
+            "High fault tolerance and redundancy because multiple alternative communication paths exist between nodes",
+            "It requires the lowest amount of cabling and has the simplest installation process",
+            "It eliminates the need for any network interface cards or IP configuration"
+          ],
+          "correctIndex": 1,
+          "explanation": "Mesh topology features redundant physical links between nodes, allowing communication to continue even if one or more connections fail.",
+          "sourceRef": "Chapter 2.pdf, slide 26, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s1-q06",
+          "question": "Which characteristic of valuable information ensures that the information is free from errors and can be relied upon for decision-making?",
+          "options": [
+            "Accessibility",
+            "Completeness",
+            "Timeliness",
+            "Accuracy"
+          ],
+          "correctIndex": 3,
+          "explanation": "Accuracy means the information is correct and free of errors. Inaccurate information can lead to flawed and costly organizational decisions.",
+          "sourceRef": "Chapter 1.pdf, slide 12, 13",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s1-q07",
+          "question": "What distinguishes System Software from Application Software?",
+          "options": [
+            "System software manages and controls computer hardware and background operations (like operating systems), while application software performs specific user tasks",
+            "System software is only written by end users whereas application software is built into hardware chips",
+            "System software is always open-source whereas application software is always proprietary",
+            "System software cannot run on personal computers while application software runs only on supercomputers"
+          ],
+          "correctIndex": 0,
+          "explanation": "System software (OS, device drivers, utilities) serves as the base platform managing computer hardware, enabling application software (spreadsheets, browsers) to execute user tasks.",
+          "sourceRef": "Chapter 1.pdf, slide 62, 63",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s1-q08",
+          "question": "Which cloud deployment model is operated solely for a single organization and hosted either internally or by a third party?",
+          "options": [
+            "Public Cloud",
+            "Private Cloud",
+            "Hybrid Cloud",
+            "Community Cloud"
+          ],
+          "correctIndex": 1,
+          "explanation": "A Private Cloud is dedicated exclusively to one enterprise, offering greater control, customization, and security for sensitive organizational data.",
+          "sourceRef": "Chapter 2.pdf, slide 87, 88",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s1-q09",
+          "question": "What is the primary role of the Domain Name System (DNS) in computer networks?",
+          "options": [
+            "Formatting HTML text documents with cascading style sheets",
+            "Encrypting email communications between senders and mail servers",
+            "Translating human-readable domain names (like www.google.com) into numerical IP addresses",
+            "Assigning physical MAC addresses to network interface cards during manufacturing"
+          ],
+          "correctIndex": 2,
+          "explanation": "DNS acts like the internet's phonebook, mapping human-friendly alphanumeric domain names to machine-readable IP addresses.",
+          "sourceRef": "Chapter 2.pdf, slide 71, 72",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s1-q10",
+          "question": "In unguided (wireless) transmission, which medium is line-of-sight and widely used for long-distance terrestrial telecommunications and satellite links?",
+          "options": [
+            "Microwave transmission",
+            "Twisted pair cable",
+            "Infrared transmission",
+            "Coaxial cable"
+          ],
+          "correctIndex": 0,
+          "explanation": "Microwave signals travel in straight line-of-sight paths and are widely employed in high-capacity terrestrial relay towers and satellite communications.",
+          "sourceRef": "Chapter 2.pdf, slide 38, 39",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "foundation-is-medium-s2-q01",
+          "question": "Which type of decision is most effectively supported by a Decision Support System (DSS)?",
+          "options": [
+            "Highly repetitive, fully programmed structured transactions like calculating overtime pay",
+            "Low-level clock-in timestamp recording on biometric attendance machines",
+            "Semistructured and unstructured decisions where human judgment combines with quantitative models",
+            "Routine barcode lookup at supermarket inventory checkouts"
+          ],
+          "correctIndex": 2,
+          "explanation": "DSS is specifically designed to help decision-makers analyze semistructured and unstructured problems using analytical models and interactive data exploration.",
+          "sourceRef": "Chapter 3.pdf, slide 23, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s2-q02",
+          "question": "How do Management Information Systems (MIS) typically obtain their primary operational data?",
+          "options": [
+            "Through manual keyboard data entry performed directly by board directors",
+            "By summarizing, aggregating, and filtering raw transaction data captured by Transaction Processing Systems (TPS)",
+            "By querying external web crawlers on the public internet",
+            "By inspecting CPU register contents using hardware logic probes"
+          ],
+          "correctIndex": 1,
+          "explanation": "MIS extracts, aggregates, and summarizes underlying data produced by TPS to generate structured operational and management reports.",
+          "sourceRef": "Chapter 3.pdf, slide 17, 18",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s2-q03",
+          "question": "What is a 'What-If Analysis' capability commonly provided by Decision Support Systems?",
+          "options": [
+            "Evaluating how changes in key input variables or assumptions impact final outcomes and profitability",
+            "Preventing unauthorized users from viewing public website homepages",
+            "Detecting physical fiber optic cable breaks using optical time-domain reflectometers",
+            "Automatically generating payroll checks whenever an employee logs into the network"
+          ],
+          "correctIndex": 0,
+          "explanation": "What-If analysis allows managers to change certain assumptions or numbers (e.g. price change, supply cost) to observe the resulting impact on performance.",
+          "sourceRef": "Chapter 3.pdf, slide 26, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s2-q04",
+          "question": "In an Expert System, what is the role of the 'Inference Engine'?",
+          "options": [
+            "Storing the raw historical records of past database backups",
+            "Formatting high-level database SQL queries into assembly code",
+            "Applying logical rules and reasoning strategies to the knowledge base to derive recommendations or answers",
+            "Encrypting network packets before transmission over the internet"
+          ],
+          "correctIndex": 2,
+          "explanation": "The Inference Engine is the brain of an expert system; it processes facts and rules stored in the knowledge base to simulate human expert reasoning.",
+          "sourceRef": "Chapter 3.pdf, slide 66, 67",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s2-q05",
+          "question": "Which business benefit is most directly achieved by implementing a Customer Relationship Management (CRM) system?",
+          "options": [
+            "Elimination of physical computer RAM requirements in branch offices",
+            "Direct physical manufacturing of silicon semiconductor chips",
+            "Automated compilation of C++ device driver source code",
+            "Improved customer retention, personalized marketing, and unified tracking of customer service history"
+          ],
+          "correctIndex": 3,
+          "explanation": "CRM systems help organizations capture 360-degree customer views, streamline customer service, increase customer loyalty, and enhance sales conversions.",
+          "sourceRef": "Chapter 3.pdf, slide 54, 55",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s2-q06",
+          "question": "What is the 'Bullwhip Effect' in supply chain management that SCM systems help mitigate?",
+          "options": [
+            "The distortion and amplification of demand fluctuations as information moves up the supply chain from retailer to raw supplier",
+            "A hardware malfunction where fiber optic laser light overheats network switches",
+            "A cyber attack where hackers delete customer transaction logs simultaneously",
+            "The delay that occurs when converting analog signals into digital pulses"
+          ],
+          "correctIndex": 0,
+          "explanation": "The bullwhip effect occurs when small changes in retail consumer demand cause increasingly large swings in inventory orders up the supply chain.",
+          "sourceRef": "Chapter 3.pdf, slide 50, 51",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s2-q07",
+          "question": "What is the primary distinguishing feature of a Knowledge Management System (KMS)?",
+          "options": [
+            "Formatting raw hard disk sectors during initial operating system installation",
+            "Calculating monthly employee income tax deductions for payroll",
+            "Scanning barcode labels on supermarket shipping cartons",
+            "Capturing, organizing, storing, and sharing both explicit and tacit organizational expertise and intellectual assets"
+          ],
+          "correctIndex": 3,
+          "explanation": "KMS facilitates the creation, storage, and sharing of organizational knowledge, best practices, and expert insights across employees.",
+          "sourceRef": "Chapter 3.pdf, slide 60, 61",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s2-q08",
+          "question": "In executive dashboards (EIS), what does the 'Drill-Down' feature allow a senior manager to do?",
+          "options": [
+            "Force the operating system to shut down all running background processes",
+            "Bypass all network firewalls without requiring authentication credentials",
+            "Physically bore holes into computer motherboards to install cooling fans",
+            "Navigate from high-level summary figures down to progressively more detailed underlying operational data"
+          ],
+          "correctIndex": 3,
+          "explanation": "Drill-down capabilities allow executives to click on a summary metric (e.g. total monthly sales drop) to inspect regional, store-level, or product-level details.",
+          "sourceRef": "Chapter 3.pdf, slide 35, 36",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s2-q09",
+          "question": "What is a major challenge organizations frequently face during the implementation of an Enterprise Resource Planning (ERP) system?",
+          "options": [
+            "High cost, complex business process reengineering (BPR), and organizational resistance to change",
+            "The complete absence of database systems in modern commercial computing",
+            "Lack of available Ethernet cables in retail technology stores",
+            "Inability of modern CPUs to perform basic addition and subtraction"
+          ],
+          "correctIndex": 0,
+          "explanation": "ERP implementations are large, costly projects that demand substantial business process change, employee retraining, and cultural adaptation.",
+          "sourceRef": "Chapter 3.pdf, slide 45, 46",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s2-q10",
+          "question": "How do structured decisions differ from unstructured decisions in managerial hierarchy?",
+          "options": [
+            "Structured decisions require millions of dollars while unstructured decisions cost nothing",
+            "Structured decisions follow standard, repetitive established procedures, while unstructured decisions involve novel, non-routine situations requiring intuition",
+            "Structured decisions only occur in hospitals while unstructured decisions only occur in banks",
+            "Structured decisions are made exclusively by computers while unstructured decisions are forbidden by law"
+          ],
+          "correctIndex": 1,
+          "explanation": "Structured decisions are routine and follow defined procedures (operational level). Unstructured decisions are novel and require judgment and insight (executive level).",
+          "sourceRef": "Chapter 3.pdf, slide 5, 6",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "foundation-is-medium-s3-q01",
+          "question": "In system concepts, what characterizes an 'Open System' compared to a 'Closed System'?",
+          "options": [
+            "An open system cannot be connected to electrical power supplies",
+            "An open system is isolated from all outside forces and does not adapt to changes",
+            "An open system has no source code while a closed system has free public documentation",
+            "An open system actively interacts with and exchanges information, matter, or energy with its external environment"
+          ],
+          "correctIndex": 3,
+          "explanation": "An open system interacts dynamically with its external environment, receiving inputs and adapting, whereas a closed system is self-contained and isolated.",
+          "sourceRef": "Chapter 4.pdf, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s3-q02",
+          "question": "During the Planning phase of the SDLC, what is the primary purpose of conducting a 'Feasibility Study'?",
+          "options": [
+            "Writing unit tests for individual database query functions",
+            "Evaluating whether a proposed system is technically, economically, operationally, and legally viable before investing significant resources",
+            "Installing antivirus definition updates on desktop workstations",
+            "Formatting end-user training manuals and visual slide presentations"
+          ],
+          "correctIndex": 1,
+          "explanation": "A feasibility study analyzes technical, financial/economic, organizational/operational, and legal viability to ensure the project is worth pursuing.",
+          "sourceRef": "Chapter 4.pdf, slide 16, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s3-q03",
+          "question": "Which system conversion strategy involves running both the old legacy system and the new system concurrently until the new system is proven reliable?",
+          "options": [
+            "Pilot Conversion",
+            "Direct Cutover (Plunge Conversion)",
+            "Parallel Conversion",
+            "Phased Conversion"
+          ],
+          "correctIndex": 2,
+          "explanation": "In parallel conversion, both old and new systems run simultaneously, providing high safety and a fallback mechanism at the cost of duplicate effort.",
+          "sourceRef": "Chapter 4.pdf, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s3-q04",
+          "question": "In cryptography, what is the main distinction between Symmetric Encryption and Asymmetric Encryption?",
+          "options": [
+            "Symmetric encryption is only used by web browsers while asymmetric is used only by printers",
+            "Symmetric encryption can only encrypt numbers while asymmetric encryption only encrypts images",
+            "Symmetric encryption uses a single shared key for both encryption and decryption, whereas asymmetric encryption uses a public key and a private key pair",
+            "Symmetric encryption does not require mathematical formulas while asymmetric uses binary addition"
+          ],
+          "correctIndex": 2,
+          "explanation": "Symmetric key cryptography uses the same secret key to encrypt and decrypt. Asymmetric (public-key) cryptography uses a public key to encrypt and a matching private key to decrypt.",
+          "sourceRef": "Chapter 5.pdf, slide 37, 38",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s3-q05",
+          "question": "What is a 'Logic Bomb' in malware classification?",
+          "options": [
+            "Malicious code embedded in software that remains dormant until triggered by a specific event, condition, or date",
+            "A mathematical bug inside the ALU that causes rounding discrepancies",
+            "A network cable that fails when high bandwidth traffic passes through it",
+            "A physical explosive detonated inside a server cooling unit"
+          ],
+          "correctIndex": 0,
+          "explanation": "A logic bomb lies dormant until a specific trigger event (such as a specific calendar date or an employee termination) activates its payload.",
+          "sourceRef": "Chapter 5.pdf, slide 29",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s3-q06",
+          "question": "What form of intellectual property protects commercial symbols, logos, brand names, or designs that distinguish goods/services of one company from competitors?",
+          "options": [
+            "Copyright",
+            "Patent",
+            "Trademark",
+            "Trade Secret"
+          ],
+          "correctIndex": 2,
+          "explanation": "A trademark protects distinctive brand symbols, names, logos, and slogans (e.g. Nike Swoosh, Apple logo) that identify the commercial source of goods.",
+          "sourceRef": "Chapter 5.pdf, slide 61, 62",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s3-q07",
+          "question": "What does a Patent protect that Copyright does not?",
+          "options": [
+            "General intangible ideas, mathematical concepts, and unapplied formulas",
+            "Novel, useful, and non-obvious functional inventions, technical processes, and mechanical/scientific implementations",
+            "Original literary expressions, poems, and recorded musical songs",
+            "Historical facts and public domain demographic statistics"
+          ],
+          "correctIndex": 1,
+          "explanation": "Patents protect functional inventions and technological processes, whereas copyrights protect original forms of creative expression.",
+          "sourceRef": "Chapter 5.pdf, slide 52, 53",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s3-q08",
+          "question": "Under intellectual property law, what is the 'Fair Use' doctrine?",
+          "options": [
+            "A legal exception allowing limited reproduction of copyrighted material for purposes such as criticism, education, research, and news reporting without permission",
+            "The right to copy and sell commercial software programs for full retail profit",
+            "A rule stating that all software becomes public property after 30 days of release",
+            "An authorization permitting employees to share company trade secrets with competitors"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fair Use allows reasonable, limited reproduction of copyrighted material for educational, critical, scholarly, or journalistic purposes without copyright infringement.",
+          "sourceRef": "Chapter 5.pdf, slide 59, 60",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s3-q09",
+          "question": "Why is 'Trade Secret' protection often chosen over Patent protection for certain formulas (e.g. Coca-Cola formula)?",
+          "options": [
+            "Trade secrets can only be held by non-profit academic institutions",
+            "Trade secrets are granted automatically by government patent offices free of charge",
+            "Trade secrets prevent anyone from independently discovering or reverse-engineering the product",
+            "Trade secret protection lasts indefinitely as long as the information remains secret, without requiring public disclosure of technical details"
+          ],
+          "correctIndex": 3,
+          "explanation": "Unlike patents (which require full public technical disclosure and expire after ~20 years), trade secrets can last forever as long as secrecy is maintained.",
+          "sourceRef": "Chapter 5.pdf, slide 50, 51",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-medium-s3-q10",
+          "question": "Which of the following represents an effective Procedural Security Control in an organization?",
+          "options": [
+            "Using solid state drives instead of traditional magnetic rotating hard disks",
+            "Deploying deep packet inspection firewalls and intrusion detection hardware",
+            "Installing physical steel server cages and biometric door locks",
+            "Mandating periodic security awareness training, password change policies, and formal separation of duties"
+          ],
+          "correctIndex": 3,
+          "explanation": "Procedural controls are administrative policies, operational procedures, training regimens, and security guidelines established by management.",
+          "sourceRef": "Chapter 5.pdf, slide 38, 39",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

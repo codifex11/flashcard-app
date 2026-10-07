@@ -1,0 +1,440 @@
+{
+  "level": "easy",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "foundation-is-easy-s1-q01",
+          "question": "What is the primary definition of data in the context of information systems?",
+          "options": [
+            "A collection of software procedures that manage database transactions",
+            "The physical hardware units that execute machine instructions inside the CPU",
+            "Information that has been analyzed and formatted into actionable business reports",
+            "Raw, unorganized facts, figures, and symbols that have not yet been processed into meaningful form"
+          ],
+          "correctIndex": 3,
+          "explanation": "Data consists of raw, unprocessed facts, figures, and symbols. Once processed and structured in a meaningful context, it becomes information.",
+          "sourceRef": "Chapter 1.pdf, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s1-q02",
+          "question": "Which of the following is considered volatile primary memory in a computer system?",
+          "options": [
+            "Flash Memory Drive",
+            "ROM (Read-Only Memory)",
+            "RAM (Random Access Memory)",
+            "Hard Disk Drive (HDD)"
+          ],
+          "correctIndex": 2,
+          "explanation": "RAM is volatile memory whose contents are lost when electrical power is turned off, whereas ROM and secondary storage retain data permanently.",
+          "sourceRef": "Chapter 1.pdf, slide 43, 44",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s1-q03",
+          "question": "What are the four basic operations of the Information Processing Cycle performed by computers?",
+          "options": [
+            "Encoding, Compiling, Executing, and Debugging",
+            "Input, Processing, Output, and Storage",
+            "Planning, Analysis, Design, and Implementation",
+            "Transmission, Switching, Routing, and Bridging"
+          ],
+          "correctIndex": 1,
+          "explanation": "The information processing cycle comprises four core operations: Input (data entry), Processing (manipulation), Output (result generation), and Storage (saving for future use).",
+          "sourceRef": "Chapter 1.pdf, slide 7, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s1-q04",
+          "question": "What is the main function of the Control Unit (CU) inside the Central Processing Unit (CPU)?",
+          "options": [
+            "Converting analog signals from input devices into digital video output",
+            "Directing and coordinating most of the operations in the computer by fetching and decoding instructions",
+            "Performing arithmetic calculations and logical comparisons",
+            "Permanently storing user files and operating system programs"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Control Unit (CU) directs and coordinates operations within the CPU by fetching, decoding, and managing instruction execution.",
+          "sourceRef": "Chapter 1.pdf, slide 38, 39",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s1-q05",
+          "question": "Which computer network type is designed to connect personal devices within a very short range of an individual (typically up to 10 meters)?",
+          "options": [
+            "PAN (Personal Area Network)",
+            "WAN (Wide Area Network)",
+            "MAN (Metropolitan Area Network)",
+            "LAN (Local Area Network)"
+          ],
+          "correctIndex": 0,
+          "explanation": "A Personal Area Network (PAN) connects personal devices (such as Bluetooth headsets and smartphones) within the workspace of a single individual.",
+          "sourceRef": "Chapter 2.pdf, slide 12, 13",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s1-q06",
+          "question": "In a Star network topology, how are all network devices connected?",
+          "options": [
+            "All devices share a single central backbone cable with terminators at both ends",
+            "Every device is directly interconnected with every other device in the network",
+            "Each device connects to exactly two neighboring devices in a closed continuous loop",
+            "Each device connects directly to a central connecting point such as a switch or hub"
+          ],
+          "correctIndex": 3,
+          "explanation": "In a Star topology, every network node connects directly to a central hub or switch, ensuring that the failure of one cable does not disable the entire network.",
+          "sourceRef": "Chapter 2.pdf, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s1-q07",
+          "question": "Which transmission medium transmits data as pulses of light through thin strands of glass or plastic?",
+          "options": [
+            "Coaxial cable",
+            "Fiber-optic cable",
+            "Infrared wireless link",
+            "Unshielded Twisted Pair (UTP) cable"
+          ],
+          "correctIndex": 1,
+          "explanation": "Fiber-optic cables use light pulses generated by lasers or LEDs to transmit data at very high speeds with minimal interference.",
+          "sourceRef": "Chapter 2.pdf, slide 34, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s1-q08",
+          "question": "What is the primary role of a Network Interface Card (NIC)?",
+          "options": [
+            "Assigning public IP addresses to wide area network domain names",
+            "Translating high-level programming code into machine instructions",
+            "Providing the physical hardware interface and connection between a computer and a network medium",
+            "Filtering spam and malware from incoming email attachments"
+          ],
+          "correctIndex": 2,
+          "explanation": "A Network Interface Card (NIC) enables a computer or device to communicate over a network by converting internal data into signals for the network medium.",
+          "sourceRef": "Chapter 2.pdf, slide 43",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s1-q09",
+          "question": "How many layers are defined in the standard Open Systems Interconnection (OSI) reference model?",
+          "options": [
+            "7 layers",
+            "4 layers",
+            "5 layers",
+            "6 layers"
+          ],
+          "correctIndex": 0,
+          "explanation": "The OSI model specifies 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application.",
+          "sourceRef": "Chapter 2.pdf, slide 50, 51",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s1-q10",
+          "question": "Which cloud computing service model delivers complete, ready-to-use software applications over the internet to end users?",
+          "options": [
+            "IaaS (Infrastructure as a Service)",
+            "DaaS (Database as a Service)",
+            "PaaS (Platform as a Service)",
+            "SaaS (Software as a Service)"
+          ],
+          "correctIndex": 3,
+          "explanation": "Software as a Service (SaaS) provides fully functioning software applications hosted and managed in the cloud (such as Google Workspace or Microsoft 365).",
+          "sourceRef": "Chapter 2.pdf, slide 81, 82",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "foundation-is-easy-s2-q01",
+          "question": "What is the lowest layer (Layer 1) of the OSI 7-layer reference model?",
+          "options": [
+            "Data Link Layer",
+            "Physical Layer",
+            "Transport Layer",
+            "Network Layer"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Physical Layer is Layer 1 of the OSI model; it handles the transmission and reception of raw unstructured bit streams over a physical medium.",
+          "sourceRef": "Chapter 2.pdf, slide 52",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s2-q02",
+          "question": "Which network device operates at the Network Layer (Layer 3) to forward data packets between different networks?",
+          "options": [
+            "Bridge",
+            "Hub",
+            "Router",
+            "Repeater"
+          ],
+          "correctIndex": 2,
+          "explanation": "Routers operate at OSI Layer 3 (Network layer) using logical IP addresses to direct data packets across interconnected networks.",
+          "sourceRef": "Chapter 2.pdf, slide 46, 47",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s2-q03",
+          "question": "What type of information system is designed to record and process daily routine business transactions such as sales, payroll, and receipts?",
+          "options": [
+            "EIS (Executive Information System)",
+            "DSS (Decision Support System)",
+            "TPS (Transaction Processing System)",
+            "ES (Expert System)"
+          ],
+          "correctIndex": 2,
+          "explanation": "A Transaction Processing System (TPS) handles the routine, day-to-day operational transactions necessary to conduct business.",
+          "sourceRef": "Chapter 3.pdf, slide 7, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s2-q04",
+          "question": "Which organizational level is primarily served by a Management Information System (MIS)?",
+          "options": [
+            "External customers and suppliers",
+            "Senior executives and board of directors",
+            "Operational workers and clerks",
+            "Middle management (tactical managers)"
+          ],
+          "correctIndex": 3,
+          "explanation": "MIS provides regular summary reports and performance metrics to middle-level managers to support tactical planning and control.",
+          "sourceRef": "Chapter 3.pdf, slide 15, 16",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s2-q05",
+          "question": "What is the primary focus of an Executive Support System (ESS) / Executive Information System (EIS)?",
+          "options": [
+            "Compiling source code into binary executable programs",
+            "Automating machine tool operations on a factory manufacturing floor",
+            "Managing low-level barcode scanning at supermarket checkout counters",
+            "Providing senior executives with summary data, high-level dashboards, and drill-down analysis for strategic decisions"
+          ],
+          "correctIndex": 3,
+          "explanation": "EIS/ESS assists senior executives by providing summarized, strategic visual dashboards with drill-down capabilities into enterprise data.",
+          "sourceRef": "Chapter 3.pdf, slide 32, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s2-q06",
+          "question": "What is an Enterprise Resource Planning (ERP) system?",
+          "options": [
+            "A dedicated hardware router used exclusively for wide-area telecom connections",
+            "An integrated enterprise-wide software suite that connects and automates key business functions across the entire organization",
+            "A single-user desktop spreadsheet program designed for budget calculations",
+            "A standalone word processing application used for generating office memos"
+          ],
+          "correctIndex": 1,
+          "explanation": "ERP is an integrated software system that manages and coordinates information across all core functional departments (finance, HR, supply chain, manufacturing).",
+          "sourceRef": "Chapter 3.pdf, slide 42, 43",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s2-q07",
+          "question": "Which system focuses on managing all aspects of customer interactions, sales leads, marketing campaigns, and customer retention?",
+          "options": [
+            "CRM (Customer Relationship Management)",
+            "SCM (Supply Chain Management)",
+            "TPS (Transaction Processing System)",
+            "CAD (Computer-Aided Design)"
+          ],
+          "correctIndex": 0,
+          "explanation": "Customer Relationship Management (CRM) systems organize and automate customer sales, service, support, and marketing interactions.",
+          "sourceRef": "Chapter 3.pdf, slide 52, 53",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s2-q08",
+          "question": "What are the two core components that make up an Expert System?",
+          "options": [
+            "A Compiler and a Linker",
+            "A Knowledge Base and an Inference Engine",
+            "A Modem and an Ethernet Hub",
+            "A Graphic Card and a Sound Card"
+          ],
+          "correctIndex": 1,
+          "explanation": "An Expert System contains a Knowledge Base (facts and rules provided by human experts) and an Inference Engine (reasoning logic that derives conclusions).",
+          "sourceRef": "Chapter 3.pdf, slide 64, 65",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s2-q09",
+          "question": "Which system manages the flow of materials, information, and finances across suppliers, manufacturers, wholesalers, and retailers?",
+          "options": [
+            "MIS (Management Information System)",
+            "OAS (Office Automation System)",
+            "EIS (Executive Information System)",
+            "SCM (Supply Chain Management)"
+          ],
+          "correctIndex": 3,
+          "explanation": "Supply Chain Management (SCM) oversees the end-to-end movement of goods, information, and finances from raw material suppliers to final delivery.",
+          "sourceRef": "Chapter 3.pdf, slide 48, 49",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s2-q10",
+          "question": "What is the primary purpose of an Office Automation System (OAS)?",
+          "options": [
+            "Enhancing the productivity of clerical and knowledge workers through tools like word processors, spreadsheets, and email",
+            "Controlling high-voltage power generation turbines at electrical substations",
+            "Executing complex algorithmic stock trading transactions on global markets",
+            "Managing relational database schemas and SQL table normalization"
+          ],
+          "correctIndex": 0,
+          "explanation": "Office Automation Systems (OAS) provide software tools (word processing, scheduling, communication) to boost office worker efficiency.",
+          "sourceRef": "Chapter 3.pdf, slide 72, 73",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "foundation-is-easy-s3-q01",
+          "question": "What is defined as a collection of interrelated components working together toward a common goal?",
+          "options": [
+            "A Gateway",
+            "A Peripheral",
+            "A System",
+            "A Topology"
+          ],
+          "correctIndex": 2,
+          "explanation": "A system is an organized collection of interacting components that accept inputs, process them, and produce outputs to achieve a shared objective.",
+          "sourceRef": "Chapter 4.pdf, slide 4, 5",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s3-q02",
+          "question": "In system concepts, what role does 'Feedback' play in a system?",
+          "options": [
+            "Serving as the physical boundary that separates the system from external entities",
+            "Supplying raw raw material input from the external environment",
+            "Formatting final results into high-resolution graphic printouts",
+            "Measuring output performance and providing data to evaluate and adjust system operations"
+          ],
+          "correctIndex": 3,
+          "explanation": "Feedback is data about system performance that is compared against standards so that corrective control actions can be taken.",
+          "sourceRef": "Chapter 4.pdf, slide 6, 7",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s3-q03",
+          "question": "What does SDLC stand for in information systems development?",
+          "options": [
+            "System Distribution Logic Controller",
+            "Systems Development Life Cycle",
+            "Software Data Link Connection",
+            "Structured Database Language Code"
+          ],
+          "correctIndex": 1,
+          "explanation": "SDLC stands for Systems Development Life Cycle, the structured framework used to plan, analyze, design, build, and maintain information systems.",
+          "sourceRef": "Chapter 4.pdf, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s3-q04",
+          "question": "What is the primary objective of the 'Systems Analysis' phase in SDLC?",
+          "options": [
+            "Decommissioning legacy servers and archiving old backup tapes",
+            "Understanding the existing system in detail and determining end-user requirements for the new system",
+            "Purchasing server hardware racks and laying underground fiber cables",
+            "Writing source code in C++ or Python for all database modules"
+          ],
+          "correctIndex": 1,
+          "explanation": "Systems Analysis focuses on studying the current system and defining what the new system must do to satisfy user and organizational needs.",
+          "sourceRef": "Chapter 4.pdf, slide 18, 19",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s3-q05",
+          "question": "What is Computer Ethics primarily concerned with?",
+          "options": [
+            "Maximizing computational clock speed through hardware overclocking",
+            "The mathematical proofs behind relational algebra operations",
+            "Moral principles and ethical standards that govern the responsible use of computers and information technologies",
+            "Electrical safety standards for computer power supplies and cables"
+          ],
+          "correctIndex": 2,
+          "explanation": "Computer ethics involves analyzing the moral principles and societal rules governing the acceptable and responsible use of computing resources.",
+          "sourceRef": "Chapter 5.pdf, slide 10, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s3-q06",
+          "question": "How does a Computer Worm differ fundamentally from a Computer Virus?",
+          "options": [
+            "A worm requires user intervention to execute while a virus spreads purely in hardware",
+            "A worm always improves system speed while a virus slows down execution",
+            "A worm only infects mobile phones whereas viruses only infect mainframe computers",
+            "A worm can replicate and spread autonomously across networks without attaching itself to a host file or program"
+          ],
+          "correctIndex": 3,
+          "explanation": "Unlike a virus (which needs a host program to infect), a worm is a standalone malicious program that replicates across network connections on its own.",
+          "sourceRef": "Chapter 5.pdf, slide 25, 26",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s3-q07",
+          "question": "What is a Trojan Horse in computer security terminology?",
+          "options": [
+            "A network switch that has run out of physical Ethernet ports",
+            "A protocol analyzer used for measuring internet bandwidth",
+            "A malicious program disguised as a useful or benign application to trick users into executing it",
+            "A hardware firewall that automatically encrypts wireless transmissions"
+          ],
+          "correctIndex": 2,
+          "explanation": "A Trojan horse hides malicious code inside what appears to be legitimate or entertaining software, executing harmful actions once launched.",
+          "sourceRef": "Chapter 5.pdf, slide 27, 28",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s3-q08",
+          "question": "Which security mechanism acts as a protective barrier to monitor and filter incoming and outgoing network traffic based on security rules?",
+          "options": [
+            "Firewall",
+            "Repeater",
+            "Defragmenter",
+            "Modem"
+          ],
+          "correctIndex": 0,
+          "explanation": "A firewall enforces access control policies by blocking unauthorized network traffic while permitting authorized communications.",
+          "sourceRef": "Chapter 5.pdf, slide 36",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s3-q09",
+          "question": "What legal form of intellectual property protection grants exclusive rights to creators of original literary, artistic, or software works?",
+          "options": [
+            "Copyright",
+            "Patent",
+            "Trademark",
+            "Trade Secret"
+          ],
+          "correctIndex": 0,
+          "explanation": "Copyright protects original creative and authorial expressions (including written computer programs, books, and music) from unauthorized copying.",
+          "sourceRef": "Chapter 5.pdf, slide 54, 57",
+          "confidence": "high"
+        },
+        {
+          "id": "foundation-is-easy-s3-q10",
+          "question": "What does the term 'Digital Divide' describe?",
+          "options": [
+            "The boundary between high-level programming languages and machine bytecode",
+            "The socioeconomic gap between individuals, households, and regions that have access to modern ICT and those that do not",
+            "The mathematical division algorithm executed inside the arithmetic logic unit",
+            "The separation of physical cables and wireless signals inside a router"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Digital Divide refers to disparities in access to, use of, or knowledge of information and communication technologies among demographic groups.",
+          "sourceRef": "Chapter 5.pdf, slide 71, 72",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}
