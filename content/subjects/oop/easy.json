@@ -1,0 +1,440 @@
+{
+  "level": "easy",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "oop-easy-s1-q01",
+          "question": "What is the primary definition of an Object in Object-Oriented Programming?",
+          "options": [
+            "A hardware component that executes machine-level CPU instructions",
+            "A compiled binary operating system driver for external devices",
+            "A database table definition containing raw relational records",
+            "A software bundle of states (attributes) and behaviors (methods) representing a real-world entity"
+          ],
+          "correctIndex": 3,
+          "explanation": "An object represents a real-world entity with characteristics (attributes/state) and behaviors (methods/functionalities).",
+          "sourceRef": "Chapter 1.pptx, slide 13, 14",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s1-q02",
+          "question": "What is the relationship between a class and an object in Java?",
+          "options": [
+            "An object is a blueprint used to write class source code",
+            "A class is an individual runtime copy of a compiled object",
+            "A class is a blueprint or template that defines properties and behaviors, while an object is an instance of that class",
+            "Classes and objects are identical terms that can be used interchangeably"
+          ],
+          "correctIndex": 2,
+          "explanation": "A class is a blueprint or plan that specifies how to build an object; individual objects created from a class are called instances.",
+          "sourceRef": "Chapter 1.pptx, slide 12, 20, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s1-q03",
+          "question": "Which pillar of OOP involves keeping the internal state and implementation of an object privately held inside a class boundary?",
+          "options": [
+            "Inheritance",
+            "Encapsulation",
+            "Polymorphism",
+            "Compilation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Encapsulation restricts direct access to an object's internal components, exposing only selected public methods to prevent tight coupling.",
+          "sourceRef": "Chapter 1.pptx, slide 29, 31",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s1-q04",
+          "question": "What enables Java's famous 'Write Once, Run Anywhere' (WORA) capability?",
+          "options": [
+            "Java code compiles directly into machine-specific assembly for every target microprocessor",
+            "Java source code is compiled into platform-neutral bytecode that runs on any system equipped with a Java Virtual Machine (JVM)",
+            "Java programs do not require compilation and run solely as interpreted bash scripts",
+            "Java requires all computers to run the same operating system kernel"
+          ],
+          "correctIndex": 1,
+          "explanation": "Java programs are compiled into bytecode (.class files) rather than native machine code. Any system with a compatible JVM can execute this bytecode.",
+          "sourceRef": "Chapter 1.pptx, slide 40, 44, 45",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s1-q05",
+          "question": "Which Java keyword is used to dynamically create an object and allocate memory on the heap?",
+          "options": [
+            "new",
+            "create",
+            "instance",
+            "alloc"
+          ],
+          "correctIndex": 0,
+          "explanation": "The 'new' keyword instantiates a class by dynamically allocating memory on the heap for the new object and calling its constructor.",
+          "sourceRef": "Chapter 2.pptx, slide 21, 22",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s1-q06",
+          "question": "What is the syntax rule regarding the name and return type of a constructor in Java?",
+          "options": [
+            "A constructor can have any user-defined name and must return an integer status code",
+            "A constructor must have the exact same name as its declaring class and has no return type (not even void)",
+            "A constructor must have the name 'init' and return void",
+            "A constructor must have the same name as the class and return a reference to the class"
+          ],
+          "correctIndex": 1,
+          "explanation": "Constructors have the exact same name as the class, are called when an object is instantiated, and do not specify any return type (not even void).",
+          "sourceRef": "Chapter 2.pptx, slide 42, 43",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s1-q07",
+          "question": "Which Java keyword is used by a subclass to inherit from a superclass?",
+          "options": [
+            "implements",
+            "inherits",
+            "super",
+            "extends"
+          ],
+          "correctIndex": 3,
+          "explanation": "The 'extends' keyword is used in Java class declarations to establish an inheritance relationship with a superclass.",
+          "sourceRef": "Chapter 3.pptx, slide 6",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s1-q08",
+          "question": "What type of relationship does proper inheritance establish between a child class and a parent class?",
+          "options": [
+            "A 'has-a' relationship (e.g., a Car has-a Engine)",
+            "A 'uses-a' relationship (e.g., a Driver uses-a Car)",
+            "A 'part-of' relationship (e.g., a Wheel is part-of a Car)",
+            "An 'is-a' relationship (e.g., a Car is-a Vehicle)"
+          ],
+          "correctIndex": 3,
+          "explanation": "Inheritance establishes an 'is-a' relationship, indicating that the subclass is a specialized version of the superclass.",
+          "sourceRef": "Chapter 3.pptx, slide 5",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s1-q09",
+          "question": "What is the core definition of Polymorphism in Object-Oriented Programming?",
+          "options": [
+            "The ability to store variables of multiple different data types inside a single byte",
+            "The process of converting all source code into binary machine instructions",
+            "The ability of an object or method call to take many forms and execute different behaviors depending on runtime type",
+            "The restriction that allows only one class to be compiled at a time"
+          ],
+          "correctIndex": 2,
+          "explanation": "Polymorphism means 'many forms' and allows objects of different subclasses to be treated through a common superclass reference, executing specific behaviors.",
+          "sourceRef": "Chapter 4.pptx, slide 3, 4",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s1-q10",
+          "question": "What is the primary advantage of Exception Handling in Java?",
+          "options": [
+            "To speed up processor clock cycles during mathematical calculations",
+            "To prevent the compiler from generating bytecode files",
+            "To maintain the normal flow of the application even when unexpected errors or exceptional conditions arise",
+            "To automatically rewrite incorrect Java syntax during execution"
+          ],
+          "correctIndex": 2,
+          "explanation": "The core advantage of exception handling is to prevent abrupt abnormal program termination and maintain normal application flow.",
+          "sourceRef": "Chapter 5.pptx, slide 6, 7",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "oop-easy-s2-q01",
+          "question": "Which pillar of OOP refers to showing only the essential features of an entity while hiding unnecessary background details?",
+          "options": [
+            "Inheritance",
+            "Encapsulation",
+            "Abstraction",
+            "Overloading"
+          ],
+          "correctIndex": 2,
+          "explanation": "Abstraction focuses on representing essential qualities without including implementation background details (e.g., showing relevant student attributes).",
+          "sourceRef": "Chapter 1.pptx, slide 27, 28",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s2-q02",
+          "question": "What file extension is given to the compiled Java bytecode generated by the javac compiler?",
+          "options": [
+            ".class",
+            ".java",
+            ".exe",
+            ".bin"
+          ],
+          "correctIndex": 0,
+          "explanation": "When javac compiles a source code file (.java), it outputs platform-independent bytecode into a file with the .class extension.",
+          "sourceRef": "Chapter 1.pptx, slide 45, 46",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s2-q03",
+          "question": "How does a static (class) variable differ fundamentally from an instance variable in Java?",
+          "options": [
+            "Only one copy of a static variable exists and is shared across all instances of the class, whereas each instance has its own copy of an instance variable",
+            "Static variables can only store strings, while instance variables store numbers",
+            "Instance variables are shared across all instances, while static variables are private to each object",
+            "Static variables are destroyed whenever a method terminates"
+          ],
+          "correctIndex": 0,
+          "explanation": "A static variable belongs to the class itself and has a single shared memory location for all instances, while instance variables belong to individual objects.",
+          "sourceRef": "Chapter 2.pptx, slide 32, 33, 34",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s2-q04",
+          "question": "In Java, what does the 'this' keyword represent inside an instance method or constructor?",
+          "options": [
+            "A reference to the parent superclass of the current object",
+            "A reference to the current object instance executing the method",
+            "A pointer to the Java Virtual Machine process",
+            "A reference to the first static method in the program"
+          ],
+          "correctIndex": 1,
+          "explanation": "The 'this' keyword is an implicit reference variable that points to the current object whose method or constructor is being invoked.",
+          "sourceRef": "Chapter 2.pptx, slide 57, 58",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s2-q05",
+          "question": "Why does Java not support multiple inheritance with classes (extending more than one superclass)?",
+          "options": [
+            "To prevent ambiguity and complexity (such as the Diamond Problem) when two superclasses have methods with the same signature",
+            "Because Java microprocessors can only load one file per minute",
+            "Because subclasses in Java are not allowed to reuse code",
+            "Because the Java Virtual Machine cannot allocate heap memory for subclasses"
+          ],
+          "correctIndex": 0,
+          "explanation": "Java eliminates multiple class inheritance to avoid ambiguity and method resolution conflicts (the Diamond Problem). Interfaces are used instead.",
+          "sourceRef": "Chapter 3.pptx, slide 7, 14",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s2-q06",
+          "question": "Which class sits at the very top of the Java class hierarchy as the ultimate superclass of all classes?",
+          "options": [
+            "java.lang.Class",
+            "java.lang.Object",
+            "java.lang.Root",
+            "java.lang.Throwable"
+          ],
+          "correctIndex": 1,
+          "explanation": "In Java, the class hierarchy begins with java.lang.Object; every class directly or indirectly inherits from Object.",
+          "sourceRef": "Chapter 3.pptx, slide 13",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s2-q07",
+          "question": "What is the primary purpose of the 'super' keyword in Java?",
+          "options": [
+            "To allocate additional dynamic heap memory for garbage collection",
+            "To declare that a class cannot be inherited by other classes",
+            "To terminate the execution of the entire Java program",
+            "To refer to members, methods, or constructors of the immediate superclass"
+          ],
+          "correctIndex": 3,
+          "explanation": "The 'super' keyword is a reference variable used in a subclass to access superclass constructors (super()), methods (super.method()), or fields.",
+          "sourceRef": "Chapter 3.pptx, slide 23, 43",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s2-q08",
+          "question": "Which Java keyword is used to declare an interface?",
+          "options": [
+            "interface",
+            "implements",
+            "abstract class",
+            "struct"
+          ],
+          "correctIndex": 0,
+          "explanation": "An interface is declared using the 'interface' keyword and defines a contract of abstract methods and constant fields.",
+          "sourceRef": "Chapter 4.pptx, slide 30, 34",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s2-q09",
+          "question": "Which Java keyword is used by a class to implement an interface?",
+          "options": [
+            "extends",
+            "inherits",
+            "implements",
+            "uses"
+          ],
+          "correctIndex": 2,
+          "explanation": "A class uses the 'implements' keyword to indicate that it provides concrete implementations for the methods declared in an interface.",
+          "sourceRef": "Chapter 4.pptx, slide 34, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s2-q10",
+          "question": "What is the base superclass for all exception and error types in the Java programming language?",
+          "options": [
+            "java.lang.Exception",
+            "java.lang.Error",
+            "java.lang.RuntimeException",
+            "java.lang.Throwable"
+          ],
+          "correctIndex": 3,
+          "explanation": "All exceptions and errors in Java inherit directly or indirectly from the built-in base class java.lang.Throwable.",
+          "sourceRef": "Chapter 5.pptx, slide 5, 21",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "oop-easy-s3-q01",
+          "question": "What default initial values does Java assign to uninitialized instance variables of numeric, boolean, and reference types?",
+          "options": [
+            "Numeric types receive -1, boolean receives true, and references receive null",
+            "Numeric types receive 0, boolean receives false, and object references receive null",
+            "All variables receive undefined until explicitly initialized",
+            "All instance variables cause a compile-time error if not initialized explicitly"
+          ],
+          "correctIndex": 1,
+          "explanation": "Java automatically initializes instance variables: numbers to 0 (or 0.0), booleans to false, and object reference types to null.",
+          "sourceRef": "Chapter 2.pptx, slide 46, 47",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s3-q02",
+          "question": "What is the accessibility scope of a class member declared with the 'public' access modifier?",
+          "options": [
+            "Accessible only within the declaring class",
+            "Accessible only within classes in the same package",
+            "Accessible only to subclasses in other packages",
+            "Accessible from any class in any package"
+          ],
+          "correctIndex": 3,
+          "explanation": "The 'public' access modifier provides the widest access; public members can be accessed from any class in any package.",
+          "sourceRef": "Chapter 2.pptx, slide 64",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s3-q03",
+          "question": "What is the accessibility scope of a class member declared with the 'private' access modifier?",
+          "options": [
+            "Accessible to all classes in the same package",
+            "Accessible only within the declaring class itself",
+            "Accessible to subclasses anywhere",
+            "Accessible to any class in the program"
+          ],
+          "correctIndex": 1,
+          "explanation": "The 'private' modifier is the most restrictive access level; private members are visible only within the class that defines them.",
+          "sourceRef": "Chapter 2.pptx, slide 65",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s3-q04",
+          "question": "What is the accessibility scope of a member declared with the 'protected' access modifier?",
+          "options": [
+            "Accessible within the same package, and by subclasses in other packages",
+            "Accessible strictly inside the declaring class only",
+            "Accessible from all classes everywhere in the entire project",
+            "Accessible only by interfaces"
+          ],
+          "correctIndex": 0,
+          "explanation": "The 'protected' modifier allows access to classes within the same package and to subclasses located in different packages.",
+          "sourceRef": "Chapter 3.pptx, slide 8, 11",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s3-q05",
+          "question": "What happens if a programmer does not define any constructor in a Java class?",
+          "options": [
+            "The class cannot be compiled and throws a syntax error",
+            "The class cannot be instantiated under any circumstances",
+            "The program automatically crashes with a NullPointerException at runtime",
+            "The Java compiler automatically generates a no-argument default constructor"
+          ],
+          "correctIndex": 3,
+          "explanation": "If no constructor is explicitly provided, the Java compiler provides a default no-argument constructor that initializes fields to default values.",
+          "sourceRef": "Chapter 2.pptx, slide 46, 47",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s3-q06",
+          "question": "What effect does the 'final' keyword have when applied to a variable in Java?",
+          "options": [
+            "The variable is deleted immediately after its first usage",
+            "The variable becomes a constant whose value cannot be changed or reassigned after initialization",
+            "The variable is converted to a static class method",
+            "The variable can only be accessed by the final class in the file"
+          ],
+          "correctIndex": 1,
+          "explanation": "A final variable is a constant: once assigned, its value cannot be modified or reassigned.",
+          "sourceRef": "Chapter 3.pptx, slide 47",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s3-q07",
+          "question": "What is the primary constraint imposed when a class is declared as 'abstract'?",
+          "options": [
+            "The class cannot be instantiated directly using the 'new' keyword",
+            "The class cannot have any subclasses",
+            "The class cannot contain any concrete methods with bodies",
+            "The class cannot declare any variables or fields"
+          ],
+          "correctIndex": 0,
+          "explanation": "An abstract class cannot be instantiated directly with 'new'; it must be extended by concrete subclasses that implement its abstract methods.",
+          "sourceRef": "Chapter 4.pptx, slide 20, 22, 29",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s3-q08",
+          "question": "Which five keywords comprise the exception handling mechanism in Java?",
+          "options": [
+            "try, catch, error, alert, resume",
+            "begin, rescue, ensure, raise, retry",
+            "try, catch, finally, throw, throws",
+            "try, handle, finalize, dispatch, raise"
+          ],
+          "correctIndex": 2,
+          "explanation": "Java exception handling is managed via five keywords: try, catch, finally, throw, and throws.",
+          "sourceRef": "Chapter 5.pptx, slide 23, 24, 25",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s3-q09",
+          "question": "When does a 'finally' block execute in a Java try-catch-finally statement?",
+          "options": [
+            "It executes only when an uncaught exception crashes the application",
+            "It executes only if no exception occurred in the try block",
+            "It always executes regardless of whether an exception occurred or was handled",
+            "It executes only if the catch block throws a new exception"
+          ],
+          "correctIndex": 2,
+          "explanation": "The 'finally' block always executes after try/catch, whether an exception is thrown, caught, or not thrown at all (except if the JVM forcibly exits).",
+          "sourceRef": "Chapter 5.pptx, slide 25, 29, 31",
+          "confidence": "high"
+        },
+        {
+          "id": "oop-easy-s3-q10",
+          "question": "What causes a NullPointerException to be thrown at runtime in Java?",
+          "options": [
+            "Dividing an integer by zero using the arithmetic division operator",
+            "Accessing an array element using an index that is negative or beyond array length",
+            "Attempting to access a method or field on an object reference variable that has not been assigned an object and is null",
+            "Casting an object to an incompatible subclass type"
+          ],
+          "correctIndex": 2,
+          "explanation": "NullPointerException occurs when code attempts to dereference or access a member of a variable that currently holds null.",
+          "sourceRef": "Chapter 5.pptx, slide 13, 15",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

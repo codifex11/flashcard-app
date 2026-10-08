@@ -40,6 +40,12 @@ window.APP_DATA_BUNDLE = {
                     "name": "Data Structure and Algorithms",
                     "questionCount": 90,
                     "reviewStatus": "pending_review"
+                  },
+                  {
+                    "id": "oop",
+                    "name": "OOP",
+                    "questionCount": 90,
+                    "reviewStatus": "pending_review"
                   }
                 ]
               }
@@ -7149,6 +7155,1781 @@ window.APP_DATA_BUNDLE = {
                 "answer": "Single Left (RR), Single Right (LL), Left-Right (LR: left on child then right on parent), and Right-Left (RL: right on child then left on parent).",
                 "category": "AVL Rotations",
                 "sourceRef": "Chapter 7.pptx, slide 76, 77, 78, 79, 80",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "oop": {
+      "meta": {
+        "id": "oop",
+        "name": "OOP",
+        "department": "Information System",
+        "year": "Year 2",
+        "semester": "Semester 2",
+        "sourceFiles": [
+          "Chapter 1.pptx",
+          "Chapter 2.pptx",
+          "Chapter 3.pptx",
+          "Chapter 4.pptx",
+          "Chapter 5.pptx"
+        ],
+        "generatedAt": "2026-10-08",
+        "reviewStatus": "pending_review",
+        "questionCount": 90,
+        "lowConfidenceCount": 0
+      },
+      "easy": {
+        "level": "easy",
+        "sets": [
+          {
+            "setNumber": 1,
+            "questions": [
+              {
+                "id": "oop-easy-s1-q01",
+                "question": "What is the primary definition of an Object in Object-Oriented Programming?",
+                "options": [
+                  "A hardware component that executes machine-level CPU instructions",
+                  "A compiled binary operating system driver for external devices",
+                  "A database table definition containing raw relational records",
+                  "A software bundle of states (attributes) and behaviors (methods) representing a real-world entity"
+                ],
+                "correctIndex": 3,
+                "explanation": "An object represents a real-world entity with characteristics (attributes/state) and behaviors (methods/functionalities).",
+                "sourceRef": "Chapter 1.pptx, slide 13, 14",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s1-q02",
+                "question": "What is the relationship between a class and an object in Java?",
+                "options": [
+                  "An object is a blueprint used to write class source code",
+                  "A class is an individual runtime copy of a compiled object",
+                  "A class is a blueprint or template that defines properties and behaviors, while an object is an instance of that class",
+                  "Classes and objects are identical terms that can be used interchangeably"
+                ],
+                "correctIndex": 2,
+                "explanation": "A class is a blueprint or plan that specifies how to build an object; individual objects created from a class are called instances.",
+                "sourceRef": "Chapter 1.pptx, slide 12, 20, 24",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s1-q03",
+                "question": "Which pillar of OOP involves keeping the internal state and implementation of an object privately held inside a class boundary?",
+                "options": [
+                  "Inheritance",
+                  "Encapsulation",
+                  "Polymorphism",
+                  "Compilation"
+                ],
+                "correctIndex": 1,
+                "explanation": "Encapsulation restricts direct access to an object's internal components, exposing only selected public methods to prevent tight coupling.",
+                "sourceRef": "Chapter 1.pptx, slide 29, 31",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s1-q04",
+                "question": "What enables Java's famous 'Write Once, Run Anywhere' (WORA) capability?",
+                "options": [
+                  "Java code compiles directly into machine-specific assembly for every target microprocessor",
+                  "Java source code is compiled into platform-neutral bytecode that runs on any system equipped with a Java Virtual Machine (JVM)",
+                  "Java programs do not require compilation and run solely as interpreted bash scripts",
+                  "Java requires all computers to run the same operating system kernel"
+                ],
+                "correctIndex": 1,
+                "explanation": "Java programs are compiled into bytecode (.class files) rather than native machine code. Any system with a compatible JVM can execute this bytecode.",
+                "sourceRef": "Chapter 1.pptx, slide 40, 44, 45",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s1-q05",
+                "question": "Which Java keyword is used to dynamically create an object and allocate memory on the heap?",
+                "options": [
+                  "new",
+                  "create",
+                  "instance",
+                  "alloc"
+                ],
+                "correctIndex": 0,
+                "explanation": "The 'new' keyword instantiates a class by dynamically allocating memory on the heap for the new object and calling its constructor.",
+                "sourceRef": "Chapter 2.pptx, slide 21, 22",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s1-q06",
+                "question": "What is the syntax rule regarding the name and return type of a constructor in Java?",
+                "options": [
+                  "A constructor can have any user-defined name and must return an integer status code",
+                  "A constructor must have the exact same name as its declaring class and has no return type (not even void)",
+                  "A constructor must have the name 'init' and return void",
+                  "A constructor must have the same name as the class and return a reference to the class"
+                ],
+                "correctIndex": 1,
+                "explanation": "Constructors have the exact same name as the class, are called when an object is instantiated, and do not specify any return type (not even void).",
+                "sourceRef": "Chapter 2.pptx, slide 42, 43",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s1-q07",
+                "question": "Which Java keyword is used by a subclass to inherit from a superclass?",
+                "options": [
+                  "implements",
+                  "inherits",
+                  "super",
+                  "extends"
+                ],
+                "correctIndex": 3,
+                "explanation": "The 'extends' keyword is used in Java class declarations to establish an inheritance relationship with a superclass.",
+                "sourceRef": "Chapter 3.pptx, slide 6",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s1-q08",
+                "question": "What type of relationship does proper inheritance establish between a child class and a parent class?",
+                "options": [
+                  "A 'has-a' relationship (e.g., a Car has-a Engine)",
+                  "A 'uses-a' relationship (e.g., a Driver uses-a Car)",
+                  "A 'part-of' relationship (e.g., a Wheel is part-of a Car)",
+                  "An 'is-a' relationship (e.g., a Car is-a Vehicle)"
+                ],
+                "correctIndex": 3,
+                "explanation": "Inheritance establishes an 'is-a' relationship, indicating that the subclass is a specialized version of the superclass.",
+                "sourceRef": "Chapter 3.pptx, slide 5",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s1-q09",
+                "question": "What is the core definition of Polymorphism in Object-Oriented Programming?",
+                "options": [
+                  "The ability to store variables of multiple different data types inside a single byte",
+                  "The process of converting all source code into binary machine instructions",
+                  "The ability of an object or method call to take many forms and execute different behaviors depending on runtime type",
+                  "The restriction that allows only one class to be compiled at a time"
+                ],
+                "correctIndex": 2,
+                "explanation": "Polymorphism means 'many forms' and allows objects of different subclasses to be treated through a common superclass reference, executing specific behaviors.",
+                "sourceRef": "Chapter 4.pptx, slide 3, 4",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s1-q10",
+                "question": "What is the primary advantage of Exception Handling in Java?",
+                "options": [
+                  "To speed up processor clock cycles during mathematical calculations",
+                  "To prevent the compiler from generating bytecode files",
+                  "To maintain the normal flow of the application even when unexpected errors or exceptional conditions arise",
+                  "To automatically rewrite incorrect Java syntax during execution"
+                ],
+                "correctIndex": 2,
+                "explanation": "The core advantage of exception handling is to prevent abrupt abnormal program termination and maintain normal application flow.",
+                "sourceRef": "Chapter 5.pptx, slide 6, 7",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 2,
+            "questions": [
+              {
+                "id": "oop-easy-s2-q01",
+                "question": "Which pillar of OOP refers to showing only the essential features of an entity while hiding unnecessary background details?",
+                "options": [
+                  "Inheritance",
+                  "Encapsulation",
+                  "Abstraction",
+                  "Overloading"
+                ],
+                "correctIndex": 2,
+                "explanation": "Abstraction focuses on representing essential qualities without including implementation background details (e.g., showing relevant student attributes).",
+                "sourceRef": "Chapter 1.pptx, slide 27, 28",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s2-q02",
+                "question": "What file extension is given to the compiled Java bytecode generated by the javac compiler?",
+                "options": [
+                  ".class",
+                  ".java",
+                  ".exe",
+                  ".bin"
+                ],
+                "correctIndex": 0,
+                "explanation": "When javac compiles a source code file (.java), it outputs platform-independent bytecode into a file with the .class extension.",
+                "sourceRef": "Chapter 1.pptx, slide 45, 46",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s2-q03",
+                "question": "How does a static (class) variable differ fundamentally from an instance variable in Java?",
+                "options": [
+                  "Only one copy of a static variable exists and is shared across all instances of the class, whereas each instance has its own copy of an instance variable",
+                  "Static variables can only store strings, while instance variables store numbers",
+                  "Instance variables are shared across all instances, while static variables are private to each object",
+                  "Static variables are destroyed whenever a method terminates"
+                ],
+                "correctIndex": 0,
+                "explanation": "A static variable belongs to the class itself and has a single shared memory location for all instances, while instance variables belong to individual objects.",
+                "sourceRef": "Chapter 2.pptx, slide 32, 33, 34",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s2-q04",
+                "question": "In Java, what does the 'this' keyword represent inside an instance method or constructor?",
+                "options": [
+                  "A reference to the parent superclass of the current object",
+                  "A reference to the current object instance executing the method",
+                  "A pointer to the Java Virtual Machine process",
+                  "A reference to the first static method in the program"
+                ],
+                "correctIndex": 1,
+                "explanation": "The 'this' keyword is an implicit reference variable that points to the current object whose method or constructor is being invoked.",
+                "sourceRef": "Chapter 2.pptx, slide 57, 58",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s2-q05",
+                "question": "Why does Java not support multiple inheritance with classes (extending more than one superclass)?",
+                "options": [
+                  "To prevent ambiguity and complexity (such as the Diamond Problem) when two superclasses have methods with the same signature",
+                  "Because Java microprocessors can only load one file per minute",
+                  "Because subclasses in Java are not allowed to reuse code",
+                  "Because the Java Virtual Machine cannot allocate heap memory for subclasses"
+                ],
+                "correctIndex": 0,
+                "explanation": "Java eliminates multiple class inheritance to avoid ambiguity and method resolution conflicts (the Diamond Problem). Interfaces are used instead.",
+                "sourceRef": "Chapter 3.pptx, slide 7, 14",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s2-q06",
+                "question": "Which class sits at the very top of the Java class hierarchy as the ultimate superclass of all classes?",
+                "options": [
+                  "java.lang.Class",
+                  "java.lang.Object",
+                  "java.lang.Root",
+                  "java.lang.Throwable"
+                ],
+                "correctIndex": 1,
+                "explanation": "In Java, the class hierarchy begins with java.lang.Object; every class directly or indirectly inherits from Object.",
+                "sourceRef": "Chapter 3.pptx, slide 13",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s2-q07",
+                "question": "What is the primary purpose of the 'super' keyword in Java?",
+                "options": [
+                  "To allocate additional dynamic heap memory for garbage collection",
+                  "To declare that a class cannot be inherited by other classes",
+                  "To terminate the execution of the entire Java program",
+                  "To refer to members, methods, or constructors of the immediate superclass"
+                ],
+                "correctIndex": 3,
+                "explanation": "The 'super' keyword is a reference variable used in a subclass to access superclass constructors (super()), methods (super.method()), or fields.",
+                "sourceRef": "Chapter 3.pptx, slide 23, 43",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s2-q08",
+                "question": "Which Java keyword is used to declare an interface?",
+                "options": [
+                  "interface",
+                  "implements",
+                  "abstract class",
+                  "struct"
+                ],
+                "correctIndex": 0,
+                "explanation": "An interface is declared using the 'interface' keyword and defines a contract of abstract methods and constant fields.",
+                "sourceRef": "Chapter 4.pptx, slide 30, 34",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s2-q09",
+                "question": "Which Java keyword is used by a class to implement an interface?",
+                "options": [
+                  "extends",
+                  "inherits",
+                  "implements",
+                  "uses"
+                ],
+                "correctIndex": 2,
+                "explanation": "A class uses the 'implements' keyword to indicate that it provides concrete implementations for the methods declared in an interface.",
+                "sourceRef": "Chapter 4.pptx, slide 34, 35",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s2-q10",
+                "question": "What is the base superclass for all exception and error types in the Java programming language?",
+                "options": [
+                  "java.lang.Exception",
+                  "java.lang.Error",
+                  "java.lang.RuntimeException",
+                  "java.lang.Throwable"
+                ],
+                "correctIndex": 3,
+                "explanation": "All exceptions and errors in Java inherit directly or indirectly from the built-in base class java.lang.Throwable.",
+                "sourceRef": "Chapter 5.pptx, slide 5, 21",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 3,
+            "questions": [
+              {
+                "id": "oop-easy-s3-q01",
+                "question": "What default initial values does Java assign to uninitialized instance variables of numeric, boolean, and reference types?",
+                "options": [
+                  "Numeric types receive -1, boolean receives true, and references receive null",
+                  "Numeric types receive 0, boolean receives false, and object references receive null",
+                  "All variables receive undefined until explicitly initialized",
+                  "All instance variables cause a compile-time error if not initialized explicitly"
+                ],
+                "correctIndex": 1,
+                "explanation": "Java automatically initializes instance variables: numbers to 0 (or 0.0), booleans to false, and object reference types to null.",
+                "sourceRef": "Chapter 2.pptx, slide 46, 47",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s3-q02",
+                "question": "What is the accessibility scope of a class member declared with the 'public' access modifier?",
+                "options": [
+                  "Accessible only within the declaring class",
+                  "Accessible only within classes in the same package",
+                  "Accessible only to subclasses in other packages",
+                  "Accessible from any class in any package"
+                ],
+                "correctIndex": 3,
+                "explanation": "The 'public' access modifier provides the widest access; public members can be accessed from any class in any package.",
+                "sourceRef": "Chapter 2.pptx, slide 64",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s3-q03",
+                "question": "What is the accessibility scope of a class member declared with the 'private' access modifier?",
+                "options": [
+                  "Accessible to all classes in the same package",
+                  "Accessible only within the declaring class itself",
+                  "Accessible to subclasses anywhere",
+                  "Accessible to any class in the program"
+                ],
+                "correctIndex": 1,
+                "explanation": "The 'private' modifier is the most restrictive access level; private members are visible only within the class that defines them.",
+                "sourceRef": "Chapter 2.pptx, slide 65",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s3-q04",
+                "question": "What is the accessibility scope of a member declared with the 'protected' access modifier?",
+                "options": [
+                  "Accessible within the same package, and by subclasses in other packages",
+                  "Accessible strictly inside the declaring class only",
+                  "Accessible from all classes everywhere in the entire project",
+                  "Accessible only by interfaces"
+                ],
+                "correctIndex": 0,
+                "explanation": "The 'protected' modifier allows access to classes within the same package and to subclasses located in different packages.",
+                "sourceRef": "Chapter 3.pptx, slide 8, 11",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s3-q05",
+                "question": "What happens if a programmer does not define any constructor in a Java class?",
+                "options": [
+                  "The class cannot be compiled and throws a syntax error",
+                  "The class cannot be instantiated under any circumstances",
+                  "The program automatically crashes with a NullPointerException at runtime",
+                  "The Java compiler automatically generates a no-argument default constructor"
+                ],
+                "correctIndex": 3,
+                "explanation": "If no constructor is explicitly provided, the Java compiler provides a default no-argument constructor that initializes fields to default values.",
+                "sourceRef": "Chapter 2.pptx, slide 46, 47",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s3-q06",
+                "question": "What effect does the 'final' keyword have when applied to a variable in Java?",
+                "options": [
+                  "The variable is deleted immediately after its first usage",
+                  "The variable becomes a constant whose value cannot be changed or reassigned after initialization",
+                  "The variable is converted to a static class method",
+                  "The variable can only be accessed by the final class in the file"
+                ],
+                "correctIndex": 1,
+                "explanation": "A final variable is a constant: once assigned, its value cannot be modified or reassigned.",
+                "sourceRef": "Chapter 3.pptx, slide 47",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s3-q07",
+                "question": "What is the primary constraint imposed when a class is declared as 'abstract'?",
+                "options": [
+                  "The class cannot be instantiated directly using the 'new' keyword",
+                  "The class cannot have any subclasses",
+                  "The class cannot contain any concrete methods with bodies",
+                  "The class cannot declare any variables or fields"
+                ],
+                "correctIndex": 0,
+                "explanation": "An abstract class cannot be instantiated directly with 'new'; it must be extended by concrete subclasses that implement its abstract methods.",
+                "sourceRef": "Chapter 4.pptx, slide 20, 22, 29",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s3-q08",
+                "question": "Which five keywords comprise the exception handling mechanism in Java?",
+                "options": [
+                  "try, catch, error, alert, resume",
+                  "begin, rescue, ensure, raise, retry",
+                  "try, catch, finally, throw, throws",
+                  "try, handle, finalize, dispatch, raise"
+                ],
+                "correctIndex": 2,
+                "explanation": "Java exception handling is managed via five keywords: try, catch, finally, throw, and throws.",
+                "sourceRef": "Chapter 5.pptx, slide 23, 24, 25",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s3-q09",
+                "question": "When does a 'finally' block execute in a Java try-catch-finally statement?",
+                "options": [
+                  "It executes only when an uncaught exception crashes the application",
+                  "It executes only if no exception occurred in the try block",
+                  "It always executes regardless of whether an exception occurred or was handled",
+                  "It executes only if the catch block throws a new exception"
+                ],
+                "correctIndex": 2,
+                "explanation": "The 'finally' block always executes after try/catch, whether an exception is thrown, caught, or not thrown at all (except if the JVM forcibly exits).",
+                "sourceRef": "Chapter 5.pptx, slide 25, 29, 31",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-easy-s3-q10",
+                "question": "What causes a NullPointerException to be thrown at runtime in Java?",
+                "options": [
+                  "Dividing an integer by zero using the arithmetic division operator",
+                  "Accessing an array element using an index that is negative or beyond array length",
+                  "Attempting to access a method or field on an object reference variable that has not been assigned an object and is null",
+                  "Casting an object to an incompatible subclass type"
+                ],
+                "correctIndex": 2,
+                "explanation": "NullPointerException occurs when code attempts to dereference or access a member of a variable that currently holds null.",
+                "sourceRef": "Chapter 5.pptx, slide 13, 15",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      },
+      "medium": {
+        "level": "medium",
+        "sets": [
+          {
+            "setNumber": 1,
+            "questions": [
+              {
+                "id": "oop-medium-s1-q01",
+                "question": "Which of the following conditions is required to successfully overload a method in Java?",
+                "options": [
+                  "The overloaded method must have a different return type while keeping identical parameter lists",
+                  "The overloaded method must differ in the number, data types, or sequence of its parameters",
+                  "The overloaded method must reside in a completely different package",
+                  "The overloaded method must have a different access modifier while keeping identical parameters"
+                ],
+                "correctIndex": 1,
+                "explanation": "Method overloading requires different parameter lists (count, type, or order). Changing only the return type or access modifier is insufficient and causes a compile error.",
+                "sourceRef": "Chapter 2.pptx, slide 83, 84, 85",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s1-q02",
+                "question": "What is the syntactic rule when using this() to invoke another constructor within the same class?",
+                "options": [
+                  "The this() call must be placed as the last statement of the constructor",
+                  "The this() call can be placed anywhere inside any static method",
+                  "The this() call must be the very first statement inside the constructor body",
+                  "The this() call can only be called from inside a catch block"
+                ],
+                "correctIndex": 2,
+                "explanation": "When invoking an overloaded constructor in the same class using this(), it must be the first line of the constructor body.",
+                "sourceRef": "Chapter 2.pptx, slide 59; Chapter 3.pptx, slide 46",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s1-q03",
+                "question": "Why are private instance variables typically accompanied by public accessor (getter) and mutator (setter) methods?",
+                "options": [
+                  "Because Java does not permit reading variables without setters",
+                  "To protect data integrity by allowing validation and control over how values are read or updated without exposing internal representation",
+                  "To automatically convert primitive values into database records",
+                  "To bypass all access modifiers at compile time"
+                ],
+                "correctIndex": 1,
+                "explanation": "Accessors and mutators enforce encapsulation: fields remain private while getters and setters control access and enforce validation logic.",
+                "sourceRef": "Chapter 2.pptx, slide 72, 73",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s1-q04",
+                "question": "What happens if a subclass constructor explicitly calls a parameterized superclass constructor using super(args)?",
+                "options": [
+                  "The super(args) call must be executed at the end of the subclass constructor",
+                  "The super(args) call must be the very first statement in the subclass constructor body",
+                  "The super(args) call must be preceded by at least one variable declaration",
+                  "The super(args) call can only be placed inside the finalize() method"
+                ],
+                "correctIndex": 1,
+                "explanation": "Invocation of a superclass constructor using super() or super(args) must always be the first statement in the subclass constructor.",
+                "sourceRef": "Chapter 3.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s1-q05",
+                "question": "Which rule governs the access modifier of an overriding method in a Java subclass?",
+                "options": [
+                  "The overriding method must have a more restrictive access modifier than the superclass method",
+                  "The overriding method can allow more, but not less, access than the overridden superclass method",
+                  "The overriding method must always be declared private",
+                  "The overriding method must always have the default (package-private) modifier"
+                ],
+                "correctIndex": 1,
+                "explanation": "An overriding method cannot reduce the visibility of the superclass method (e.g., a protected superclass method can be overridden as protected or public, but not private).",
+                "sourceRef": "Chapter 3.pptx, slide 33",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s1-q06",
+                "question": "What is method hiding in Java and how does it differ from method overriding?",
+                "options": [
+                  "Method hiding occurs when an instance method is declared private in a subclass",
+                  "Method hiding is identical to overriding and is resolved dynamically at runtime",
+                  "Method hiding deletes the superclass method from memory during execution",
+                  "Method hiding occurs when a subclass defines a static method with the same signature as a superclass static method; it is resolved at compile time based on the reference type"
+                ],
+                "correctIndex": 3,
+                "explanation": "Static methods cannot be overridden; when a subclass defines a static method with the same signature as a superclass static method, it hides it based on compile-time reference type.",
+                "sourceRef": "Chapter 3.pptx, slide 35, 36",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s1-q07",
+                "question": "Given class Dog extends Animal, what occurs during the assignment 'Animal a = new Dog();'?",
+                "options": [
+                  "Downcasting occurs explicitly requiring a cast operator",
+                  "A compile-time ClassCastException is thrown",
+                  "Upcasting occurs automatically and implicitly because Dog is an Animal",
+                  "The Dog object is stripped of all methods and converted to an integer"
+                ],
+                "correctIndex": 2,
+                "explanation": "Assigning a subclass reference to a superclass reference type is upcasting. Because an 'is-a' relationship holds upward, it is done implicitly and safely.",
+                "sourceRef": "Chapter 4.pptx, slide 14, 15, 16",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s1-q08",
+                "question": "If Appliance a = new Toaster(); where Toaster overrides turnOn() and defines a new method toast(), what happens if you call a.toast()?",
+                "options": [
+                  "The toast() method runs normally using dynamic dispatch",
+                  "A compilation error occurs because class Appliance does not declare a toast() method",
+                  "A runtime ClassCastException is thrown",
+                  "The Appliance turns on instead of toasting"
+                ],
+                "correctIndex": 1,
+                "explanation": "The compiler checks the declared reference type (Appliance). Since Appliance has no toast() method, compilation fails, even though the runtime object is a Toaster.",
+                "sourceRef": "Chapter 4.pptx, slide 17, 18, 19",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s1-q09",
+                "question": "What is the syntactic requirement for an abstract method inside an abstract class?",
+                "options": [
+                  "It must contain an empty set of curly braces containing return 0;",
+                  "It must be declared with both 'abstract' and 'final' keywords simultaneously",
+                  "It must have only a method heading ending with a semicolon, no curly braces or method body, and be marked with 'abstract'",
+                  "It must be declared private so that subclasses cannot see it"
+                ],
+                "correctIndex": 2,
+                "explanation": "Abstract methods have only a signature ending with a semicolon and no implementation body. Subclasses are responsible for providing the body.",
+                "sourceRef": "Chapter 4.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s1-q10",
+                "question": "How do Checked Exceptions differ fundamentally from Unchecked Exceptions in Java?",
+                "options": [
+                  "Checked exceptions inherit from RuntimeException, while unchecked exceptions inherit from Error",
+                  "Checked exceptions crash the JVM immediately, while unchecked exceptions are ignored",
+                  "Checked exceptions are verified at compile time and must be handled or declared with throws, whereas unchecked exceptions (RuntimeExceptions) occur at runtime due to logic flaws",
+                  "Checked exceptions cannot be caught inside a try-catch block"
+                ],
+                "correctIndex": 2,
+                "explanation": "Checked exceptions (like IOException) are verified by the compiler and require handling or declaring. Unchecked exceptions (subclasses of RuntimeException) are not checked at compile time.",
+                "sourceRef": "Chapter 5.pptx, slide 10, 11, 13",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 2,
+            "questions": [
+              {
+                "id": "oop-medium-s2-q01",
+                "question": "What is the practical difference between creating a String using a literal (String s1 = \"hello\";) versus using the new keyword (String s2 = new String(\"hello\");)?",
+                "options": [
+                  "String literals are mutable, while strings created with 'new' are immutable",
+                  "String literals can only contain single characters",
+                  "The 'new' keyword stores strings in CPU registers",
+                  "String literals are stored in the String Constant Pool to conserve memory, while the 'new' keyword forces a new object allocation on the heap"
+                ],
+                "correctIndex": 3,
+                "explanation": "String literals check the String Constant Pool and reuse existing instances, whereas 'new String()' always allocates a distinct object in heap memory.",
+                "sourceRef": "Chapter 2.pptx, slide 104, 106, 107",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s2-q02",
+                "question": "Why should Arrays.toString(myArray) be used to print a single-dimensional array instead of System.out.println(myArray)?",
+                "options": [
+                  "Because System.out.println(myArray) prints the array's type and memory hash code, whereas Arrays.toString() formats and prints the actual elements",
+                  "Because System.out.println() causes a compile error when passed an array",
+                  "Because Arrays.toString() sorts the array before printing",
+                  "Because System.out.println() deletes the first element of the array"
+                ],
+                "correctIndex": 0,
+                "explanation": "Arrays in Java inherit default toString() from Object, which outputs type and hash code (e.g. [I@15db9742). Arrays.toString() prints a comma-separated list of values.",
+                "sourceRef": "Chapter 2.pptx, slide 101, 102",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s2-q03",
+                "question": "What error occurs if a subclass attempts to override a method declared as 'final' in its superclass?",
+                "options": [
+                  "A runtime NoSuchMethodException is thrown",
+                  "A compile-time error occurs because final methods cannot be overridden",
+                  "The subclass method silently replaces the final method",
+                  "The program compiles but generates a runtime ClassCastException"
+                ],
+                "correctIndex": 1,
+                "explanation": "The 'final' modifier on a method explicitly prevents subclasses from overriding it; attempting to override results in a compilation error.",
+                "sourceRef": "Chapter 3.pptx, slide 47, 48",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s2-q04",
+                "question": "What restriction is enforced when a class is declared with the 'final' keyword?",
+                "options": [
+                  "The class cannot contain any methods or constructors",
+                  "The class can only be instantiated once during program execution",
+                  "The class cannot be extended or inherited by any other class",
+                  "The class cannot be imported into other packages"
+                ],
+                "correctIndex": 2,
+                "explanation": "A final class cannot be subclassed (e.g., java.lang.String and java.lang.Math are final classes to ensure security and immutability).",
+                "sourceRef": "Chapter 3.pptx, slide 47, 49",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s2-q05",
+                "question": "What are the default implicit modifiers for any variable declared inside an interface in Java?",
+                "options": [
+                  "private transient volatile",
+                  "public static final (it is implicitly a constant)",
+                  "protected abstract",
+                  "package-private dynamic"
+                ],
+                "correctIndex": 1,
+                "explanation": "All fields declared inside an interface are implicitly public, static, and final, meaning they are constants.",
+                "sourceRef": "Chapter 4.pptx, slide 31, 34",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s2-q06",
+                "question": "What capability was introduced in Java 8 regarding interface methods via the 'default' keyword?",
+                "options": [
+                  "Interfaces can provide concrete method implementations with bodies that implementing classes may use or optionally override",
+                  "All interface methods automatically become private",
+                  "Implementing classes are forbidden from adding their own methods",
+                  "Interfaces can now be directly instantiated using new"
+                ],
+                "correctIndex": 0,
+                "explanation": "Java 8 added default methods to interfaces, allowing interfaces to add new methods with default implementations without breaking existing implementing classes.",
+                "sourceRef": "Chapter 4.pptx, slide 32",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s2-q07",
+                "question": "How are static methods defined inside an interface invoked in Java?",
+                "options": [
+                  "By instantiating the interface with 'new' and calling through the object reference",
+                  "Through the 'super' keyword inside any subclass",
+                  "By qualifying the method name with the interface name (e.g., InterfaceName.staticMethod()) without requiring an object instance",
+                  "Only from within a finally block"
+                ],
+                "correctIndex": 2,
+                "explanation": "Like static methods in a class, static methods in an interface belong to the interface and are invoked directly using InterfaceName.methodName().",
+                "sourceRef": "Chapter 4.pptx, slide 33",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s2-q08",
+                "question": "What is the key distinction between the 'throw' and 'throws' keywords in Java?",
+                "options": [
+                  "'throw' is used to explicitly throw a specific exception object, while 'throws' is used in a method declaration to declare exceptions that might be thrown",
+                  "'throw' is used in method signatures, while 'throws' is used inside try blocks",
+                  "'throw' catches exceptions, while 'throws' creates exceptions",
+                  "There is no difference; 'throws' is simply the plural form of 'throw'"
+                ],
+                "correctIndex": 0,
+                "explanation": "'throw' explicitly throws an exception instance (throw new Exception()), while 'throws' is part of a method signature declaring potential exceptions.",
+                "sourceRef": "Chapter 5.pptx, slide 36, 38",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s2-q09",
+                "question": "When handling multiple exceptions with multiple catch blocks, what rule must be observed regarding their ordering?",
+                "options": [
+                  "Superclass exceptions (like Exception) must always appear first",
+                  "Catch blocks must be arranged in alphabetical order by exception name",
+                  "Only one catch block is permitted per try block in Java",
+                  "More specific subclass exceptions must appear before more general superclass exceptions"
+                ],
+                "correctIndex": 3,
+                "explanation": "If a superclass catch block precedes a subclass catch block, the subclass block is unreachable, causing a compile-time error.",
+                "sourceRef": "Chapter 5.pptx, slide 42",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s2-q10",
+                "question": "Under which specific circumstance will a 'finally' block NOT execute following a try block?",
+                "options": [
+                  "When an ArithmeticException is thrown in the try block",
+                  "When a catch block handles an exception successfully",
+                  "When the try block contains a return statement",
+                  "When the Java Virtual Machine is forcibly terminated, such as via System.exit(0)"
+                ],
+                "correctIndex": 3,
+                "explanation": "A finally block always executes, even after return statements, EXCEPT when the JVM is abruptly or forcibly terminated (e.g., System.exit()).",
+                "sourceRef": "Chapter 5.pptx, slide 33, 34, 35",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 3,
+            "questions": [
+              {
+                "id": "oop-medium-s3-q01",
+                "question": "How does Automatic Garbage Collection manage memory in Java?",
+                "options": [
+                  "The programmer must manually deallocate memory using the 'delete' keyword",
+                  "Garbage collection deletes all global variables every 60 seconds",
+                  "The JVM automatically detects and frees memory occupied by objects that are no longer referenced or reachable by any active thread",
+                  "Memory is only freed when the computer is shut down"
+                ],
+                "correctIndex": 2,
+                "explanation": "Java has automatic garbage collection: the JVM identifies objects that have no active references and reclaims their heap memory automatically.",
+                "sourceRef": "Chapter 2.pptx, slide 28, 29",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s3-q02",
+                "question": "What is the difference between comparing two String objects using '==' versus using the '.equals()' method?",
+                "options": [
+                  "'==' compares content equality, while '.equals()' compares memory addresses",
+                  "Both '==' and '.equals()' always perform identical operations on strings",
+                  "'.equals()' compares string lengths only, while '==' compares character values",
+                  "'==' compares memory addresses (reference equality), while '.equals()' compares the actual sequence of characters (content equality)"
+                ],
+                "correctIndex": 3,
+                "explanation": "The '==' operator checks if both references point to the exact same object in memory, whereas .equals() checks if the character contents match.",
+                "sourceRef": "Chapter 2.pptx, slide 110, 112",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s3-q03",
+                "question": "In constructor chaining during subclass instantiation, in what order do constructors execute?",
+                "options": [
+                  "The superclass constructor executes first, followed by the subclass constructor",
+                  "The subclass constructor executes completely before the superclass constructor begins",
+                  "Constructors execute simultaneously in parallel threads",
+                  "Only the subclass constructor executes; the superclass constructor is bypassed"
+                ],
+                "correctIndex": 0,
+                "explanation": "Object construction proceeds from top to bottom of the inheritance hierarchy: the superclass constructor initializes its portion before the subclass constructor runs.",
+                "sourceRef": "Chapter 3.pptx, slide 21, 22",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s3-q04",
+                "question": "Can a subclass directly access private fields defined in its superclass?",
+                "options": [
+                  "Yes, subclasses automatically gain direct access to all private fields of the superclass",
+                  "Yes, if the subclass is in the same file as the superclass",
+                  "No, private fields are completely deleted when a class is extended",
+                  "No, private fields are inherited but not directly accessible; they must be accessed via public or protected accessor methods"
+                ],
+                "correctIndex": 3,
+                "explanation": "Private members of a superclass are not directly accessible by name in a subclass. The subclass must use inherited public or protected getters/setters.",
+                "sourceRef": "Chapter 3.pptx, slide 15, 19",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s3-q05",
+                "question": "How does Java achieve multiple inheritance through interfaces?",
+                "options": [
+                  "A class can extend multiple superclasses separated by commas: class C extends A, B",
+                  "A single class can implement multiple interfaces separated by commas: class C implements I1, I2",
+                  "An interface can extend a class and an abstract class simultaneously",
+                  "By writing nested public classes inside an abstract class"
+                ],
+                "correctIndex": 1,
+                "explanation": "While Java forbids multiple class inheritance (extends A, B is illegal), a class can implement any number of interfaces: class C implements I1, I2.",
+                "sourceRef": "Chapter 4.pptx, slide 35, 36, 37",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s3-q06",
+                "question": "What is a major structural difference between an Abstract Class and an Interface in Java?",
+                "options": [
+                  "Interfaces can contain private constructors, while abstract classes cannot",
+                  "Abstract classes cannot contain any concrete methods with bodies",
+                  "An abstract class can declare instance variables and constructors, whereas an interface cannot have instance state or constructors",
+                  "An interface can extend multiple concrete classes"
+                ],
+                "correctIndex": 2,
+                "explanation": "Abstract classes can maintain object state via instance fields and constructors. Interfaces define contracts and can only have static final constants (no instance state).",
+                "sourceRef": "Chapter 4.pptx, slide 29, 31, 34",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s3-q07",
+                "question": "What runtime condition triggers an ArrayIndexOutOfBoundsException in Java?",
+                "options": [
+                  "Attempting to access an array element with an index that is negative, or greater than or equal to the array length",
+                  "Attempting to store an integer in a floating-point array",
+                  "Calling Arrays.sort() on an already-sorted array",
+                  "Initializing an array with a size of zero"
+                ],
+                "correctIndex": 0,
+                "explanation": "ArrayIndexOutOfBoundsException is thrown whenever an array access occurs outside valid bounds: index < 0 or index >= array.length.",
+                "sourceRef": "Chapter 5.pptx, slide 16",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s3-q08",
+                "question": "What exception is thrown at runtime when an integer division by zero occurs in Java (e.g., int result = 10 / 0;)?",
+                "options": [
+                  "java.lang.ArithmeticException",
+                  "java.lang.NullPointerException",
+                  "java.lang.NumberFormatException",
+                  "java.lang.IllegalArgumentException"
+                ],
+                "correctIndex": 0,
+                "explanation": "Integer division or modulo by zero causes the JVM to throw an ArithmeticException (which is an unchecked RuntimeException).",
+                "sourceRef": "Chapter 5.pptx, slide 9, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s3-q09",
+                "question": "How do you create a custom, user-defined checked exception in Java?",
+                "options": [
+                  "By declaring a class that implements the java.lang.Throwable interface",
+                  "By declaring a class that extends java.lang.Error",
+                  "By creating a static method inside an interface named 'Exception'",
+                  "By declaring a class that extends java.lang.Exception (without extending RuntimeException)"
+                ],
+                "correctIndex": 3,
+                "explanation": "A custom checked exception is created by subclassing Exception. If it extends RuntimeException instead, it would be an unchecked exception.",
+                "sourceRef": "Chapter 5.pptx, slide 47, 49",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-medium-s3-q10",
+                "question": "What happens when an exception is thrown inside a method and is NOT caught within that method?",
+                "options": [
+                  "The exception propagates up the call stack to the calling method; if unhandled throughout the stack, the JVM terminates the thread with a stack trace",
+                  "The compiler automatically catches it and re-runs the method from line 1",
+                  "The exception is converted into a boolean false return value",
+                  "The CPU resets and clears all operating system memory"
+                ],
+                "correctIndex": 0,
+                "explanation": "Exception propagation means unhandled exceptions drop down the call stack to the invoker. If no handler is found, the thread prints a stack trace and terminates.",
+                "sourceRef": "Chapter 5.pptx, slide 37, 53",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      },
+      "hard": {
+        "level": "hard",
+        "sets": [
+          {
+            "setNumber": 1,
+            "questions": [
+              {
+                "id": "oop-hard-s1-q01",
+                "question": "Consider the following code snippet:\nclass Point {\n    int x;\n    Point(int x) {\n        x = x;\n    }\n}\nPoint p = new Point(5);\nSystem.out.println(p.x);\nWhat is the output and why?",
+                "options": [
+                  "5, because the parameter x assigns its value directly to the instance variable",
+                  "A compilation error occurs due to duplicate variable identifier x",
+                  "0, because the parameter x shadows the instance variable and without 'this.x = x', the instance variable remains at its default value 0",
+                  "A NullPointerException is thrown because p is unassigned"
+                ],
+                "correctIndex": 2,
+                "explanation": "Due to variable shadowing, the statement x = x assigns the parameter to itself. The instance variable x is never updated and retains its default value 0. To fix this, use this.x = x.",
+                "sourceRef": "Chapter 2.pptx, slide 57, 58",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s1-q02",
+                "question": "Consider the following class:\nclass Counter {\n    static int count = 0;\n    Counter() { count++; }\n}\nCounter c1 = new Counter();\nCounter c2 = new Counter();\nSystem.out.println(Counter.count);\nWhat is printed?",
+                "options": [
+                  "1, because each object gets a fresh copy of static variables initialized to 0",
+                  "2, because static variables are shared across all instances of the class and persist across instantiations",
+                  "0, because static variables cannot be modified inside constructors",
+                  "A compilation error occurs because static variables cannot be accessed via class name"
+                ],
+                "correctIndex": 1,
+                "explanation": "Static variables have a single shared memory location per class. Each constructor call increments the same static variable 'count', resulting in 2 after two instantiations.",
+                "sourceRef": "Chapter 2.pptx, slide 33, 34, 35",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s1-q03",
+                "question": "If superclass Parent defines ONLY a parameterized constructor 'Parent(int x)' and NO default constructor, what happens if subclass Child defines 'Child() { }' without an explicit super() call?",
+                "options": [
+                  "Child compiles successfully and Parent's x field is automatically initialized to null",
+                  "The program compiles but throws a runtime NoSuchMethodError upon instantiating Child",
+                  "The JVM dynamically generates a default constructor inside Parent at runtime",
+                  "A compilation error occurs because the compiler automatically inserts super(), but no no-argument constructor exists in Parent"
+                ],
+                "correctIndex": 3,
+                "explanation": "If a constructor does not explicitly call super(...) or this(...), Java inserts super(). Since Parent has a parameterized constructor, no default constructor exists, causing a compile-time error.",
+                "sourceRef": "Chapter 3.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s1-q04",
+                "question": "What is allowed in Java regarding the return type of an overriding method in a subclass (Covariant Return Types)?",
+                "options": [
+                  "The overriding method can return any completely unrelated primitive or object type",
+                  "The overriding method can return a subtype of the return type declared in the superclass method",
+                  "The return type of the overriding method must be strictly void",
+                  "The return type must be a supertype of the superclass method's return type"
+                ],
+                "correctIndex": 1,
+                "explanation": "Java supports covariant return types: an overriding method can declare a return type that is a subclass (subtype) of the return type declared in the overridden superclass method.",
+                "sourceRef": "Chapter 3.pptx, slide 28, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s1-q05",
+                "question": "Given class A { void show() { System.out.print(\"A \"); } }\nclass B extends A { void show() { System.out.print(\"B \"); } }\nclass C extends B { void show() { System.out.print(\"C \"); } }\nWhat is printed by: A obj = new C(); obj.show();?",
+                "options": [
+                  "\"C \", because dynamic method dispatch invokes the most specific overridden method of the actual runtime object",
+                  "\"A \", because the reference variable type is A",
+                  "\"B \", because B is the direct superclass of C",
+                  "\"A B C \", because all versions in the hierarchy execute sequentially"
+                ],
+                "correctIndex": 0,
+                "explanation": "In Java runtime polymorphism (dynamic method dispatch), virtual method calls are resolved based on the actual object instance created on the heap (class C), printing 'C '.",
+                "sourceRef": "Chapter 4.pptx, slide 9, 10, 14",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s1-q06",
+                "question": "Consider the following code:\nclass Parent { static void print() { System.out.print(\"P \"); } }\nclass Child extends Parent { static void print() { System.out.print(\"C \"); } }\nParent obj = new Child();\nobj.print();\nWhat is the output and why?",
+                "options": [
+                  "\"C \", because the runtime object is Child and dynamic dispatch applies to all methods",
+                  "A compilation error occurs because static methods cannot be defined with identical names in subclasses",
+                  "\"P \", because static methods are hidden rather than overridden and are resolved at compile time based on the reference type (Parent)",
+                  "A runtime ClassCastException is thrown"
+                ],
+                "correctIndex": 2,
+                "explanation": "Static methods cannot be polymorphically overridden; they are hidden. Calls to static methods are resolved at compile time based on the declared reference type (Parent), printing 'P '.",
+                "sourceRef": "Chapter 3.pptx, slide 35, 36",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s1-q07",
+                "question": "What happens at runtime if you execute:\nAnimal a = new Animal();\nDog d = (Dog) a;\n(where Dog extends Animal)?",
+                "options": [
+                  "A ClassCastException is thrown at runtime because the actual object in memory is an Animal, not a Dog",
+                  "It compiles and runs without error, converting the Animal into a Dog",
+                  "A compilation error occurs on the cast operator line",
+                  "The variable d is assigned null without throwing an exception"
+                ],
+                "correctIndex": 0,
+                "explanation": "Downcasting fails at runtime with a ClassCastException if the actual heap object is not an instance of the target subclass (an Animal is not a Dog).",
+                "sourceRef": "Chapter 4.pptx, slide 15, 16",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s1-q08",
+                "question": "How should a programmer safely perform downcasting in Java to prevent a ClassCastException?",
+                "options": [
+                  "Wrap the cast inside a synchronized block",
+                  "Declare the target reference variable as final before casting",
+                  "Use the 'new' keyword on the reference variable",
+                  "Use the 'instanceof' operator to verify the runtime object type before performing the cast: if (a instanceof Dog) { Dog d = (Dog) a; }"
+                ],
+                "correctIndex": 3,
+                "explanation": "The 'instanceof' operator tests whether an object reference is an instance of a specified class or implements an interface, ensuring safe downcasting.",
+                "sourceRef": "Chapter 4.pptx, slide 15",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s1-q09",
+                "question": "If a class implements two interfaces that both define an identical default method 'default void log()', how does Java resolve the conflict?",
+                "options": [
+                  "Java arbitrarily chooses the default method from the interface listed first in the implements clause",
+                  "The compiler issues an error unless the implementing class explicitly overrides the default method to resolve the ambiguity",
+                  "Both default methods execute simultaneously in separate threads",
+                  "The class automatically deletes both default methods"
+                ],
+                "correctIndex": 1,
+                "explanation": "When two interfaces provide conflicting default method implementations, Java requires the implementing class to override the method explicitly to resolve ambiguity.",
+                "sourceRef": "Chapter 4.pptx, slide 32, 36",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s1-q10",
+                "question": "What value is returned by the method:\nint test() {\n    try {\n        return 10;\n    } finally {\n        return 20;\n    }\n}?",
+                "options": [
+                  "10, because the try block's return statement executes first and terminates the method",
+                  "20, because the finally block always executes and its return statement overrides any return statement in the try block",
+                  "30, because the returned values are summed together",
+                  "A compilation error occurs because return statements cannot appear in finally blocks"
+                ],
+                "correctIndex": 1,
+                "explanation": "The finally block always runs prior to method exit. A return statement in a finally block supersedes and overrides any pending return value from the try or catch blocks.",
+                "sourceRef": "Chapter 5.pptx, slide 29, 32",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 2,
+            "questions": [
+              {
+                "id": "oop-hard-s2-q01",
+                "question": "In a constructor body, can you include BOTH a this() call and a super() call simultaneously?",
+                "options": [
+                  "No, because both this() and super() must be the first statement of a constructor, making it syntactically impossible to have both in the same constructor",
+                  "Yes, provided this() is written before super()",
+                  "Yes, provided super() is written before this()",
+                  "Yes, but only in abstract classes"
+                ],
+                "correctIndex": 0,
+                "explanation": "Java strictly mandates that an explicit constructor invocation (either this() or super()) must be the first statement. You cannot have both in the same constructor.",
+                "sourceRef": "Chapter 3.pptx, slide 22, 44, 46",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s2-q02",
+                "question": "If a superclass defines a method with default (package-private) access, can a subclass located in a DIFFERENT package override that method?",
+                "options": [
+                  "Yes, default methods are automatically inherited across all packages in Java",
+                  "Yes, provided the subclass method is declared public",
+                  "No, because default package-private members are not visible outside their package; the subclass method is treated as a completely new, independent method",
+                  "A compile error occurs claiming that default methods cannot have subclasses"
+                ],
+                "correctIndex": 2,
+                "explanation": "Package-private members are not visible to classes in other packages. Since the subclass cannot see the superclass method, it cannot override it; any identical method in the subclass is just a new method.",
+                "sourceRef": "Chapter 2.pptx, slide 67; Chapter 3.pptx, slide 11",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s2-q03",
+                "question": "Consider the following code snippet:\nString s = \"Java\";\ns.concat(\" OOP\");\nSystem.out.println(s);\nWhat is printed and why?",
+                "options": [
+                  "\"Java\", because String objects are immutable; concat() returns a new String that was not reassigned to s",
+                  "\"Java OOP\", because concat() modifies the string in place",
+                  "\" OOP\", because concat() overwrites the original string",
+                  "A NullPointerException is thrown"
+                ],
+                "correctIndex": 0,
+                "explanation": "Strings in Java are immutable. Calling s.concat(\" OOP\") creates and returns a new String \"Java OOP\", but 's' continues referencing the original string \"Java\".",
+                "sourceRef": "Chapter 2.pptx, slide 105, 110",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s2-q04",
+                "question": "Why does the following code fail to compile?\ntry {\n    int a = 10 / 0;\n} catch (Exception e) {\n    System.out.println(\"Exception\");\n} catch (ArithmeticException ae) {\n    System.out.println(\"Arithmetic\");\n}",
+                "options": [
+                  "Because integer division by zero is forbidden inside try blocks",
+                  "Because ArithmeticException is a subclass of Exception and is already caught by the first catch block, making the second block unreachable code",
+                  "Because catch blocks cannot accept parameter identifiers like 'e' and 'ae'",
+                  "Because try blocks must be followed immediately by a finally block"
+                ],
+                "correctIndex": 1,
+                "explanation": "Java compiler detects unreachable catch blocks. Since Exception catches all exceptions, the subsequent ArithmeticException catch block can never be reached, causing a compilation error.",
+                "sourceRef": "Chapter 5.pptx, slide 42",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s2-q05",
+                "question": "If a superclass method declares 'void process() throws IOException', what is true regarding the exceptions that an overriding subclass method can declare in its throws clause?",
+                "options": [
+                  "The overriding method can declare IOException, a subclass of IOException, or no checked exceptions at all, but cannot declare a broader checked exception like Exception",
+                  "The overriding method must declare the exact same IOException and cannot declare fewer exceptions",
+                  "The overriding method can declare any checked exception including Exception or Throwable",
+                  "The overriding method is forbidden from using throws clauses"
+                ],
+                "correctIndex": 0,
+                "explanation": "Overriding methods cannot declare broader or new checked exceptions than the superclass method. They can declare the same exception, a narrower subclass exception, or omit throws entirely.",
+                "sourceRef": "Chapter 3.pptx, slide 28; Chapter 5.pptx, slide 38",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s2-q06",
+                "question": "Why should applications NOT attempt to catch subclasses of java.lang.Error (such as OutOfMemoryError or StackOverflowError)?",
+                "options": [
+                  "Because Errors represent catastrophic, fatal JVM failures indicating the execution environment is compromised and cannot be recovered from programmatically",
+                  "Because catching an Error is a syntax error that causes javac compilation failure",
+                  "Because Errors are automatically converted into checked SQLExceptions",
+                  "Because Error does not inherit from java.lang.Throwable"
+                ],
+                "correctIndex": 0,
+                "explanation": "Errors (subclasses of Error) indicate severe conditions (e.g. running out of memory, JVM internal faults) that typical programs should not try to catch or recover from.",
+                "sourceRef": "Chapter 5.pptx, slide 18, 19, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s2-q07",
+                "question": "What is the result of re-throwing an exception inside a catch block:\ntry {\n    throw new CustomException(\"Failed\");\n} catch (CustomException e) {\n    System.out.print(\"Handled \");\n    throw e;\n}?",
+                "options": [
+                  "The program enters an infinite loop inside the catch block",
+                  "\"Handled \" is printed, and the exception continues propagating up the call stack to enclosing try blocks or caller methods",
+                  "The exception is permanently suppressed and silenced",
+                  "The JVM terminates immediately without executing any finally blocks"
+                ],
+                "correctIndex": 1,
+                "explanation": "Re-throwing an exception allows local handling (e.g. logging or partial recovery) before re-throwing the exception to allow caller methods higher in the call stack to handle it.",
+                "sourceRef": "Chapter 5.pptx, slide 51, 52, 53",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s2-q08",
+                "question": "If an abstract class cannot be instantiated directly with 'new', what is the purpose of defining constructors inside an abstract class?",
+                "options": [
+                  "To initialize fields and enforce setup logic of the abstract class when invoked by concrete subclass constructors via super()",
+                  "To allow the JVM to instantiate the abstract class secretly at startup",
+                  "Abstract class constructors are only used for static method calls",
+                  "To prevent subclasses from defining their own constructors"
+                ],
+                "correctIndex": 0,
+                "explanation": "Abstract classes have constructors to initialize their own state. These constructors are called through constructor chaining (super()) whenever a concrete subclass is instantiated.",
+                "sourceRef": "Chapter 4.pptx, slide 20, 29",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s2-q09",
+                "question": "Given interface Constants { int MAX = 100; }, what happens if code executes 'Constants.MAX = 200;'?",
+                "options": [
+                  "The constant is successfully reassigned to 200 for all classes",
+                  "A compilation error occurs because all fields in an interface are implicitly 'final' and cannot be reassigned",
+                  "A runtime SecurityException is thrown",
+                  "MAX is modified only for the current thread"
+                ],
+                "correctIndex": 1,
+                "explanation": "All variables in an interface are implicitly public, static, and final. Reassigning a final variable causes a compilation error.",
+                "sourceRef": "Chapter 4.pptx, slide 34",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s2-q10",
+                "question": "What is printed by the following code snippet?\ntry {\n    System.out.print(\"A \");\n    System.exit(0);\n} finally {\n    System.out.print(\"B \");\n}",
+                "options": [
+                  "\"A B \", because finally always executes regardless of JVM state",
+                  "\"B \", because finally executes before exit",
+                  "\"A B A \", because the JVM restarts upon exit",
+                  "\"A \", because System.exit(0) terminates the JVM immediately, bypassing the finally block"
+                ],
+                "correctIndex": 3,
+                "explanation": "Calling System.exit(0) forcibly shuts down the Java Virtual Machine. This is the rare scenario where a finally block does not execute.",
+                "sourceRef": "Chapter 5.pptx, slide 34, 35",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 3,
+            "questions": [
+              {
+                "id": "oop-hard-s3-q01",
+                "question": "Why does Arrays.equals(arr1, arr2) return false for two nested two-dimensional arrays with identical numbers, and which method must be used instead?",
+                "options": [
+                  "Arrays.equals() only works for arrays of strings; Arrays.compare() must be used",
+                  "Two-dimensional arrays cannot be compared in Java",
+                  "Arrays.equals() performs shallow comparison on the subarray references, which have different memory addresses; Arrays.deepEquals() must be used for deep content comparison",
+                  "Arrays.equals() reverses the array order before checking"
+                ],
+                "correctIndex": 2,
+                "explanation": "Arrays.equals() checks element references. In 2D arrays, elements are references to 1D arrays with different memory addresses. Arrays.deepEquals() recursively compares multidimensional arrays.",
+                "sourceRef": "Chapter 2.pptx, slide 99, 100",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s3-q02",
+                "question": "Given: final int[] numbers = {1, 2, 3}; numbers[0] = 99; numbers = new int[]{4, 5, 6}; Which statement is true?",
+                "options": [
+                  "Both statements compile and execute without error",
+                  "numbers[0] = 99 causes a compilation error because array elements are final",
+                  "Both statements cause compilation errors",
+                  "numbers[0] = 99 compiles and runs successfully, while numbers = new int[]{...} causes a compilation error"
+                ],
+                "correctIndex": 3,
+                "explanation": "The 'final' modifier on an object or array reference means the reference variable cannot be reassigned to a different object. However, the internal contents/elements of the referenced array remain mutable.",
+                "sourceRef": "Chapter 3.pptx, slide 47",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s3-q03",
+                "question": "What happens at runtime when the following code is executed?\nObject[] arr = new String[3];\narr[0] = Integer.valueOf(10);",
+                "options": [
+                  "It compiles and runs successfully because Integer is an Object",
+                  "A compilation error occurs on the assignment line",
+                  "A runtime ArrayStoreException is thrown because the actual array in heap memory is of type String[]",
+                  "The Integer is automatically converted into the string \"10\""
+                ],
+                "correctIndex": 2,
+                "explanation": "Java arrays are covariant and reified at runtime. Even though the reference is Object[], the actual array is String[]. Storing an Integer causes the JVM to throw an ArrayStoreException.",
+                "sourceRef": "Chapter 2.pptx, slide 89; Chapter 4.pptx, slide 14",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s3-q04",
+                "question": "What is the console output of the following nested try-finally structure?\ntry {\n    try {\n        throw new ArithmeticException();\n    } finally {\n        System.out.print(\"InnerFinally \");\n    }\n} catch (ArithmeticException e) {\n    System.out.print(\"OuterCatch \");\n}",
+                "options": [
+                  "\"OuterCatch InnerFinally \", because the outer catch handles the exception first",
+                  "\"InnerFinally OuterCatch \", because the inner finally block executes before the exception propagates to the outer catch block",
+                  "\"InnerFinally \", because the outer catch block is skipped",
+                  "\"OuterCatch \", because the inner finally block is suppressed"
+                ],
+                "correctIndex": 1,
+                "explanation": "When an exception occurs in an inner try block, the inner finally block executes first before control transfers to any matching outer catch block.",
+                "sourceRef": "Chapter 5.pptx, slide 43, 44, 46",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s3-q05",
+                "question": "When defining a custom checked exception 'class MyException extends Exception', why is it standard practice to provide a constructor that calls 'super(message)'?",
+                "options": [
+                  "To prevent the JVM from garbage collecting the exception object",
+                  "Because Exception has no constructors of its own",
+                  "To pass the descriptive error message to Throwable, enabling e.getMessage() and e.printStackTrace() to display it",
+                  "To convert the checked exception into an unchecked exception automatically"
+                ],
+                "correctIndex": 2,
+                "explanation": "Calling super(message) in a custom exception invokes Exception's constructor, storing the error message string inside Throwable so that getMessage() returns it.",
+                "sourceRef": "Chapter 5.pptx, slide 49, 51",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s3-q06",
+                "question": "Given class Tester { void print(int x) { System.out.print(\"primitive \"); } void print(Integer x) { System.out.print(\"boxed \"); } }\nWhat is printed by: new Tester().print(5);?",
+                "options": [
+                  "\"boxed \", because all numbers in Java are treated as objects",
+                  "A compilation error occurs due to ambiguous method call",
+                  "\"primitive \", because Java method overloading prefers exact primitive matches over autoboxing",
+                  "Both methods execute in sequence"
+                ],
+                "correctIndex": 2,
+                "explanation": "In Java overload resolution, exact primitive type matching takes precedence over autoboxing (converting int to Integer). Therefore, print(int) is selected.",
+                "sourceRef": "Chapter 2.pptx, slide 83, 85",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s3-q07",
+                "question": "Consider the following code:\nclass Parent { int val = 10; int getVal() { return val; } }\nclass Child extends Parent { int val = 20; int getVal() { return val; } }\nParent p = new Child();\nSystem.out.println(p.val + \" \" + p.getVal());\nWhat is printed?",
+                "options": [
+                  "\"20 20\", because both variables and methods are polymorphic",
+                  "\"10 10\", because both variables and methods are resolved by reference type",
+                  "\"20 10\", because variables override while methods hide",
+                  "\"10 20\", because variables are not polymorphic and are resolved by reference type (Parent), while methods are polymorphic and dispatched dynamically (Child)"
+                ],
+                "correctIndex": 3,
+                "explanation": "In Java, instance variables are NOT polymorphic (they are bound at compile time based on reference type: p.val is 10). Instance methods are polymorphic and dynamically dispatched (p.getVal() is 20).",
+                "sourceRef": "Chapter 3.pptx, slide 19; Chapter 4.pptx, slide 14",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s3-q08",
+                "question": "If method a() calls method b(), and method b() declares 'throws IOException', what must method a() do if it does not handle IOException in a try-catch block?",
+                "options": [
+                  "Method a() does not need to do anything because IOException is unchecked",
+                  "Method a() must be declared abstract",
+                  "Method a() automatically converts IOException into a runtime warning",
+                  "Method a() must also declare 'throws IOException' in its own method signature to pass responsibility to its caller"
+                ],
+                "correctIndex": 3,
+                "explanation": "Checked exceptions must satisfy the 'Catch or Specify' requirement. If method a() does not catch the checked exception thrown by b(), it must declare it using throws.",
+                "sourceRef": "Chapter 5.pptx, slide 38, 39",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s3-q09",
+                "question": "If class C implements interfaces Alpha and Beta, both of which provide a default method 'void greet()', how can class C explicitly invoke Alpha's default implementation?",
+                "options": [
+                  "super.Alpha.greet();",
+                  "Alpha.greet();",
+                  "Alpha.super.greet();",
+                  "((Alpha) this).greet();"
+                ],
+                "correctIndex": 2,
+                "explanation": "To invoke a specific interface's default method implementation from within the overriding method of an implementing class, the syntax is InterfaceName.super.methodName().",
+                "sourceRef": "Chapter 4.pptx, slide 32, 36",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-hard-s3-q10",
+                "question": "Why does designing software using interfaces (programming to an interface, not an implementation) lead to loosely coupled architecture?",
+                "options": [
+                  "Interfaces automatically double the execution speed of CPU operations",
+                  "Interfaces eliminate the need for classes or objects entirely",
+                  "Interfaces prevent programs from throwing any runtime exceptions",
+                  "Clients depend on abstract behavioral contracts rather than concrete classes, allowing implementations to be modified, replaced, or mocked without altering client code"
+                ],
+                "correctIndex": 3,
+                "explanation": "Interfaces establish formal contracts without exposing implementation details. This promotes loose coupling, high flexibility, easy testing/mocking, and independent system evolution.",
+                "sourceRef": "Chapter 4.pptx, slide 40, 41",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      },
+      "flashcards": {
+        "subjectId": "oop",
+        "phases": [
+          {
+            "phaseNumber": 1,
+            "title": "Introduction to OOP & Java Platform",
+            "cards": [
+              {
+                "id": "oop-fc-p1-c01",
+                "question": "What is the primary definition of an Object in OOP?",
+                "answer": "A software unit representing a real-world entity with state (attributes) and behavior (methods), encapsulating data and functionalities together.",
+                "category": "OOP Basics",
+                "sourceRef": "Chapter 1.pptx, slide 13, 14",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p1-c02",
+                "question": "What is a Class in Object-Oriented Programming?",
+                "answer": "A blueprint, template, or prototype that defines the variables and methods common to all objects of that kind; objects are instances of a class.",
+                "category": "Classes & Objects",
+                "sourceRef": "Chapter 1.pptx, slide 12, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p1-c03",
+                "question": "What is Encapsulation in OOP?",
+                "answer": "The OOP principle of bundling data and methods inside a single class and restricting direct access to internal state, exposing only public interfaces.",
+                "category": "OOP Pillars",
+                "sourceRef": "Chapter 1.pptx, slide 29, 31",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p1-c04",
+                "question": "What is Abstraction in OOP?",
+                "answer": "The process of exposing only essential features of an object while hiding complex background implementation details from the user.",
+                "category": "OOP Pillars",
+                "sourceRef": "Chapter 1.pptx, slide 27, 28",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p1-c05",
+                "question": "What is Inheritance in OOP?",
+                "answer": "A mechanism where a new class (subclass) derives characteristics and behaviors from an existing class (superclass), creating an IS-A relationship and enabling code reuse.",
+                "category": "OOP Pillars",
+                "sourceRef": "Chapter 1.pptx, slide 32",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p1-c06",
+                "question": "What is Polymorphism in OOP?",
+                "answer": "The ability of an object or method call to take many forms, allowing different underlying forms to be processed through a single common interface.",
+                "category": "OOP Pillars",
+                "sourceRef": "Chapter 1.pptx, slide 33",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p1-c07",
+                "question": "What is the Java Virtual Machine (JVM)?",
+                "answer": "An abstract computing machine that provides the runtime execution environment to convert platform-neutral Java bytecode into machine instructions.",
+                "category": "Java Platform",
+                "sourceRef": "Chapter 1.pptx, slide 40, 44",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p1-c08",
+                "question": "What is Java Bytecode?",
+                "answer": "The highly optimized intermediate set of instructions generated by the Java compiler (javac) and saved in .class files to be executed by the JVM.",
+                "category": "Java Platform",
+                "sourceRef": "Chapter 1.pptx, slide 45, 46",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p1-c09",
+                "question": "What does 'Write Once, Run Anywhere' (WORA) mean?",
+                "answer": "Java programs compile into architecture-neutral bytecode that can run without recompilation on any platform that has a compatible JVM installed.",
+                "category": "Java Features",
+                "sourceRef": "Chapter 1.pptx, slide 40, 44",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p1-c10",
+                "question": "What are the four primary types of Java applications?",
+                "answer": "Standalone (desktop GUI/console) applications, Web applications, Enterprise applications (distributed/business), and Mobile applications.",
+                "category": "Java Applications",
+                "sourceRef": "Chapter 1.pptx, slide 37",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 2,
+            "title": "Classes, Objects, Methods & Strings",
+            "cards": [
+              {
+                "id": "oop-fc-p2-c01",
+                "question": "What does the 'new' keyword do in Java?",
+                "answer": "Dynamically allocates memory on the heap for a new object instance and calls the matching class constructor to initialize it.",
+                "category": "Object Creation",
+                "sourceRef": "Chapter 2.pptx, slide 21, 22",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p2-c02",
+                "question": "What is the difference between Instance and Static variables?",
+                "answer": "Instance variables belong to a specific object (each instance has a copy); static variables belong to the class itself and are shared across all instances.",
+                "category": "Variables",
+                "sourceRef": "Chapter 2.pptx, slide 32, 33, 34",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p2-c03",
+                "question": "What is a Constructor in Java?",
+                "answer": "A special method with the same name as the class and no return type, invoked automatically to initialize a newly created object.",
+                "category": "Constructors",
+                "sourceRef": "Chapter 2.pptx, slide 42, 43",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p2-c04",
+                "question": "What is Constructor Overloading?",
+                "answer": "Defining multiple constructors within the same class that have the same name but different parameter lists (count, type, or order).",
+                "category": "Constructors",
+                "sourceRef": "Chapter 2.pptx, slide 53",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p2-c05",
+                "question": "What is the 'this' keyword used for in Java?",
+                "answer": "It refers to the current object instance; used to resolve variable shadowing (this.x = x) or to call another constructor in the same class (this()).",
+                "category": "Language Keywords",
+                "sourceRef": "Chapter 2.pptx, slide 57, 58, 59",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p2-c06",
+                "question": "What are the four Access Modifiers in Java?",
+                "answer": "public (accessible everywhere), protected (same package + subclasses), default (package-private, same package only), and private (declaring class only).",
+                "category": "Access Control",
+                "sourceRef": "Chapter 2.pptx, slide 64, 65, 66, 67",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p2-c07",
+                "question": "What is Method Overloading?",
+                "answer": "Defining multiple methods with the same name in the same class with different parameter lists; return type alone is not sufficient.",
+                "category": "Methods",
+                "sourceRef": "Chapter 2.pptx, slide 83, 84, 85",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p2-c08",
+                "question": "How does Java manage memory with Garbage Collection?",
+                "answer": "The JVM automatically detects and reclaims heap memory occupied by objects that are no longer reachable by any active reference in the program.",
+                "category": "Memory Management",
+                "sourceRef": "Chapter 2.pptx, slide 28, 29",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p2-c09",
+                "question": "Why are Strings immutable in Java?",
+                "answer": "Once a String object is created, its sequence of characters cannot be modified; any modification creates a new String in memory for safety and caching.",
+                "category": "Strings",
+                "sourceRef": "Chapter 2.pptx, slide 104, 105",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p2-c10",
+                "question": "How do String literals differ from 'new String()'?",
+                "answer": "String literals are stored in the String Constant Pool to avoid duplicate instances; new String() always creates a new object in general heap memory.",
+                "category": "Strings",
+                "sourceRef": "Chapter 2.pptx, slide 106, 107",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 3,
+            "title": "Inheritance & Access Control",
+            "cards": [
+              {
+                "id": "oop-fc-p3-c01",
+                "question": "What is Inheritance and which keyword is used?",
+                "answer": "A mechanism where a subclass derives attributes and methods from a superclass using the extends keyword, facilitating code reuse.",
+                "category": "Inheritance Basics",
+                "sourceRef": "Chapter 3.pptx, slide 4, 6",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p3-c02",
+                "question": "Why does Java disallow Multiple Inheritance with classes?",
+                "answer": "To avoid ambiguity such as the Diamond Problem where a subclass inherits conflicting implementations from two superclasses with identical method names.",
+                "category": "Class Hierarchy",
+                "sourceRef": "Chapter 3.pptx, slide 7, 14",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p3-c03",
+                "question": "What is the java.lang.Object class?",
+                "answer": "The root class of the entire Java class hierarchy; every class in Java directly or indirectly extends Object and inherits its methods (e.g. equals, toString).",
+                "category": "Class Hierarchy",
+                "sourceRef": "Chapter 3.pptx, slide 13",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p3-c04",
+                "question": "How does the 'protected' modifier work across packages?",
+                "answer": "Protected members are accessible to all classes in the same package and to subclasses in different packages through inheritance.",
+                "category": "Access Control",
+                "sourceRef": "Chapter 3.pptx, slide 8, 11",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p3-c05",
+                "question": "How are Superclass Constructors invoked in a Subclass?",
+                "answer": "Using super() or super(arguments), which must always be the very first statement inside the subclass constructor.",
+                "category": "Constructors & Inheritance",
+                "sourceRef": "Chapter 3.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p3-c06",
+                "question": "What is Method Overriding in Java?",
+                "answer": "When a subclass provides a specific implementation for an instance method already defined in its superclass, using the same name, parameters, and return type.",
+                "category": "Polymorphism & Inheritance",
+                "sourceRef": "Chapter 3.pptx, slide 28, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p3-c07",
+                "question": "What is Method Hiding?",
+                "answer": "When a subclass defines a static method with the same signature as a superclass static method; it is resolved at compile time based on reference type.",
+                "category": "Methods",
+                "sourceRef": "Chapter 3.pptx, slide 35, 36",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p3-c08",
+                "question": "What is the purpose of the 'super' keyword?",
+                "answer": "It refers to the immediate superclass, allowing access to hidden superclass fields, overridden superclass methods (super.m()), and superclass constructors (super()).",
+                "category": "Language Keywords",
+                "sourceRef": "Chapter 3.pptx, slide 43, 44",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p3-c09",
+                "question": "What does the 'final' keyword do when applied to a method?",
+                "answer": "It prevents the method from being overridden by any subclass, locking its implementation for security and optimization.",
+                "category": "Modifiers",
+                "sourceRef": "Chapter 3.pptx, slide 47, 48",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p3-c10",
+                "question": "What does the 'final' keyword do when applied to a class?",
+                "answer": "It prevents the class from being extended/subclassed by any other class (e.g., String is a final class).",
+                "category": "Modifiers",
+                "sourceRef": "Chapter 3.pptx, slide 47, 49",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 4,
+            "title": "Polymorphism & Interfaces",
+            "cards": [
+              {
+                "id": "oop-fc-p4-c01",
+                "question": "What are Compile-Time and Runtime Polymorphism?",
+                "answer": "Compile-time polymorphism is achieved via method overloading (static resolution); runtime polymorphism is achieved via method overriding (dynamic method dispatch).",
+                "category": "Polymorphism Types",
+                "sourceRef": "Chapter 4.pptx, slide 6, 7, 9",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p4-c02",
+                "question": "What is Dynamic Method Dispatch?",
+                "answer": "The mechanism where a call to an overridden method is resolved at runtime based on the actual object type in memory rather than the reference variable type.",
+                "category": "Polymorphism Mechanics",
+                "sourceRef": "Chapter 4.pptx, slide 9, 14",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p4-c03",
+                "question": "What is Upcasting in Java?",
+                "answer": "Assigning a subclass object reference to a superclass reference variable (e.g. Animal a = new Dog();), which is done automatically and safely.",
+                "category": "Type Casting",
+                "sourceRef": "Chapter 4.pptx, slide 14, 15, 16",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p4-c04",
+                "question": "What is Downcasting and when is it used?",
+                "answer": "Casting a superclass reference back to its subclass type (e.g. Dog d = (Dog) a;), requiring an explicit cast; must be guarded by instanceof.",
+                "category": "Type Casting",
+                "sourceRef": "Chapter 4.pptx, slide 15, 16",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p4-c05",
+                "question": "What is an Abstract Class?",
+                "answer": "A class declared with abstract that cannot be instantiated with new; serves as a common template containing both abstract and concrete methods.",
+                "category": "Abstraction",
+                "sourceRef": "Chapter 4.pptx, slide 20, 22, 29",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p4-c06",
+                "question": "What is an Abstract Method?",
+                "answer": "A method declared with abstract having only a signature and no body (abstract void m();), which must be implemented by concrete subclasses.",
+                "category": "Abstraction",
+                "sourceRef": "Chapter 4.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p4-c07",
+                "question": "What is an Interface in Java?",
+                "answer": "A reference type declared with interface defining abstract methods and constants (public static final) that classes implement using implements.",
+                "category": "Interfaces",
+                "sourceRef": "Chapter 4.pptx, slide 30, 31, 34",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p4-c08",
+                "question": "How do Interfaces achieve Multiple Inheritance in Java?",
+                "answer": "A single class can implement multiple interfaces separated by commas (class C implements I1, I2), acquiring multiple behavioral contracts safely.",
+                "category": "Interfaces",
+                "sourceRef": "Chapter 4.pptx, slide 31, 36, 37",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p4-c09",
+                "question": "What are Default Methods in interfaces?",
+                "answer": "Methods defined with the default keyword in interfaces that provide a default body, allowing interfaces to evolve without breaking existing implementing classes.",
+                "category": "Interfaces",
+                "sourceRef": "Chapter 4.pptx, slide 32",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p4-c10",
+                "question": "Why do Interfaces promote Loose Coupling?",
+                "answer": "Components communicate through abstract contracts rather than concrete classes, allowing implementations to be replaced or modified without altering client code.",
+                "category": "Architecture",
+                "sourceRef": "Chapter 4.pptx, slide 40, 41",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 5,
+            "title": "Exception Handling & Errors",
+            "cards": [
+              {
+                "id": "oop-fc-p5-c01",
+                "question": "What is an Exception in Java?",
+                "answer": "An abnormal condition or event that occurs during program execution and disrupts the normal instruction flow if left unhandled.",
+                "category": "Exceptions Overview",
+                "sourceRef": "Chapter 5.pptx, slide 4, 7",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p5-c02",
+                "question": "What is the Throwable class hierarchy?",
+                "answer": "Throwable is the root of all errors and exceptions, branching into Error (serious JVM failures) and Exception (handleable conditions).",
+                "category": "Exception Hierarchy",
+                "sourceRef": "Chapter 5.pptx, slide 5, 21",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p5-c03",
+                "question": "How do Errors differ from Exceptions?",
+                "answer": "Errors (e.g. OutOfMemoryError) are fatal JVM conditions that cannot be recovered from programmatically; Exceptions are conditions applications can catch and handle.",
+                "category": "Errors vs Exceptions",
+                "sourceRef": "Chapter 5.pptx, slide 18, 19, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p5-c04",
+                "question": "What are Checked Exceptions?",
+                "answer": "Exceptions checked at compile time (inherit from Exception but not RuntimeException); must be caught in try-catch or declared with throws.",
+                "category": "Exception Types",
+                "sourceRef": "Chapter 5.pptx, slide 10, 11, 12",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p5-c05",
+                "question": "What are Unchecked Exceptions?",
+                "answer": "Subclasses of RuntimeException (e.g. NullPointerException, ArithmeticException) caused by programming logic bugs; not enforced at compile time.",
+                "category": "Exception Types",
+                "sourceRef": "Chapter 5.pptx, slide 13, 14, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p5-c06",
+                "question": "What is the role of the try and catch blocks?",
+                "answer": "try wraps code that might throw an exception; catch intercepts and handles specific exception types to prevent abnormal termination.",
+                "category": "Exception Handling",
+                "sourceRef": "Chapter 5.pptx, slide 23, 24, 26",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p5-c07",
+                "question": "What is the purpose of the finally block?",
+                "answer": "A block following try/catch that always executes (used for resource cleanup), regardless of whether an exception occurred or was handled.",
+                "category": "Exception Handling",
+                "sourceRef": "Chapter 5.pptx, slide 25, 29, 31",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p5-c08",
+                "question": "What is the difference between throw and throws?",
+                "answer": "throw explicitly triggers an exception object in code (throw new Exception()); throws declares in a method signature that the method may throw an exception.",
+                "category": "Exception Keywords",
+                "sourceRef": "Chapter 5.pptx, slide 36, 38",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p5-c09",
+                "question": "What is the ordering rule for Multiple Catch Blocks?",
+                "answer": "Specific subclass exception catch blocks must precede more general superclass catch blocks; otherwise the compiler flags unreachable code.",
+                "category": "Exception Handling",
+                "sourceRef": "Chapter 5.pptx, slide 42",
+                "confidence": "high"
+              },
+              {
+                "id": "oop-fc-p5-c10",
+                "question": "How do you define a Custom User-Defined Exception?",
+                "answer": "By creating a class that extends Exception (for checked exceptions) or RuntimeException (for unchecked exceptions) and calling super(message).",
+                "category": "Custom Exceptions",
+                "sourceRef": "Chapter 5.pptx, slide 47, 48, 49",
                 "confidence": "high"
               }
             ]

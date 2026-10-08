@@ -1,0 +1,18 @@
+{
+  "id": "oop",
+  "name": "OOP",
+  "department": "Information System",
+  "year": "Year 2",
+  "semester": "Semester 2",
+  "sourceFiles": [
+    "Chapter 1.pptx",
+    "Chapter 2.pptx",
+    "Chapter 3.pptx",
+    "Chapter 4.pptx",
+    "Chapter 5.pptx"
+  ],
+  "generatedAt": "2026-10-08",
+  "reviewStatus": "pending_review",
+  "questionCount": 90,
+  "lowConfidenceCount": 0
+}
