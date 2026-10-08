@@ -1,0 +1,441 @@
+{
+  "subjectId": "isr",
+  "level": "medium",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "isr-med-s01-q01",
+          "question": "Comparing Data Retrieval (such as SQL relational databases) and Information Retrieval (IR), which comparison correctly characterizes their query languages and matching mechanisms?",
+          "options": [
+            "Data retrieval uses natural language queries with partial matching; IR uses formal SQL with exact matching",
+            "Data retrieval uses artificial formal query languages with exact matching; IR uses free text or Boolean queries with partial or best matching",
+            "Both Data retrieval and IR rely exclusively on exact matching where 100% accuracy is required",
+            "Both Data retrieval and IR utilize unstructured schemas without field definitions"
+          ],
+          "correctIndex": 1,
+          "explanation": "Data retrieval uses artificial languages (like SQL) and exact matching, while IR systems evaluate free-text or Boolean queries using partial or best-match algorithms.",
+          "sourceRef": "Chapter 1.pptx, slide 24",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s01-q02",
+          "question": "Why does simple keyword matching often fail to satisfy a user's true information need in IR systems?",
+          "options": [
+            "Natural language possesses polysemy (one word having multiple semantic meanings) and synonymy (multiple words expressing the same concept)",
+            "Computers lack sufficient disk space to store text files",
+            "Inverted indexes cannot store more than 100 words per document",
+            "Relational databases disallow string comparisons"
+          ],
+          "correctIndex": 0,
+          "explanation": "Word matching is weak because a single word can have multiple meanings depending on context (polysemy, e.g., 'take a picture' vs. 'take money to bank'), and concepts can be described using different words (synonymy).",
+          "sourceRef": "Chapter 1.pptx, slide 25",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s01-q03",
+          "question": "In tokenization and lexical analysis, why are hyphens problematic to treat with a single blanket rule?",
+          "options": [
+            "Hyphens cause CPU floating-point exceptions in word processors",
+            "Hyphens cannot be stored in UTF-8 or ASCII character encodings",
+            "Some hyphenated words should be broken up (e.g., 'state-of-the-art') while others lose distinct meaning if split (e.g., 'B-49' submarine vs 'B49' bus)",
+            "Stemming algorithms crash whenever a hyphen appears after a vowel"
+          ],
+          "correctIndex": 2,
+          "explanation": "Hyphens present ambiguity: breaking 'state-of-the-art' into individual words is desirable, but separating 'gilt-edged' or 'B-49' (which refers to a Soviet submarine while B49 is a US city bus) alters their semantic identity.",
+          "sourceRef": "Chapter 2.pptx, slide 6",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s01-q04",
+          "question": "How does the 'Successor Variety' stemming approach determine word and morpheme segment boundaries?",
+          "options": [
+            "By looking up each word in an alphabetical dictionary of irregular verbs",
+            "By calculating the cosine angle between consecutive character vectors",
+            "By stripping the longest matching suffix from an ordered list of rewrite rules",
+            "By counting the number of distinct characters that follow a given prefix in a large corpus; a peak in variety signals a boundary"
+          ],
+          "correctIndex": 3,
+          "explanation": "Successor variety counts the number of distinct letters following a prefix; as characters are added within a morpheme, successor variety drops, but jumps back up at segment/morpheme boundaries.",
+          "sourceRef": "Chapter 2.pptx, slide 21",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s01-q05",
+          "question": "How does the Porter Stemming algorithm perform affix removal on English words?",
+          "options": [
+            "It applies a succession of condition-action suffix-stripping rules organized into multiple ordered steps",
+            "It translates words into phonetic soundex codes based on vowel pronunciations",
+            "It relies entirely on a precomputed static database of 500,000 root stems",
+            "It trains a neural network classifier on word n-gram frequencies"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Porter algorithm uses a series of condition-action rules applied to word suffixes in multiple progressive phases, searching for the longest matching rule in each step.",
+          "sourceRef": "Chapter 2.pptx, slide 27",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s01-q06",
+          "question": "In an IR thesaurus, what relationship is designated by the symbols BT (Broader Term) and NT (Narrower Term)?",
+          "options": [
+            "Grammatical parts of speech such as nouns and prepositions",
+            "Exact phonetic anagrams that can be swapped without lexical loss",
+            "Hierarchical conceptual relationships allowing queries to be broadened or narrowed",
+            "Stop words that must be eliminated during tokenization"
+          ],
+          "correctIndex": 2,
+          "explanation": "Thesauri organize concepts hierarchically: BT indicates a broader concept and NT indicates a narrower concept, allowing users to broaden or focus their search query.",
+          "sourceRef": "Chapter 2.pptx, slide 29, 30",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s01-q07",
+          "question": "In term weighting, why does a term with a very high Document Frequency (DF) receive a lower IDF weight?",
+          "options": [
+            "High DF indicates the term is misspelled by multiple authors",
+            "High DF means the term appears in almost all documents, making it non-discriminating for distinguishing relevant documents",
+            "IDF is directly proportional to DF, so higher DF always results in higher IDF",
+            "High DF terms are automatically deleted from the vocabulary file"
+          ],
+          "correctIndex": 1,
+          "explanation": "If a term appears across almost every document (high DF), it lacks discriminating power. IDF = log(N / DF) decreases as DF increases toward N.",
+          "sourceRef": "Chapter 3.pptx, slide 9, 10, 11",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s01-q08",
+          "question": "Given two binary document vectors d1 = (1, 1, 0, 1) and d2 = (1, 0, 1, 1), what is their Inner Product?",
+          "options": [
+            "0",
+            "1",
+            "4",
+            "2"
+          ],
+          "correctIndex": 3,
+          "explanation": "Inner Product = (1*1) + (1*0) + (0*1) + (1*1) = 1 + 0 + 0 + 1 = 2.",
+          "sourceRef": "Chapter 3.pptx, slide 21, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s01-q09",
+          "question": "What is the formula for computing Cosine Similarity between document vector d and query vector q?",
+          "options": [
+            "sim(d, q) = (d . q) / (|d| * |q|)",
+            "sim(d, q) = |d| + |q| - (d . q)",
+            "sim(d, q) = (d . q)^2 / (|d| + |q|)",
+            "sim(d, q) = sqrt(|d| * |q|) / (d . q)"
+          ],
+          "correctIndex": 0,
+          "explanation": "Cosine similarity computes the cosine of the angle between the two vectors: sim(d, q) = (d . q) / (|d| * |q|), normalizing the dot product by vector lengths.",
+          "sourceRef": "Chapter 3.pptx, slide 26",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s01-q10",
+          "question": "What architectural advantage is gained by separating an inverted index into a Vocabulary file and a Postings file?",
+          "options": [
+            "It allows vocabulary files to be deleted after documents are indexed",
+            "It ensures postings lists never require sorting by document ID",
+            "The relatively small vocabulary can be kept in RAM for fast search while large postings lists reside on disk",
+            "It completely eliminates the need for term frequency calculations"
+          ],
+          "correctIndex": 2,
+          "explanation": "Keeping a separate vocabulary with pointers to postings lists allows the compact vocabulary to be cached in fast main memory while the bulky postings remain on disk.",
+          "sourceRef": "Chapter 4.pptx, slide 18",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "isr-med-s02-q01",
+          "question": "How is a Suffix Tree formed from a Suffix Trie?",
+          "options": [
+            "By replacing all leaf pointers with hash table buckets",
+            "By sorting the trie nodes using quicksort in ascending order",
+            "By converting all character edges into binary 0 and 1 bitstrings",
+            "By compacting non-branching paths (unary nodes) of the suffix trie into single edges with substring labels"
+          ],
+          "correctIndex": 3,
+          "explanation": "A suffix tree is constructed by compacting unary nodes of the suffix trie, collapsing paths of single-child nodes into single edges labeled with substrings.",
+          "sourceRef": "Chapter 4.pptx, slide 30",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s02-q02",
+          "question": "What is the search time complexity for finding all occurrences of a pattern of length m in a text of length n using a Suffix Tree?",
+          "options": [
+            "O(n^2)",
+            "O(m)",
+            "O(n * m)",
+            "O(2^m)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Searching for a substring of length m in a suffix tree takes O(m) time, which depends only on the query pattern length and is independent of text length n.",
+          "sourceRef": "Chapter 4.pptx, slide 36",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s02-q03",
+          "question": "When updating a sequential master file in batch mode, which four files are typically involved in the process?",
+          "options": [
+            "Index file, Suffix trie, Postings file, and Cache log",
+            "Vocabulary file, Document file, Query vector, and Result set",
+            "Old master file, Transaction file, New master file, and Error report file",
+            "Binary heap, AVL tree, Red-black tree, and B-tree file"
+          ],
+          "correctIndex": 2,
+          "explanation": "The four files associated with updating a sequential file are: old master file, transaction file (changes to apply), new master file (updated copy), and error report file.",
+          "sourceRef": "Chapter 4.pptx, slide 8",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s02-q04",
+          "question": "In the Vector Space Model, how is the term-document matrix typically characterized in large real-world collections?",
+          "options": [
+            "It is extremely sparse because each individual document contains only a small fraction of the entire vocabulary",
+            "It is completely dense with non-zero weights in every single cell",
+            "It is restricted to exactly two rows and two columns",
+            "It must have equal numbers of documents and vocabulary terms"
+          ],
+          "correctIndex": 0,
+          "explanation": "Because most words do not appear in any given document, the majority of entries in a term-document matrix are zero, making it highly sparse.",
+          "sourceRef": "Chapter 5.pptx, slide 6, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s02-q05",
+          "question": "Given query Q = A AND (B OR C), how does a Boolean IR system evaluate which document IDs satisfy the query?",
+          "options": [
+            "It computes the cosine angle between A and (B + C)",
+            "It takes the intersection of set D_A with the union of sets D_B and D_C: D_A ∩ (D_B ∪ D_C)",
+            "It adds term frequencies of A, B, and C and retrieves the top 10 ranked documents",
+            "It converts all three terms into suffix trees and checks for string overlaps"
+          ],
+          "correctIndex": 1,
+          "explanation": "In Boolean evaluation, AND corresponds to set intersection and OR corresponds to set union: documents satisfying A AND (B OR C) are given by D_A ∩ (D_B ∪ D_C).",
+          "sourceRef": "Chapter 5.pptx, slide 7, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s02-q06",
+          "question": "In the standard TF-IDF formulation w_ij = f(i, j) * log(N / n_i), what does the factor log(N / n_i) represent?",
+          "options": [
+            "The Term Frequency of term i in document j",
+            "The ratio of query words to document words",
+            "The precision of the retrieval algorithm",
+            "The Inverse Document Frequency (IDF) of term i in a collection of N documents"
+          ],
+          "correctIndex": 3,
+          "explanation": "log(N / n_i) is the Inverse Document Frequency (IDF) factor, where N is total documents and n_i is the number of documents containing term i.",
+          "sourceRef": "Chapter 5.pptx, slide 19, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s02-q07",
+          "question": "An IR system retrieves 10 documents for a query. Upon inspection, 4 of the retrieved documents are relevant. If the total collection contains 8 relevant documents for this query, what are the Precision and Recall?",
+          "options": [
+            "Precision = 50% (4/8), Recall = 40% (4/10)",
+            "Precision = 80% (8/10), Recall = 100% (8/8)",
+            "Precision = 40% (4/10), Recall = 50% (4/8)",
+            "Precision = 20% (2/10), Recall = 25% (2/8)"
+          ],
+          "correctIndex": 2,
+          "explanation": "Precision = Relevant Retrieved / Total Retrieved = 4 / 10 = 40%. Recall = Relevant Retrieved / Total Relevant = 4 / 8 = 50%.",
+          "sourceRef": "Chapter 6.pptx, slide 9, 12, 13",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s02-q08",
+          "question": "How is Interpolated Precision calculated at a standard recall level r_j (from {0.0, 0.1, ..., 1.0})?",
+          "options": [
+            "By taking the maximum precision observed at any recall level greater than or equal to r_j",
+            "By averaging the precision values at r_j and r_{j+1}",
+            "By setting precision to zero whenever recall drops below 50%",
+            "By multiplying the precision at r_j by the total number of test queries"
+          ],
+          "correctIndex": 0,
+          "explanation": "Interpolated precision at standard recall level r_j is defined as the maximum known precision at any recall level r >= r_j: P_interp(r_j) = max_{r >= r_j} P(r).",
+          "sourceRef": "Chapter 6.pptx, slide 19, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s02-q09",
+          "question": "How is Mean Average Precision (MAP) computed when evaluating an IR system across multiple test queries?",
+          "options": [
+            "By taking the maximum precision achieved on the single easiest query",
+            "By multiplying the recall of each query by the number of retrieved documents",
+            "By measuring the milliseconds needed to parse all query strings",
+            "By calculating the Average Precision (AP) for each query and then computing the mean of these AP values across all queries"
+          ],
+          "correctIndex": 3,
+          "explanation": "MAP is calculated by first finding the Average Precision (AP) for each individual query in the test set and then computing the arithmetic mean of those AP values across all queries.",
+          "sourceRef": "Chapter 6.pptx, slide 25, 28",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s02-q10",
+          "question": "In Vector Space Model retrieval using Cosine Similarity, why can a document be 'penalized' (demoted in rank) when it includes extra terms that were not requested in the query?",
+          "options": [
+            "Because Boolean evaluation automatically rejects any document with extra terms",
+            "Because extra non-query terms increase the document vector length |d|, which increases the denominator in cosine similarity and lowers the score",
+            "Because the extra terms are treated as syntax errors and discarded from memory",
+            "Because the query parser marks the document as corrupted"
+          ],
+          "correctIndex": 1,
+          "explanation": "In VSM with cosine similarity, non-requested terms contribute 0 to the dot product numerator but increase document vector length |d| in the denominator, decreasing the cosine similarity score.",
+          "sourceRef": "Chapter 7.pptx, slide 10",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "isr-med-s03-q01",
+          "question": "In the logical view of documents, how does document representation shift along the continuum from raw data to indexing?",
+          "options": [
+            "From index terms to encrypted binary code without linguistic parsing",
+            "From relational tables to unindexed text streams",
+            "From full text to structured index terms via tokenization, stop word removal, and stemming",
+            "From machine language to assembly language code"
+          ],
+          "correctIndex": 2,
+          "explanation": "Document representation shifts along a continuum from raw full text down to compact index terms through successive text operations: tokenization, stop word elimination, and stemming.",
+          "sourceRef": "Chapter 1.pptx, slide 30",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s03-q02",
+          "question": "What is the primary drawback of using the Table Lookup approach for stemming?",
+          "options": [
+            "It cannot stem regular plurals ending in 's'",
+            "It runs in exponential O(2^n) time complexity",
+            "It requires internet access during query evaluation",
+            "Constructing and maintaining exhaustive tables requires extensive language engineering and high storage overhead, and novel terms are missed"
+          ],
+          "correctIndex": 3,
+          "explanation": "Table lookup requires extensive language-specific engineering to build, suffers from storage overhead, and inevitably misses exceptional or unseen words.",
+          "sourceRef": "Chapter 2.pptx, slide 20",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s03-q03",
+          "question": "Given two words with unique digram counts A = 7 and B = 8, and C = 5 shared unique digrams between them, what is Dice's Coefficient of similarity?",
+          "options": [
+            "(2 * 5) / (7 + 8) = 10 / 15 ≈ 0.667",
+            "5 / 15 = 0.333",
+            "(7 * 8) / (2 * 5) = 5.60",
+            "5 / (7 * 8) = 0.089"
+          ],
+          "correctIndex": 0,
+          "explanation": "Dice's coefficient is defined as 2C / (A + B). Here, 2 * 5 / (7 + 8) = 10 / 15 ≈ 0.667.",
+          "sourceRef": "Chapter 2.pptx, slide 22",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s03-q04",
+          "question": "Why did H.P. Luhn conclude that mid-frequency words have the greatest resolving power for index terms?",
+          "options": [
+            "High-frequency words are always foreign loanwords, while low-frequency words are misspelled",
+            "High-frequency words appear everywhere and cannot differentiate topics, while low-frequency words appear too rarely to match user queries effectively",
+            "Mid-frequency words are the only words that have Latin root stems",
+            "Mid-frequency words can be compressed using Huffman coding"
+          ],
+          "correctIndex": 1,
+          "explanation": "High-frequency words (above upper cutoff) lack specificity because they occur across the collection; rare words (below lower cutoff) rarely match queries. Resolving power peaks in between.",
+          "sourceRef": "Chapter 2.pptx, slide 42, 43",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s03-q05",
+          "question": "Why is document length normalization important when calculating term weights in document collections?",
+          "options": [
+            "To ensure every document on disk has the exact same byte size",
+            "To truncate long documents so they fit into RAM cache buffers",
+            "To prevent long documents (which naturally have higher term frequencies and more words) from dominating retrieval results simply due to length",
+            "To eliminate all adjectives and adverbs from the text"
+          ],
+          "correctIndex": 2,
+          "explanation": "Longer documents contain more words and repeat terms more often. Normalizing by document length ensures they are not unfairly favored over short, concise documents.",
+          "sourceRef": "Chapter 3.pptx, slide 8, 26",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s03-q06",
+          "question": "What practical utility does storing positional (location) information for each term occurrence provide in an inverted index?",
+          "options": [
+            "It enables term highlighting in search snippets and allows processing of phrase and proximity queries",
+            "It enables automatic language translation from English to French",
+            "It allows the operating system to defragment the hard disk",
+            "It prevents users from issuing Boolean NOT queries"
+          ],
+          "correctIndex": 0,
+          "explanation": "Positional information allows the IR system to evaluate phrase queries, compute proximity distances (e.g., within 5 words), and highlight search term locations in the UI.",
+          "sourceRef": "Chapter 4.pptx, slide 15",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s03-q07",
+          "question": "Why does the Vector Space Model (VSM) provide superior retrieval effectiveness compared to the standard Boolean Model for general user search?",
+          "options": [
+            "VSM guarantees 100% precision and 100% recall on every query",
+            "VSM requires queries to be formatted strictly in SQL syntax",
+            "VSM eliminates the need for an inverted index",
+            "VSM supports partial matching and produces a ranked list of documents ordered by relevance score"
+          ],
+          "correctIndex": 3,
+          "explanation": "Unlike the Boolean model which produces an unranked set based on rigid binary criteria, VSM allows partial matching and ranks documents by their degree of similarity.",
+          "sourceRef": "Chapter 5.pptx, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s03-q08",
+          "question": "What is the definition of R-Precision in IR evaluation?",
+          "options": [
+            "The ratio of relevant documents to non-relevant documents in the entire database",
+            "Precision calculated after retrieving exactly R documents, where R is the total number of relevant documents for that query",
+            "The recall value at rank 1 in the retrieved list",
+            "The execution runtime divided by the number of returned results"
+          ],
+          "correctIndex": 1,
+          "explanation": "R-precision is defined as the precision after exactly R documents have been retrieved, where R is the total number of known relevant documents for that query.",
+          "sourceRef": "Chapter 6.pptx, slide 28",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s03-q09",
+          "question": "In relevance feedback systems, how does term reweighting modify query term weights?",
+          "options": [
+            "It resets all term weights to 1.0 regardless of relevance",
+            "It removes all terms that appear in more than two documents",
+            "It increases weights of terms appearing in relevant documents and decreases weights of terms appearing in non-relevant documents",
+            "It inverts all weights by computing 1 / weight"
+          ],
+          "correctIndex": 2,
+          "explanation": "Term reweighting increases the weights of terms that characterize documents marked as relevant, while decreasing the weights of terms from documents marked as irrelevant.",
+          "sourceRef": "Chapter 7.pptx, slide 16",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-med-s03-q10",
+          "question": "How do synonymy and polysemy create problems for keyword-based search systems?",
+          "options": [
+            "Synonymy leads to missing relevant documents using different words; polysemy leads to retrieving irrelevant documents using the same word with different meanings",
+            "Synonymy increases precision while polysemy increases recall",
+            "Both synonymy and polysemy cause inverted index files to be corrupted on disk",
+            "Synonymy affects numbers while polysemy affects punctuation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Synonymy ('restaurant' vs 'café') harms recall because matching documents may use alternate terms; polysemy ('bat' animal vs sports) harms precision by retrieving documents with unintended meanings.",
+          "sourceRef": "Chapter 7.pptx, slide 13",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

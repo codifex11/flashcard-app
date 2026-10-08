@@ -1,0 +1,435 @@
+{
+  "subjectId": "isr",
+  "phases": [
+    {
+      "phaseNumber": 1,
+      "title": "Introduction to ISR & Text Operations",
+      "cards": [
+        {
+          "id": "isr-fc-p1-c01",
+          "question": "What is Information Storage and Retrieval (ISR)?",
+          "answer": "The process of representing, storing, organizing, and accessing unstructured information (usually text) to satisfy a user's information need.",
+          "category": "IR Overview",
+          "sourceRef": "Chapter 1.pptx, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p1-c02",
+          "question": "How does Information Retrieval differ fundamentally from Data Retrieval (Databases)?",
+          "answer": "Data retrieval deals with structured fields and exact matching where errors fail; IR deals with unstructured text, best matching, and tolerates small errors.",
+          "category": "IR vs Database",
+          "sourceRef": "Chapter 1.pptx, slide 23, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p1-c03",
+          "question": "What distinguishes Searching from Browsing in user retrieval tasks?",
+          "answer": "Searching has a clearly defined objective translated into a query; browsing is open-ended exploration without a fixed search specification.",
+          "category": "User Tasks",
+          "sourceRef": "Chapter 1.pptx, slide 27, 28",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p1-c04",
+          "question": "What is the Logical View of Documents in an IR system?",
+          "answer": "A continuum representing documents as a set of extracted index terms or keywords rather than raw full text, achieved via text operations.",
+          "category": "Document View",
+          "sourceRef": "Chapter 1.pptx, slide 30",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p1-c05",
+          "question": "What roles do the Indexing and Searching subsystems play in IR architecture?",
+          "answer": "Indexing is an offline process that analyzes text and constructs index structures; searching is an online process that evaluates user queries.",
+          "category": "IR Architecture",
+          "sourceRef": "Chapter 1.pptx, slide 44",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p1-c06",
+          "question": "What is Tokenization (Lexical Analysis) in text preprocessing?",
+          "answer": "The process of segmenting raw document text into individual words or candidate index terms while handling digits, hyphens, and punctuation.",
+          "category": "Tokenization",
+          "sourceRef": "Chapter 2.pptx, slide 3, 6",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p1-c07",
+          "question": "Why are Stop Words eliminated during text operations?",
+          "answer": "Extremely frequent grammatical words (e.g., 'the', 'is', 'at') carry negligible discriminating power and inflate index size without aiding retrieval.",
+          "category": "Stop Words",
+          "sourceRef": "Chapter 2.pptx, slide 3, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p1-c08",
+          "question": "What is Stemming (Term Conflation)?",
+          "answer": "The reduction of morphological variants of words to a common base stem by stripping suffixes or prefixes (e.g., 'connected' -> 'connect').",
+          "category": "Stemming",
+          "sourceRef": "Chapter 2.pptx, slide 15, 16",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p1-c09",
+          "question": "What does Zipf's Law state regarding word distribution in natural language?",
+          "answer": "The product of a word's frequency and its frequency rank in a text collection is approximately constant: r * f = c.",
+          "category": "Zipf's Law",
+          "sourceRef": "Chapter 2.pptx, slide 36",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p1-c10",
+          "question": "What was H.P. Luhn's hypothesis regarding word significance for indexing?",
+          "answer": "Words with the highest resolving (discriminating) power lie between an upper cutoff (common words) and a lower cutoff (rare words).",
+          "category": "Luhn's Hypothesis",
+          "sourceRef": "Chapter 2.pptx, slide 42, 43",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 2,
+      "title": "Term Weighting & Similarity Measures",
+      "cards": [
+        {
+          "id": "isr-fc-p2-c01",
+          "question": "What is the Bag of Words (BOW) document representation?",
+          "answer": "A model representing documents as unordered collections of words, preserving term presence or frequency while ignoring grammar and word order.",
+          "category": "Bag of Words",
+          "sourceRef": "Chapter 3.pptx, slide 3; Chapter 5.pptx, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p2-c02",
+          "question": "What is the difference between Binary and Non-Binary term weighting?",
+          "answer": "Binary weighting assigns 1 if a term is present and 0 if absent; non-binary weighting assigns real values reflecting term frequency and collection specificity.",
+          "category": "Term Weighting",
+          "sourceRef": "Chapter 3.pptx, slide 5, 6",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p2-c03",
+          "question": "What is Term Frequency (TF) and what does it indicate?",
+          "answer": "The number of occurrences of term i in document j, indicating how intensely a document focuses on that specific concept.",
+          "category": "Term Frequency",
+          "sourceRef": "Chapter 3.pptx, slide 7",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p2-c04",
+          "question": "What is the distinction between Document Frequency (DF) and Collection Frequency (CF)?",
+          "answer": "DF is the number of distinct documents containing a term; CF is the total number of times the term appears across the entire corpus.",
+          "category": "Document Frequency",
+          "sourceRef": "Chapter 3.pptx, slide 9; Chapter 4.pptx, slide 14",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p2-c05",
+          "question": "What is Inverse Document Frequency (IDF) and why is it used?",
+          "answer": "A measure computed as log(N / DF) that downweights ubiquitous terms and assigns higher discriminatory value to rare terms in the collection.",
+          "category": "IDF",
+          "sourceRef": "Chapter 3.pptx, slide 10, 11",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p2-c06",
+          "question": "What is the standard TF-IDF weighting formula?",
+          "answer": "w_ij = f(i, j) * log(N / n_i), combining local term occurrence in document j with global term rarity across N collection documents.",
+          "category": "TF-IDF",
+          "sourceRef": "Chapter 3.pptx, slide 12, 13",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p2-c07",
+          "question": "How are documents and queries represented geometrically in the Vector Space Model?",
+          "answer": "As multi-dimensional vectors in a Euclidean space where each axis corresponds to a distinct vocabulary index term.",
+          "category": "Vector Space",
+          "sourceRef": "Chapter 3.pptx, slide 17, 18",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p2-c08",
+          "question": "What is the Inner Product (Dot Product) similarity measure?",
+          "answer": "The sum of products of corresponding term weights: sum(w_ik * w_qk). It measures shared term overlap but is sensitive to document length.",
+          "category": "Inner Product",
+          "sourceRef": "Chapter 3.pptx, slide 21, 22",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p2-c09",
+          "question": "What is Cosine Similarity and how does it normalize for document length?",
+          "answer": "sim(d, q) = (d . q) / (|d| * |q|). It measures the cosine of the angle between vectors, eliminating length bias by dividing by vector lengths.",
+          "category": "Cosine Similarity",
+          "sourceRef": "Chapter 3.pptx, slide 26, 30",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p2-c10",
+          "question": "Why is document length normalization crucial in term weighting?",
+          "answer": "Long documents repeat words more often; normalization ensures concise documents on a topic are not unfairly dominated by long documents.",
+          "category": "Length Normalization",
+          "sourceRef": "Chapter 3.pptx, slide 8, 26",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 3,
+      "title": "Indexing Structures & Inverted Files",
+      "cards": [
+        {
+          "id": "isr-fc-p3-c01",
+          "question": "What is an Inverted File (Inverted Index)?",
+          "answer": "A word-oriented indexing mechanism consisting of sorted distinct keywords, where each keyword links to a list of documents containing it.",
+          "category": "Inverted Index",
+          "sourceRef": "Chapter 4.pptx, slide 13",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p3-c02",
+          "question": "What is the Vocabulary (Dictionary) file in an inverted index?",
+          "answer": "The set of all distinct index terms stored in lexicographical order, along with term statistics (DF, CF) and pointers to postings lists.",
+          "category": "Vocabulary File",
+          "sourceRef": "Chapter 4.pptx, slide 17, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p3-c03",
+          "question": "What is a Postings File (Inverted List)?",
+          "answer": "A file storing a sequence of postings (Doc IDs, frequencies, and positions) for each distinct term in the vocabulary.",
+          "category": "Postings File",
+          "sourceRef": "Chapter 4.pptx, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p3-c04",
+          "question": "Why is keeping the Vocabulary in RAM and Postings on disk beneficial?",
+          "answer": "The vocabulary is compact and fits in main memory for fast lookup, while larger postings lists are streamed from disk only when terms match.",
+          "category": "Index Architecture",
+          "sourceRef": "Chapter 4.pptx, slide 18, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p3-c05",
+          "question": "What is the purpose of storing term positions in postings lists?",
+          "answer": "It enables phrase searches, proximity queries (e.g., words within distance k), and search snippet term highlighting in user interfaces.",
+          "category": "Postings Positions",
+          "sourceRef": "Chapter 4.pptx, slide 15",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p3-c06",
+          "question": "What are the three core steps when executing a search on an inverted index?",
+          "answer": "1) Vocabulary search (isolate query words in dictionary), 2) Retrieval of occurrences (fetch postings), 3) Manipulation of occurrences (evaluate logic).",
+          "category": "Index Searching",
+          "sourceRef": "Chapter 4.pptx, slide 25",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p3-c07",
+          "question": "What is a Suffix Trie in string indexing?",
+          "answer": "An ordinary trie data structure where the input strings inserted are all possible suffixes of a given text, indexed by their starting positions.",
+          "category": "Suffix Trie",
+          "sourceRef": "Chapter 4.pptx, slide 28",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p3-c08",
+          "question": "How is a Suffix Tree constructed from a Suffix Trie?",
+          "answer": "By compacting unary (single-child) nodes of the suffix trie, replacing chains of characters with a single edge labeled by text index pairs (a, b).",
+          "category": "Suffix Tree",
+          "sourceRef": "Chapter 4.pptx, slide 30, 31",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p3-c09",
+          "question": "What is the search time complexity of finding a pattern of length m in a Suffix Tree?",
+          "answer": "O(m) time, depending strictly on the length of the query pattern and independent of the text size n.",
+          "category": "Suffix Tree Complexity",
+          "sourceRef": "Chapter 4.pptx, slide 36",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p3-c10",
+          "question": "What does Heaps' Law dictate about vocabulary growth V = K * n^beta?",
+          "answer": "Vocabulary size grows sublinearly with corpus size n (beta ≈ 0.4-0.6), meaning unique word growth slows significantly as the corpus expands.",
+          "category": "Heaps' Law",
+          "sourceRef": "Chapter 2.pptx, slide 45; Chapter 4.pptx, slide 3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 4,
+      "title": "Classic & Modern IR Models",
+      "cards": [
+        {
+          "id": "isr-fc-p4-c01",
+          "question": "What is an IR Model?",
+          "answer": "A mathematical framework comprising a representation for documents and queries, and a ranking/matching function to estimate document relevance.",
+          "category": "IR Model Definition",
+          "sourceRef": "Chapter 5.pptx, slide 2, 4",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p4-c02",
+          "question": "What is the Term-Document Matrix in the Vector Space Model?",
+          "answer": "A matrix where rows represent distinct vocabulary terms, columns represent documents, and cells store term weights (w_ij).",
+          "category": "Term-Document Matrix",
+          "sourceRef": "Chapter 5.pptx, slide 6, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p4-c03",
+          "question": "How does the Boolean Retrieval Model evaluate document relevance?",
+          "answer": "Using strict set operations based on Boolean logic (AND = intersection, OR = union, NOT = difference) yielding a binary yes/no decision.",
+          "category": "Boolean Model",
+          "sourceRef": "Chapter 5.pptx, slide 7, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p4-c04",
+          "question": "What is the primary drawback of Boolean Retrieval regarding document ordering?",
+          "answer": "It provides no ranked output; all matching documents are considered equally relevant, often returning either zero results or overwhelming result sets.",
+          "category": "Boolean Drawbacks",
+          "sourceRef": "Chapter 5.pptx, slide 14",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p4-c05",
+          "question": "How does the Vector Space Model (VSM) overcome Boolean model limitations?",
+          "answer": "By supporting partial matching and continuous similarity scoring, allowing documents to be ranked in descending order of relevance.",
+          "category": "VSM Advantages",
+          "sourceRef": "Chapter 5.pptx, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p4-c06",
+          "question": "How is a query represented in the Vector Space Model?",
+          "answer": "As a vector in the same t-dimensional term space as documents, with term weights assigned based on query term frequency and collection IDF.",
+          "category": "Query Vector",
+          "sourceRef": "Chapter 5.pptx, slide 6, 18, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p4-c07",
+          "question": "What mathematical assumption does the Vector Space Model make about terms?",
+          "answer": "It assumes terms are pairwise independent (orthogonal basis vectors), ignoring linguistic co-occurrence and semantic dependencies.",
+          "category": "Term Independence",
+          "sourceRef": "Chapter 5.pptx, slide 6, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p4-c08",
+          "question": "What does a similarity score of 1.0 signify in Cosine Similarity?",
+          "answer": "The document and query vectors point in the identical direction in term space, meaning their relative term weight distributions are collinear.",
+          "category": "Cosine Scoring",
+          "sourceRef": "Chapter 3.pptx, slide 26; Chapter 5.pptx, slide 15",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p4-c09",
+          "question": "Why can VSM with Cosine Similarity demote documents with extra non-query terms?",
+          "answer": "Extra non-query terms add zero to the dot product numerator but increase document vector Euclidean length in the denominator, lowering the score.",
+          "category": "Document Demotion",
+          "sourceRef": "Chapter 7.pptx, slide 10",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p4-c10",
+          "question": "What role does Partial Matching play in user satisfaction in VSM?",
+          "answer": "It retrieves documents containing some query terms even if others are absent, preventing total retrieval failure on multi-term queries.",
+          "category": "Partial Matching",
+          "sourceRef": "Chapter 5.pptx, slide 14, 15",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 5,
+      "title": "Retrieval Evaluation & Query Operations",
+      "cards": [
+        {
+          "id": "isr-fc-p5-c01",
+          "question": "What is the definition of Precision in IR evaluation?",
+          "answer": "The fraction of retrieved documents that are relevant: Precision = |Retrieved ∩ Relevant| / |Retrieved|.",
+          "category": "Precision",
+          "sourceRef": "Chapter 6.pptx, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p5-c02",
+          "question": "What is the definition of Recall in IR evaluation?",
+          "answer": "The fraction of all relevant documents in the collection that are retrieved: Recall = |Retrieved ∩ Relevant| / |Total Relevant|.",
+          "category": "Recall",
+          "sourceRef": "Chapter 6.pptx, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p5-c03",
+          "question": "What is the Precision-Recall Trade-off?",
+          "answer": "As retrieval is expanded to achieve higher recall, more non-relevant documents are swept in, causing precision to decline.",
+          "category": "Evaluation Trade-off",
+          "sourceRef": "Chapter 6.pptx, slide 16",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p5-c04",
+          "question": "What is 11-Point Interpolated Precision?",
+          "answer": "Precision evaluated at 11 standard recall levels (0.0 to 1.0 in 0.1 steps), defined as the maximum known precision at any recall level >= r_j.",
+          "category": "Interpolation",
+          "sourceRef": "Chapter 6.pptx, slide 19, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p5-c05",
+          "question": "What is Average Precision (AP) for a single query?",
+          "answer": "The average of precision scores calculated at the rank of each retrieved relevant document, divided by the total count of relevant documents.",
+          "category": "Average Precision",
+          "sourceRef": "Chapter 6.pptx, slide 24, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p5-c06",
+          "question": "What is Mean Average Precision (MAP)?",
+          "answer": "The mean of the Average Precision (AP) scores calculated across an entire benchmark set of test queries, used to compare IR systems.",
+          "category": "MAP",
+          "sourceRef": "Chapter 6.pptx, slide 25, 28",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p5-c07",
+          "question": "What is R-Precision in IR evaluation?",
+          "answer": "The precision calculated after retrieving exactly R documents, where R is the total number of known relevant documents for that query.",
+          "category": "R-Precision",
+          "sourceRef": "Chapter 6.pptx, slide 28",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p5-c08",
+          "question": "What is a Proximity Query and how does it affect precision?",
+          "answer": "A query requiring search terms to appear within a specified distance (units/words) of each other, substantially increasing precision.",
+          "category": "Proximity Queries",
+          "sourceRef": "Chapter 7.pptx, slide 6",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p5-c09",
+          "question": "What are the two basic techniques in Query Reformulation?",
+          "answer": "1) Query Expansion (adding new terms from relevant documents or thesaurus), and 2) Term Reweighting (altering weights based on feedback).",
+          "category": "Query Reformulation",
+          "sourceRef": "Chapter 7.pptx, slide 16",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-fc-p5-c10",
+          "question": "How does Rocchio's Relevance Feedback algorithm revise query vectors?",
+          "answer": "It adds a weighted centroid of relevant documents and subtracts a weighted centroid of non-relevant documents: moving toward relevance.",
+          "category": "Rocchio Feedback",
+          "sourceRef": "Chapter 7.pptx, slide 16, 17",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

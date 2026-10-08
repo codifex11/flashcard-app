@@ -1,0 +1,441 @@
+{
+  "subjectId": "isr",
+  "level": "easy",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "isr-easy-s01-q01",
+          "question": "According to the formal definition by Baeza-Yates & Ribeiro-Neto, what primary type of material does an Information Retrieval (IR) system focus on finding?",
+          "options": [
+            "Strictly relational tables with primary and foreign keys",
+            "Compiled executable binary files and machine code",
+            "Unstructured material, usually text documents, that satisfies a user information need",
+            "Hard-coded hardware memory registers"
+          ],
+          "correctIndex": 2,
+          "explanation": "IR is defined as finding material of an unstructured nature (usually text) that satisfies an information need from within large document collections.",
+          "sourceRef": "Chapter 1.pptx, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s01-q02",
+          "question": "How do Information Retrieval (IR) and Data Retrieval (e.g., Relational Databases) differ regarding error tolerance?",
+          "options": [
+            "Data retrieval is error-sensitive where a single mismatch fails, whereas IR tolerates small errors and retrieves best-matching items",
+            "Data retrieval tolerates inaccurate results, whereas IR systems require 100% mathematical precision",
+            "Neither system tolerates any form of error or discrepancy",
+            "Data retrieval deals with free-text queries while IR uses rigid SQL schemas"
+          ],
+          "correctIndex": 0,
+          "explanation": "Data retrieval aims at retrieving objects satisfying well-defined semantics where an error implies failure, whereas IR semantics are loose and small errors are tolerated.",
+          "sourceRef": "Chapter 1.pptx, slide 23, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s01-q03",
+          "question": "In the context of the user task in IR, what defines 'searching' as opposed to 'browsing'?",
+          "options": [
+            "Looking through random document categories without any clear goal",
+            "Clicking hyperlinks haphazardly across web pages",
+            "Restructuring the database schema dynamically",
+            "Retrieving information where the user has a clearly defined objective and translates it into a query"
+          ],
+          "correctIndex": 3,
+          "explanation": "Searching is the process where the main objective is clearly defined from the onset, requiring the user to translate their information need into a query.",
+          "sourceRef": "Chapter 1.pptx, slide 28",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s01-q04",
+          "question": "What is the primary objective of lexical analysis (tokenization) in text operations?",
+          "options": [
+            "Translating documents into binary machine language instructions",
+            "Identifying words in text by handling digits, hyphens, punctuation marks, and character cases",
+            "Calculating inverse document frequency weights for phrases",
+            "Grouping documents into hierarchical semantic clusters"
+          ],
+          "correctIndex": 1,
+          "explanation": "Lexical analysis/tokenization converts text into candidate index terms by identifying words and handling digits, hyphens, punctuation, and letter casing.",
+          "sourceRef": "Chapter 2.pptx, slide 3, 6",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s01-q05",
+          "question": "What is the main purpose of eliminating stop words during document preprocessing?",
+          "options": [
+            "Expanding short user queries with related conceptual synonyms",
+            "Correcting misspelled terms in author text automatically",
+            "Detecting grammatical tense errors in source documents",
+            "Filtering out extremely common words with very low discriminating power for retrieval"
+          ],
+          "correctIndex": 3,
+          "explanation": "Stop word elimination filters out high-frequency words (such as 'the', 'is', 'at') that have very little power to discriminate between relevant and non-relevant documents.",
+          "sourceRef": "Chapter 2.pptx, slide 3, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s01-q06",
+          "question": "According to Zipf's Law, what mathematical relationship describes the frequency (f) and rank (r) of words in a text collection?",
+          "options": [
+            "Frequency divided by rank equals a constant (f / r = c)",
+            "Frequency plus rank squared equals zero (f + r^2 = 0)",
+            "The product of frequency and rank is approximately constant (r * f = c)",
+            "Rank is an exponential function of frequency (r = 2^f)"
+          ],
+          "correctIndex": 2,
+          "explanation": "Zipf's law states that when distinct words are ranked in decreasing order of frequency, rank multiplied by frequency roughly equals a constant: r * f = c.",
+          "sourceRef": "Chapter 2.pptx, slide 36",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s01-q07",
+          "question": "According to H.P. Luhn's ideas on word significance, which words have the highest resolving (discriminating) power?",
+          "options": [
+            "Words situated in the intermediate frequency range between the upper and lower cutoffs",
+            "The most frequent words occurring across every document",
+            "Words that appear only once in the entire corpus",
+            "Punctuation symbols and numbers exceeding four digits"
+          ],
+          "correctIndex": 0,
+          "explanation": "Luhn suggested that both extremely common words (above upper cutoff) and extremely rare words (below lower cutoff) are not useful; resolving power peaks halfway between the two cutoffs.",
+          "sourceRef": "Chapter 2.pptx, slide 42, 43",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s01-q08",
+          "question": "What does Term Frequency (TF) measure in term weighting?",
+          "options": [
+            "The total number of characters in a query string",
+            "The number of times a specific term occurs in a given document",
+            "The number of documents in the collection that contain the term",
+            "The physical disk storage space occupied by a term index entry"
+          ],
+          "correctIndex": 1,
+          "explanation": "Term Frequency (TF) measures the number of occurrences of term i in document j (often denoted as freq(i, j) or TF_ij).",
+          "sourceRef": "Chapter 3.pptx, slide 7",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s01-q09",
+          "question": "What is the intuition behind Inverse Document Frequency (IDF) in term weighting?",
+          "options": [
+            "Terms occurring in many documents receive higher weights because they are popular",
+            "All terms receive the exact same weight regardless of occurrence count",
+            "Terms that appear in few documents are more specific and receive higher weights",
+            "IDF counts the number of syllables in a stemmed index word"
+          ],
+          "correctIndex": 2,
+          "explanation": "IDF measures how informative a term is across the collection; rare terms that appear in few documents have high IDF, while common terms have low IDF.",
+          "sourceRef": "Chapter 3.pptx, slide 10, 11",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s01-q10",
+          "question": "When comparing two term vectors using the Inner Product (dot product), what does a similarity score of zero indicate?",
+          "options": [
+            "The two vectors do not share any terms in common",
+            "The two vectors are identical in every dimension",
+            "One document is an exact substring of the other",
+            "The query contains negative Boolean search terms"
+          ],
+          "correctIndex": 0,
+          "explanation": "The inner product sums the products of corresponding weights. If the documents share no common terms, every product is 0, giving an inner product of 0.",
+          "sourceRef": "Chapter 3.pptx, slide 21, 22",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "isr-easy-s02-q01",
+          "question": "What is the primary function of an index in an Information Retrieval system?",
+          "options": [
+            "Compressing images to reduce disk space",
+            "Arranging index terms to permit fast searching and speed up document retrieval",
+            "Encrypting user passwords and query history",
+            "Checking grammatical correctness in user search queries"
+          ],
+          "correctIndex": 1,
+          "explanation": "Indexing is an arrangement of index terms to permit fast searching and speed up access to relevant documents as per the user's query.",
+          "sourceRef": "Chapter 4.pptx, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s02-q02",
+          "question": "How are records accessed in a sequential file?",
+          "options": [
+            "Directly by computing hash values of the record keys",
+            "Randomly by indexing pointers stored in memory",
+            "Through a B-tree search path starting from the root",
+            "One after another from the beginning of the file to the end"
+          ],
+          "correctIndex": 3,
+          "explanation": "In a sequential file, records can only be accessed one after another from beginning to end.",
+          "sourceRef": "Chapter 4.pptx, slide 8",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s02-q03",
+          "question": "An inverted index structure is primarily divided into which two components?",
+          "options": [
+            "Vocabulary (dictionary) and Postings file (inverted list)",
+            "Master file and Transaction log",
+            "User profile and Cache buffer",
+            "Hash table and Heap block"
+          ],
+          "correctIndex": 0,
+          "explanation": "An inverted index consists of two main files: the vocabulary (list of distinct terms) and the postings file (pointers to documents where terms occur).",
+          "sourceRef": "Chapter 4.pptx, slide 17, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s02-q04",
+          "question": "What does each posting element in an inverted list represent?",
+          "options": [
+            "The author's email address and timestamp",
+            "The user's previous search session history",
+            "The occurrence of a term in a document, including the document identifier",
+            "A list of grammatical synonyms for a stop word"
+          ],
+          "correctIndex": 2,
+          "explanation": "Each element in an inverted list is a posting, which stores the occurrence of a term in a document (Doc ID, and optionally frequency/position).",
+          "sourceRef": "Chapter 4.pptx, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s02-q05",
+          "question": "In string indexing and suffix data structures, what is a suffix of a string?",
+          "options": [
+            "A substring that exists at the end of the given string",
+            "A prefix consisting of the first three letters of a word",
+            "An anagram formed by rearranging characters",
+            "The phonetic translation of a spoken word"
+          ],
+          "correctIndex": 0,
+          "explanation": "A suffix is a substring that exists at the end of a given string. For a string txt, Ti = ti...tn is the suffix starting at position i.",
+          "sourceRef": "Chapter 4.pptx, slide 27",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s02-q06",
+          "question": "In the Bag of Words (BOW) document representation, what information is discarded?",
+          "options": [
+            "The presence of words in the text",
+            "Word ordering and grammatical sequence",
+            "The total number of distinct vocabulary terms",
+            "The document identifier number"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Bag of Words model represents documents as sets or multisets of words, ignoring word order and grammatical structure.",
+          "sourceRef": "Chapter 5.pptx, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s02-q07",
+          "question": "The classical Boolean Retrieval Model is based on which mathematical foundation?",
+          "options": [
+            "Vector space linear algebra and dot products",
+            "Bayesian probability networks and prior beliefs",
+            "Genetic algorithms and evolutionary fitness",
+            "Set theory and Boolean logic (AND, OR, NOT)"
+          ],
+          "correctIndex": 3,
+          "explanation": "The Boolean model is based on set theory and Boolean algebra, imposing a binary decision criterion (a document either satisfies the formula or does not).",
+          "sourceRef": "Chapter 5.pptx, slide 8",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s02-q08",
+          "question": "How are both documents and queries represented in the Vector Space Model (VSM)?",
+          "options": [
+            "As relational tuples in normalized 3NF tables",
+            "As binary search trees with AVL balance factors",
+            "As multidimensional vectors in a term-document space",
+            "As deterministic finite state automata"
+          ],
+          "correctIndex": 2,
+          "explanation": "In VSM, documents and queries are mapped into t-dimensional vectors where each dimension corresponds to a distinct index term.",
+          "sourceRef": "Chapter 5.pptx, slide 6, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s02-q09",
+          "question": "In IR evaluation, what is the standard definition of Precision?",
+          "options": [
+            "The ratio of relevant documents retrieved to the total number of relevant documents in the collection",
+            "The fraction of retrieved documents that are relevant to the query",
+            "The time in milliseconds taken to execute a query",
+            "The ratio of non-relevant documents retrieved to total non-relevant documents"
+          ],
+          "correctIndex": 1,
+          "explanation": "Precision is the fraction of retrieved documents that are relevant: Precision = |Retrieved ∩ Relevant| / |Retrieved|.",
+          "sourceRef": "Chapter 6.pptx, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s02-q09-alt",
+          "question": "In IR evaluation, what is the standard definition of Recall?",
+          "options": [
+            "The percentage of retrieved documents that are completely irrelevant",
+            "The total number of words in the query that match the index",
+            "The speed at which the inverted index is loaded into memory",
+            "The fraction of relevant documents in the collection that were successfully retrieved"
+          ],
+          "correctIndex": 3,
+          "explanation": "Recall is the fraction of all relevant documents in the collection that were retrieved: Recall = |Retrieved ∩ Relevant| / |Total Relevant|.",
+          "sourceRef": "Chapter 6.pptx, slide 9, 10",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "isr-easy-s03-q01",
+          "question": "How are the indexing and searching subsystems partitioned in a typical IR system architecture?",
+          "options": [
+            "Indexing is an offline process while searching is an online process",
+            "Both indexing and searching run strictly online when the user types a query",
+            "Indexing is an online process while searching is completely offline",
+            "Neither subsystem requires offline document preparation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Indexing is an offline process of organizing documents using keywords extracted from the collection, whereas searching is an online process that responds to user queries.",
+          "sourceRef": "Chapter 1.pptx, slide 44",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s03-q02",
+          "question": "What is the primary goal of stemming (term conflation) in text preprocessing?",
+          "options": [
+            "Translating English terms into Latin root words",
+            "Identifying and removing syntax errors in source code",
+            "Removing affixes to map morphological variants of words to a common stem",
+            "Assigning security permissions to document folders"
+          ],
+          "correctIndex": 2,
+          "explanation": "Stemming removes affixes (suffixes/prefixes) to convert word variants (e.g., connect, connecting, connection) into a common base stem.",
+          "sourceRef": "Chapter 2.pptx, slide 15, 16",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s03-q03",
+          "question": "In n-gram stemmer methods, what is a 'digram'?",
+          "options": [
+            "A paragraph containing exactly two sentences",
+            "A pair of consecutive letters in a word",
+            "A diagram illustrating inverted index tables",
+            "A query containing exactly two boolean operators"
+          ],
+          "correctIndex": 1,
+          "explanation": "In n-gram stemming, a digram is defined as a pair of consecutive letters (e.g., 'st', 'ta', 'at' for 'statistics').",
+          "sourceRef": "Chapter 2.pptx, slide 22",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s03-q04",
+          "question": "What does Heaps' Law estimate in information retrieval collections?",
+          "options": [
+            "The CPU clock cycle time needed to perform a cosine dot product",
+            "The average number of characters per query string",
+            "The memory consumption of database transaction logs",
+            "The growth of vocabulary size (number of distinct words) as a function of corpus size"
+          ],
+          "correctIndex": 3,
+          "explanation": "Heaps' Law estimates vocabulary growth: for a text of n words, vocabulary size grows as V = K * n^beta where beta is typically 0.4 - 0.6.",
+          "sourceRef": "Chapter 2.pptx, slide 45",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s03-q05",
+          "question": "Why is the Cosine Similarity metric preferred over simple Inner Product in the Vector Space Model?",
+          "options": [
+            "It eliminates the need for computing term frequencies entirely",
+            "It normalizes for document length, preventing long documents from having an unfair advantage",
+            "It guarantees that precision and recall are both 100%",
+            "It converts text documents into alphabetical order automatically"
+          ],
+          "correctIndex": 1,
+          "explanation": "Cosine similarity divides the inner product by the product of vector Euclidean lengths, thereby neutralizing the bias toward longer documents.",
+          "sourceRef": "Chapter 3.pptx, slide 26, 30",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s03-q06",
+          "question": "What are the three general steps followed when searching an inverted index?",
+          "options": [
+            "Vocabulary search, retrieval of occurrences, and manipulation of occurrences",
+            "Database schema locking, log commit, and table rollback",
+            "Lexical scanning, AST generation, and bytecode compilation",
+            "Stopword injection, random shuffling, and bubble sorting"
+          ],
+          "correctIndex": 0,
+          "explanation": "Searching an inverted index follows three steps: 1) Vocabulary search (isolate query words in dictionary), 2) Retrieval of occurrences (fetch postings), and 3) Manipulation of occurrences (solve Boolean/proximity operators).",
+          "sourceRef": "Chapter 4.pptx, slide 25",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s03-q07",
+          "question": "Which of the following is a major drawback of the standard Boolean Retrieval Model?",
+          "options": [
+            "It is computationally too slow for small collections",
+            "It cannot process queries containing more than two words",
+            "It does not support ranked retrieval or partial matching",
+            "It requires every document to be stored in an external relational database"
+          ],
+          "correctIndex": 2,
+          "explanation": "The Boolean model uses a strict binary decision criterion with no partial matching; all retrieved documents are considered equally relevant, with no ranking provided.",
+          "sourceRef": "Chapter 5.pptx, slide 14",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s03-q08",
+          "question": "What is the typical empirical relationship observed between Precision and Recall in information retrieval?",
+          "options": [
+            "Precision and recall always increase together proportionally",
+            "Recall is completely constant regardless of precision changes",
+            "Precision is always double the value of recall",
+            "As recall increases, precision tends to decrease"
+          ],
+          "correctIndex": 3,
+          "explanation": "It is an established empirical fact in IR that as recall increases (retrieving more documents), precision generally decreases (more non-relevant items are retrieved).",
+          "sourceRef": "Chapter 6.pptx, slide 16, 19",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s03-q09",
+          "question": "What is the primary function of a Proximity Query (e.g., 'Information within 5 words of Retrieval')?",
+          "options": [
+            "To restrict the distance between search terms within a document, increasing search precision",
+            "To translate search words into phonetic sound codes",
+            "To sort search results by alphabetical document title",
+            "To delete stop words from retrieved search documents"
+          ],
+          "correctIndex": 0,
+          "explanation": "Proximity queries restrict the allowable distance between search terms, ensuring they appear close together and thus significantly increasing precision.",
+          "sourceRef": "Chapter 7.pptx, slide 6",
+          "confidence": "high"
+        },
+        {
+          "id": "isr-easy-s03-q10",
+          "question": "In query operations, what is 'Query Expansion'?",
+          "options": [
+            "Increasing the character length of the query by adding random characters",
+            "Splitting a single query into separate database transactions",
+            "Expanding the original query by adding new related terms extracted from relevant documents or a thesaurus",
+            "Encrypting the user query with a public key before transmission"
+          ],
+          "correctIndex": 2,
+          "explanation": "Query expansion is the process of adding new terms (from relevant documents or a thesaurus) to the original query to retrieve additional relevant documents.",
+          "sourceRef": "Chapter 7.pptx, slide 16",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

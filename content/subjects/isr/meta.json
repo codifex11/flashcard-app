@@ -1,0 +1,20 @@
+{
+  "id": "isr",
+  "name": "ISR",
+  "department": "Information System",
+  "year": "Year 2",
+  "semester": "Semester 2",
+  "sourceFiles": [
+    "Chapter 1.pptx",
+    "Chapter 2.pptx",
+    "Chapter 3.pptx",
+    "Chapter 4.pptx",
+    "Chapter 5.pptx",
+    "Chapter 6.pptx",
+    "Chapter 7.pptx"
+  ],
+  "generatedAt": "2026-10-08",
+  "questionCount": 90,
+  "flashcardCount": 50,
+  "lowConfidenceCount": 0
+}

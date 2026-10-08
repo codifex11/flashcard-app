@@ -49,6 +49,13 @@
                   "name": "Advanced Database",
                   "questionCount": 90,
                   "reviewStatus": "pending_review"
+                },
+                {
+                  "id": "isr",
+                  "name": "ISR",
+                  "questionCount": 90,
+                  "flashcardCount": 50,
+                  "reviewStatus": "pending_review"
                 }
               ]
             }
