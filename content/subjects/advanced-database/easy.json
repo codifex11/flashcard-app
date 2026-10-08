@@ -1,0 +1,440 @@
+{
+  "level": "easy",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "adb-easy-s1-q01",
+          "question": "What is the primary definition of a database transaction in DBMS?",
+          "options": [
+            "A physical disk partition used for storing operating system files",
+            "A compiled Java application that renders user interfaces",
+            "A network firewall rule that controls TCP/IP traffic",
+            "A logical unit of work comprising an action or series of actions that reads or updates database contents"
+          ],
+          "correctIndex": 3,
+          "explanation": "A transaction is an action, or series of actions, carried out by a user or application, which accesses or modifies the contents of a database as a single logical unit.",
+          "sourceRef": "Chapter 1.pptx, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s1-q02",
+          "question": "Which four properties collectively ensure the reliable processing of database transactions (ACID)?",
+          "options": [
+            "Authentication, Confidentiality, Integrity, and Delegation",
+            "Availability, Concurrency, Indexing, and Distribution",
+            "Atomicity, Consistency, Isolation, and Durability",
+            "Aggregation, Cardinality, Inheritance, and Decomposition"
+          ],
+          "correctIndex": 2,
+          "explanation": "ACID properties are Atomicity (all-or-nothing), Consistency (preserves database integrity constraints), Isolation (independent concurrent execution), and Durability (committed changes persist).",
+          "sourceRef": "Chapter 1.pptx, slide 8, 9",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s1-q03",
+          "question": "What are the two possible terminal outcomes of a database transaction?",
+          "options": [
+            "Compile (binary output) or Execute (runtime output)",
+            "Suspend (temporary delay) or Replicate (network copy)",
+            "Fragment (partition data) or Encrypt (security cipher)",
+            "Commit (success, changes are saved) or Abort/Rollback (failure, changes are undone)"
+          ],
+          "correctIndex": 3,
+          "explanation": "A transaction either commits (reaches a new consistent state with permanent updates) or aborts (rolls back, restoring the database to its pre-transaction state).",
+          "sourceRef": "Chapter 1.pptx, slide 6",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s1-q04",
+          "question": "In multi-user database concurrency, what is the Lost Update problem?",
+          "options": [
+            "When a transaction crashes before beginning its first operation",
+            "When an apparently successfully completed update by one transaction is overwritten by another concurrent transaction",
+            "When an index is deleted from the disk due to hardware failure",
+            "When network packets are dropped during query transmission"
+          ],
+          "correctIndex": 1,
+          "explanation": "The lost update problem occurs when two concurrent transactions read and update the same data item, and the second transaction overwrites the first transaction's changes.",
+          "sourceRef": "Chapter 1.pptx, slide 13, 14",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s1-q05",
+          "question": "What is the primary function of Query Processing in a relational database management system?",
+          "options": [
+            "Encrypting the physical hard drive sectors containing tables",
+            "Translating a high-level query expressed in a declarative language like SQL into efficient, low-level execution operations",
+            "Backing up database tables to magnetic tape storage nightly",
+            "Formatting user input forms inside desktop client interfaces"
+          ],
+          "correctIndex": 1,
+          "explanation": "Query processing encompasses the activities involved in parsing, validating, optimizing, and executing a high-level query to retrieve data efficiently.",
+          "sourceRef": "Chapter 2.pptx, slide 6",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s1-q06",
+          "question": "Which of the following outlines the four core phases of Query Processing in order?",
+          "options": [
+            "Indexing, Normalization, Denormalization, and Archiving",
+            "GRANT, REVOKE, COMMIT, and ROLLBACK",
+            "Replication, Fragmentation, Allocation, and Verification",
+            "Query Decomposition (Parsing & Translation), Query Optimization, Code Generation, and Execution"
+          ],
+          "correctIndex": 3,
+          "explanation": "Query processing consists of parsing/translating the SQL query into relational algebra, optimizing the query to select the lowest cost strategy, generating execution code, and evaluating the plan.",
+          "sourceRef": "Chapter 2.pptx, slide 8",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s1-q07",
+          "question": "What is the primary scope of Database Security in an organization?",
+          "options": [
+            "Mechanisms that protect the database and its data against intentional or accidental security threats",
+            "Designing database tables with third normal form constraints",
+            "Increasing the CPU clock speed of the database server machine",
+            "Translating relational algebra queries into SQL syntax"
+          ],
+          "correctIndex": 0,
+          "explanation": "Database security encompasses all mechanisms that protect data against unauthorized disclosure, alteration, destruction, or denial of service.",
+          "sourceRef": "Chapter 3.pptx, slide 3, 5",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s1-q08",
+          "question": "What is the distinction between Authentication and Authorization in database security?",
+          "options": [
+            "Authentication grants access privileges, while Authorization encrypts data on disk",
+            "Authorization verifies user passwords, while Authentication creates database tables",
+            "Authentication verifies the identity of the user, while Authorization determines what operations the authenticated user is permitted to perform",
+            "There is no distinction; they are identical terms in database security"
+          ],
+          "correctIndex": 2,
+          "explanation": "Authentication checks who the user is (e.g. login credentials); authorization checks what database resources and commands that user is allowed to access.",
+          "sourceRef": "Chapter 3.pptx, slide 11, 12",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s1-q09",
+          "question": "What is a Distributed Database System (DDBMS)?",
+          "options": [
+            "A single computer running multiple independent copies of Microsoft Excel",
+            "A collection of unrelated local databases with no network connection",
+            "A logically interrelated collection of shared data physically distributed across multiple computers interconnected by a network",
+            "A centralized mainframe that has multiple monitors attached"
+          ],
+          "correctIndex": 2,
+          "explanation": "A distributed database is a logically integrated database whose physical storage is distributed across multiple autonomous sites connected via a computer network.",
+          "sourceRef": "Chapter 4.pptx, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s1-q10",
+          "question": "What is the difference between Horizontal Fragmentation and Vertical Fragmentation in a DDBMS?",
+          "options": [
+            "Horizontal fragmentation partitions columns, while Vertical partitions rows",
+            "Horizontal fragmentation duplicates data across all sites, while Vertical deletes data",
+            "Horizontal fragmentation divides a relation into subsets of rows (tuples), while Vertical fragmentation divides a relation into subsets of columns (attributes)",
+            "Horizontal fragmentation uses magnetic tapes, while Vertical uses optical disks"
+          ],
+          "correctIndex": 2,
+          "explanation": "Horizontal fragmentation breaks a table by rows using a selection condition, while vertical fragmentation breaks a table by columns using projection.",
+          "sourceRef": "Chapter 4.pptx, slide 31, 41",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "adb-easy-s2-q01",
+          "question": "What concurrency anomaly is known as the Uncommitted Dependency (or Dirty Read) problem?",
+          "options": [
+            "Two transactions simultaneously delete the same database index",
+            "A transaction reads data that has been updated by another transaction that has not yet committed and subsequently aborts",
+            "A query is executed on an empty relation with zero rows",
+            "A backup file is corrupted during scheduled tape maintenance"
+          ],
+          "correctIndex": 1,
+          "explanation": "A dirty read occurs when Transaction A reads an intermediate value updated by Transaction B, but Transaction B later aborts and rolls back its changes.",
+          "sourceRef": "Chapter 1.pptx, slide 15, 16",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s2-q02",
+          "question": "In database locking protocols, how do Shared (S) locks differ from Exclusive (X) locks?",
+          "options": [
+            "Shared locks allow writing, while Exclusive locks allow reading only",
+            "Shared locks allow concurrent read operations by multiple transactions, while Exclusive locks grant exclusive write access and block all other locks",
+            "Shared locks are applied to entire databases only, while Exclusive locks apply to single bits",
+            "Exclusive locks can be held simultaneously by any number of transactions"
+          ],
+          "correctIndex": 1,
+          "explanation": "A Shared (read) lock permits multiple concurrent transactions to read a data item; an Exclusive (write) lock prevents any other transaction from reading or writing that item.",
+          "sourceRef": "Chapter 1.pptx, slide 33, 34",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s2-q03",
+          "question": "What is the defining rule of the Two-Phase Locking (2PL) protocol?",
+          "options": [
+            "A transaction must acquire locks in exactly two seconds or abort",
+            "A transaction must lock exactly two database tables simultaneously",
+            "All transactions must be executed twice to ensure correctness",
+            "A transaction acquires all needed locks during a Growing Phase and releases locks during a Shrinking Phase without acquiring any new locks after releasing one"
+          ],
+          "correctIndex": 3,
+          "explanation": "Under 2PL, a transaction has a Growing Phase (locks may be acquired but not released) and a Shrinking Phase (locks may be released but no new locks acquired).",
+          "sourceRef": "Chapter 1.pptx, slide 37, 38",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s2-q04",
+          "question": "What is the primary objective of Query Optimization in database management systems?",
+          "options": [
+            "To re-write SQL queries so they fit on a single line of text",
+            "To translate SQL keywords into different human languages",
+            "To find an execution plan for evaluating a query that minimizes resource usage, particularly disk I/O and execution time",
+            "To eliminate all primary keys from database tables"
+          ],
+          "correctIndex": 2,
+          "explanation": "Query optimization evaluates candidate execution plans and selects the one with the lowest estimated cost (disk block accesses, CPU time, and communication cost).",
+          "sourceRef": "Chapter 2.pptx, slide 7",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s2-q05",
+          "question": "Which unary Relational Algebra operator is denoted by the Greek letter sigma (σ)?",
+          "options": [
+            "Selection (filtering rows that satisfy a specified predicate condition)",
+            "Projection (selecting specified columns)",
+            "Cartesian Product (combining all pairs of tuples)",
+            "Join (combining matching records on common attributes)"
+          ],
+          "correctIndex": 0,
+          "explanation": "Sigma (σ) represents the Selection operation in relational algebra, filtering tuples from a relation that satisfy a logical condition.",
+          "sourceRef": "Chapter 6.pptx, slide 4, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s2-q06",
+          "question": "Which unary Relational Algebra operator is denoted by the Greek letter pi (π)?",
+          "options": [
+            "Projection (extracting specified attributes/columns and eliminating duplicate tuples)",
+            "Selection (filtering rows by condition)",
+            "Division (finding elements associated with all elements)",
+            "Set Difference (removing elements present in another relation)"
+          ],
+          "correctIndex": 0,
+          "explanation": "Pi (π) represents the Projection operation in relational algebra, choosing specific columns from a relation and removing any duplicate rows.",
+          "sourceRef": "Chapter 6.pptx, slide 4, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s2-q07",
+          "question": "Which two SQL statements are used to implement Discretionary Access Control (DAC)?",
+          "options": [
+            "SELECT and UPDATE",
+            "COMMIT and ROLLBACK",
+            "CREATE and DROP",
+            "GRANT and REVOKE"
+          ],
+          "correctIndex": 3,
+          "explanation": "Discretionary Access Control in SQL is managed via GRANT (assigning privileges to users/roles) and REVOKE (removing privileges).",
+          "sourceRef": "Chapter 3.pptx, slide 16, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s2-q08",
+          "question": "What does RAID stand for in database storage technology?",
+          "options": [
+            "Random Access of Integrated Databases",
+            "Redundant Array of Independent Disks",
+            "Relational Architecture for Internet Domains",
+            "Reliable Array of Internal Devices"
+          ],
+          "correctIndex": 1,
+          "explanation": "RAID stands for Redundant Array of Independent Disks, a storage technology combining multiple physical disk drives into a logical unit for fault tolerance and performance.",
+          "sourceRef": "Chapter 3.pptx, slide 31, 32",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s2-q09",
+          "question": "Which three correctness rules must be satisfied when partitioning data into fragments in a DDBMS?",
+          "options": [
+            "Atomicity, Consistency, and Durability",
+            "Completeness, Reconstruction, and Disjointness",
+            "Selection, Projection, and Cartesian Product",
+            "Authentication, Authorization, and Accounting"
+          ],
+          "correctIndex": 1,
+          "explanation": "The three correctness rules for fragmentation are: Completeness (all data belongs to a fragment), Reconstruction (original relation can be rebuilt), and Disjointness (minimal data overlap).",
+          "sourceRef": "Chapter 4.pptx, slide 36",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s2-q10",
+          "question": "What is an Object Identifier (OID) in an Object-Oriented Database (OODBMS)?",
+          "options": [
+            "A user-entered primary key value such as a social security number",
+            "The memory address of the database server's network adapter",
+            "An immutable, system-generated unique identifier assigned to an object that remains constant regardless of state or location",
+            "The file path where the database installation binary resides"
+          ],
+          "correctIndex": 2,
+          "explanation": "In OODBMS, each object has a unique system-generated Object Identifier (OID) that is independent of its attribute values and never changes over its lifetime.",
+          "sourceRef": "Chapter 5.pptx, slide 26, 27",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "adb-easy-s3-q01",
+          "question": "What concurrency issue occurs when a transaction reads several values to calculate an aggregate summary while another transaction modifies those values concurrently?",
+          "options": [
+            "Inconsistent Analysis (or Phantom / Inconsistent Read) problem",
+            "Deadlock Error",
+            "Hard Drive Head Crash",
+            "Network Timeout Abort"
+          ],
+          "correctIndex": 0,
+          "explanation": "Inconsistent analysis occurs when a transaction reads partial updates from another transaction while computing a summary, resulting in an inaccurate, inconsistent result.",
+          "sourceRef": "Chapter 1.pptx, slide 17, 18",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s3-q02",
+          "question": "What condition describes a Deadlock in database transaction management?",
+          "options": [
+            "When the database disk runs out of free storage space",
+            "An impasse where two or more transactions are each waiting for locks held by the other, and none can proceed",
+            "When a query contains a syntax error flagged by the parser",
+            "When a user logs out without saving their active form session"
+          ],
+          "correctIndex": 1,
+          "explanation": "A deadlock occurs when two or more concurrent transactions are in a mutual wait state, each holding a lock that the other needs.",
+          "sourceRef": "Chapter 1.pptx, slide 48, 49",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s3-q03",
+          "question": "Which binary Relational Algebra operator combines every tuple of relation R with every tuple of relation S?",
+          "options": [
+            "Natural Join (denoted by R ⋈ S)",
+            "Set Difference (denoted by R - S)",
+            "Cartesian Product (denoted by R × S)",
+            "Intersection (denoted by R ∩ S)"
+          ],
+          "correctIndex": 2,
+          "explanation": "The Cartesian product (R × S) produces a new relation containing all possible concatenated pairs of tuples from R and S.",
+          "sourceRef": "Chapter 6.pptx, slide 4, 18",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s3-q04",
+          "question": "What does the Relational Algebra Set Difference operation (R - S) return?",
+          "options": [
+            "A relation containing tuples that appear in both R and S simultaneously",
+            "A relation containing all tuples from both R and S combined",
+            "A relation containing all tuples that appear in R but do not appear in S",
+            "A numerical difference between the row counts of R and S"
+          ],
+          "correctIndex": 2,
+          "explanation": "Set difference (R - S) returns the set of all tuples belonging to relation R that are not present in relation S (relations must be union-compatible).",
+          "sourceRef": "Chapter 6.pptx, slide 4, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s3-q05",
+          "question": "How do Database Views function as a security mechanism?",
+          "options": [
+            "By encrypting database traffic using SSL certificates",
+            "By forcing users to re-enter their passwords every five minutes",
+            "By preventing users from submitting SELECT queries",
+            "By restricting users to seeing only specific rows and columns of underlying tables without granting direct access to base tables"
+          ],
+          "correctIndex": 3,
+          "explanation": "Views present a virtual customized window into the database, hiding sensitive attributes or rows from unauthorized users.",
+          "sourceRef": "Chapter 3.pptx, slide 23, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s3-q06",
+          "question": "What does Location Transparency mean to a user querying a Distributed Database System?",
+          "options": [
+            "The user must specify the exact IP address and port for every table",
+            "The database server can physically relocate to different data centers without power loss",
+            "All database tables are stored in the same computer memory chip",
+            "The user can query the database without needing to know the physical network site where the data is stored"
+          ],
+          "correctIndex": 3,
+          "explanation": "Location transparency allows users to query data using logical names without having to know or specify the physical network location of data items.",
+          "sourceRef": "Chapter 4.pptx, slide 51, 52",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s3-q07",
+          "question": "What is the primary role of the Two-Phase Commit (2PC) protocol in distributed databases?",
+          "options": [
+            "To ensure that all participating distributed sites either commit or abort a distributed transaction together (atomic commit)",
+            "To encrypt all distributed query messages across local area networks",
+            "To automatically generate primary keys across distributed tables",
+            "To convert SQL queries into object-oriented Java classes"
+          ],
+          "correctIndex": 0,
+          "explanation": "The 2PC protocol coordinates distributed sites in two phases (voting/prepare and decision/commit) to guarantee atomicity of distributed transactions.",
+          "sourceRef": "Chapter 4.pptx, slide 63",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s3-q08",
+          "question": "What is meant by 'Impedance Mismatch' between object-oriented applications and relational databases?",
+          "options": [
+            "An electrical resistance issue between network cables and disk controllers",
+            "The fundamental mismatch between the object-oriented paradigm (classes, objects, inheritance) and the relational model (tables, rows, foreign keys)",
+            "A difference in clock speeds between database servers and client computers",
+            "A mismatch between SQL character encodings and ASCII files"
+          ],
+          "correctIndex": 1,
+          "explanation": "Impedance mismatch refers to the conceptual and data-type differences between object-oriented programming languages and relational database models.",
+          "sourceRef": "Chapter 5.pptx, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s3-q09",
+          "question": "What is Object Query Language (OQL) in the context of OODBMS standards?",
+          "options": [
+            "A declarative query language developed by ODMG that allows querying object-oriented databases using SQL-like syntax",
+            "A compiled C++ library used strictly for hardware diagnostics",
+            "A network routing protocol designed for fiber optic backbones",
+            "A low-level assembly language for disk controllers"
+          ],
+          "correctIndex": 0,
+          "explanation": "OQL is the declarative query language defined by the Object Data Management Group (ODMG) that provides high-level SQL-like querying over object databases.",
+          "sourceRef": "Chapter 5.pptx, slide 71, 72",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-easy-s3-q10",
+          "question": "What is the result of performing a Natural Join (⋈) between two relations in Relational Algebra?",
+          "options": [
+            "An equijoin on all attributes with identical names from both relations, with duplicate common attribute columns eliminated from the result",
+            "A Cartesian product that retains all duplicate columns without any filtering",
+            "A set union of all rows from both relations regardless of schemas",
+            "A relation containing only tuples with primary key conflicts"
+          ],
+          "correctIndex": 0,
+          "explanation": "Natural Join (⋈) matches tuples based on common attribute names and automatically eliminates duplicate join columns from the final result relation.",
+          "sourceRef": "Chapter 6.pptx, slide 27, 28",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

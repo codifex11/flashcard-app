@@ -1,0 +1,435 @@
+{
+  "subjectId": "advanced-database",
+  "phases": [
+    {
+      "phaseNumber": 1,
+      "title": "Transaction Management & Concurrency Control",
+      "cards": [
+        {
+          "id": "adb-fc-p1-c01",
+          "question": "What is a Database Transaction in DBMS?",
+          "answer": "A logical unit of database processing consisting of one or more operations (reads/writes) that must execute atomically.",
+          "category": "Transactions",
+          "sourceRef": "Chapter 1.pptx, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p1-c02",
+          "question": "What are the four ACID Properties of transactions?",
+          "answer": "Atomicity (all or nothing), Consistency (preserves database integrity constraints), Isolation (independent concurrent execution), and Durability (committed changes persist).",
+          "category": "ACID Properties",
+          "sourceRef": "Chapter 1.pptx, slide 8, 9",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p1-c03",
+          "question": "What are the primary Transaction States in a DBMS?",
+          "answer": "Active (executing), Partially Committed (final statement executed), Committed (changes permanently saved), Failed (normal execution halted), and Aborted (rolled back).",
+          "category": "Transaction States",
+          "sourceRef": "Chapter 1.pptx, slide 7",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p1-c04",
+          "question": "What is the Lost Update Problem in concurrency?",
+          "answer": "Occurs when two concurrent transactions read the same data item and update it, causing one update to overwrite the other without incorporating its changes.",
+          "category": "Concurrency Anomalies",
+          "sourceRef": "Chapter 1.pptx, slide 13, 14",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p1-c05",
+          "question": "What is a Dirty Read (Uncommitted Dependency)?",
+          "answer": "Occurs when a transaction reads uncommitted data modified by another transaction that subsequently aborts and rolls back its changes.",
+          "category": "Concurrency Anomalies",
+          "sourceRef": "Chapter 1.pptx, slide 15, 16",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p1-c06",
+          "question": "What is Conflict Serializability in database schedules?",
+          "answer": "A schedule is conflict serializable if it can be transformed into an equivalent serial schedule by swapping non-conflicting concurrent operations.",
+          "category": "Serializability",
+          "sourceRef": "Chapter 1.pptx, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p1-c07",
+          "question": "What is Two-Phase Locking (2PL)?",
+          "answer": "A concurrency control protocol with a Growing Phase (locks acquired, none released) and a Shrinking Phase (locks released, none acquired), guaranteeing serializability.",
+          "category": "Locking Protocols",
+          "sourceRef": "Chapter 1.pptx, slide 37, 38",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p1-c08",
+          "question": "How does Strict 2PL prevent Cascading Aborts?",
+          "answer": "By holding all exclusive (write) locks until the transaction terminates (commits or aborts), ensuring other transactions never read uncommitted data.",
+          "category": "Locking Protocols",
+          "sourceRef": "Chapter 1.pptx, slide 40, 41",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p1-c09",
+          "question": "What are the Wait-Die and Wound-Wait Deadlock Prevention schemes?",
+          "answer": "Timestamp-based protocols: Wait-Die is non-preemptive (older waits, younger dies); Wound-Wait is preemptive (older preempts/wounds younger, younger waits).",
+          "category": "Deadlock",
+          "sourceRef": "Chapter 1.pptx, slide 54, 55",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p1-c10",
+          "question": "What is Write-Ahead Logging (WAL)?",
+          "answer": "A recovery rule ensuring log records detailing updates are written to stable non-volatile storage before corresponding dirty database buffer blocks are written to disk.",
+          "category": "Database Recovery",
+          "sourceRef": "Chapter 1.pptx, slide 69, 70",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 2,
+      "title": "Query Processing & Optimization",
+      "cards": [
+        {
+          "id": "adb-fc-p2-c01",
+          "question": "What are the main phases of Query Processing in DBMS?",
+          "answer": "Query Decomposition (parsing, syntax checking, relational algebra translation), Query Optimization (selecting lowest-cost plan), Code Generation, and Execution.",
+          "category": "Query Processing",
+          "sourceRef": "Chapter 2.pptx, slide 6, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p2-c02",
+          "question": "What is a Relational Algebra Query Tree?",
+          "answer": "A tree representation of a query where leaf nodes represent base relations, internal nodes represent relational algebra operators, and root represents the final result.",
+          "category": "Query Trees",
+          "sourceRef": "Chapter 2.pptx, slide 13, 14",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p2-c03",
+          "question": "Why push Selection (σ) operations down a Query Tree?",
+          "answer": "Applying selections early filters and eliminates unwanted rows, drastically shrinking the size of intermediate relations before costly joins occur.",
+          "category": "Heuristic Optimization",
+          "sourceRef": "Chapter 2.pptx, slide 19, 51",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p2-c04",
+          "question": "Why push Projection (π) operations down a Query Tree?",
+          "answer": "Eliminates unneeded columns early, reducing tuple width and saving buffer pool memory during intermediate relational operations.",
+          "category": "Heuristic Optimization",
+          "sourceRef": "Chapter 2.pptx, slide 20, 51",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p2-c05",
+          "question": "What is the primary metric in Query Cost Estimation?",
+          "answer": "Secondary storage disk I/O (number of block transfers and random disk seeks), which dwarfs CPU execution time in database systems.",
+          "category": "Cost Estimation",
+          "sourceRef": "Chapter 2.pptx, slide 27, 28",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p2-c06",
+          "question": "How does a Nested-Loop Join work?",
+          "answer": "For each outer relation tuple, it scans all inner relation tuples; simple and universal, but expensive (O(M * N)) without indexes or buffering.",
+          "category": "Join Algorithms",
+          "sourceRef": "Chapter 2.pptx, slide 34, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p2-c07",
+          "question": "How does a Sort-Merge Join work?",
+          "answer": "Sorts both relations on join attributes (if not already sorted) and performs a simultaneous linear scan to find matching keys in O(M + N) time.",
+          "category": "Join Algorithms",
+          "sourceRef": "Chapter 2.pptx, slide 38, 39",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p2-c08",
+          "question": "What are the two phases of a Hash Join?",
+          "answer": "Build Phase (hashes the smaller relation into an in-memory hash table on join key) and Probe Phase (scans the larger relation to find hash matches).",
+          "category": "Join Algorithms",
+          "sourceRef": "Chapter 2.pptx, slide 40, 41",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p2-c09",
+          "question": "What is the difference between Materialization and Pipelining?",
+          "answer": "Materialization writes intermediate results to temporary disk files; Pipelining streams tuples directly between operators in memory without disk writes.",
+          "category": "Execution Models",
+          "sourceRef": "Chapter 2.pptx, slide 43, 44",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p2-c10",
+          "question": "What system catalog statistics guide Cost-Based Optimization?",
+          "answer": "Relation cardinality (NR), block count (BR), attribute distinct value count (V(A, R)), and index structures/levels.",
+          "category": "Cost Estimation",
+          "sourceRef": "Chapter 2.pptx, slide 56, 57",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 3,
+      "title": "Database Security, Integrity & Recovery",
+      "cards": [
+        {
+          "id": "adb-fc-p3-c01",
+          "question": "What are the primary objectives of Database Security?",
+          "answer": "Protecting database resources from threats to preserve Confidentiality (no unauthorized disclosure), Integrity (no unauthorized modification), and Availability.",
+          "category": "Security Basics",
+          "sourceRef": "Chapter 3.pptx, slide 3, 5",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p3-c02",
+          "question": "What is Discretionary Access Control (DAC)?",
+          "answer": "An access control model where resource creators/owners have the discretion to grant and revoke access privileges using SQL GRANT and REVOKE.",
+          "category": "Access Control",
+          "sourceRef": "Chapter 3.pptx, slide 16, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p3-c03",
+          "question": "What is Mandatory Access Control (MAC)?",
+          "answer": "A system-enforced security model based on fixed classification levels (e.g. Top Secret, Secret) that cannot be altered or bypassed by individual users.",
+          "category": "Access Control",
+          "sourceRef": "Chapter 3.pptx, slide 20, 21",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p3-c04",
+          "question": "What are the Bell-LaPadula rules in MAC?",
+          "answer": "Simple Security Property ('No Read Up' to protect secrets) and the ★-Property ('No Write Down' to prevent leaking classified information).",
+          "category": "Security Models",
+          "sourceRef": "Chapter 3.pptx, slide 21, 22",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p3-c05",
+          "question": "What is Role-Based Access Control (RBAC)?",
+          "answer": "A security model where privileges are granted to administrative/job roles rather than individual users, simplifying permission management.",
+          "category": "Access Control",
+          "sourceRef": "Chapter 3.pptx, slide 18, 19",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p3-c06",
+          "question": "How do Views enhance Database Security?",
+          "answer": "By providing virtual customized subsets of tables, hiding sensitive columns and restricted rows from unauthorized users who lack base table access.",
+          "category": "Security Mechanisms",
+          "sourceRef": "Chapter 3.pptx, slide 23, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p3-c07",
+          "question": "What is an Audit Trail in a DBMS?",
+          "answer": "A chronological log recording all user access, updates, and administrative activities for security monitoring, compliance, and forensics.",
+          "category": "Security Controls",
+          "sourceRef": "Chapter 3.pptx, slide 25, 26",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p3-c08",
+          "question": "What is RAID and why is it used in databases?",
+          "answer": "Redundant Array of Independent Disks, combining multiple physical drives into one logical storage unit for fault tolerance, redundancy, and performance.",
+          "category": "Fault Tolerance",
+          "sourceRef": "Chapter 3.pptx, slide 31, 32",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p3-c09",
+          "question": "How does RAID 1 differ from RAID 0?",
+          "answer": "RAID 0 stripes data across disks for speed with zero redundancy; RAID 1 mirrors data completely across duplicate disks for high fault tolerance.",
+          "category": "RAID Architecture",
+          "sourceRef": "Chapter 3.pptx, slide 33, 34",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p3-c10",
+          "question": "How does RAID 5 provide Fault Tolerance?",
+          "answer": "By block striping data across drives and distributing parity blocks cyclically across all disks, surviving any single drive failure without a parity bottleneck.",
+          "category": "RAID Architecture",
+          "sourceRef": "Chapter 3.pptx, slide 34, 35",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 4,
+      "title": "Distributed Database Systems",
+      "cards": [
+        {
+          "id": "adb-fc-p4-c01",
+          "question": "What is a Distributed Database System (DDBMS)?",
+          "answer": "A logically interrelated collection of shared data physically distributed across multiple computers connected by a network.",
+          "category": "DDBMS Basics",
+          "sourceRef": "Chapter 4.pptx, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p4-c02",
+          "question": "What are the main Advantages of a DDBMS?",
+          "answer": "Local organizational autonomy, improved response times for local queries, higher availability/reliability, and modular incremental growth.",
+          "category": "DDBMS Basics",
+          "sourceRef": "Chapter 4.pptx, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p4-c03",
+          "question": "What is Horizontal Fragmentation?",
+          "answer": "Partitioning a table into subsets of rows (tuples) based on a selection predicate (σ), placing different groups of records at appropriate sites.",
+          "category": "Fragmentation",
+          "sourceRef": "Chapter 4.pptx, slide 31, 41",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p4-c04",
+          "question": "What is Vertical Fragmentation?",
+          "answer": "Partitioning a table into subsets of columns (attributes) based on projection (π), requiring the primary key in each fragment for reconstruction.",
+          "category": "Fragmentation",
+          "sourceRef": "Chapter 4.pptx, slide 31, 43",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p4-c05",
+          "question": "What are the Three Correctness Rules of Fragmentation?",
+          "answer": "Completeness (all data belongs to a fragment), Reconstruction (relation can be rebuilt without loss), and Disjointness (minimal data overlap).",
+          "category": "Fragmentation",
+          "sourceRef": "Chapter 4.pptx, slide 36",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p4-c06",
+          "question": "What is Distribution Transparency in a DDBMS?",
+          "answer": "The property that makes the distributed system appear like a centralized database to users, hiding fragmentation, location, and replication details.",
+          "category": "Transparencies",
+          "sourceRef": "Chapter 4.pptx, slide 51, 52",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p4-c07",
+          "question": "What is Data Replication and its Trade-offs?",
+          "answer": "Storing identical copies of data at multiple sites; improves read performance and fault tolerance, but increases update cost and concurrency complexity.",
+          "category": "Replication",
+          "sourceRef": "Chapter 4.pptx, slide 26, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p4-c08",
+          "question": "How does the Two-Phase Commit (2PC) Protocol work?",
+          "answer": "Phase 1 (Prepare): coordinator asks participants to vote commit or abort. Phase 2 (Decision): if all vote commit, coordinator commits; otherwise, aborts.",
+          "category": "Distributed Transactions",
+          "sourceRef": "Chapter 4.pptx, slide 63, 64",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p4-c09",
+          "question": "Why is 2PC considered a Blocking Protocol?",
+          "answer": "If the coordinator crashes after participants vote commit but before broadcasting the decision, participants must block indefinitely waiting for recovery.",
+          "category": "Distributed Transactions",
+          "sourceRef": "Chapter 4.pptx, slide 64, 65",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p4-c08b",
+          "question": "What are Phantom Deadlocks in distributed systems?",
+          "answer": "False deadlock cycles detected by a central detector due to network transmission delays of lock release messages from local sites.",
+          "category": "Distributed Concurrency",
+          "sourceRef": "Chapter 4.pptx, slide 62",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "phaseNumber": 5,
+      "title": "Object-Oriented Databases & Relational Query Languages",
+      "cards": [
+        {
+          "id": "adb-fc-p5-c01",
+          "question": "What is an Object Identifier (OID) in OODBMS?",
+          "answer": "An immutable, system-generated identifier that uniquely identifies an object for its lifetime, independent of attribute values or physical memory location.",
+          "category": "OODBMS Concepts",
+          "sourceRef": "Chapter 5.pptx, slide 26, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p5-c02",
+          "question": "What is the Object-Relational Impedance Mismatch?",
+          "answer": "The conceptual and syntactic divide between object-oriented programming concepts (objects, inheritance, pointers) and relational tables (tuples, keys).",
+          "category": "OODBMS Concepts",
+          "sourceRef": "Chapter 5.pptx, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p5-c03",
+          "question": "What are User-Defined Types (UDTs) in ORDBMS?",
+          "answer": "Structured object types defined directly in SQL (SQL:1999) that encapsulate named attributes, custom routines, and type inheritance.",
+          "category": "ORDBMS",
+          "sourceRef": "Chapter 5.pptx, slide 81, 91",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p5-c04",
+          "question": "What is the REF type in Object-Relational SQL?",
+          "answer": "A strongly-typed persistent object reference (pointer) to a row object, enabling navigation of complex relationships without writing explicit joins.",
+          "category": "ORDBMS",
+          "sourceRef": "Chapter 5.pptx, slide 93, 94",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p5-c05",
+          "question": "What is Object Query Language (OQL)?",
+          "answer": "An ODMG standard declarative query language with SQL-like syntax designed to query object-oriented databases and return collections of objects.",
+          "category": "OODBMS",
+          "sourceRef": "Chapter 5.pptx, slide 71, 72",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p5-c06",
+          "question": "How do Relational Algebra and Relational Calculus differ?",
+          "answer": "Relational Algebra is procedural (specifies operations and execution sequence); Relational Calculus is declarative (specifies what data is wanted, not how).",
+          "category": "Relational Languages",
+          "sourceRef": "Chapter 6.pptx, slide 2",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p5-c07",
+          "question": "What are the five Fundamental Operations of Relational Algebra?",
+          "answer": "Selection (σ), Projection (π), Cartesian Product (×), Union (∪), and Set Difference (-).",
+          "category": "Relational Algebra",
+          "sourceRef": "Chapter 6.pptx, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p5-c08",
+          "question": "What is a Natural Join (⋈)?",
+          "answer": "An equijoin on all attributes having identical names across both relations, automatically eliminating duplicate join columns in the result.",
+          "category": "Relational Algebra",
+          "sourceRef": "Chapter 6.pptx, slide 27, 28",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p5-c09",
+          "question": "What is the Relational Algebra Division (÷) operator?",
+          "answer": "An operator used for universal queries ('for all'), returning tuples from R that are associated with every single tuple in relation S.",
+          "category": "Relational Algebra",
+          "sourceRef": "Chapter 6.pptx, slide 29, 30",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-fc-p5-c10",
+          "question": "What are Outer Joins in Relational Algebra?",
+          "answer": "Joins that preserve unmatched tuples with NULL values: Left Outer Join (⟕), Right Outer Join (⟖), and Full Outer Join (⟗).",
+          "category": "Relational Algebra",
+          "sourceRef": "Chapter 6.pptx, slide 31, 35, 36",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

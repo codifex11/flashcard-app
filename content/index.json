@@ -43,6 +43,12 @@
                   "name": "OOP",
                   "questionCount": 90,
                   "reviewStatus": "pending_review"
+                },
+                {
+                  "id": "advanced-database",
+                  "name": "Advanced Database",
+                  "questionCount": 90,
+                  "reviewStatus": "pending_review"
                 }
               ]
             }

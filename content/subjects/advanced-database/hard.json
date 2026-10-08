@@ -1,0 +1,440 @@
+{
+  "level": "hard",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "adb-hard-s1-q01",
+          "question": "How is a Precedence Graph (Serialization Graph) used to prove whether a concurrent execution schedule S is conflict serializable?",
+          "options": [
+            "Construct a graph where edges represent shared network connections; S is serializable if the graph is a complete bipartite graph",
+            "Construct a directed graph with a node for each committed transaction; an edge Ti -> Tj exists if Ti performs an operation that conflicts with a subsequent operation of Tj. S is conflict serializable if and only if the graph contains no directed cycles",
+            "S is conflict serializable if all transactions acquire locks in alphabetical order by transaction ID",
+            "Construct a tree of all database tables; S is serializable if the tree depth is strictly less than the number of active transactions"
+          ],
+          "correctIndex": 1,
+          "explanation": "Conflict serializability is formally proven via the precedence graph: if there are no directed cycles, the topological sort of the graph provides an equivalent serial schedule.",
+          "sourceRef": "Chapter 1.pptx, slide 22, 23, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s1-q02",
+          "question": "What is the theoretical relationship between Conflict Serializability and View Serializability?",
+          "options": [
+            "Every view serializable schedule is conflict serializable, but conflict serializability is strictly NP-complete",
+            "Conflict serializability and view serializability are completely identical sets of schedules",
+            "View serializability requires all transactions to hold shared read locks until completion",
+            "Every conflict serializable schedule is view serializable, but not every view serializable schedule is conflict serializable; determining view serializability is NP-complete"
+          ],
+          "correctIndex": 3,
+          "explanation": "Conflict serializability is a stricter, computationally efficient (polynomial time) condition. View serializability is broader (accommodating blind writes) but NP-complete to test.",
+          "sourceRef": "Chapter 1.pptx, slide 25, 26",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s1-q03",
+          "question": "How does Rigorous Two-Phase Locking (Rigorous 2PL) differ from Strict Two-Phase Locking (Strict 2PL)?",
+          "options": [
+            "Rigorous 2PL allows locks to be released during the growing phase, while Strict 2PL does not",
+            "Strict 2PL prevents deadlocks completely, while Rigorous 2PL causes deadlocks for every transaction",
+            "Rigorous 2PL requires all transactions to run on a single CPU core without concurrency",
+            "Strict 2PL holds only exclusive (write) locks until the transaction ends, whereas Rigorous 2PL holds BOTH shared (read) and exclusive (write) locks until the transaction terminates"
+          ],
+          "correctIndex": 3,
+          "explanation": "Rigorous 2PL holds all locks (shared and exclusive) until transaction termination. This ensures transactions can be serialized in the exact order in which they commit.",
+          "sourceRef": "Chapter 1.pptx, slide 42",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s1-q04",
+          "question": "Under what condition is the relational algebra transformation σ_p(R ⋈ S) ≡ (σ_p(R)) ⋈ S mathematically valid?",
+          "options": [
+            "When all attributes referenced in the selection predicate p belong exclusively to relation R",
+            "When relation R contains more rows than relation S",
+            "When the join between R and S is a Cartesian product with zero matching keys",
+            "When predicate p involves attributes from both R and S simultaneously"
+          ],
+          "correctIndex": 0,
+          "explanation": "A selection condition σ_p can be pushed through a join to operate on relation R before the join if and only if all attributes involved in predicate p belong solely to R.",
+          "sourceRef": "Chapter 2.pptx, slide 46, 48",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s1-q05",
+          "question": "What two mandatory security rules define the classic Bell-LaPadula model in Mandatory Access Control (MAC)?",
+          "options": [
+            "'No Read Down' and 'No Write Up'",
+            "'Read All' and 'Write Only With Administrator Consent'",
+            "'No Read Up' (Simple Security Property: a user cannot read data at a higher security level) and 'No Write Down' (★-Property: a user cannot write data to a lower security level)",
+            "'No Encrypt Up' and 'No Decrypt Down'"
+          ],
+          "correctIndex": 2,
+          "explanation": "Bell-LaPadula enforces confidentiality: No Read Up prevents reading higher classified data, and No Write Down prevents a subject with high clearance from leaking secret information into lower classification levels.",
+          "sourceRef": "Chapter 3.pptx, slide 21, 22",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s1-q06",
+          "question": "Why is RAID 10 (RAID 1+0: striped mirrors) considered more resilient to disk failures than RAID 0+1 (RAID 0+1: mirrored stripes)?",
+          "options": [
+            "RAID 10 uses half the number of disk drives compared to RAID 0+1",
+            "RAID 0+1 requires dedicated parity drives while RAID 10 does not use any disks",
+            "RAID 10 can tolerate multiple simultaneous disk failures as long as no two failed disks belong to the same mirrored pair, whereas in RAID 0+1 a single disk failure renders an entire striped half vulnerable",
+            "RAID 10 eliminates all disk writes by caching everything in CPU registers"
+          ],
+          "correctIndex": 2,
+          "explanation": "In RAID 10, disks are mirrored first and then striped. If one disk fails, only its mirror partner is critical; any other disk in other pairs can also fail without data loss.",
+          "sourceRef": "Chapter 3.pptx, slide 35",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s1-q07",
+          "question": "In distributed query optimization, how does the Semijoin operator (R ⋉_p S) reduce network communication costs between remote sites?",
+          "options": [
+            "By projecting and transmitting only the join key attributes from S to R, filtering R to only matching tuples, and sending only those matching tuples across the network to complete the join with S",
+            "By duplicating the entire relation R on all network routers simultaneously",
+            "By converting all relational queries into unindexed text files before transmission",
+            "By compressing relation S using lossy image compression algorithms"
+          ],
+          "correctIndex": 0,
+          "explanation": "The semijoin strategy projects join attributes of S, transmits that compact column to R's site, selects only matching tuples of R, and ships only those qualified tuples, minimizing network payload.",
+          "sourceRef": "Chapter 4.pptx, slide 28, 29",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s1-q08",
+          "question": "Why is the classic Two-Phase Commit (2PC) protocol classified as a 'blocking' atomic commit protocol?",
+          "options": [
+            "Because it blocks all network traffic across the company's local area network during Phase 1",
+            "If the coordinator crashes after participants have voted VOTE_COMMIT but before sending the global decision, participants must block indefinitely waiting for the coordinator to recover",
+            "Because all database tables are deleted if a participant experiences a disk read error",
+            "Because participants cannot execute any SELECT queries for 24 hours following a commit"
+          ],
+          "correctIndex": 1,
+          "explanation": "2PC is blocking: a participant that votes to commit cannot unilaterally decide to commit or abort if the coordinator fails before broadcasting the decision, leaving the participant blocked.",
+          "sourceRef": "Chapter 4.pptx, slide 64, 65",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s1-q09",
+          "question": "How does an Object Identifier (OID) in an OODBMS differ fundamentally from a Primary Key in a Relational Database (RDBMS)?",
+          "options": [
+            "An OID is visible and editable by users, while a primary key is hidden by the operating system",
+            "An OID is re-used immediately whenever an object is deleted, while primary keys are never reused",
+            "An OID can only identify integer values, while primary keys can identify complex objects",
+            "An OID is system-generated, immutable, independent of attribute values, and permanently unique even if attributes change, whereas a primary key is value-based and mutable if record data changes"
+          ],
+          "correctIndex": 3,
+          "explanation": "Relational primary keys are value-based (derived from data columns) and can change if data changes. OIDs are system-assigned, immutable, independent of object content, and never reused.",
+          "sourceRef": "Chapter 5.pptx, slide 26, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s1-q10",
+          "question": "In Relational Algebra, which combination of operations is required to solve the query: 'Find the names of all clients who have viewed every single property located in London'?",
+          "options": [
+            "A simple Cartesian product between Client and Property with no selection predicate",
+            "Set Difference between Client and Viewing relations followed by Union",
+            "An aggregate SUM operation grouped by client branch numbers",
+            "Division (÷) of viewing records by London properties, followed by a Natural Join (⋈) with the Client relation and a Projection (π) of client names"
+          ],
+          "correctIndex": 3,
+          "explanation": "Queries with universal quantification ('who have viewed all...') require the Division operator (Viewing ÷ σ_city='London'(Property)) to isolate qualifying client IDs, joined with Client to project names.",
+          "sourceRef": "Chapter 6.pptx, slide 29, 30",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "adb-hard-s2-q01",
+          "question": "Which SQL transaction isolation level prevents Lost Updates, Dirty Reads, and Non-Repeatable Reads, but still permits Phantom Reads?",
+          "options": [
+            "Read Uncommitted",
+            "Repeatable Read",
+            "Read Committed",
+            "Serializable"
+          ],
+          "correctIndex": 1,
+          "explanation": "SQL Repeatable Read locks individual rows accessed during queries, preventing dirty reads and non-repeatable reads, but permits phantom rows inserted by concurrent transactions (prevented by Serializable).",
+          "sourceRef": "Chapter 1.pptx, slide 13, 18, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s2-q02",
+          "question": "In ARIES-style database crash recovery, what is the role and direction of the three recovery passes?",
+          "options": [
+            "Analysis scans backward, Redo scans backward, and Undo scans forward",
+            "Analysis (scans log forward from checkpoint to identify active transactions and dirty pages), Redo (scans forward repeating all logged actions), and Undo (scans backward rolling back active uncommitted transactions)",
+            "All three passes scan backward starting from the physical end of the disk",
+            "Redo executes first, followed by Analysis, followed by Checkpoint creation"
+          ],
+          "correctIndex": 1,
+          "explanation": "ARIES recovery performs Analysis forward from the last checkpoint, Redo forward from the oldest unwritten change to repeat history, and Undo backward to roll back active transactions.",
+          "sourceRef": "Chapter 1.pptx, slide 75, 76",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s2-q03",
+          "question": "Given an outer relation R with BR blocks and an inner relation S with BS blocks, what is the disk I/O cost of a Block Nested-Loop Join using B buffer frames?",
+          "options": [
+            "BR * BS * B block accesses",
+            "(BR + BS) / B block accesses",
+            "BR + (ceil(BR / (B - 2)) * BS) block accesses",
+            "BR^2 + BS^2 block accesses"
+          ],
+          "correctIndex": 2,
+          "explanation": "In Block Nested-Loop Join, the buffer allocates B-2 blocks to read chunks of the outer relation R, scanning the inner relation S once for each chunk, yielding BR + (ceil(BR / (B - 2)) * BS).",
+          "sourceRef": "Chapter 2.pptx, slide 35, 41",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s2-q04",
+          "question": "Why might a cost-based query optimizer choose a full sequential table scan over a secondary B+ tree index scan for evaluating a selection condition σ_A=v(R)?",
+          "options": [
+            "Because B+ tree indices can only evaluate queries on integer columns",
+            "Because sequential scans consume zero CPU cycles on modern servers",
+            "If the selection has low selectivity (retrieves more than ~5-10% of total tuples), each index match incurs an unclustered random disk I/O seek, making sequential scanning faster",
+            "Because secondary indices cannot be read while transactions are active"
+          ],
+          "correctIndex": 2,
+          "explanation": "Secondary indices are non-clustered, so retrieving each tuple may require fetching a distinct disk block. When retrieving many tuples, the cost of random I/O exceeds sequential block reading.",
+          "sourceRef": "Chapter 2.pptx, slide 29, 30",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s2-q05",
+          "question": "Why are Parameterized Prepared Statements effective at preventing SQL Injection attacks in web-database applications?",
+          "options": [
+            "They automatically encrypt all user input with 4096-bit RSA keys",
+            "The database compiles and establishes the query structure and parse tree before user input is supplied, treating user parameters strictly as literal values rather than executable code",
+            "They prevent web applications from connecting to database servers",
+            "They convert all SQL statements into static HTML text files"
+          ],
+          "correctIndex": 1,
+          "explanation": "Prepared statements pre-compile the SQL template. User input is bound strictly as data parameters, making it impossible for input to alter the syntactic structure of the query tree.",
+          "sourceRef": "Chapter 3.pptx, slide 9, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s2-q06",
+          "question": "In distributed concurrency control, how does the Majority Consensus 2PL protocol differ from the Primary Copy 2PL protocol?",
+          "options": [
+            "Majority Consensus requires locking a strict majority (floor(N/2) + 1) of replicated copies, avoiding single-point master failures at the cost of requiring multiple site lock negotiations",
+            "Primary Copy locks all sites, while Majority Consensus locks exactly one site",
+            "Majority Consensus disables all shared read locks across the network",
+            "Primary Copy requires all sites to execute transactions at identical microsecond timestamps"
+          ],
+          "correctIndex": 0,
+          "explanation": "Primary Copy 2PL routes all lock requests to a single designated master copy (vulnerable to master failure). Majority Consensus locks a majority of replica sites, providing higher fault tolerance.",
+          "sourceRef": "Chapter 4.pptx, slide 60, 61",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s2-q07",
+          "question": "How does the Three-Phase Commit (3PC) protocol eliminate the blocking problem inherent in the Two-Phase Commit (2PC) protocol?",
+          "options": [
+            "By eliminating the need for transaction coordinators entirely",
+            "By committing all distributed transactions before checking site availability",
+            "By using optical fiber connections to guarantee zero transmission latency",
+            "By introducing an intermediate 'PreCommit' state between prepare and commit, ensuring that no state transition can lead to uncertainty when non-partitioned site crashes occur"
+          ],
+          "correctIndex": 3,
+          "explanation": "3PC splits the commit decision into Prepare, PreCommit, and Commit phases. The PreCommit state guarantees that all live nodes agree on the outcome before any node commits, removing blocking under site crashes.",
+          "sourceRef": "Chapter 4.pptx, slide 64, 65",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s2-q08",
+          "question": "In Object-Oriented Database Schemas, how are structural conflicts resolved when a subclass inherits two attributes with the exact same name from different superclasses?",
+          "options": [
+            "The DBMS automatically deletes both conflicting attributes from the database",
+            "The DBMS converts both attributes into unstructured text comments",
+            "Through attribute renaming in the subclass declaration or by qualifying the attribute using its originating superclass scope identifier",
+            "Multiple inheritance is strictly forbidden in all object database standards"
+          ],
+          "correctIndex": 2,
+          "explanation": "In OODBMS schema definition (such as ODMG ODL), multiple inheritance name collisions are resolved either by explicit renaming in the subclass or by prefixing with the superclass name.",
+          "sourceRef": "Chapter 5.pptx, slide 38, 39",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s2-q09",
+          "question": "In an Object-Relational Database (SQL:1999), what is the structural difference between a ROW type and a User-Defined Structured Type (UDT)?",
+          "options": [
+            "A ROW type can contain methods, while a structured UDT cannot",
+            "A ROW type is an anonymous sequence of fields without methods or inheritance, whereas a structured UDT is a named schema object that supports methods, encapsulation, and type inheritance",
+            "A structured UDT is stored exclusively on magnetic backup tape",
+            "There is no difference; ROW types and UDTs are identical synonyms in SQL:1999"
+          ],
+          "correctIndex": 1,
+          "explanation": "ROW types are anonymous composite types without behavior. Named structured types (UDTs) define named types with encapsulation, user-defined routines (methods), and subtype inheritance.",
+          "sourceRef": "Chapter 5.pptx, slide 89, 90, 110",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s2-q10",
+          "question": "Why must expressions in Tuple Relational Calculus (TRC) be syntactically restricted to 'safe' expressions?",
+          "options": [
+            "Unsafe expressions cause physical disk sectors to become corrupted",
+            "Unsafe expressions bypass user login authentication passwords",
+            "Unsafe expressions (such as {t | ¬R(t)}) could potentially yield an infinite relation containing all tuples in the universe not present in relation R",
+            "Safe expressions are required only when relations have fewer than two columns"
+          ],
+          "correctIndex": 2,
+          "explanation": "In TRC, an expression is safe if all its result tuples are composed of constants appearing in the database relations or the query formula. Unsafe expressions can produce infinite relations.",
+          "sourceRef": "Chapter 6.pptx, slide 2, 45",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "adb-hard-s3-q01",
+          "question": "Under Timestamp Ordering concurrency control, what optimization does Thomas' Write Rule introduce?",
+          "options": [
+            "It aborts all active transactions whenever any read operation arrives",
+            "If an incoming write operation has a timestamp older than the data item's write timestamp (TS(T) < W-timestamp(X)), the write is safely ignored instead of aborting the transaction",
+            "It forces all write operations to execute in reverse chronological order",
+            "It requires every write operation to obtain an exclusive hardware lock"
+          ],
+          "correctIndex": 1,
+          "explanation": "Thomas' Write Rule recognizes that an obsolete write would be overwritten by a newer completed write anyway, so it simply ignores the outdated write, achieving view serializability without aborting.",
+          "sourceRef": "Chapter 1.pptx, slide 44, 45",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s3-q02",
+          "question": "How does the classic System R dynamic programming algorithm optimize join order for a query involving N relations?",
+          "options": [
+            "It randomly shuffles relations and picks the first execution plan generated",
+            "It translates the query into an unindexed XML file and executes a linear scan",
+            "It restricts search space to left-deep trees and iteratively builds optimal join orders for subsets of size 1, 2, ..., N, caching lowest-cost plans to avoid examining all N! permutations",
+            "It evaluates all possible bush-tree permutations in factorial time O(N!)"
+          ],
+          "correctIndex": 2,
+          "explanation": "System R uses dynamic programming to explore left-deep join trees, computing optimal sub-plans for subsets of relations of increasing size, reducing search complexity from O(N!) to O(N * 2^N).",
+          "sourceRef": "Chapter 2.pptx, slide 49, 50",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s3-q03",
+          "question": "When a query optimizer estimates the selectivity of a conjunctive predicate σ_(A=v1 AND B=v2)(R), what critical assumption does it make, and when does it fail?",
+          "options": [
+            "It assumes relations are stored in separate data centers; this fails if the network is fast",
+            "It assumes relations have zero rows; this fails when records are inserted",
+            "It assumes both attributes are encrypted; this fails when plain text is used",
+            "It assumes attribute value independence (multiplying sel(A) * sel(B)); this fails significantly when attributes are strongly correlated (e.g. Model='Corolla' and Make='Toyota')"
+          ],
+          "correctIndex": 3,
+          "explanation": "Optimizers typically assume independent distribution of attribute values (multiplying individual selectivities). Correlated attributes violate this assumption and lead to severe underestimation.",
+          "sourceRef": "Chapter 2.pptx, slide 56, 57",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s3-q04",
+          "question": "In statistical database security, how does an attacker use a 'Tracker Attack' to bypass query size restriction thresholds (e.g., k <= count <= N-k)?",
+          "options": [
+            "By constructing a compound query using an auxiliary 'tracker' predicate whose count is known, combining it with target predicates to algebraically isolate confidential individual records",
+            "By physically tracking the fiber optic cables connecting database servers",
+            "By flooding the database server with billions of simultaneous ping requests",
+            "By deleting the transaction log files to conceal query execution history"
+          ],
+          "correctIndex": 0,
+          "explanation": "A tracker attack uses an auxiliary predicate T with an acceptable count to formulate queries like count(T OR C) and count(T AND NOT C), mathematically deducing individual secret values without triggering alerts.",
+          "sourceRef": "Chapter 3.pptx, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s3-q05",
+          "question": "According to the CAP Theorem, what fundamental trade-off must a Distributed Database System make when a network partition (P) occurs?",
+          "options": [
+            "It must choose between Relational Algebra and Relational Calculus",
+            "It must choose between using SSD storage and Magnetic Tape storage",
+            "It must choose between Consistency (refusing requests to avoid serving stale/conflicting data) or Availability (allowing reads/writes on partitioned sites at the expense of inconsistency)",
+            "It must choose between English and Latin character encodings"
+          ],
+          "correctIndex": 2,
+          "explanation": "The CAP theorem states that under a network partition, a distributed system cannot guarantee both Consistency and Availability; it must prioritize one over the other.",
+          "sourceRef": "Chapter 4.pptx, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s3-q06",
+          "question": "What causes a 'Phantom Deadlock' in a Distributed Database System using centralized deadlock detection?",
+          "options": [
+            "Network transmission delays in delivering lock release messages to the central coordinator, causing the coordinator to detect a cycle that has already been resolved at the local sites",
+            "Transactions that execute queries on empty tables containing zero rows",
+            "Hardware failures that damage the physical cooling fans of database servers",
+            "Corrupted database indices that have not been rebuilt after an update"
+          ],
+          "correctIndex": 0,
+          "explanation": "Because messages take time to travel across the network, a central detector may receive an edge addition before an edge deletion, detecting a 'phantom' deadlock cycle that no longer exists.",
+          "sourceRef": "Chapter 4.pptx, slide 62",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s3-q07",
+          "question": "In an Object-Relational DBMS (ORDBMS), what is the function of an INSTEAD OF trigger on an Object View?",
+          "options": [
+            "To intercept update, insert, or delete operations on complex object views and execute custom SQL statements that correctly propagate changes to underlying base relational tables",
+            "To prevent users from ever running SELECT queries on object views",
+            "To automatically drop and recreate the underlying database schema every hour",
+            "To convert all relational queries into binary machine code"
+          ],
+          "correctIndex": 0,
+          "explanation": "Object views synthesize objects from relational tables. INSTEAD OF triggers intercept modifications to these views, translating object updates into appropriate updates on base tables.",
+          "sourceRef": "Chapter 5.pptx, slide 85, 86",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s3-q08",
+          "question": "In the ODMG Object Query Language (OQL), what is the purpose of the 'element' operator?",
+          "options": [
+            "To calculate the chemical composition of database server hardware",
+            "To combine two separate object databases into a single relational table",
+            "To permanently delete an object from disk storage",
+            "To extract the single element from a collection (such as a set or bag) that is known to contain exactly one object, returning the object itself rather than a collection"
+          ],
+          "correctIndex": 3,
+          "explanation": "In OQL, queries return collections by default. The 'element' operator extracts the single object from a singleton collection, enabling direct object navigation.",
+          "sourceRef": "Chapter 5.pptx, slide 72, 73",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s3-q09",
+          "question": "What fundamental principle does Codd's Theorem establish regarding relational database query languages?",
+          "options": [
+            "Relational Calculus is strictly more expressive than Relational Algebra in all cases",
+            "Basic Relational Algebra, safe Tuple Relational Calculus, and safe Domain Relational Calculus have exactly equivalent expressive power (defining Relational Completeness)",
+            "Object-oriented query languages can express every mathematical theorem",
+            "SQL queries can only be evaluated using two-phase locking protocols"
+          ],
+          "correctIndex": 1,
+          "explanation": "Codd's Theorem proves that basic Relational Algebra and safe Relational Calculus are equivalent in expressive power, establishing the benchmark known as 'relationally complete'.",
+          "sourceRef": "Chapter 6.pptx, slide 2, 45",
+          "confidence": "high"
+        },
+        {
+          "id": "adb-hard-s3-q10",
+          "question": "In Relational Algebra, how is a Full Outer Join (⟗) mathematically expressed in terms of Left Outer Join (⟕) and Right Outer Join (⟖)?",
+          "options": [
+            "(R ⟕ S) ∪ (R ⟖ S)",
+            "(R ⟕ S) ∩ (R ⟖ S)",
+            "(R × S) - (R ⋈ S)",
+            "σ_(R=S)(R ⋈ S)"
+          ],
+          "correctIndex": 0,
+          "explanation": "A Full Outer Join preserves all tuples from both R and S with NULL padding for unmatched attributes, which is equivalent to the union of the Left Outer Join and Right Outer Join: (R ⟕ S) ∪ (R ⟖ S).",
+          "sourceRef": "Chapter 6.pptx, slide 35, 36",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}
