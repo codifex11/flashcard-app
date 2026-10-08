@@ -28,6 +28,17 @@
                   "reviewStatus": "pending_review"
                 }
               ]
+            },
+            {
+              "semester": "Semester 2",
+              "subjects": [
+                {
+                  "id": "data-structures-and-algorithms",
+                  "name": "Data Structure and Algorithms",
+                  "questionCount": 90,
+                  "reviewStatus": "pending_review"
+                }
+              ]
             }
           ]
         }

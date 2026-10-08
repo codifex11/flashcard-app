@@ -1,0 +1,440 @@
+{
+  "level": "hard",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "dsa-hard-s1-q01",
+          "question": "By the formal mathematical definition of Big-Theta (Θ), a function f(n) = Θ(g(n)) if and only if there exist positive constants c1, c2, n0 such that which condition holds for all n >= n0?",
+          "options": [
+            "f(n) <= c1 * g(n) + c2",
+            "c1 * f(n) <= g(n) <= c2 * f(n)",
+            "f(n) >= c1 * g(n) - c2 * g(n)",
+            "c1 * g(n) <= f(n) <= c2 * g(n)"
+          ],
+          "correctIndex": 3,
+          "explanation": "Big-Theta (Θ) provides an asymptotically tight bound: f(n) is squeezed between c1*g(n) and c2*g(n) for all sufficiently large n.",
+          "sourceRef": "Chapter 2.pptx, slide 16, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s1-q02",
+          "question": "In terms of mathematical limits, how does Little-o (f(n) = o(g(n))) differ strictly from Big-O (f(n) = O(g(n))) as n -> infinity?",
+          "options": [
+            "f(n) = o(g(n)) requires lim(n->inf) f(n)/g(n) = infinity",
+            "Little-o applies only to polynomial functions, whereas Big-O applies to exponential functions",
+            "There is no mathematical difference; Little-o is merely shorthand notation",
+            "f(n) = o(g(n)) requires lim(n->inf) f(n)/g(n) = 0, whereas Big-O allows the limit to be any non-negative constant c >= 0"
+          ],
+          "correctIndex": 3,
+          "explanation": "Little-o denotes a strict asymptotic upper bound where f(n) grows strictly slower than g(n), meaning the ratio approaches 0 as n -> infinity.",
+          "sourceRef": "Chapter 2.pptx, slide 18, 19",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s1-q03",
+          "question": "Under which condition does Quick Sort degenerate into its worst-case time complexity of O(n^2) when using the first element as the pivot?",
+          "options": [
+            "When the array contains randomly permuted distinct values",
+            "When the input array is already sorted (in ascending or descending order)",
+            "When the array has an even number of elements",
+            "When all elements in the array are powers of two"
+          ],
+          "correctIndex": 1,
+          "explanation": "If the array is already sorted and the first element is selected as pivot, each partition produces one empty subarray and one subarray of size n-1, leading to n recursive levels and O(n^2) comparisons.",
+          "sourceRef": "Chapter 3.pptx, slide 34, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s1-q04",
+          "question": "Why is Quick Sort often preferred in practice over standard Merge Sort for internal sorting of arrays despite having a worst-case of O(n^2)?",
+          "options": [
+            "Quick Sort always performs fewer comparisons than Merge Sort in every possible case",
+            "Quick Sort is an in-place algorithm requiring only O(log n) call stack space and has superior cache locality, whereas Merge Sort requires O(n) auxiliary array memory",
+            "Merge Sort cannot be implemented recursively in C++",
+            "Quick Sort requires zero CPU comparisons during execution"
+          ],
+          "correctIndex": 1,
+          "explanation": "Merge Sort requires an extra temporary array of size n to merge sorted halves (O(n) auxiliary space), whereas Quick Sort partitions in-place, requiring only O(log n) stack space on average.",
+          "sourceRef": "Chapter 3.pptx, slide 30, 36",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s1-q05",
+          "question": "In self-organizing linked lists, how does the Move-to-Front (MTF) heuristic reorganize nodes upon access?",
+          "options": [
+            "Whenever a node is accessed, it is immediately unlinked and inserted at the very head of the list",
+            "The accessed node is swapped with its immediate predecessor node",
+            "The accessed node increments an access counter and is sorted at the end of the day",
+            "The accessed node is moved to the exact middle position of the list"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Move-to-Front heuristic unlinks the accessed node and places it at the head of the list, ensuring frequently or recently accessed items are found quickly near the front.",
+          "sourceRef": "Chapter 4.pptx, slide 32, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s1-q06",
+          "question": "In an array-based circular queue of capacity N where front == rear signifies an empty queue, how can the queue distinguish a full queue from an empty queue without an extra counter variable?",
+          "options": [
+            "By setting front = -1 and rear = -1 when full",
+            "By allowing rear to exceed N and wrapping only front",
+            "By sacrificing one array slot and defining full as (rear + 1) % N == front",
+            "By converting the array to a dynamic hash table when full"
+          ],
+          "correctIndex": 2,
+          "explanation": "Leaving one slot permanently empty allows distinguishing full ((rear + 1) % N == front, holding N-1 elements) from empty (front == rear).",
+          "sourceRef": "Chapter 5.pptx, slide 32, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s1-q07",
+          "question": "When converting the infix expression A ^ B ^ C (where ^ is right-associative exponentiation) to postfix, what is the correct result?",
+          "options": [
+            "A B ^ C ^",
+            "A B C ^ ^",
+            "^ ^ A B C",
+            "A B C ^ *"
+          ],
+          "correctIndex": 1,
+          "explanation": "Right-associativity means A ^ B ^ C is grouped as A ^ (B ^ C). In postfix notation, this evaluates B C ^ first, then A (B C ^) ^ -> A B C ^ ^.",
+          "sourceRef": "Chapter 5.pptx, slide 19, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s1-q08",
+          "question": "What specific system error occurs when a recursive function without a proper base case exhausts all memory allocated for function call frames?",
+          "options": [
+            "Heap Fragmentation",
+            "Null Pointer Dereference Exception",
+            "Stack Overflow (due to call stack exhaustion)",
+            "Deadlock"
+          ],
+          "correctIndex": 2,
+          "explanation": "Every recursive call allocates an activation record on the runtime Call Stack. Infinite recursion consumes all available stack memory until a Stack Overflow occurs.",
+          "sourceRef": "Chapter 6.pptx, slide 14, 21",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s1-q09",
+          "question": "When deleting a node Z that has two children from a Binary Search Tree, how is the deletion safely executed to preserve BST ordering?",
+          "options": [
+            "Directly connect the left child of Z to the right child of Z and delete Z",
+            "Delete both child subtrees along with node Z",
+            "Find Z's Inorder Successor (smallest node in right subtree) or Inorder Predecessor, copy its key to Z, and delete that successor/predecessor node",
+            "Rotate node Z until it becomes the root node and delete it"
+          ],
+          "correctIndex": 2,
+          "explanation": "The inorder successor has at most one child (no left child). Copying its value to Z and deleting the successor reduces the problem to Case 1 or Case 2.",
+          "sourceRef": "Chapter 7.pptx, slide 39",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s1-q10",
+          "question": "In the Day-Stout-Warren (DSW) balancing algorithm, what is the objective of Phase 1 (creating a backbone or vine)?",
+          "options": [
+            "Sorting an external array of nodes using Merge Sort in O(n log n) time",
+            "Constructing a complete binary tree using level-order queues",
+            "Deleting all internal nodes and re-inserting them as leaves",
+            "Transforming the arbitrary BST into a right-skewed degenerate linked list of nodes using right rotations in O(n) time"
+          ],
+          "correctIndex": 3,
+          "explanation": "DSW Phase 1 performs right rotations on any left children encountered along the path from the root downward, creating a right-degenerate vine (backbone) in O(n) time.",
+          "sourceRef": "Chapter 7.pptx, slide 59, 63, 65",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "dsa-hard-s2-q01",
+          "question": "Why does a Skip List achieve O(log n) average search, insertion, and deletion time complexity?",
+          "options": [
+            "It compresses data into binary search tree nodes using hash tables",
+            "It maintains multiple hierarchical layers of linked lists with probabilistic express lanes that skip over geometric numbers of elements",
+            "It eliminates all pointer dereferences using contiguous memory blocks",
+            "It converts linked list pointers into array indices dynamically"
+          ],
+          "correctIndex": 1,
+          "explanation": "A skip list is a layered, probabilistic data structure where higher layers act as 'express lanes' skipping over nodes, yielding O(log n) average search.",
+          "sourceRef": "Chapter 4.pptx, slide 32, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s2-q02",
+          "question": "What primary hardware-level advantage does an Unrolled Linked List offer compared to a standard Singly Linked List?",
+          "options": [
+            "Direct O(1) random indexing to any element across all nodes",
+            "Ability to perform binary search across non-contiguous nodes in O(log n) time",
+            "Elimination of dynamic memory allocation during insertions",
+            "Better CPU cache performance and reduced pointer overhead because each node stores an array of multiple elements"
+          ],
+          "correctIndex": 3,
+          "explanation": "In an unrolled linked list, each node holds an array of elements. This improves cache locality and reduces the per-element pointer memory overhead.",
+          "sourceRef": "Chapter 4.pptx, slide 32, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s2-q03",
+          "question": "Comparing an array-based stack with a dynamic linked-list-based stack, which statement accurately captures their structural trade-offs?",
+          "options": [
+            "Array stacks have O(1) amortized push with contiguous cache locality but possible resize overhead, whereas linked stacks have strict O(1) push but extra memory overhead per pointer",
+            "Array stacks allow O(1) access while linked stacks take O(n) for pop()",
+            "Linked stacks use less total memory per element than fixed-size array stacks",
+            "Array stacks can grow infinitely without heap memory allocation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Linked stacks require extra memory for pointers (next) in every node, but allocate only as needed. Array stacks have lower per-element overhead and better cache locality.",
+          "sourceRef": "Chapter 5.pptx, slide 11, 13",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s2-q04",
+          "question": "What distinguishes a Double-Ended Queue (Deque) from a standard FIFO Queue?",
+          "options": [
+            "Elements are automatically sorted in ascending order upon insertion",
+            "It can hold two distinct data types simultaneously",
+            "Elements can be inserted and deleted from both the front and the rear ends in O(1) time",
+            "It can only be implemented using two-dimensional arrays"
+          ],
+          "correctIndex": 2,
+          "explanation": "A Deque supports four core operations: push_front(), push_back(), pop_front(), and pop_back(), all running in O(1) time.",
+          "sourceRef": "Chapter 5.pptx, slide 39, 40",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s2-q05",
+          "question": "In Phase 2 of the DSW algorithm, how is the initial number of left rotations calculated for a backbone of n nodes?",
+          "options": [
+            "n - M, where M = 2^(floor(log2(n + 1))) - 1",
+            "n / 2, where M = n - 1",
+            "2^n - 1, where M = log2 n",
+            "n - log2 n, where M = n / 2"
+          ],
+          "correctIndex": 0,
+          "explanation": "M is the number of nodes in the largest full binary tree that fits in n nodes (M = 2^(floor(log2(n+1))) - 1). The first pass performs n - M rotations to balance the excess leaf nodes.",
+          "sourceRef": "Chapter 7.pptx, slide 67, 68",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s2-q06",
+          "question": "What are the overall time complexity and auxiliary space complexity of the DSW global rebalancing algorithm?",
+          "options": [
+            "Time complexity O(n) and auxiliary space complexity O(1)",
+            "Time complexity O(n log n) and auxiliary space complexity O(n)",
+            "Time complexity O(n^2) and auxiliary space complexity O(1)",
+            "Time complexity O(log n) and auxiliary space complexity O(log n)"
+          ],
+          "correctIndex": 0,
+          "explanation": "DSW creates a backbone using at most n-1 rotations (O(n)) and rebuilds the balanced tree with fewer than n rotations (O(n)), modifying pointers in-place with O(1) auxiliary storage.",
+          "sourceRef": "Chapter 7.pptx, slide 70, 71",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s2-q07",
+          "question": "If a new node is inserted into the left subtree of the left child of node A, causing A's balance factor to become +2, what type of rotation is required?",
+          "options": [
+            "Single Right Rotation (LL Rotation)",
+            "Single Left Rotation (RR Rotation)",
+            "Left-Right Rotation (LR Rotation)",
+            "Right-Left Rotation (RL Rotation)"
+          ],
+          "correctIndex": 0,
+          "explanation": "Insertion into the Left child's Left subtree is a Left-Left (LL) imbalance. A Single Right Rotation pivots the left child up to become the new root of the subtree.",
+          "sourceRef": "Chapter 7.pptx, slide 76, 77",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s2-q08",
+          "question": "Which exact two-step rotation sequence resolves a Left-Right (LR) imbalance in an AVL tree?",
+          "options": [
+            "Perform a Single Right Rotation on the left child, followed by a Single Left Rotation on the unbalanced node",
+            "Perform a Single Left Rotation on the left child, followed by a Single Right Rotation on the unbalanced node",
+            "Perform two consecutive Single Right Rotations on the unbalanced node",
+            "Perform a Single Left Rotation on the root of the entire tree"
+          ],
+          "correctIndex": 1,
+          "explanation": "An LR imbalance means the node's left subtree is right-heavy. A left rotation on the left child transforms it into an LL imbalance, which is then resolved by a right rotation on the parent.",
+          "sourceRef": "Chapter 7.pptx, slide 79",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s2-q09",
+          "question": "Which exact two-step rotation sequence resolves a Right-Left (RL) imbalance in an AVL tree?",
+          "options": [
+            "Perform a Single Left Rotation on the right child, followed by a Single Right Rotation on the unbalanced node",
+            "Perform two consecutive Single Left Rotations on the unbalanced node",
+            "Perform a Single Right Rotation on the right child, followed by a Single Left Rotation on the unbalanced node",
+            "Perform a Single Right Rotation on the root of the tree"
+          ],
+          "correctIndex": 2,
+          "explanation": "An RL imbalance means the node's right subtree is left-heavy. A right rotation on the right child transforms it into an RR imbalance, which is then resolved by a left rotation on the parent.",
+          "sourceRef": "Chapter 7.pptx, slide 80",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s2-q10",
+          "question": "What is the maximum (worst-case) height of an AVL Tree containing n nodes?",
+          "options": [
+            "Exactly log2 n",
+            "Approximately 1.44 * log2(n + 2) = O(log n)",
+            "O(n) (identical to a skewed BST)",
+            "O(sqrt(n))"
+          ],
+          "correctIndex": 1,
+          "explanation": "Because an AVL tree enforces |h_L - h_R| <= 1, the minimum number of nodes for height h follows Fibonacci-like growth (N(h) = N(h-1) + N(h-2) + 1), giving worst-case height approximately 1.44 * log2(n) = O(log n).",
+          "sourceRef": "Chapter 7.pptx, slide 72, 81",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "dsa-hard-s3-q01",
+          "question": "What is the exact number of operations and Big-O complexity of the nested loops:\nfor (int i = 0; i < n; i++)\n    for (int j = 0; j < i; j++)\n        sum++;",
+          "options": [
+            "n(n - 1)/2 operations, which is O(n^2)",
+            "n^2 operations, which is O(n^2)",
+            "n log n operations, which is O(n log n)",
+            "n operations, which is O(n)"
+          ],
+          "correctIndex": 0,
+          "explanation": "When i=0, inner loop runs 0; i=1, runs 1; ... i=n-1, runs n-1. The sum is 0 + 1 + ... + (n-1) = n(n-1)/2 = O(n^2).",
+          "sourceRef": "Chapter 2.pptx, slide 26, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s3-q02",
+          "question": "What does it mean for a sorting algorithm to be 'stable', and which of the following is an example of a stable sorting algorithm?",
+          "options": [
+            "It uses constant O(1) auxiliary memory; Selection Sort is stable",
+            "It guarantees O(n log n) worst-case time; Quick Sort is stable",
+            "It sorts elements without performing any comparisons; Bubble Sort is unstable",
+            "It preserves the relative input order of records with equal keys; Merge Sort is stable"
+          ],
+          "correctIndex": 3,
+          "explanation": "A sorting algorithm is stable if elements with identical keys appear in the same relative order in the output as in the input. Merge Sort and Insertion Sort are stable; Quick Sort and Selection Sort are not.",
+          "sourceRef": "Chapter 3.pptx, slide 23, 29, 35",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s3-q03",
+          "question": "In a circular doubly linked list with a single node head, what must happen to head when this only node is deleted?",
+          "options": [
+            "head->next = head; head->prev = head;",
+            "delete head; head = NULL;",
+            "head = head->next;",
+            "head->prev = NULL;"
+          ],
+          "correctIndex": 1,
+          "explanation": "When a circular doubly linked list contains only one node, head->next == head. Deleting that node leaves an empty list, requiring head = NULL;.",
+          "sourceRef": "Chapter 4.pptx, slide 29, 30",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s3-q04",
+          "question": "What is the correct postfix conversion for the infix expression (A + B) * (C - D) / E?",
+          "options": [
+            "A B + C D * - E /",
+            "A B + C D - * E /",
+            "A B + * C D - E /",
+            "* + A B - C D / E"
+          ],
+          "correctIndex": 1,
+          "explanation": "A + B -> A B +; C - D -> C D -; multiplied -> A B + C D - *; divided by E -> A B + C D - * E /.",
+          "sourceRef": "Chapter 5.pptx, slide 19, 20, 22",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s3-q05",
+          "question": "Which recurrence relation describes the time complexity of Merge Sort, and what is its closed-form asymptotic solution?",
+          "options": [
+            "T(n) = T(n - 1) + O(n) => T(n) = O(n^2)",
+            "T(n) = 2T(n/2) + O(1) => T(n) = O(n)",
+            "T(n) = T(n/2) + O(1) => T(n) = O(log n)",
+            "T(n) = 2T(n/2) + O(n) => T(n) = O(n log n)"
+          ],
+          "correctIndex": 3,
+          "explanation": "Merge Sort splits the input into 2 subproblems of size n/2 (2T(n/2)) and spends O(n) time merging. By Master Theorem (Case 2), T(n) = O(n log n).",
+          "sourceRef": "Chapter 3.pptx, slide 29; Chapter 6.pptx, slide 20",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s3-q06",
+          "question": "What is the primary memory drawback of using a sequential array representation for a degenerate (skewed) binary tree of height h?",
+          "options": [
+            "It cannot store numeric key values",
+            "It requires O(n^2) time to find the root node",
+            "It requires an array of size 2^h - 1, wasting exponential memory space when the tree contains only h nodes",
+            "It prevents tree traversal algorithms from executing"
+          ],
+          "correctIndex": 2,
+          "explanation": "In an array representation, a right-skewed tree of height h places the deepest node at index 2^h - 2, allocating 2^h - 1 slots for just h nodes, wasting massive space.",
+          "sourceRef": "Chapter 7.pptx, slide 23, 24",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s3-q07",
+          "question": "Given the Preorder traversal sequence [6, 4, 3, 5, 8, 7, 9], which node is the left child of the root node 6 in the constructed BST?",
+          "options": [
+            "Node 3",
+            "Node 5",
+            "Node 8",
+            "Node 4"
+          ],
+          "correctIndex": 3,
+          "explanation": "In preorder (NLR), 6 is the root. Elements smaller than 6 (4, 3, 5) belong to the left subtree, where the first element 4 is the left child of 6.",
+          "sourceRef": "Chapter 7.pptx, slide 41, 48, 50",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s3-q08",
+          "question": "Why might deleting a node from an AVL tree require up to O(log n) rotations, whereas inserting a node requires at most one single or double rotation?",
+          "options": [
+            "Because deletion requires re-sorting the entire array",
+            "Because leaf nodes cannot be rotated without allocating new heap memory",
+            "Because a deletion rotation can decrease the height of the entire subtree, potentially propagating height imbalances upward all the way to the root",
+            "Because AVL deletion transforms the tree into a B-Tree"
+          ],
+          "correctIndex": 2,
+          "explanation": "Insertion rebalancing restores the original subtree height, terminating further propagation. Deletion rebalancing can reduce subtree height by 1, which may cause imbalances at higher ancestor nodes up to the root (O(log n) rotations).",
+          "sourceRef": "Chapter 7.pptx, slide 88",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s3-q09",
+          "question": "According to course slides, when is a binary tree defined as 'perfectfully balanced'?",
+          "options": [
+            "When the tree is height-balanced and all leaf nodes reside on only one or two consecutive levels",
+            "When every single node in the tree has exactly two children",
+            "When the number of nodes in the left subtree exactly equals the right subtree",
+            "When the height of the tree is strictly equal to n"
+          ],
+          "correctIndex": 0,
+          "explanation": "A binary tree is height-balanced if the subtrees of every node differ by <= 1. It is 'perfectly balanced' if it is balanced and all leaves are found on one level or two levels.",
+          "sourceRef": "Chapter 7.pptx, slide 51",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-hard-s3-q10",
+          "question": "Comparing the Array-Sorting balancing method, the DSW algorithm, and AVL Trees, which technique provides dynamic, on-the-fly rebalancing during regular insertions and deletions?",
+          "options": [
+            "Array-Sorting method (Technique 1)",
+            "DSW Algorithm (Technique 2)",
+            "AVL Tree",
+            "Sequential Linear Search Balancing"
+          ],
+          "correctIndex": 2,
+          "explanation": "Array sorting and DSW are global rebalancing methods performed after all nodes arrive. AVL Trees dynamically balance the tree on-the-fly after every insertion and deletion in O(log n) time.",
+          "sourceRef": "Chapter 7.pptx, slide 54, 58, 71, 72",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

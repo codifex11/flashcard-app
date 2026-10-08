@@ -1,0 +1,22 @@
+{
+  "id": "data-structures-and-algorithms",
+  "name": "Data Structure and Algorithms",
+  "department": "Information System",
+  "year": "Year 2",
+  "semester": "Semester 2",
+  "courseCode": "INSY2041",
+  "sourceFiles": [
+    "Chapter 0.pptx",
+    "Chapter 1.pptx",
+    "Chapter 2.pptx",
+    "Chapter 3.pptx",
+    "Chapter 4.pptx",
+    "Chapter 5.pptx",
+    "Chapter 6.pptx",
+    "Chapter 7.pptx"
+  ],
+  "generatedAt": "2026-10-07",
+  "reviewStatus": "pending_review",
+  "questionCount": 90,
+  "lowConfidenceCount": 0
+}

@@ -31,6 +31,17 @@ window.APP_DATA_BUNDLE = {
                     "reviewStatus": "pending_review"
                   }
                 ]
+              },
+              {
+                "semester": "Semester 2",
+                "subjects": [
+                  {
+                    "id": "data-structures-and-algorithms",
+                    "name": "Data Structure and Algorithms",
+                    "questionCount": 90,
+                    "reviewStatus": "pending_review"
+                  }
+                ]
               }
             ]
           }
@@ -5359,6 +5370,1785 @@ window.APP_DATA_BUNDLE = {
                 "answer": "The social and economic gap in access to and use of modern ICT, encompassing disparities in physical equipment, connection quality, autonomy of use, digital skills, and social support.",
                 "category": "Digital Divide",
                 "sourceRef": "Chapter 5.pdf, slide 71, 77",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "data-structures-and-algorithms": {
+      "meta": {
+        "id": "data-structures-and-algorithms",
+        "name": "Data Structure and Algorithms",
+        "department": "Information System",
+        "year": "Year 2",
+        "semester": "Semester 2",
+        "courseCode": "INSY2041",
+        "sourceFiles": [
+          "Chapter 0.pptx",
+          "Chapter 1.pptx",
+          "Chapter 2.pptx",
+          "Chapter 3.pptx",
+          "Chapter 4.pptx",
+          "Chapter 5.pptx",
+          "Chapter 6.pptx",
+          "Chapter 7.pptx"
+        ],
+        "generatedAt": "2026-10-07",
+        "reviewStatus": "pending_review",
+        "questionCount": 90,
+        "lowConfidenceCount": 0
+      },
+      "easy": {
+        "level": "easy",
+        "sets": [
+          {
+            "setNumber": 1,
+            "questions": [
+              {
+                "id": "dsa-easy-s1-q01",
+                "question": "What is the primary definition of a data structure in computer science?",
+                "options": [
+                  "A hardware component that executes arithmetic and logical instructions",
+                  "A high-level programming language syntax used for compiling code",
+                  "A network protocol designed for transmitting data packets across nodes",
+                  "A specialized format for organizing, processing, retrieving, and storing data in computer memory"
+                ],
+                "correctIndex": 3,
+                "explanation": "A data structure is a specialized format for organizing, managing, and storing data that enables efficient access and modification.",
+                "sourceRef": "Chapter 1.pptx, slide 3",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s1-q02",
+                "question": "What is an Abstract Data Type (ADT)?",
+                "options": [
+                  "A physical hardware register used for temporary CPU calculations",
+                  "A built-in primitive data type provided directly by the hardware architecture",
+                  "A mathematical model of data objects defined solely by their behavior and operations, independent of implementation",
+                  "A compiled binary executable file that manages operating system threads"
+                ],
+                "correctIndex": 2,
+                "explanation": "An ADT specifies what operations can be performed on data and their mathematical behaviors, without exposing or specifying the underlying implementation details.",
+                "sourceRef": "Chapter 1.pptx, slide 4",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s1-q03",
+                "question": "Which of the following is NOT one of the five essential characteristics of an algorithm?",
+                "options": [
+                  "Finiteness (terminating after a finite number of steps)",
+                  "Infinite Recursion (running indefinitely without terminating)",
+                  "Definiteness (each step must be clear and unambiguous)",
+                  "Effectiveness (each operation must be basic and feasible)"
+                ],
+                "correctIndex": 1,
+                "explanation": "The five essential characteristics of an algorithm are: Input, Output, Definiteness, Finiteness, and Effectiveness. An algorithm must terminate after a finite number of steps.",
+                "sourceRef": "Chapter 1.pptx, slide 12",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s1-q04",
+                "question": "Which of the following is classified as a non-linear data structure?",
+                "options": [
+                  "One-Dimensional Array",
+                  "Singly Linked List",
+                  "Binary Tree",
+                  "Stack"
+                ],
+                "correctIndex": 2,
+                "explanation": "In linear data structures (arrays, linked lists, stacks, queues), elements form a sequential sequence. In non-linear data structures (trees, graphs), elements are arranged hierarchically or interconnectedly.",
+                "sourceRef": "Chapter 1.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s1-q05",
+                "question": "Why do computer scientists analyze algorithm complexity instead of just measuring execution time in seconds on a specific computer?",
+                "options": [
+                  "Because physical execution time is identical across all brands of microprocessors",
+                  "To convert high-level C++ code directly into assembly instructions",
+                  "To provide a platform-independent and machine-neutral measure of algorithm efficiency as input size grows",
+                  "To determine the exact monetary cost of the computer hardware components"
+                ],
+                "correctIndex": 2,
+                "explanation": "Measuring run-time in seconds depends on machine architecture, CPU speed, and compiler optimizations. Complexity analysis provides an objective, input-size-dependent metric.",
+                "sourceRef": "Chapter 2.pptx, slide 3, 4",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s1-q06",
+                "question": "What does Big-O notation (O) formally represent in algorithmic analysis?",
+                "options": [
+                  "The asymptotic lower bound or minimum required execution time",
+                  "The asymptotic upper bound on the growth rate of an algorithm's running time",
+                  "The exact, tight bound where upper and lower bounds coincide",
+                  "The exact number of CPU clock cycles executed on a machine"
+                ],
+                "correctIndex": 1,
+                "explanation": "Big-O notation describes the upper bound (worst-case growth rate) of an algorithm's time or space complexity as input size n approaches infinity.",
+                "sourceRef": "Chapter 2.pptx, slide 10, 11",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s1-q07",
+                "question": "What are the best-case and worst-case time complexities of Linear Search on an array of size n?",
+                "options": [
+                  "Best-case O(n), Worst-case O(n^2)",
+                  "Best-case O(log n), Worst-case O(n log n)",
+                  "Best-case O(1), Worst-case O(n)",
+                  "Best-case O(1), Worst-case O(log n)"
+                ],
+                "correctIndex": 2,
+                "explanation": "In Linear Search, if the target item is at the first index, it takes 1 comparison (O(1)). If it is at the last index or absent, all n items are checked (O(n)).",
+                "sourceRef": "Chapter 3.pptx, slide 4, 5",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s1-q08",
+                "question": "What fundamental condition must be satisfied before Binary Search can be applied to an array?",
+                "options": [
+                  "The array must have an odd number of elements",
+                  "The elements must be stored in a linked list rather than an array",
+                  "The size of the array must be a power of two",
+                  "The elements of the array must be sorted in order"
+                ],
+                "correctIndex": 3,
+                "explanation": "Binary Search relies on comparing the target with the middle element and eliminating half the search space; this requires the array to be sorted.",
+                "sourceRef": "Chapter 3.pptx, slide 8, 9",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s1-q09",
+                "question": "What are the two essential components that constitute a standard node in a singly linked list?",
+                "options": [
+                  "A key field and two pointers (left and right)",
+                  "A data field and a pointer (prev) to the previous node only",
+                  "An index number and an array of contiguous values",
+                  "A data (or info) field and a pointer (next) to the next node"
+                ],
+                "correctIndex": 3,
+                "explanation": "Each node in a singly linked list holds data (the payload) and a next pointer referencing the subsequent node in memory.",
+                "sourceRef": "Chapter 4.pptx, slide 5, 13",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s1-q10",
+                "question": "Which operational principle governs the insertion and deletion of elements in a Stack data structure?",
+                "options": [
+                  "FIFO (First-In-First-Out)",
+                  "LIFO (Last-In-First-Out)",
+                  "LILO (Last-In-Last-Out)",
+                  "Priority-Based Selection"
+                ],
+                "correctIndex": 1,
+                "explanation": "A Stack follows the Last-In-First-Out (LIFO) principle: the most recently added element is the first one removed.",
+                "sourceRef": "Chapter 5.pptx, slide 5, 6",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 2,
+            "questions": [
+              {
+                "id": "dsa-easy-s2-q01",
+                "question": "Which of the following data structures is homogeneous (stores elements of the exact same data type)?",
+                "options": [
+                  "C++ struct",
+                  "C++ class",
+                  "Heterogeneous record tuple",
+                  "Standard Array"
+                ],
+                "correctIndex": 3,
+                "explanation": "Arrays are homogeneous data structures because all elements must belong to the identical data type, whereas structs/classes can hold heterogeneous data types.",
+                "sourceRef": "Chapter 1.pptx, slide 25, 26",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s2-q02",
+                "question": "What does Big-Omega (Ω) notation describe in algorithmic complexity analysis?",
+                "options": [
+                  "The asymptotic upper bound on growth rate",
+                  "The average running time across all inputs",
+                  "The asymptotic lower bound on the growth rate of an algorithm",
+                  "The exact strict upper bound on memory consumption"
+                ],
+                "correctIndex": 2,
+                "explanation": "Big-Omega (Ω) provides an asymptotic lower bound, stating that the algorithm requires at least a certain number of operations for large input sizes.",
+                "sourceRef": "Chapter 2.pptx, slide 14, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s2-q03",
+                "question": "Which of the following correctly orders the complexity classes from fastest (most efficient) to slowest (least efficient) for large n?",
+                "options": [
+                  "O(1) < O(n) < O(log n) < O(n^2) < O(n log n) < O(2^n)",
+                  "O(log n) < O(1) < O(n) < O(2^n) < O(n log n) < O(n^2)",
+                  "O(n^2) < O(n log n) < O(n) < O(log n) < O(1) < O(2^n)",
+                  "O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(2^n)"
+                ],
+                "correctIndex": 3,
+                "explanation": "The standard hierarchy of growth rates is: Constant O(1) < Logarithmic O(log n) < Linear O(n) < Linearithmic O(n log n) < Quadratic O(n^2) < Exponential O(2^n).",
+                "sourceRef": "Chapter 2.pptx, slide 20, 21",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s2-q04",
+                "question": "How does the Bubble Sort algorithm sort an array of elements?",
+                "options": [
+                  "By repeatedly finding the minimum element and placing it at the front",
+                  "By dividing the array into two halves recursively and merging them",
+                  "By repeatedly comparing adjacent pairs of elements and swapping them if they are in the wrong order",
+                  "By picking a pivot and partitioning elements smaller and larger than the pivot"
+                ],
+                "correctIndex": 2,
+                "explanation": "Bubble Sort works by stepping through the array, comparing each pair of adjacent items, and swapping them if they are out of order, bubbling the largest value to the end.",
+                "sourceRef": "Chapter 3.pptx, slide 12, 13",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s2-q05",
+                "question": "What is the primary action performed in each pass of the Selection Sort algorithm?",
+                "options": [
+                  "Finding the minimum (or maximum) element in the unsorted section and swapping it with the first unsorted element",
+                  "Comparing every adjacent pair and swapping them immediately",
+                  "Splitting the array into single-element subarrays and merging them",
+                  "Shifting all larger elements one position to the right to insert the current item"
+                ],
+                "correctIndex": 0,
+                "explanation": "Selection Sort divides the list into sorted and unsorted regions, repeatedly scans the unsorted region for the minimum value, and swaps it into the beginning of the unsorted region.",
+                "sourceRef": "Chapter 3.pptx, slide 19, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s2-q06",
+                "question": "In a singly linked list, what is the role of the reference variable commonly named 'head' or 'start'?",
+                "options": [
+                  "It stores the total count of all nodes in the list",
+                  "It stores the memory address of the first node in the linked list",
+                  "It stores the memory address of the last node in the list",
+                  "It holds the maximum data value present in the entire list"
+                ],
+                "correctIndex": 1,
+                "explanation": "The head pointer holds the address of the first node. If the list is empty, head contains NULL.",
+                "sourceRef": "Chapter 4.pptx, slide 14, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s2-q07",
+                "question": "Which operational principle governs a Queue data structure?",
+                "options": [
+                  "FIFO (First-In-First-Out)",
+                  "LIFO (Last-In-First-Out)",
+                  "LILO (Last-In-Last-Out)",
+                  "Random Access"
+                ],
+                "correctIndex": 0,
+                "explanation": "A Queue operates on the First-In-First-Out (FIFO) principle: the first item inserted at the rear is the first item removed from the front.",
+                "sourceRef": "Chapter 5.pptx, slide 26, 27",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s2-q08",
+                "question": "What is the vital purpose of the base case in a recursive function?",
+                "options": [
+                  "To allocate additional memory on the heap for function variables",
+                  "To provide a non-recursive terminating condition that stops further recursive calls",
+                  "To ensure the function runs in quadratic time complexity",
+                  "To double the value of the input parameter on every invocation"
+                ],
+                "correctIndex": 1,
+                "explanation": "Without a base case, a recursive function would call itself endlessly until it exhausts call stack memory, triggering a stack overflow error.",
+                "sourceRef": "Chapter 6.pptx, slide 6, 8",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s2-q09",
+                "question": "In tree terminology, what is a node that has no children called?",
+                "options": [
+                  "A leaf node (or terminal node)",
+                  "A root node",
+                  "An internal node",
+                  "An ancestor node"
+                ],
+                "correctIndex": 0,
+                "explanation": "A leaf (or terminal node) is a node with degree 0 (no children), whereas the root is the top node with no parent.",
+                "sourceRef": "Chapter 7.pptx, slide 5, 10",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s2-q10",
+                "question": "What is the defining structural rule of a Binary Tree?",
+                "options": [
+                  "Each node must have exactly two children at all times",
+                  "Every node must contain two separate data values",
+                  "All leaf nodes must reside on the exact same depth level",
+                  "Each node can have at most two children (left child and right child)"
+                ],
+                "correctIndex": 3,
+                "explanation": "A binary tree is a hierarchical data structure where every node has at most two children, referred to as the left child and right child.",
+                "sourceRef": "Chapter 7.pptx, slide 14",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 3,
+            "questions": [
+              {
+                "id": "dsa-easy-s3-q01",
+                "question": "What differentiates a static data structure from a dynamic data structure?",
+                "options": [
+                  "Static structures can store any data type, whereas dynamic structures store only integers",
+                  "Static structures are non-linear, whereas dynamic structures are strictly linear",
+                  "Static structures have a fixed memory size allocated at compile time, whereas dynamic structures grow and shrink during runtime",
+                  "Static structures reside in permanent disk storage, whereas dynamic structures reside in CPU registers"
+                ],
+                "correctIndex": 2,
+                "explanation": "Static data structures (like fixed-size arrays) have predetermined memory sizes, while dynamic data structures (like linked lists) allocate memory dynamically during program execution.",
+                "sourceRef": "Chapter 1.pptx, slide 24",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s3-q02",
+                "question": "What does Big-Theta (Θ) notation signify about an algorithm's complexity?",
+                "options": [
+                  "An asymptotically tight bound where the upper bound and lower bound have the same growth rate",
+                  "That the algorithm's execution time is strictly non-deterministic",
+                  "An upper bound that is strictly looser than Big-O",
+                  "That the algorithm uses zero auxiliary memory space"
+                ],
+                "correctIndex": 0,
+                "explanation": "Big-Theta (Θ) represents an asymptotically tight bound: f(n) = Θ(g(n)) means f(n) is bounded both from above (O(g(n))) and from below (Ω(g(n))) by constant multiples of g(n).",
+                "sourceRef": "Chapter 2.pptx, slide 16, 17",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s3-q03",
+                "question": "How does the Insertion Sort algorithm sort a collection of elements?",
+                "options": [
+                  "By swapping random non-adjacent elements until sorted",
+                  "By taking elements one by one from the unsorted portion and inserting each into its correct position within the sorted portion",
+                  "By finding the global maximum and placing it at index 0 on each pass",
+                  "By partitioning the array into two halves around a median pivot"
+                ],
+                "correctIndex": 1,
+                "explanation": "Insertion Sort builds the final sorted array one item at a time by comparing the current element with elements in the sorted portion and shifting larger elements right.",
+                "sourceRef": "Chapter 3.pptx, slide 24, 25",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s3-q04",
+                "question": "How many pointer fields does a standard node in a doubly linked list contain?",
+                "options": [
+                  "One pointer pointing to the next node only",
+                  "Two pointers: one pointing to the previous node and one pointing to the next node",
+                  "Three pointers: parent, left child, and right child",
+                  "Four pointers pointing to north, south, east, and west"
+                ],
+                "correctIndex": 1,
+                "explanation": "A node in a doubly linked list contains three fields: a previous pointer (prev/LPoint), data, and a next pointer (next/RPoint).",
+                "sourceRef": "Chapter 4.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s3-q05",
+                "question": "What does the next pointer of the last node point to in a circular singly linked list?",
+                "options": [
+                  "The first node (head) of the list, forming a closed circle",
+                  "NULL (indicating the end of the list)",
+                  "Itself (creating a self-loop on the last node)",
+                  "The middle node of the list"
+                ],
+                "correctIndex": 0,
+                "explanation": "In a circular singly linked list, the last node does not point to NULL; instead, its next pointer connects back to the first node (head), forming a loop.",
+                "sourceRef": "Chapter 4.pptx, slide 27, 28",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s3-q06",
+                "question": "Which functions are used to add an item to and remove an item from a Stack, respectively?",
+                "options": [
+                  "enqueue() to add and dequeue() to remove",
+                  "insert() to add and extract() to remove",
+                  "push() to add and pop() to remove",
+                  "append() to add and shift() to remove"
+                ],
+                "correctIndex": 2,
+                "explanation": "push() inserts a new element onto the top of the stack, and pop() removes the topmost element from the stack.",
+                "sourceRef": "Chapter 5.pptx, slide 7, 9",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s3-q07",
+                "question": "What major limitation of a linear array-based queue does a Circular Queue solve?",
+                "options": [
+                  "Inability to store integer data types",
+                  "Slow O(n^2) insertion time complexity",
+                  "Requiring doubly linked list nodes",
+                  "Wasted memory spaces at the front of the array caused by repeated dequeue operations"
+                ],
+                "correctIndex": 3,
+                "explanation": "In a linear array queue, dequeuing leaves unused empty cells at the beginning that cannot be reused without shifting. A circular queue wraps pointers using modulo arithmetic.",
+                "sourceRef": "Chapter 5.pptx, slide 30, 31",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s3-q08",
+                "question": "What data structure is utilized internally by the runtime environment to track active function calls during recursion?",
+                "options": [
+                  "Call Stack (using Activation Records / Stack Frames)",
+                  "FIFO Queue",
+                  "Binary Search Tree",
+                  "Circular Linked List"
+                ],
+                "correctIndex": 0,
+                "explanation": "The runtime system pushes an activation record (containing parameters, local variables, and return address) onto the Call Stack for each recursive call.",
+                "sourceRef": "Chapter 6.pptx, slide 5, 13, 14",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s3-q09",
+                "question": "What is the defining ordering property of a Binary Search Tree (BST)?",
+                "options": [
+                  "All leaf nodes must have greater values than the root node",
+                  "All keys in the left subtree are smaller than the node's key, and all keys in the right subtree are greater",
+                  "The left child must always equal the right child",
+                  "The root must contain the maximum value in the entire tree"
+                ],
+                "correctIndex": 1,
+                "explanation": "In a BST, for every node X: all values in X's left subtree are < X, and all values in X's right subtree are > X.",
+                "sourceRef": "Chapter 7.pptx, slide 19, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-easy-s3-q10",
+                "question": "What is the unique result of performing an Inorder Traversal (Left-Node-Right) on any Binary Search Tree?",
+                "options": [
+                  "The elements are visited in ascending sorted order",
+                  "The elements are visited in descending sorted order",
+                  "The root node is visited first before all other nodes",
+                  "All leaf nodes are visited before any internal nodes"
+                ],
+                "correctIndex": 0,
+                "explanation": "Inorder traversal visits Left subtree, then Node, then Right subtree. On a BST, this yields all keys in strictly ascending sorted order.",
+                "sourceRef": "Chapter 7.pptx, slide 41, 44",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      },
+      "medium": {
+        "level": "medium",
+        "sets": [
+          {
+            "setNumber": 1,
+            "questions": [
+              {
+                "id": "dsa-medium-s1-q01",
+                "question": "What is the time complexity of the following code snippet containing nested loops?\nfor (int i = 0; i < n; i++) {\n    for (int j = 0; j < n; j++) {\n        count++;\n    }\n}",
+                "options": [
+                  "O(n) because the variable count is incremented by 1 in each step",
+                  "O(n^2) because the inner loop executes n times for each of the n iterations of the outer loop",
+                  "O(n log n) because the inner loop divides the iterations in half",
+                  "O(1) because the loop bounds are fixed at compile time"
+                ],
+                "correctIndex": 1,
+                "explanation": "The outer loop runs n times and the inner loop runs n times for every outer iteration, totaling n * n = n^2 basic operations (O(n^2)).",
+                "sourceRef": "Chapter 2.pptx, slide 24, 25",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s1-q02",
+                "question": "What is the time complexity of a loop where the loop counter is doubled on each iteration (i *= 2) until reaching n?",
+                "options": [
+                  "O(log n) because the number of iterations required for 2^k >= n is k = ceil(log2 n)",
+                  "O(n) because the loop counter reaches n",
+                  "O(n^2) because multiplication is more computationally expensive than addition",
+                  "O(1) because the loop starts at index 1"
+                ],
+                "correctIndex": 0,
+                "explanation": "When the loop control variable doubles in each iteration (1, 2, 4, 8, ..., 2^k), the loop runs approximately log2(n) times, yielding O(log n) complexity.",
+                "sourceRef": "Chapter 2.pptx, slide 28",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s1-q03",
+                "question": "In the worst case, how many comparisons are needed to search for an element in a sorted array of 64 elements using Binary Search?",
+                "options": [
+                  "32 comparisons (64 / 2 = 32)",
+                  "6 comparisons (log2 64 = 6)",
+                  "64 comparisons (n = 64)",
+                  "128 comparisons (2 * 64 = 128)"
+                ],
+                "correctIndex": 1,
+                "explanation": "Binary search divides the search interval in half in each step. For n = 64, log2(64) = 6, requiring at most 6 comparisons.",
+                "sourceRef": "Chapter 3.pptx, slide 10, 11",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s1-q04",
+                "question": "Given the array [5, 1, 4, 2, 8], what is the exact state of the array after completing the first full pass of Bubble Sort?",
+                "options": [
+                  "[1, 2, 4, 5, 8]",
+                  "[5, 4, 2, 1, 8]",
+                  "[1, 5, 4, 2, 8]",
+                  "[1, 4, 2, 5, 8]"
+                ],
+                "correctIndex": 3,
+                "explanation": "Pass 1: compare (5,1)->swap [1,5,4,2,8]; compare (5,4)->swap [1,4,5,2,8]; compare (5,2)->swap [1,4,2,5,8]; compare (5,8)->no swap [1,4,2,5,8]. The largest element 8 is at the end.",
+                "sourceRef": "Chapter 3.pptx, slide 14, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s1-q05",
+                "question": "Which algorithmic paradigm does Merge Sort employ, and what is its time complexity in all cases (best, average, worst)?",
+                "options": [
+                  "Dynamic Programming, running in O(n^2) time",
+                  "Greedy Approach, running in O(n) time",
+                  "Backtracking, running in O(2^n) time",
+                  "Divide and Conquer, running in O(n log n) time across all cases"
+                ],
+                "correctIndex": 3,
+                "explanation": "Merge Sort recursively splits the array into two halves (O(log n) levels) and merges them in linear time (O(n) per level), giving O(n log n) consistently.",
+                "sourceRef": "Chapter 3.pptx, slide 28, 29",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s1-q06",
+                "question": "To insert a newly created node newNode at the beginning of a singly linked list with head pointer head, which pointer assignments must be executed?",
+                "options": [
+                  "head = newNode; newNode->next = head;",
+                  "newNode->next = head; head = newNode;",
+                  "head->next = newNode; newNode->next = NULL;",
+                  "newNode = head; head->next = newNode;"
+                ],
+                "correctIndex": 1,
+                "explanation": "To insert at the beginning without losing the rest of the list: first point newNode->next to current head, then update head to point to newNode.",
+                "sourceRef": "Chapter 4.pptx, slide 17, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s1-q07",
+                "question": "In a doubly linked list, which sequence of pointer updates correctly removes an internal node pointed to by temp?",
+                "options": [
+                  "temp->next = temp->prev; temp->prev = temp->next; delete temp;",
+                  "temp->prev = NULL; temp->next = NULL; delete temp;",
+                  "temp->prev->next = temp->next; temp->next->prev = temp->prev; delete temp;",
+                  "head = temp->next; temp->prev->next = NULL; delete temp;"
+                ],
+                "correctIndex": 2,
+                "explanation": "To bypass temp: the node before temp must point forward to the node after temp, and the node after temp must point backward to the node before temp.",
+                "sourceRef": "Chapter 4.pptx, slide 24, 26",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s1-q08",
+                "question": "What is the correct postfix (Reverse Polish) expression for the infix expression (A + B) * C?",
+                "options": [
+                  "A B C + *",
+                  "* + A B C",
+                  "A B + C *",
+                  "A B + * C"
+                ],
+                "correctIndex": 2,
+                "explanation": "The parentheses enforce evaluating (A + B) first -> A B +. Then multiplying by C produces A B + C *.",
+                "sourceRef": "Chapter 5.pptx, slide 19, 21, 22",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s1-q09",
+                "question": "What is the evaluated result of the postfix expression 2 3 1 * + 9 - using an evaluation stack?",
+                "options": [
+                  "4",
+                  "-4",
+                  "-14",
+                  "10"
+                ],
+                "correctIndex": 1,
+                "explanation": "Push 2, 3, 1 -> pop 1, 3: 3 * 1 = 3, push 3 -> pop 3, 2: 2 + 3 = 5, push 5 -> push 9 -> pop 9, 5: 5 - 9 = -4.",
+                "sourceRef": "Chapter 5.pptx, slide 23, 24, 25",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s1-q10",
+                "question": "Which three verification questions constitute the Three-Question Method for verifying recursive algorithm correctness?",
+                "options": [
+                  "The Base-Case Question, the Smaller-Caller Question, and the General-Case Question",
+                  "The Input Question, the Process Question, and the Output Question",
+                  "The Array Question, the Pointer Question, and the Heap Question",
+                  "The Time Question, the Space Question, and the Cache Question"
+                ],
+                "correctIndex": 0,
+                "explanation": "The three questions check: (1) Does a base case exist and return correctly? (2) Does each call work on a smaller problem? (3) Does the general case produce the correct overall result?",
+                "sourceRef": "Chapter 6.pptx, slide 9, 10",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 2,
+            "questions": [
+              {
+                "id": "dsa-medium-s2-q01",
+                "question": "What is the main objective of the partitioning step in the Quick Sort algorithm?",
+                "options": [
+                  "To sort the entire array in a single recursive step",
+                  "To split the array into two exactly equal halves regardless of element values",
+                  "To place the pivot in its final sorted position such that all smaller elements are to its left and all larger elements are to its right",
+                  "To reverse the order of elements in the array"
+                ],
+                "correctIndex": 2,
+                "explanation": "Partitioning picks a pivot and rearranges elements so that elements <= pivot are on the left, and elements > pivot are on the right, putting the pivot in its correct sorted position.",
+                "sourceRef": "Chapter 3.pptx, slide 32, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s2-q02",
+                "question": "Which while loop condition correctly stops a pointer temp at the very last node of a non-empty singly linked list?",
+                "options": [
+                  "while (temp->next != NULL) temp = temp->next;",
+                  "while (temp != NULL) temp = temp->next;",
+                  "while (temp->next == NULL) temp = temp->next;",
+                  "while (head != NULL) head = head->next;"
+                ],
+                "correctIndex": 0,
+                "explanation": "temp->next != NULL stops when temp reaches the last node (whose next is NULL), allowing access to temp->data of the last node.",
+                "sourceRef": "Chapter 4.pptx, slide 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s2-q03",
+                "question": "In a circular queue of capacity size = 6, if rear = 5, what will rear become after enqueuing one new element?",
+                "options": [
+                  "6 (calculated as 5 + 1)",
+                  "5 (it cannot increment further)",
+                  "0 (calculated as (5 + 1) % 6 = 0)",
+                  "1 (calculated as (5 + 2) % 6)"
+                ],
+                "correctIndex": 2,
+                "explanation": "In a circular queue, wrapping around the end of the array is performed using modulo arithmetic: rear = (rear + 1) % size = (5 + 1) % 6 = 0.",
+                "sourceRef": "Chapter 5.pptx, slide 31, 32",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s2-q04",
+                "question": "Given the recursive function int h(int n) { if (n <= 2) return 1; return h(n - 1) + (n - 1); }, what value is returned by h(4)?",
+                "options": [
+                  "3",
+                  "4",
+                  "10",
+                  "6"
+                ],
+                "correctIndex": 3,
+                "explanation": "h(2) = 1; h(3) = h(2) + 2 = 1 + 2 = 3; h(4) = h(3) + 3 = 3 + 3 = 6. (This computes the number of handshakes among n people: n(n-1)/2 = 4 * 3 / 2 = 6).",
+                "sourceRef": "Chapter 6.pptx, slide 7, 18",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s2-q05",
+                "question": "Why does a linear recursive function computing factorial of n require O(n) space complexity while its iterative counterpart requires only O(1) space?",
+                "options": [
+                  "Because recursion allocates an array of size n on the heap",
+                  "Because iteration cannot calculate factorial for large n",
+                  "Because the recursive version creates n stack frames on the call stack simultaneously, whereas iteration uses a fixed set of local variables",
+                  "Because compiler optimization disables CPU caching during recursion"
+                ],
+                "correctIndex": 2,
+                "explanation": "Each recursive call pushes an activation record onto the system call stack. For recursion depth n, n frames exist concurrently, using O(n) stack space.",
+                "sourceRef": "Chapter 6.pptx, slide 20, 21",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s2-q06",
+                "question": "In an array-based sequential representation of a binary tree (0-indexed root), what are the indices of the left and right children of a node stored at index i?",
+                "options": [
+                  "Left child at 2i, Right child at 2i + 1",
+                  "Left child at i + 1, Right child at i + 2",
+                  "Left child at 2i + 1, Right child at 2i + 2",
+                  "Left child at i/2, Right child at i/2 + 1"
+                ],
+                "correctIndex": 2,
+                "explanation": "For 0-based indexing: root is at 0, its children are at 2(0)+1 = 1 and 2(0)+2 = 2. For any node i, left child is at 2i+1 and right child is at 2i+2.",
+                "sourceRef": "Chapter 7.pptx, slide 23",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s2-q07",
+                "question": "In what order does a Preorder Traversal visit the components of any binary subtree?",
+                "options": [
+                  "Left subtree, then Root node, then Right subtree (L-N-R)",
+                  "Left subtree, then Right subtree, then Root node (L-R-N)",
+                  "Right subtree, then Left subtree, then Root node (R-L-N)",
+                  "Root node, then Left subtree, then Right subtree (N-L-R)"
+                ],
+                "correctIndex": 3,
+                "explanation": "Preorder traversal visits the Current Node first, then recursively traverses the Left subtree, and finally the Right subtree (Node-Left-Right).",
+                "sourceRef": "Chapter 7.pptx, slide 43, 48",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s2-q08",
+                "question": "In what order does a Postorder Traversal visit the components of any binary subtree?",
+                "options": [
+                  "Root node, then Left subtree, then Right subtree (N-L-R)",
+                  "Left subtree, then Root node, then Right subtree (L-N-R)",
+                  "Root node, then Right subtree, then Left subtree (N-R-L)",
+                  "Left subtree, then Right subtree, then Root node (L-R-N)"
+                ],
+                "correctIndex": 3,
+                "explanation": "Postorder traversal visits the Left subtree first, then the Right subtree, and visits the Root node last (Left-Right-Node).",
+                "sourceRef": "Chapter 7.pptx, slide 45, 48",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s2-q09",
+                "question": "When deleting a node that has exactly one child from a Binary Search Tree, how is the deletion performed?",
+                "options": [
+                  "The entire subtree rooted at that node is deleted",
+                  "The node's parent is modified to point directly to the node's single child, bypassing the deleted node",
+                  "The node is replaced by the maximum element of the whole tree",
+                  "The tree is rotated to make the node a leaf node first"
+                ],
+                "correctIndex": 1,
+                "explanation": "In BST deletion Case 2 (one child), the node is bypassed by connecting its parent pointer directly to its single child, preserving BST order.",
+                "sourceRef": "Chapter 7.pptx, slide 38",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s2-q10",
+                "question": "How is the Balance Factor (BF) of a node in an AVL Tree calculated, and what values are valid for a balanced node?",
+                "options": [
+                  "BF = height(Left) - height(Right), and valid values are -1, 0, +1",
+                  "BF = height(Left) * height(Right), and valid values are 0, 1",
+                  "BF = nodes(Left) - nodes(Right), and valid values are -2, 0, +2",
+                  "BF = depth(Node) - height(Node), and valid values are positive integers"
+                ],
+                "correctIndex": 0,
+                "explanation": "The balance factor is the difference in height between the left and right subtrees: height(left) - height(right). In an AVL tree, every node must have BF in {-1, 0, +1}.",
+                "sourceRef": "Chapter 7.pptx, slide 73, 74",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 3,
+            "questions": [
+              {
+                "id": "dsa-medium-s3-q01",
+                "question": "Why does Selection Sort always execute n(n - 1)/2 comparisons (O(n^2) time) even if the input array is already sorted?",
+                "options": [
+                  "Because it recursively partitions the array into halves",
+                  "Because swapping two elements takes O(n) time",
+                  "Because it scans the entire remaining unsorted subarray to find the minimum on every pass without early termination",
+                  "Because it uses dynamic memory allocation for each comparison"
+                ],
+                "correctIndex": 2,
+                "explanation": "Selection sort does not detect if an array is already sorted; it must check every element in the remaining subarray to find the minimum, making comparisons always n(n-1)/2.",
+                "sourceRef": "Chapter 3.pptx, slide 21, 22",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s3-q02",
+                "question": "What is the best-case time complexity of Insertion Sort when given an already sorted array?",
+                "options": [
+                  "O(n) because each element requires only 1 comparison and 0 shifts",
+                  "O(n^2) because all pairs must still be swapped",
+                  "O(log n) because it uses binary search for insertions",
+                  "O(n log n) because of the divide-and-conquer strategy"
+                ],
+                "correctIndex": 0,
+                "explanation": "If the input array is already sorted, each element is immediately compared with its predecessor, finds its correct place in 1 step, requiring n-1 comparisons total (O(n)).",
+                "sourceRef": "Chapter 3.pptx, slide 26",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s3-q03",
+                "question": "Which sequence of C++ statements correctly deletes the first node of a non-empty singly linked list?",
+                "options": [
+                  "Node *temp = head; head = head->next; delete temp;",
+                  "delete head; head = head->next;",
+                  "head->next = head; delete head;",
+                  "Node *temp = head->next; delete temp; head = NULL;"
+                ],
+                "correctIndex": 0,
+                "explanation": "To delete the first node: save head in a temporary pointer temp, advance head to head->next, and then free the memory using delete temp;.",
+                "sourceRef": "Chapter 4.pptx, slide 18",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s3-q04",
+                "question": "In a linked list implementation of a FIFO Queue with front and rear pointers, where do enqueue and dequeue operations occur for O(1) efficiency?",
+                "options": [
+                  "enqueue inserts at front, and dequeue removes from rear",
+                  "Both enqueue and dequeue occur at rear",
+                  "Both enqueue and dequeue occur at front",
+                  "enqueue inserts at rear, and dequeue removes from front"
+                ],
+                "correctIndex": 3,
+                "explanation": "Inserting at the tail (rear) is O(1) using rear->next = newNode; rear = newNode;, and removing at the head (front) is O(1) using front = front->next;.",
+                "sourceRef": "Chapter 5.pptx, slide 34, 35, 36",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s3-q05",
+                "question": "During Infix to Postfix conversion, why does an incoming operator pop higher or equal precedence operators from the operator stack?",
+                "options": [
+                  "Because the operator stack can hold only one operator at a time",
+                  "To convert all arithmetic operators into operands",
+                  "Because higher or equal precedence operators must be evaluated before the current incoming operator in postfix notation",
+                  "To automatically balance parentheses in the expression"
+                ],
+                "correctIndex": 2,
+                "explanation": "In postfix, operators appear after their operands. Higher or equal precedence operators waiting on the stack must execute first, so they are popped to the output before pushing the lower precedence operator.",
+                "sourceRef": "Chapter 5.pptx, slide 19, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s3-q06",
+                "question": "What output is produced by calling print(3) on the recursive function: void print(int n) { if (n == 0) return; print(n - 1); cout << n << ' '; }?",
+                "options": [
+                  "1 2 3 ",
+                  "3 2 1 ",
+                  "3 3 3 ",
+                  "0 1 2 3 "
+                ],
+                "correctIndex": 0,
+                "explanation": "Because the recursive call print(n - 1) occurs BEFORE cout << n, the calls cascade down to n = 0 first and print upon returning from the call stack: 1, then 2, then 3.",
+                "sourceRef": "Chapter 6.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s3-q07",
+                "question": "If height h is defined as the number of levels (where a single root node has height h = 1), what is the maximum number of nodes in a binary tree of height h?",
+                "options": [
+                  "2^h",
+                  "2^h - 1",
+                  "2^(h-1)",
+                  "2h + 1"
+                ],
+                "correctIndex": 1,
+                "explanation": "The maximum number of nodes is the sum of 2^i from i=0 to h-1, which equals 2^h - 1. (If root is height 0, the formula is 2^(h+1) - 1).",
+                "sourceRef": "Chapter 7.pptx, slide 15, 16",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s3-q08",
+                "question": "Which data structure is required to implement Level-Order (Breadth-First) Traversal of a binary tree?",
+                "options": [
+                  "Stack (LIFO)",
+                  "Queue (FIFO)",
+                  "Binary Search Tree",
+                  "Disjoint Set"
+                ],
+                "correctIndex": 1,
+                "explanation": "Level-order traversal visits nodes level by level from left to right, which requires a FIFO Queue to enqueue child nodes and process them in arrival order.",
+                "sourceRef": "Chapter 7.pptx, slide 46, 47",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s3-q09",
+                "question": "When an AVL tree becomes unbalanced with a Balance Factor of -2 due to an insertion into the right subtree of a right child, which rotation restores balance?",
+                "options": [
+                  "Single Right Rotation (LL Rotation)",
+                  "Double Left-Right Rotation (LR Rotation)",
+                  "Three-way Splitting Rotation",
+                  "Single Left Rotation (RR Rotation)"
+                ],
+                "correctIndex": 3,
+                "explanation": "When an insertion occurs in the right subtree of the right child (Right-Right heavy), a Single Left Rotation pivots the right child up to become the new parent.",
+                "sourceRef": "Chapter 7.pptx, slide 76, 78",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-medium-s3-q10",
+                "question": "When is a double rotation (such as LR Rotation) required in an AVL Tree?",
+                "options": [
+                  "When the tree has an odd number of total nodes",
+                  "When the imbalance is caused by an insertion into the inner subtree (e.g., right child of the left subtree)",
+                  "When both the left and right children are leaf nodes",
+                  "Whenever a node with zero balance factor is deleted"
+                ],
+                "correctIndex": 1,
+                "explanation": "Single rotations only fix outer-outer imbalances (LL or RR). An inner zigzag imbalance (LR or RL) requires a double rotation to straighten and balance the subtree.",
+                "sourceRef": "Chapter 7.pptx, slide 76, 79, 80",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      },
+      "hard": {
+        "level": "hard",
+        "sets": [
+          {
+            "setNumber": 1,
+            "questions": [
+              {
+                "id": "dsa-hard-s1-q01",
+                "question": "By the formal mathematical definition of Big-Theta (Θ), a function f(n) = Θ(g(n)) if and only if there exist positive constants c1, c2, n0 such that which condition holds for all n >= n0?",
+                "options": [
+                  "f(n) <= c1 * g(n) + c2",
+                  "c1 * f(n) <= g(n) <= c2 * f(n)",
+                  "f(n) >= c1 * g(n) - c2 * g(n)",
+                  "c1 * g(n) <= f(n) <= c2 * g(n)"
+                ],
+                "correctIndex": 3,
+                "explanation": "Big-Theta (Θ) provides an asymptotically tight bound: f(n) is squeezed between c1*g(n) and c2*g(n) for all sufficiently large n.",
+                "sourceRef": "Chapter 2.pptx, slide 16, 17",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s1-q02",
+                "question": "In terms of mathematical limits, how does Little-o (f(n) = o(g(n))) differ strictly from Big-O (f(n) = O(g(n))) as n -> infinity?",
+                "options": [
+                  "f(n) = o(g(n)) requires lim(n->inf) f(n)/g(n) = infinity",
+                  "Little-o applies only to polynomial functions, whereas Big-O applies to exponential functions",
+                  "There is no mathematical difference; Little-o is merely shorthand notation",
+                  "f(n) = o(g(n)) requires lim(n->inf) f(n)/g(n) = 0, whereas Big-O allows the limit to be any non-negative constant c >= 0"
+                ],
+                "correctIndex": 3,
+                "explanation": "Little-o denotes a strict asymptotic upper bound where f(n) grows strictly slower than g(n), meaning the ratio approaches 0 as n -> infinity.",
+                "sourceRef": "Chapter 2.pptx, slide 18, 19",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s1-q03",
+                "question": "Under which condition does Quick Sort degenerate into its worst-case time complexity of O(n^2) when using the first element as the pivot?",
+                "options": [
+                  "When the array contains randomly permuted distinct values",
+                  "When the input array is already sorted (in ascending or descending order)",
+                  "When the array has an even number of elements",
+                  "When all elements in the array are powers of two"
+                ],
+                "correctIndex": 1,
+                "explanation": "If the array is already sorted and the first element is selected as pivot, each partition produces one empty subarray and one subarray of size n-1, leading to n recursive levels and O(n^2) comparisons.",
+                "sourceRef": "Chapter 3.pptx, slide 34, 35",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s1-q04",
+                "question": "Why is Quick Sort often preferred in practice over standard Merge Sort for internal sorting of arrays despite having a worst-case of O(n^2)?",
+                "options": [
+                  "Quick Sort always performs fewer comparisons than Merge Sort in every possible case",
+                  "Quick Sort is an in-place algorithm requiring only O(log n) call stack space and has superior cache locality, whereas Merge Sort requires O(n) auxiliary array memory",
+                  "Merge Sort cannot be implemented recursively in C++",
+                  "Quick Sort requires zero CPU comparisons during execution"
+                ],
+                "correctIndex": 1,
+                "explanation": "Merge Sort requires an extra temporary array of size n to merge sorted halves (O(n) auxiliary space), whereas Quick Sort partitions in-place, requiring only O(log n) stack space on average.",
+                "sourceRef": "Chapter 3.pptx, slide 30, 36",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s1-q05",
+                "question": "In self-organizing linked lists, how does the Move-to-Front (MTF) heuristic reorganize nodes upon access?",
+                "options": [
+                  "Whenever a node is accessed, it is immediately unlinked and inserted at the very head of the list",
+                  "The accessed node is swapped with its immediate predecessor node",
+                  "The accessed node increments an access counter and is sorted at the end of the day",
+                  "The accessed node is moved to the exact middle position of the list"
+                ],
+                "correctIndex": 0,
+                "explanation": "The Move-to-Front heuristic unlinks the accessed node and places it at the head of the list, ensuring frequently or recently accessed items are found quickly near the front.",
+                "sourceRef": "Chapter 4.pptx, slide 32, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s1-q06",
+                "question": "In an array-based circular queue of capacity N where front == rear signifies an empty queue, how can the queue distinguish a full queue from an empty queue without an extra counter variable?",
+                "options": [
+                  "By setting front = -1 and rear = -1 when full",
+                  "By allowing rear to exceed N and wrapping only front",
+                  "By sacrificing one array slot and defining full as (rear + 1) % N == front",
+                  "By converting the array to a dynamic hash table when full"
+                ],
+                "correctIndex": 2,
+                "explanation": "Leaving one slot permanently empty allows distinguishing full ((rear + 1) % N == front, holding N-1 elements) from empty (front == rear).",
+                "sourceRef": "Chapter 5.pptx, slide 32, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s1-q07",
+                "question": "When converting the infix expression A ^ B ^ C (where ^ is right-associative exponentiation) to postfix, what is the correct result?",
+                "options": [
+                  "A B ^ C ^",
+                  "A B C ^ ^",
+                  "^ ^ A B C",
+                  "A B C ^ *"
+                ],
+                "correctIndex": 1,
+                "explanation": "Right-associativity means A ^ B ^ C is grouped as A ^ (B ^ C). In postfix notation, this evaluates B C ^ first, then A (B C ^) ^ -> A B C ^ ^.",
+                "sourceRef": "Chapter 5.pptx, slide 19, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s1-q08",
+                "question": "What specific system error occurs when a recursive function without a proper base case exhausts all memory allocated for function call frames?",
+                "options": [
+                  "Heap Fragmentation",
+                  "Null Pointer Dereference Exception",
+                  "Stack Overflow (due to call stack exhaustion)",
+                  "Deadlock"
+                ],
+                "correctIndex": 2,
+                "explanation": "Every recursive call allocates an activation record on the runtime Call Stack. Infinite recursion consumes all available stack memory until a Stack Overflow occurs.",
+                "sourceRef": "Chapter 6.pptx, slide 14, 21",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s1-q09",
+                "question": "When deleting a node Z that has two children from a Binary Search Tree, how is the deletion safely executed to preserve BST ordering?",
+                "options": [
+                  "Directly connect the left child of Z to the right child of Z and delete Z",
+                  "Delete both child subtrees along with node Z",
+                  "Find Z's Inorder Successor (smallest node in right subtree) or Inorder Predecessor, copy its key to Z, and delete that successor/predecessor node",
+                  "Rotate node Z until it becomes the root node and delete it"
+                ],
+                "correctIndex": 2,
+                "explanation": "The inorder successor has at most one child (no left child). Copying its value to Z and deleting the successor reduces the problem to Case 1 or Case 2.",
+                "sourceRef": "Chapter 7.pptx, slide 39",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s1-q10",
+                "question": "In the Day-Stout-Warren (DSW) balancing algorithm, what is the objective of Phase 1 (creating a backbone or vine)?",
+                "options": [
+                  "Sorting an external array of nodes using Merge Sort in O(n log n) time",
+                  "Constructing a complete binary tree using level-order queues",
+                  "Deleting all internal nodes and re-inserting them as leaves",
+                  "Transforming the arbitrary BST into a right-skewed degenerate linked list of nodes using right rotations in O(n) time"
+                ],
+                "correctIndex": 3,
+                "explanation": "DSW Phase 1 performs right rotations on any left children encountered along the path from the root downward, creating a right-degenerate vine (backbone) in O(n) time.",
+                "sourceRef": "Chapter 7.pptx, slide 59, 63, 65",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 2,
+            "questions": [
+              {
+                "id": "dsa-hard-s2-q01",
+                "question": "Why does a Skip List achieve O(log n) average search, insertion, and deletion time complexity?",
+                "options": [
+                  "It compresses data into binary search tree nodes using hash tables",
+                  "It maintains multiple hierarchical layers of linked lists with probabilistic express lanes that skip over geometric numbers of elements",
+                  "It eliminates all pointer dereferences using contiguous memory blocks",
+                  "It converts linked list pointers into array indices dynamically"
+                ],
+                "correctIndex": 1,
+                "explanation": "A skip list is a layered, probabilistic data structure where higher layers act as 'express lanes' skipping over nodes, yielding O(log n) average search.",
+                "sourceRef": "Chapter 4.pptx, slide 32, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s2-q02",
+                "question": "What primary hardware-level advantage does an Unrolled Linked List offer compared to a standard Singly Linked List?",
+                "options": [
+                  "Direct O(1) random indexing to any element across all nodes",
+                  "Ability to perform binary search across non-contiguous nodes in O(log n) time",
+                  "Elimination of dynamic memory allocation during insertions",
+                  "Better CPU cache performance and reduced pointer overhead because each node stores an array of multiple elements"
+                ],
+                "correctIndex": 3,
+                "explanation": "In an unrolled linked list, each node holds an array of elements. This improves cache locality and reduces the per-element pointer memory overhead.",
+                "sourceRef": "Chapter 4.pptx, slide 32, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s2-q03",
+                "question": "Comparing an array-based stack with a dynamic linked-list-based stack, which statement accurately captures their structural trade-offs?",
+                "options": [
+                  "Array stacks have O(1) amortized push with contiguous cache locality but possible resize overhead, whereas linked stacks have strict O(1) push but extra memory overhead per pointer",
+                  "Array stacks allow O(1) access while linked stacks take O(n) for pop()",
+                  "Linked stacks use less total memory per element than fixed-size array stacks",
+                  "Array stacks can grow infinitely without heap memory allocation"
+                ],
+                "correctIndex": 0,
+                "explanation": "Linked stacks require extra memory for pointers (next) in every node, but allocate only as needed. Array stacks have lower per-element overhead and better cache locality.",
+                "sourceRef": "Chapter 5.pptx, slide 11, 13",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s2-q04",
+                "question": "What distinguishes a Double-Ended Queue (Deque) from a standard FIFO Queue?",
+                "options": [
+                  "Elements are automatically sorted in ascending order upon insertion",
+                  "It can hold two distinct data types simultaneously",
+                  "Elements can be inserted and deleted from both the front and the rear ends in O(1) time",
+                  "It can only be implemented using two-dimensional arrays"
+                ],
+                "correctIndex": 2,
+                "explanation": "A Deque supports four core operations: push_front(), push_back(), pop_front(), and pop_back(), all running in O(1) time.",
+                "sourceRef": "Chapter 5.pptx, slide 39, 40",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s2-q05",
+                "question": "In Phase 2 of the DSW algorithm, how is the initial number of left rotations calculated for a backbone of n nodes?",
+                "options": [
+                  "n - M, where M = 2^(floor(log2(n + 1))) - 1",
+                  "n / 2, where M = n - 1",
+                  "2^n - 1, where M = log2 n",
+                  "n - log2 n, where M = n / 2"
+                ],
+                "correctIndex": 0,
+                "explanation": "M is the number of nodes in the largest full binary tree that fits in n nodes (M = 2^(floor(log2(n+1))) - 1). The first pass performs n - M rotations to balance the excess leaf nodes.",
+                "sourceRef": "Chapter 7.pptx, slide 67, 68",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s2-q06",
+                "question": "What are the overall time complexity and auxiliary space complexity of the DSW global rebalancing algorithm?",
+                "options": [
+                  "Time complexity O(n) and auxiliary space complexity O(1)",
+                  "Time complexity O(n log n) and auxiliary space complexity O(n)",
+                  "Time complexity O(n^2) and auxiliary space complexity O(1)",
+                  "Time complexity O(log n) and auxiliary space complexity O(log n)"
+                ],
+                "correctIndex": 0,
+                "explanation": "DSW creates a backbone using at most n-1 rotations (O(n)) and rebuilds the balanced tree with fewer than n rotations (O(n)), modifying pointers in-place with O(1) auxiliary storage.",
+                "sourceRef": "Chapter 7.pptx, slide 70, 71",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s2-q07",
+                "question": "If a new node is inserted into the left subtree of the left child of node A, causing A's balance factor to become +2, what type of rotation is required?",
+                "options": [
+                  "Single Right Rotation (LL Rotation)",
+                  "Single Left Rotation (RR Rotation)",
+                  "Left-Right Rotation (LR Rotation)",
+                  "Right-Left Rotation (RL Rotation)"
+                ],
+                "correctIndex": 0,
+                "explanation": "Insertion into the Left child's Left subtree is a Left-Left (LL) imbalance. A Single Right Rotation pivots the left child up to become the new root of the subtree.",
+                "sourceRef": "Chapter 7.pptx, slide 76, 77",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s2-q08",
+                "question": "Which exact two-step rotation sequence resolves a Left-Right (LR) imbalance in an AVL tree?",
+                "options": [
+                  "Perform a Single Right Rotation on the left child, followed by a Single Left Rotation on the unbalanced node",
+                  "Perform a Single Left Rotation on the left child, followed by a Single Right Rotation on the unbalanced node",
+                  "Perform two consecutive Single Right Rotations on the unbalanced node",
+                  "Perform a Single Left Rotation on the root of the entire tree"
+                ],
+                "correctIndex": 1,
+                "explanation": "An LR imbalance means the node's left subtree is right-heavy. A left rotation on the left child transforms it into an LL imbalance, which is then resolved by a right rotation on the parent.",
+                "sourceRef": "Chapter 7.pptx, slide 79",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s2-q09",
+                "question": "Which exact two-step rotation sequence resolves a Right-Left (RL) imbalance in an AVL tree?",
+                "options": [
+                  "Perform a Single Left Rotation on the right child, followed by a Single Right Rotation on the unbalanced node",
+                  "Perform two consecutive Single Left Rotations on the unbalanced node",
+                  "Perform a Single Right Rotation on the right child, followed by a Single Left Rotation on the unbalanced node",
+                  "Perform a Single Right Rotation on the root of the tree"
+                ],
+                "correctIndex": 2,
+                "explanation": "An RL imbalance means the node's right subtree is left-heavy. A right rotation on the right child transforms it into an RR imbalance, which is then resolved by a left rotation on the parent.",
+                "sourceRef": "Chapter 7.pptx, slide 80",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s2-q10",
+                "question": "What is the maximum (worst-case) height of an AVL Tree containing n nodes?",
+                "options": [
+                  "Exactly log2 n",
+                  "Approximately 1.44 * log2(n + 2) = O(log n)",
+                  "O(n) (identical to a skewed BST)",
+                  "O(sqrt(n))"
+                ],
+                "correctIndex": 1,
+                "explanation": "Because an AVL tree enforces |h_L - h_R| <= 1, the minimum number of nodes for height h follows Fibonacci-like growth (N(h) = N(h-1) + N(h-2) + 1), giving worst-case height approximately 1.44 * log2(n) = O(log n).",
+                "sourceRef": "Chapter 7.pptx, slide 72, 81",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "setNumber": 3,
+            "questions": [
+              {
+                "id": "dsa-hard-s3-q01",
+                "question": "What is the exact number of operations and Big-O complexity of the nested loops:\nfor (int i = 0; i < n; i++)\n    for (int j = 0; j < i; j++)\n        sum++;",
+                "options": [
+                  "n(n - 1)/2 operations, which is O(n^2)",
+                  "n^2 operations, which is O(n^2)",
+                  "n log n operations, which is O(n log n)",
+                  "n operations, which is O(n)"
+                ],
+                "correctIndex": 0,
+                "explanation": "When i=0, inner loop runs 0; i=1, runs 1; ... i=n-1, runs n-1. The sum is 0 + 1 + ... + (n-1) = n(n-1)/2 = O(n^2).",
+                "sourceRef": "Chapter 2.pptx, slide 26, 27",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s3-q02",
+                "question": "What does it mean for a sorting algorithm to be 'stable', and which of the following is an example of a stable sorting algorithm?",
+                "options": [
+                  "It uses constant O(1) auxiliary memory; Selection Sort is stable",
+                  "It guarantees O(n log n) worst-case time; Quick Sort is stable",
+                  "It sorts elements without performing any comparisons; Bubble Sort is unstable",
+                  "It preserves the relative input order of records with equal keys; Merge Sort is stable"
+                ],
+                "correctIndex": 3,
+                "explanation": "A sorting algorithm is stable if elements with identical keys appear in the same relative order in the output as in the input. Merge Sort and Insertion Sort are stable; Quick Sort and Selection Sort are not.",
+                "sourceRef": "Chapter 3.pptx, slide 23, 29, 35",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s3-q03",
+                "question": "In a circular doubly linked list with a single node head, what must happen to head when this only node is deleted?",
+                "options": [
+                  "head->next = head; head->prev = head;",
+                  "delete head; head = NULL;",
+                  "head = head->next;",
+                  "head->prev = NULL;"
+                ],
+                "correctIndex": 1,
+                "explanation": "When a circular doubly linked list contains only one node, head->next == head. Deleting that node leaves an empty list, requiring head = NULL;.",
+                "sourceRef": "Chapter 4.pptx, slide 29, 30",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s3-q04",
+                "question": "What is the correct postfix conversion for the infix expression (A + B) * (C - D) / E?",
+                "options": [
+                  "A B + C D * - E /",
+                  "A B + C D - * E /",
+                  "A B + * C D - E /",
+                  "* + A B - C D / E"
+                ],
+                "correctIndex": 1,
+                "explanation": "A + B -> A B +; C - D -> C D -; multiplied -> A B + C D - *; divided by E -> A B + C D - * E /.",
+                "sourceRef": "Chapter 5.pptx, slide 19, 20, 22",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s3-q05",
+                "question": "Which recurrence relation describes the time complexity of Merge Sort, and what is its closed-form asymptotic solution?",
+                "options": [
+                  "T(n) = T(n - 1) + O(n) => T(n) = O(n^2)",
+                  "T(n) = 2T(n/2) + O(1) => T(n) = O(n)",
+                  "T(n) = T(n/2) + O(1) => T(n) = O(log n)",
+                  "T(n) = 2T(n/2) + O(n) => T(n) = O(n log n)"
+                ],
+                "correctIndex": 3,
+                "explanation": "Merge Sort splits the input into 2 subproblems of size n/2 (2T(n/2)) and spends O(n) time merging. By Master Theorem (Case 2), T(n) = O(n log n).",
+                "sourceRef": "Chapter 3.pptx, slide 29; Chapter 6.pptx, slide 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s3-q06",
+                "question": "What is the primary memory drawback of using a sequential array representation for a degenerate (skewed) binary tree of height h?",
+                "options": [
+                  "It cannot store numeric key values",
+                  "It requires O(n^2) time to find the root node",
+                  "It requires an array of size 2^h - 1, wasting exponential memory space when the tree contains only h nodes",
+                  "It prevents tree traversal algorithms from executing"
+                ],
+                "correctIndex": 2,
+                "explanation": "In an array representation, a right-skewed tree of height h places the deepest node at index 2^h - 2, allocating 2^h - 1 slots for just h nodes, wasting massive space.",
+                "sourceRef": "Chapter 7.pptx, slide 23, 24",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s3-q07",
+                "question": "Given the Preorder traversal sequence [6, 4, 3, 5, 8, 7, 9], which node is the left child of the root node 6 in the constructed BST?",
+                "options": [
+                  "Node 3",
+                  "Node 5",
+                  "Node 8",
+                  "Node 4"
+                ],
+                "correctIndex": 3,
+                "explanation": "In preorder (NLR), 6 is the root. Elements smaller than 6 (4, 3, 5) belong to the left subtree, where the first element 4 is the left child of 6.",
+                "sourceRef": "Chapter 7.pptx, slide 41, 48, 50",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s3-q08",
+                "question": "Why might deleting a node from an AVL tree require up to O(log n) rotations, whereas inserting a node requires at most one single or double rotation?",
+                "options": [
+                  "Because deletion requires re-sorting the entire array",
+                  "Because leaf nodes cannot be rotated without allocating new heap memory",
+                  "Because a deletion rotation can decrease the height of the entire subtree, potentially propagating height imbalances upward all the way to the root",
+                  "Because AVL deletion transforms the tree into a B-Tree"
+                ],
+                "correctIndex": 2,
+                "explanation": "Insertion rebalancing restores the original subtree height, terminating further propagation. Deletion rebalancing can reduce subtree height by 1, which may cause imbalances at higher ancestor nodes up to the root (O(log n) rotations).",
+                "sourceRef": "Chapter 7.pptx, slide 88",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s3-q09",
+                "question": "According to course slides, when is a binary tree defined as 'perfectfully balanced'?",
+                "options": [
+                  "When the tree is height-balanced and all leaf nodes reside on only one or two consecutive levels",
+                  "When every single node in the tree has exactly two children",
+                  "When the number of nodes in the left subtree exactly equals the right subtree",
+                  "When the height of the tree is strictly equal to n"
+                ],
+                "correctIndex": 0,
+                "explanation": "A binary tree is height-balanced if the subtrees of every node differ by <= 1. It is 'perfectly balanced' if it is balanced and all leaves are found on one level or two levels.",
+                "sourceRef": "Chapter 7.pptx, slide 51",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-hard-s3-q10",
+                "question": "Comparing the Array-Sorting balancing method, the DSW algorithm, and AVL Trees, which technique provides dynamic, on-the-fly rebalancing during regular insertions and deletions?",
+                "options": [
+                  "Array-Sorting method (Technique 1)",
+                  "DSW Algorithm (Technique 2)",
+                  "AVL Tree",
+                  "Sequential Linear Search Balancing"
+                ],
+                "correctIndex": 2,
+                "explanation": "Array sorting and DSW are global rebalancing methods performed after all nodes arrive. AVL Trees dynamically balance the tree on-the-fly after every insertion and deletion in O(log n) time.",
+                "sourceRef": "Chapter 7.pptx, slide 54, 58, 71, 72",
+                "confidence": "high"
+              }
+            ]
+          }
+        ]
+      },
+      "flashcards": {
+        "subjectId": "data-structures-and-algorithms",
+        "phases": [
+          {
+            "phaseNumber": 1,
+            "title": "Fundamentals & Complexity Analysis",
+            "cards": [
+              {
+                "id": "dsa-fc-p1-c01",
+                "question": "What is the primary definition of a data structure?",
+                "answer": "A specialized format for organizing, managing, and storing data in computer memory to enable efficient access and modification.",
+                "category": "Data Structures",
+                "sourceRef": "Chapter 1.pptx, slide 3",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p1-c02",
+                "question": "What is an Abstract Data Type (ADT)?",
+                "answer": "A mathematical model of data objects defined solely by their behavior and supported operations, independent of any specific implementation.",
+                "category": "ADT",
+                "sourceRef": "Chapter 1.pptx, slide 4",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p1-c03",
+                "question": "What are the five essential characteristics of an algorithm?",
+                "answer": "Input (zero or more), Output (at least one), Definiteness (unambiguous steps), Finiteness (terminates in finite steps), and Effectiveness (feasible operations).",
+                "category": "Algorithms",
+                "sourceRef": "Chapter 1.pptx, slide 12",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p1-c04",
+                "question": "How do linear data structures differ from non-linear data structures?",
+                "answer": "Linear structures (arrays, linked lists, stacks, queues) arrange elements sequentially; non-linear structures (trees, graphs) arrange elements hierarchically or interconnectedly.",
+                "category": "Classification",
+                "sourceRef": "Chapter 1.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p1-c05",
+                "question": "What is the difference between static and dynamic data structures?",
+                "answer": "Static structures have a fixed size allocated at compile time (like standard arrays), whereas dynamic structures grow or shrink during runtime (like linked lists).",
+                "category": "Memory Types",
+                "sourceRef": "Chapter 1.pptx, slide 24",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p1-c06",
+                "question": "What is the difference between Time Complexity and Space Complexity?",
+                "answer": "Time complexity quantifies the amount of time/operations an algorithm takes as a function of input size; space complexity quantifies the auxiliary memory consumed.",
+                "category": "Complexity",
+                "sourceRef": "Chapter 2.pptx, slide 4, 5",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p1-c07",
+                "question": "What does Big-O notation (O) represent in algorithmic analysis?",
+                "answer": "An asymptotic upper bound that describes the worst-case growth rate of an algorithm's resource consumption as input size approaches infinity.",
+                "category": "Asymptotics",
+                "sourceRef": "Chapter 2.pptx, slide 10, 11",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p1-c08",
+                "question": "What does Big-Omega (Ω) notation represent?",
+                "answer": "An asymptotic lower bound that describes the minimum growth rate or best-case lower limit of an algorithm's execution time.",
+                "category": "Asymptotics",
+                "sourceRef": "Chapter 2.pptx, slide 14, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p1-c09",
+                "question": "What does Big-Theta (Θ) notation represent?",
+                "answer": "An asymptotically tight bound where an algorithm's upper and lower bounds share the same growth rate within constant factors.",
+                "category": "Asymptotics",
+                "sourceRef": "Chapter 2.pptx, slide 16, 17",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p1-c10",
+                "question": "What is the standard hierarchy of algorithmic complexity growth rates?",
+                "answer": "O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(n^3) < O(2^n) < O(n!), ordered from most efficient to least efficient.",
+                "category": "Complexity Classes",
+                "sourceRef": "Chapter 2.pptx, slide 20, 21",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 2,
+            "title": "Searching & Sorting Algorithms",
+            "cards": [
+              {
+                "id": "dsa-fc-p2-c01",
+                "question": "How does Linear Search work and what is its time complexity?",
+                "answer": "It sequentially checks every element from start to finish. Best-case is O(1) (found at index 0); worst-case is O(n) (not found or at end).",
+                "category": "Searching",
+                "sourceRef": "Chapter 3.pptx, slide 4, 5",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p2-c02",
+                "question": "How does Binary Search achieve O(log n) efficiency?",
+                "answer": "On a sorted array, it compares the target with the middle element and discards half the search space in each step, taking at most ceil(log2 n) comparisons.",
+                "category": "Searching",
+                "sourceRef": "Chapter 3.pptx, slide 8, 9, 10",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p2-c03",
+                "question": "How does Bubble Sort operate?",
+                "answer": "It repeatedly steps through the list, compares adjacent elements, and swaps them if out of order, bubbling the largest unsorted element to the end (O(n^2) time).",
+                "category": "Sorting",
+                "sourceRef": "Chapter 3.pptx, slide 12, 13",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p2-c04",
+                "question": "What is the core mechanism of Selection Sort?",
+                "answer": "It repeatedly finds the minimum element from the unsorted section and swaps it with the first element of that unsorted section (O(n^2) comparisons always).",
+                "category": "Sorting",
+                "sourceRef": "Chapter 3.pptx, slide 19, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p2-c05",
+                "question": "How does Insertion Sort work and when is it fastest?",
+                "answer": "It builds the sorted array by inserting each unsorted element into its proper position among sorted items; best-case is O(n) on an already-sorted array.",
+                "category": "Sorting",
+                "sourceRef": "Chapter 3.pptx, slide 24, 25, 26",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p2-c06",
+                "question": "What is the Divide-and-Conquer strategy in sorting?",
+                "answer": "A strategy that divides a problem into smaller subproblems, solves the subproblems recursively, and combines their solutions (used in Merge Sort and Quick Sort).",
+                "category": "Paradigms",
+                "sourceRef": "Chapter 3.pptx, slide 28",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p2-c07",
+                "question": "What are the time and space complexities of Merge Sort?",
+                "answer": "Time complexity is O(n log n) in all cases (best, average, worst); auxiliary space complexity is O(n) for the temporary merge buffer.",
+                "category": "Efficient Sorting",
+                "sourceRef": "Chapter 3.pptx, slide 28, 29, 30",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p2-c08",
+                "question": "How does Quick Sort partition an array?",
+                "answer": "It selects a pivot element and rearranges elements so that values <= pivot are placed left and values > pivot are right, placing the pivot in its final sorted index.",
+                "category": "Efficient Sorting",
+                "sourceRef": "Chapter 3.pptx, slide 32, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p2-c09",
+                "question": "When does Quick Sort exhibit its worst-case O(n^2) behavior?",
+                "answer": "When the chosen pivot is consistently the smallest or largest element (such as choosing the first element on an already-sorted array).",
+                "category": "Efficient Sorting",
+                "sourceRef": "Chapter 3.pptx, slide 34, 35",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p2-c10",
+                "question": "What is stability in sorting algorithms?",
+                "answer": "A sorting algorithm is stable if it preserves the relative original order of records that have equal key values (e.g., Merge Sort and Insertion Sort are stable).",
+                "category": "Sorting Concepts",
+                "sourceRef": "Chapter 3.pptx, slide 23, 29, 35",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 3,
+            "title": "Linked Lists & Dynamic Pointers",
+            "cards": [
+              {
+                "id": "dsa-fc-p3-c01",
+                "question": "What are the primary trade-offs between Arrays and Linked Lists?",
+                "answer": "Arrays offer O(1) random indexing but fixed size and O(n) insertion/deletion shifting; Linked Lists offer dynamic size and O(1) insertion at known pointers, but O(n) access.",
+                "category": "Linked Lists",
+                "sourceRef": "Chapter 4.pptx, slide 3, 31",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p3-c02",
+                "question": "What are the components of a Singly Linked List Node?",
+                "answer": "A data field (data or info) storing the element value and a pointer field (next) storing the memory address of the next node.",
+                "category": "Singly Linked List",
+                "sourceRef": "Chapter 4.pptx, slide 5, 13",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p3-c03",
+                "question": "What is the role of the head pointer and how does a singly linked list terminate?",
+                "answer": "The head pointer stores the address of the first node (or NULL if empty); the next pointer of the last node is set to NULL.",
+                "category": "Singly Linked List",
+                "sourceRef": "Chapter 4.pptx, slide 14, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p3-c04",
+                "question": "How is a new node inserted at the beginning of a Singly Linked List in O(1) time?",
+                "answer": "newNode->next = head; head = newNode; — first connect the new node to current first node, then update head to point to newNode.",
+                "category": "Operations",
+                "sourceRef": "Chapter 4.pptx, slide 17, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p3-c05",
+                "question": "How is the first node deleted from a Singly Linked List in O(1) time?",
+                "answer": "Node *temp = head; head = head->next; delete temp; — save head in a temporary pointer, advance head, and free the old node.",
+                "category": "Operations",
+                "sourceRef": "Chapter 4.pptx, slide 18",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p3-c06",
+                "question": "What is the node structure of a Doubly Linked List?",
+                "answer": "Each node contains three fields: prev (pointer to previous node), data (information payload), and next (pointer to next node).",
+                "category": "Doubly Linked List",
+                "sourceRef": "Chapter 4.pptx, slide 22, 23",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p3-c07",
+                "question": "What are the main benefits of a Doubly Linked List over a Singly Linked List?",
+                "answer": "Bidirectional traversal (forward and backward) and easier deletion of a given node in O(1) without needing to traverse from head to find the predecessor.",
+                "category": "Doubly Linked List",
+                "sourceRef": "Chapter 4.pptx, slide 24",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p3-c08",
+                "question": "What characterizes a Circular Linked List?",
+                "answer": "The last node's next pointer points back to the first node (head) instead of NULL, creating a continuous circular loop.",
+                "category": "Circular List",
+                "sourceRef": "Chapter 4.pptx, slide 27, 28, 29",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p3-c09",
+                "question": "What is a Skip List?",
+                "answer": "A multi-level linked list with probabilistic forward pointers that allow skipping multiple nodes to achieve O(log n) average search, insertion, and deletion.",
+                "category": "Advanced Lists",
+                "sourceRef": "Chapter 4.pptx, slide 32, 33",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p3-c10",
+                "question": "What are Self-Organizing Lists and Unrolled Linked Lists?",
+                "answer": "Self-organizing lists reorder nodes based on access frequency (e.g. Move-to-Front); unrolled linked lists store arrays of items per node for better cache performance.",
+                "category": "Advanced Lists",
+                "sourceRef": "Chapter 4.pptx, slide 32, 33",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 4,
+            "title": "Stacks, Queues & Recursion",
+            "cards": [
+              {
+                "id": "dsa-fc-p4-c01",
+                "question": "What is a Stack and what is its governing principle?",
+                "answer": "A linear data structure operating under the LIFO (Last-In-First-Out) principle, where all additions and removals occur exclusively at the top.",
+                "category": "Stacks",
+                "sourceRef": "Chapter 5.pptx, slide 5, 6",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p4-c02",
+                "question": "What are the primary operations of a Stack?",
+                "answer": "push(x) (adds an item onto top), pop() (removes and returns topmost item), top()/peek() (inspects top item), isEmpty(), and isFull().",
+                "category": "Stacks",
+                "sourceRef": "Chapter 5.pptx, slide 7, 9",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p4-c03",
+                "question": "Why are infix expressions converted to postfix notation for machines?",
+                "answer": "Infix expressions require operator precedence and parentheses rules that complicate parsing; postfix expressions can be evaluated linearly in a single pass using a stack.",
+                "category": "Expression Parsing",
+                "sourceRef": "Chapter 5.pptx, slide 16, 18, 19",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p4-c04",
+                "question": "How does a Stack evaluate a Postfix expression?",
+                "answer": "Scan left-to-right: push operands onto stack; when an operator is encountered, pop top two operands, apply operator, and push result back.",
+                "category": "Expression Parsing",
+                "sourceRef": "Chapter 5.pptx, slide 23, 24",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p4-c05",
+                "question": "What is a Queue and what is its governing principle?",
+                "answer": "A linear data structure operating under the FIFO (First-In-First-Out) principle, where insertions occur at the rear and deletions occur at the front.",
+                "category": "Queues",
+                "sourceRef": "Chapter 5.pptx, slide 26, 27",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p4-c06",
+                "question": "How does a Circular Queue eliminate wasted space?",
+                "answer": "It wraps front and rear indices around the ends of the array using modulo arithmetic: rear = (rear + 1) % size and front = (front + 1) % size.",
+                "category": "Queues",
+                "sourceRef": "Chapter 5.pptx, slide 30, 31",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p4-c07",
+                "question": "What is a Deque and a Priority Queue?",
+                "answer": "A Deque allows insertion/deletion at both ends (O(1)); a Priority Queue serves elements according to assigned priority rather than arrival sequence.",
+                "category": "Queue Variants",
+                "sourceRef": "Chapter 5.pptx, slide 39, 40",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p4-c08",
+                "question": "What are the two essential components of any recursive function?",
+                "answer": "A Base Case (stopping condition that returns directly without further recursion) and a General/Recursive Case (reduces problem toward the base case).",
+                "category": "Recursion",
+                "sourceRef": "Chapter 6.pptx, slide 6, 8",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p4-c09",
+                "question": "What is the Three-Question Method for verifying recursion?",
+                "answer": "Base-Case Question (is there a non-recursive exit?), Smaller-Caller Question (does each call work on a smaller problem?), and General-Case Question (is the result correct?).",
+                "category": "Recursion",
+                "sourceRef": "Chapter 6.pptx, slide 9, 10",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p4-c10",
+                "question": "How does the Call Stack manage recursive executions?",
+                "answer": "Each recursive call pushes an Activation Record (local variables, parameters, return address) onto the Call Stack and pops it when the call completes.",
+                "category": "Recursion Mechanics",
+                "sourceRef": "Chapter 6.pptx, slide 13, 14",
+                "confidence": "high"
+              }
+            ]
+          },
+          {
+            "phaseNumber": 5,
+            "title": "Binary Trees, BSTs & AVL Balancing",
+            "cards": [
+              {
+                "id": "dsa-fc-p5-c01",
+                "question": "What are Root, Leaf, and Height in tree terminology?",
+                "answer": "Root is the top node with no parent; Leaf is a node with degree 0 (no children); Height is the length of the longest path from root to any leaf node.",
+                "category": "Tree Basics",
+                "sourceRef": "Chapter 7.pptx, slide 5, 10",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p5-c02",
+                "question": "What are Full, Complete, and Perfect Binary Trees?",
+                "answer": "Full: all nodes have 0 or 2 children; Complete: all levels full except possibly last (filled left-to-right); Perfect: all internal nodes have 2 children and leaves are at same level.",
+                "category": "Binary Trees",
+                "sourceRef": "Chapter 7.pptx, slide 14, 15",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p5-c03",
+                "question": "How is a Binary Tree represented sequentially in an array?",
+                "answer": "For 0-indexed root: a node at index i has its left child at 2i + 1, right child at 2i + 2, and parent at floor((i - 1) / 2).",
+                "category": "Tree Representation",
+                "sourceRef": "Chapter 7.pptx, slide 23",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p5-c04",
+                "question": "What is the Binary Search Tree (BST) property?",
+                "answer": "For every node X, all keys in the left subtree are strictly smaller than X's key, and all keys in the right subtree are strictly greater than X's key.",
+                "category": "BST",
+                "sourceRef": "Chapter 7.pptx, slide 19, 20",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p5-c05",
+                "question": "How is a node with two children deleted from a BST?",
+                "answer": "Replace the node's value with its Inorder Successor (minimum of right subtree) or Inorder Predecessor, then delete that successor/predecessor node.",
+                "category": "BST Deletion",
+                "sourceRef": "Chapter 7.pptx, slide 36, 39",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p5-c06",
+                "question": "What are Preorder, Inorder, and Postorder Traversals?",
+                "answer": "Preorder is Node-Left-Right (NLR); Inorder is Left-Node-Right (LNR, produces sorted keys in BST); Postorder is Left-Right-Node (LRN).",
+                "category": "Traversals",
+                "sourceRef": "Chapter 7.pptx, slide 40, 41, 44",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p5-c07",
+                "question": "How is Level-Order Traversal implemented?",
+                "answer": "Using a FIFO Queue to visit nodes level by level from left to right (enqueue root, then repeatedly dequeue node and enqueue its left and right children).",
+                "category": "Traversals",
+                "sourceRef": "Chapter 7.pptx, slide 46, 47",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p5-c08",
+                "question": "How does the DSW Algorithm rebalance a BST?",
+                "answer": "Phase 1 creates a backbone (right-skewed vine) via right rotations in O(n) time; Phase 2 performs left rotations using M = 2^(floor(log2(n+1))) - 1 to build a balanced tree in O(n) time.",
+                "category": "DSW Balancing",
+                "sourceRef": "Chapter 7.pptx, slide 59, 63, 65, 71",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p5-c09",
+                "question": "What is an AVL Tree and how is Balance Factor defined?",
+                "answer": "A self-balancing BST where the balance factor BF = height(Left) - height(Right) in {-1, 0, +1} for every node, guaranteeing O(log n) operations.",
+                "category": "AVL Tree",
+                "sourceRef": "Chapter 7.pptx, slide 72, 73",
+                "confidence": "high"
+              },
+              {
+                "id": "dsa-fc-p5-c10",
+                "question": "What are the four types of AVL Tree rotations?",
+                "answer": "Single Left (RR), Single Right (LL), Left-Right (LR: left on child then right on parent), and Right-Left (RL: right on child then left on parent).",
+                "category": "AVL Rotations",
+                "sourceRef": "Chapter 7.pptx, slide 76, 77, 78, 79, 80",
                 "confidence": "high"
               }
             ]

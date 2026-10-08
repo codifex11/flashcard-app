@@ -1,0 +1,440 @@
+{
+  "level": "easy",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "dsa-easy-s1-q01",
+          "question": "What is the primary definition of a data structure in computer science?",
+          "options": [
+            "A hardware component that executes arithmetic and logical instructions",
+            "A high-level programming language syntax used for compiling code",
+            "A network protocol designed for transmitting data packets across nodes",
+            "A specialized format for organizing, processing, retrieving, and storing data in computer memory"
+          ],
+          "correctIndex": 3,
+          "explanation": "A data structure is a specialized format for organizing, managing, and storing data that enables efficient access and modification.",
+          "sourceRef": "Chapter 1.pptx, slide 3",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s1-q02",
+          "question": "What is an Abstract Data Type (ADT)?",
+          "options": [
+            "A physical hardware register used for temporary CPU calculations",
+            "A built-in primitive data type provided directly by the hardware architecture",
+            "A mathematical model of data objects defined solely by their behavior and operations, independent of implementation",
+            "A compiled binary executable file that manages operating system threads"
+          ],
+          "correctIndex": 2,
+          "explanation": "An ADT specifies what operations can be performed on data and their mathematical behaviors, without exposing or specifying the underlying implementation details.",
+          "sourceRef": "Chapter 1.pptx, slide 4",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s1-q03",
+          "question": "Which of the following is NOT one of the five essential characteristics of an algorithm?",
+          "options": [
+            "Finiteness (terminating after a finite number of steps)",
+            "Infinite Recursion (running indefinitely without terminating)",
+            "Definiteness (each step must be clear and unambiguous)",
+            "Effectiveness (each operation must be basic and feasible)"
+          ],
+          "correctIndex": 1,
+          "explanation": "The five essential characteristics of an algorithm are: Input, Output, Definiteness, Finiteness, and Effectiveness. An algorithm must terminate after a finite number of steps.",
+          "sourceRef": "Chapter 1.pptx, slide 12",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s1-q04",
+          "question": "Which of the following is classified as a non-linear data structure?",
+          "options": [
+            "One-Dimensional Array",
+            "Singly Linked List",
+            "Binary Tree",
+            "Stack"
+          ],
+          "correctIndex": 2,
+          "explanation": "In linear data structures (arrays, linked lists, stacks, queues), elements form a sequential sequence. In non-linear data structures (trees, graphs), elements are arranged hierarchically or interconnectedly.",
+          "sourceRef": "Chapter 1.pptx, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s1-q05",
+          "question": "Why do computer scientists analyze algorithm complexity instead of just measuring execution time in seconds on a specific computer?",
+          "options": [
+            "Because physical execution time is identical across all brands of microprocessors",
+            "To convert high-level C++ code directly into assembly instructions",
+            "To provide a platform-independent and machine-neutral measure of algorithm efficiency as input size grows",
+            "To determine the exact monetary cost of the computer hardware components"
+          ],
+          "correctIndex": 2,
+          "explanation": "Measuring run-time in seconds depends on machine architecture, CPU speed, and compiler optimizations. Complexity analysis provides an objective, input-size-dependent metric.",
+          "sourceRef": "Chapter 2.pptx, slide 3, 4",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s1-q06",
+          "question": "What does Big-O notation (O) formally represent in algorithmic analysis?",
+          "options": [
+            "The asymptotic lower bound or minimum required execution time",
+            "The asymptotic upper bound on the growth rate of an algorithm's running time",
+            "The exact, tight bound where upper and lower bounds coincide",
+            "The exact number of CPU clock cycles executed on a machine"
+          ],
+          "correctIndex": 1,
+          "explanation": "Big-O notation describes the upper bound (worst-case growth rate) of an algorithm's time or space complexity as input size n approaches infinity.",
+          "sourceRef": "Chapter 2.pptx, slide 10, 11",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s1-q07",
+          "question": "What are the best-case and worst-case time complexities of Linear Search on an array of size n?",
+          "options": [
+            "Best-case O(n), Worst-case O(n^2)",
+            "Best-case O(log n), Worst-case O(n log n)",
+            "Best-case O(1), Worst-case O(n)",
+            "Best-case O(1), Worst-case O(log n)"
+          ],
+          "correctIndex": 2,
+          "explanation": "In Linear Search, if the target item is at the first index, it takes 1 comparison (O(1)). If it is at the last index or absent, all n items are checked (O(n)).",
+          "sourceRef": "Chapter 3.pptx, slide 4, 5",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s1-q08",
+          "question": "What fundamental condition must be satisfied before Binary Search can be applied to an array?",
+          "options": [
+            "The array must have an odd number of elements",
+            "The elements must be stored in a linked list rather than an array",
+            "The size of the array must be a power of two",
+            "The elements of the array must be sorted in order"
+          ],
+          "correctIndex": 3,
+          "explanation": "Binary Search relies on comparing the target with the middle element and eliminating half the search space; this requires the array to be sorted.",
+          "sourceRef": "Chapter 3.pptx, slide 8, 9",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s1-q09",
+          "question": "What are the two essential components that constitute a standard node in a singly linked list?",
+          "options": [
+            "A key field and two pointers (left and right)",
+            "A data field and a pointer (prev) to the previous node only",
+            "An index number and an array of contiguous values",
+            "A data (or info) field and a pointer (next) to the next node"
+          ],
+          "correctIndex": 3,
+          "explanation": "Each node in a singly linked list holds data (the payload) and a next pointer referencing the subsequent node in memory.",
+          "sourceRef": "Chapter 4.pptx, slide 5, 13",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s1-q10",
+          "question": "Which operational principle governs the insertion and deletion of elements in a Stack data structure?",
+          "options": [
+            "FIFO (First-In-First-Out)",
+            "LIFO (Last-In-First-Out)",
+            "LILO (Last-In-Last-Out)",
+            "Priority-Based Selection"
+          ],
+          "correctIndex": 1,
+          "explanation": "A Stack follows the Last-In-First-Out (LIFO) principle: the most recently added element is the first one removed.",
+          "sourceRef": "Chapter 5.pptx, slide 5, 6",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "dsa-easy-s2-q01",
+          "question": "Which of the following data structures is homogeneous (stores elements of the exact same data type)?",
+          "options": [
+            "C++ struct",
+            "C++ class",
+            "Heterogeneous record tuple",
+            "Standard Array"
+          ],
+          "correctIndex": 3,
+          "explanation": "Arrays are homogeneous data structures because all elements must belong to the identical data type, whereas structs/classes can hold heterogeneous data types.",
+          "sourceRef": "Chapter 1.pptx, slide 25, 26",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s2-q02",
+          "question": "What does Big-Omega (Ω) notation describe in algorithmic complexity analysis?",
+          "options": [
+            "The asymptotic upper bound on growth rate",
+            "The average running time across all inputs",
+            "The asymptotic lower bound on the growth rate of an algorithm",
+            "The exact strict upper bound on memory consumption"
+          ],
+          "correctIndex": 2,
+          "explanation": "Big-Omega (Ω) provides an asymptotic lower bound, stating that the algorithm requires at least a certain number of operations for large input sizes.",
+          "sourceRef": "Chapter 2.pptx, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s2-q03",
+          "question": "Which of the following correctly orders the complexity classes from fastest (most efficient) to slowest (least efficient) for large n?",
+          "options": [
+            "O(1) < O(n) < O(log n) < O(n^2) < O(n log n) < O(2^n)",
+            "O(log n) < O(1) < O(n) < O(2^n) < O(n log n) < O(n^2)",
+            "O(n^2) < O(n log n) < O(n) < O(log n) < O(1) < O(2^n)",
+            "O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(2^n)"
+          ],
+          "correctIndex": 3,
+          "explanation": "The standard hierarchy of growth rates is: Constant O(1) < Logarithmic O(log n) < Linear O(n) < Linearithmic O(n log n) < Quadratic O(n^2) < Exponential O(2^n).",
+          "sourceRef": "Chapter 2.pptx, slide 20, 21",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s2-q04",
+          "question": "How does the Bubble Sort algorithm sort an array of elements?",
+          "options": [
+            "By repeatedly finding the minimum element and placing it at the front",
+            "By dividing the array into two halves recursively and merging them",
+            "By repeatedly comparing adjacent pairs of elements and swapping them if they are in the wrong order",
+            "By picking a pivot and partitioning elements smaller and larger than the pivot"
+          ],
+          "correctIndex": 2,
+          "explanation": "Bubble Sort works by stepping through the array, comparing each pair of adjacent items, and swapping them if they are out of order, bubbling the largest value to the end.",
+          "sourceRef": "Chapter 3.pptx, slide 12, 13",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s2-q05",
+          "question": "What is the primary action performed in each pass of the Selection Sort algorithm?",
+          "options": [
+            "Finding the minimum (or maximum) element in the unsorted section and swapping it with the first unsorted element",
+            "Comparing every adjacent pair and swapping them immediately",
+            "Splitting the array into single-element subarrays and merging them",
+            "Shifting all larger elements one position to the right to insert the current item"
+          ],
+          "correctIndex": 0,
+          "explanation": "Selection Sort divides the list into sorted and unsorted regions, repeatedly scans the unsorted region for the minimum value, and swaps it into the beginning of the unsorted region.",
+          "sourceRef": "Chapter 3.pptx, slide 19, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s2-q06",
+          "question": "In a singly linked list, what is the role of the reference variable commonly named 'head' or 'start'?",
+          "options": [
+            "It stores the total count of all nodes in the list",
+            "It stores the memory address of the first node in the linked list",
+            "It stores the memory address of the last node in the list",
+            "It holds the maximum data value present in the entire list"
+          ],
+          "correctIndex": 1,
+          "explanation": "The head pointer holds the address of the first node. If the list is empty, head contains NULL.",
+          "sourceRef": "Chapter 4.pptx, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s2-q07",
+          "question": "Which operational principle governs a Queue data structure?",
+          "options": [
+            "FIFO (First-In-First-Out)",
+            "LIFO (Last-In-First-Out)",
+            "LILO (Last-In-Last-Out)",
+            "Random Access"
+          ],
+          "correctIndex": 0,
+          "explanation": "A Queue operates on the First-In-First-Out (FIFO) principle: the first item inserted at the rear is the first item removed from the front.",
+          "sourceRef": "Chapter 5.pptx, slide 26, 27",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s2-q08",
+          "question": "What is the vital purpose of the base case in a recursive function?",
+          "options": [
+            "To allocate additional memory on the heap for function variables",
+            "To provide a non-recursive terminating condition that stops further recursive calls",
+            "To ensure the function runs in quadratic time complexity",
+            "To double the value of the input parameter on every invocation"
+          ],
+          "correctIndex": 1,
+          "explanation": "Without a base case, a recursive function would call itself endlessly until it exhausts call stack memory, triggering a stack overflow error.",
+          "sourceRef": "Chapter 6.pptx, slide 6, 8",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s2-q09",
+          "question": "In tree terminology, what is a node that has no children called?",
+          "options": [
+            "A leaf node (or terminal node)",
+            "A root node",
+            "An internal node",
+            "An ancestor node"
+          ],
+          "correctIndex": 0,
+          "explanation": "A leaf (or terminal node) is a node with degree 0 (no children), whereas the root is the top node with no parent.",
+          "sourceRef": "Chapter 7.pptx, slide 5, 10",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s2-q10",
+          "question": "What is the defining structural rule of a Binary Tree?",
+          "options": [
+            "Each node must have exactly two children at all times",
+            "Every node must contain two separate data values",
+            "All leaf nodes must reside on the exact same depth level",
+            "Each node can have at most two children (left child and right child)"
+          ],
+          "correctIndex": 3,
+          "explanation": "A binary tree is a hierarchical data structure where every node has at most two children, referred to as the left child and right child.",
+          "sourceRef": "Chapter 7.pptx, slide 14",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "dsa-easy-s3-q01",
+          "question": "What differentiates a static data structure from a dynamic data structure?",
+          "options": [
+            "Static structures can store any data type, whereas dynamic structures store only integers",
+            "Static structures are non-linear, whereas dynamic structures are strictly linear",
+            "Static structures have a fixed memory size allocated at compile time, whereas dynamic structures grow and shrink during runtime",
+            "Static structures reside in permanent disk storage, whereas dynamic structures reside in CPU registers"
+          ],
+          "correctIndex": 2,
+          "explanation": "Static data structures (like fixed-size arrays) have predetermined memory sizes, while dynamic data structures (like linked lists) allocate memory dynamically during program execution.",
+          "sourceRef": "Chapter 1.pptx, slide 24",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s3-q02",
+          "question": "What does Big-Theta (Θ) notation signify about an algorithm's complexity?",
+          "options": [
+            "An asymptotically tight bound where the upper bound and lower bound have the same growth rate",
+            "That the algorithm's execution time is strictly non-deterministic",
+            "An upper bound that is strictly looser than Big-O",
+            "That the algorithm uses zero auxiliary memory space"
+          ],
+          "correctIndex": 0,
+          "explanation": "Big-Theta (Θ) represents an asymptotically tight bound: f(n) = Θ(g(n)) means f(n) is bounded both from above (O(g(n))) and from below (Ω(g(n))) by constant multiples of g(n).",
+          "sourceRef": "Chapter 2.pptx, slide 16, 17",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s3-q03",
+          "question": "How does the Insertion Sort algorithm sort a collection of elements?",
+          "options": [
+            "By swapping random non-adjacent elements until sorted",
+            "By taking elements one by one from the unsorted portion and inserting each into its correct position within the sorted portion",
+            "By finding the global maximum and placing it at index 0 on each pass",
+            "By partitioning the array into two halves around a median pivot"
+          ],
+          "correctIndex": 1,
+          "explanation": "Insertion Sort builds the final sorted array one item at a time by comparing the current element with elements in the sorted portion and shifting larger elements right.",
+          "sourceRef": "Chapter 3.pptx, slide 24, 25",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s3-q04",
+          "question": "How many pointer fields does a standard node in a doubly linked list contain?",
+          "options": [
+            "One pointer pointing to the next node only",
+            "Two pointers: one pointing to the previous node and one pointing to the next node",
+            "Three pointers: parent, left child, and right child",
+            "Four pointers pointing to north, south, east, and west"
+          ],
+          "correctIndex": 1,
+          "explanation": "A node in a doubly linked list contains three fields: a previous pointer (prev/LPoint), data, and a next pointer (next/RPoint).",
+          "sourceRef": "Chapter 4.pptx, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s3-q05",
+          "question": "What does the next pointer of the last node point to in a circular singly linked list?",
+          "options": [
+            "The first node (head) of the list, forming a closed circle",
+            "NULL (indicating the end of the list)",
+            "Itself (creating a self-loop on the last node)",
+            "The middle node of the list"
+          ],
+          "correctIndex": 0,
+          "explanation": "In a circular singly linked list, the last node does not point to NULL; instead, its next pointer connects back to the first node (head), forming a loop.",
+          "sourceRef": "Chapter 4.pptx, slide 27, 28",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s3-q06",
+          "question": "Which functions are used to add an item to and remove an item from a Stack, respectively?",
+          "options": [
+            "enqueue() to add and dequeue() to remove",
+            "insert() to add and extract() to remove",
+            "push() to add and pop() to remove",
+            "append() to add and shift() to remove"
+          ],
+          "correctIndex": 2,
+          "explanation": "push() inserts a new element onto the top of the stack, and pop() removes the topmost element from the stack.",
+          "sourceRef": "Chapter 5.pptx, slide 7, 9",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s3-q07",
+          "question": "What major limitation of a linear array-based queue does a Circular Queue solve?",
+          "options": [
+            "Inability to store integer data types",
+            "Slow O(n^2) insertion time complexity",
+            "Requiring doubly linked list nodes",
+            "Wasted memory spaces at the front of the array caused by repeated dequeue operations"
+          ],
+          "correctIndex": 3,
+          "explanation": "In a linear array queue, dequeuing leaves unused empty cells at the beginning that cannot be reused without shifting. A circular queue wraps pointers using modulo arithmetic.",
+          "sourceRef": "Chapter 5.pptx, slide 30, 31",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s3-q08",
+          "question": "What data structure is utilized internally by the runtime environment to track active function calls during recursion?",
+          "options": [
+            "Call Stack (using Activation Records / Stack Frames)",
+            "FIFO Queue",
+            "Binary Search Tree",
+            "Circular Linked List"
+          ],
+          "correctIndex": 0,
+          "explanation": "The runtime system pushes an activation record (containing parameters, local variables, and return address) onto the Call Stack for each recursive call.",
+          "sourceRef": "Chapter 6.pptx, slide 5, 13, 14",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s3-q09",
+          "question": "What is the defining ordering property of a Binary Search Tree (BST)?",
+          "options": [
+            "All leaf nodes must have greater values than the root node",
+            "All keys in the left subtree are smaller than the node's key, and all keys in the right subtree are greater",
+            "The left child must always equal the right child",
+            "The root must contain the maximum value in the entire tree"
+          ],
+          "correctIndex": 1,
+          "explanation": "In a BST, for every node X: all values in X's left subtree are < X, and all values in X's right subtree are > X.",
+          "sourceRef": "Chapter 7.pptx, slide 19, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-easy-s3-q10",
+          "question": "What is the unique result of performing an Inorder Traversal (Left-Node-Right) on any Binary Search Tree?",
+          "options": [
+            "The elements are visited in ascending sorted order",
+            "The elements are visited in descending sorted order",
+            "The root node is visited first before all other nodes",
+            "All leaf nodes are visited before any internal nodes"
+          ],
+          "correctIndex": 0,
+          "explanation": "Inorder traversal visits Left subtree, then Node, then Right subtree. On a BST, this yields all keys in strictly ascending sorted order.",
+          "sourceRef": "Chapter 7.pptx, slide 41, 44",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

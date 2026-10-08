@@ -1,0 +1,440 @@
+{
+  "level": "medium",
+  "sets": [
+    {
+      "setNumber": 1,
+      "questions": [
+        {
+          "id": "dsa-medium-s1-q01",
+          "question": "What is the time complexity of the following code snippet containing nested loops?\nfor (int i = 0; i < n; i++) {\n    for (int j = 0; j < n; j++) {\n        count++;\n    }\n}",
+          "options": [
+            "O(n) because the variable count is incremented by 1 in each step",
+            "O(n^2) because the inner loop executes n times for each of the n iterations of the outer loop",
+            "O(n log n) because the inner loop divides the iterations in half",
+            "O(1) because the loop bounds are fixed at compile time"
+          ],
+          "correctIndex": 1,
+          "explanation": "The outer loop runs n times and the inner loop runs n times for every outer iteration, totaling n * n = n^2 basic operations (O(n^2)).",
+          "sourceRef": "Chapter 2.pptx, slide 24, 25",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s1-q02",
+          "question": "What is the time complexity of a loop where the loop counter is doubled on each iteration (i *= 2) until reaching n?",
+          "options": [
+            "O(log n) because the number of iterations required for 2^k >= n is k = ceil(log2 n)",
+            "O(n) because the loop counter reaches n",
+            "O(n^2) because multiplication is more computationally expensive than addition",
+            "O(1) because the loop starts at index 1"
+          ],
+          "correctIndex": 0,
+          "explanation": "When the loop control variable doubles in each iteration (1, 2, 4, 8, ..., 2^k), the loop runs approximately log2(n) times, yielding O(log n) complexity.",
+          "sourceRef": "Chapter 2.pptx, slide 28",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s1-q03",
+          "question": "In the worst case, how many comparisons are needed to search for an element in a sorted array of 64 elements using Binary Search?",
+          "options": [
+            "32 comparisons (64 / 2 = 32)",
+            "6 comparisons (log2 64 = 6)",
+            "64 comparisons (n = 64)",
+            "128 comparisons (2 * 64 = 128)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Binary search divides the search interval in half in each step. For n = 64, log2(64) = 6, requiring at most 6 comparisons.",
+          "sourceRef": "Chapter 3.pptx, slide 10, 11",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s1-q04",
+          "question": "Given the array [5, 1, 4, 2, 8], what is the exact state of the array after completing the first full pass of Bubble Sort?",
+          "options": [
+            "[1, 2, 4, 5, 8]",
+            "[5, 4, 2, 1, 8]",
+            "[1, 5, 4, 2, 8]",
+            "[1, 4, 2, 5, 8]"
+          ],
+          "correctIndex": 3,
+          "explanation": "Pass 1: compare (5,1)->swap [1,5,4,2,8]; compare (5,4)->swap [1,4,5,2,8]; compare (5,2)->swap [1,4,2,5,8]; compare (5,8)->no swap [1,4,2,5,8]. The largest element 8 is at the end.",
+          "sourceRef": "Chapter 3.pptx, slide 14, 15",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s1-q05",
+          "question": "Which algorithmic paradigm does Merge Sort employ, and what is its time complexity in all cases (best, average, worst)?",
+          "options": [
+            "Dynamic Programming, running in O(n^2) time",
+            "Greedy Approach, running in O(n) time",
+            "Backtracking, running in O(2^n) time",
+            "Divide and Conquer, running in O(n log n) time across all cases"
+          ],
+          "correctIndex": 3,
+          "explanation": "Merge Sort recursively splits the array into two halves (O(log n) levels) and merges them in linear time (O(n) per level), giving O(n log n) consistently.",
+          "sourceRef": "Chapter 3.pptx, slide 28, 29",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s1-q06",
+          "question": "To insert a newly created node newNode at the beginning of a singly linked list with head pointer head, which pointer assignments must be executed?",
+          "options": [
+            "head = newNode; newNode->next = head;",
+            "newNode->next = head; head = newNode;",
+            "head->next = newNode; newNode->next = NULL;",
+            "newNode = head; head->next = newNode;"
+          ],
+          "correctIndex": 1,
+          "explanation": "To insert at the beginning without losing the rest of the list: first point newNode->next to current head, then update head to point to newNode.",
+          "sourceRef": "Chapter 4.pptx, slide 17, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s1-q07",
+          "question": "In a doubly linked list, which sequence of pointer updates correctly removes an internal node pointed to by temp?",
+          "options": [
+            "temp->next = temp->prev; temp->prev = temp->next; delete temp;",
+            "temp->prev = NULL; temp->next = NULL; delete temp;",
+            "temp->prev->next = temp->next; temp->next->prev = temp->prev; delete temp;",
+            "head = temp->next; temp->prev->next = NULL; delete temp;"
+          ],
+          "correctIndex": 2,
+          "explanation": "To bypass temp: the node before temp must point forward to the node after temp, and the node after temp must point backward to the node before temp.",
+          "sourceRef": "Chapter 4.pptx, slide 24, 26",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s1-q08",
+          "question": "What is the correct postfix (Reverse Polish) expression for the infix expression (A + B) * C?",
+          "options": [
+            "A B C + *",
+            "* + A B C",
+            "A B + C *",
+            "A B + * C"
+          ],
+          "correctIndex": 2,
+          "explanation": "The parentheses enforce evaluating (A + B) first -> A B +. Then multiplying by C produces A B + C *.",
+          "sourceRef": "Chapter 5.pptx, slide 19, 21, 22",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s1-q09",
+          "question": "What is the evaluated result of the postfix expression 2 3 1 * + 9 - using an evaluation stack?",
+          "options": [
+            "4",
+            "-4",
+            "-14",
+            "10"
+          ],
+          "correctIndex": 1,
+          "explanation": "Push 2, 3, 1 -> pop 1, 3: 3 * 1 = 3, push 3 -> pop 3, 2: 2 + 3 = 5, push 5 -> push 9 -> pop 9, 5: 5 - 9 = -4.",
+          "sourceRef": "Chapter 5.pptx, slide 23, 24, 25",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s1-q10",
+          "question": "Which three verification questions constitute the Three-Question Method for verifying recursive algorithm correctness?",
+          "options": [
+            "The Base-Case Question, the Smaller-Caller Question, and the General-Case Question",
+            "The Input Question, the Process Question, and the Output Question",
+            "The Array Question, the Pointer Question, and the Heap Question",
+            "The Time Question, the Space Question, and the Cache Question"
+          ],
+          "correctIndex": 0,
+          "explanation": "The three questions check: (1) Does a base case exist and return correctly? (2) Does each call work on a smaller problem? (3) Does the general case produce the correct overall result?",
+          "sourceRef": "Chapter 6.pptx, slide 9, 10",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 2,
+      "questions": [
+        {
+          "id": "dsa-medium-s2-q01",
+          "question": "What is the main objective of the partitioning step in the Quick Sort algorithm?",
+          "options": [
+            "To sort the entire array in a single recursive step",
+            "To split the array into two exactly equal halves regardless of element values",
+            "To place the pivot in its final sorted position such that all smaller elements are to its left and all larger elements are to its right",
+            "To reverse the order of elements in the array"
+          ],
+          "correctIndex": 2,
+          "explanation": "Partitioning picks a pivot and rearranges elements so that elements <= pivot are on the left, and elements > pivot are on the right, putting the pivot in its correct sorted position.",
+          "sourceRef": "Chapter 3.pptx, slide 32, 33",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s2-q02",
+          "question": "Which while loop condition correctly stops a pointer temp at the very last node of a non-empty singly linked list?",
+          "options": [
+            "while (temp->next != NULL) temp = temp->next;",
+            "while (temp != NULL) temp = temp->next;",
+            "while (temp->next == NULL) temp = temp->next;",
+            "while (head != NULL) head = head->next;"
+          ],
+          "correctIndex": 0,
+          "explanation": "temp->next != NULL stops when temp reaches the last node (whose next is NULL), allowing access to temp->data of the last node.",
+          "sourceRef": "Chapter 4.pptx, slide 20",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s2-q03",
+          "question": "In a circular queue of capacity size = 6, if rear = 5, what will rear become after enqueuing one new element?",
+          "options": [
+            "6 (calculated as 5 + 1)",
+            "5 (it cannot increment further)",
+            "0 (calculated as (5 + 1) % 6 = 0)",
+            "1 (calculated as (5 + 2) % 6)"
+          ],
+          "correctIndex": 2,
+          "explanation": "In a circular queue, wrapping around the end of the array is performed using modulo arithmetic: rear = (rear + 1) % size = (5 + 1) % 6 = 0.",
+          "sourceRef": "Chapter 5.pptx, slide 31, 32",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s2-q04",
+          "question": "Given the recursive function int h(int n) { if (n <= 2) return 1; return h(n - 1) + (n - 1); }, what value is returned by h(4)?",
+          "options": [
+            "3",
+            "4",
+            "10",
+            "6"
+          ],
+          "correctIndex": 3,
+          "explanation": "h(2) = 1; h(3) = h(2) + 2 = 1 + 2 = 3; h(4) = h(3) + 3 = 3 + 3 = 6. (This computes the number of handshakes among n people: n(n-1)/2 = 4 * 3 / 2 = 6).",
+          "sourceRef": "Chapter 6.pptx, slide 7, 18",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s2-q05",
+          "question": "Why does a linear recursive function computing factorial of n require O(n) space complexity while its iterative counterpart requires only O(1) space?",
+          "options": [
+            "Because recursion allocates an array of size n on the heap",
+            "Because iteration cannot calculate factorial for large n",
+            "Because the recursive version creates n stack frames on the call stack simultaneously, whereas iteration uses a fixed set of local variables",
+            "Because compiler optimization disables CPU caching during recursion"
+          ],
+          "correctIndex": 2,
+          "explanation": "Each recursive call pushes an activation record onto the system call stack. For recursion depth n, n frames exist concurrently, using O(n) stack space.",
+          "sourceRef": "Chapter 6.pptx, slide 20, 21",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s2-q06",
+          "question": "In an array-based sequential representation of a binary tree (0-indexed root), what are the indices of the left and right children of a node stored at index i?",
+          "options": [
+            "Left child at 2i, Right child at 2i + 1",
+            "Left child at i + 1, Right child at i + 2",
+            "Left child at 2i + 1, Right child at 2i + 2",
+            "Left child at i/2, Right child at i/2 + 1"
+          ],
+          "correctIndex": 2,
+          "explanation": "For 0-based indexing: root is at 0, its children are at 2(0)+1 = 1 and 2(0)+2 = 2. For any node i, left child is at 2i+1 and right child is at 2i+2.",
+          "sourceRef": "Chapter 7.pptx, slide 23",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s2-q07",
+          "question": "In what order does a Preorder Traversal visit the components of any binary subtree?",
+          "options": [
+            "Left subtree, then Root node, then Right subtree (L-N-R)",
+            "Left subtree, then Right subtree, then Root node (L-R-N)",
+            "Right subtree, then Left subtree, then Root node (R-L-N)",
+            "Root node, then Left subtree, then Right subtree (N-L-R)"
+          ],
+          "correctIndex": 3,
+          "explanation": "Preorder traversal visits the Current Node first, then recursively traverses the Left subtree, and finally the Right subtree (Node-Left-Right).",
+          "sourceRef": "Chapter 7.pptx, slide 43, 48",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s2-q08",
+          "question": "In what order does a Postorder Traversal visit the components of any binary subtree?",
+          "options": [
+            "Root node, then Left subtree, then Right subtree (N-L-R)",
+            "Left subtree, then Root node, then Right subtree (L-N-R)",
+            "Root node, then Right subtree, then Left subtree (N-R-L)",
+            "Left subtree, then Right subtree, then Root node (L-R-N)"
+          ],
+          "correctIndex": 3,
+          "explanation": "Postorder traversal visits the Left subtree first, then the Right subtree, and visits the Root node last (Left-Right-Node).",
+          "sourceRef": "Chapter 7.pptx, slide 45, 48",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s2-q09",
+          "question": "When deleting a node that has exactly one child from a Binary Search Tree, how is the deletion performed?",
+          "options": [
+            "The entire subtree rooted at that node is deleted",
+            "The node's parent is modified to point directly to the node's single child, bypassing the deleted node",
+            "The node is replaced by the maximum element of the whole tree",
+            "The tree is rotated to make the node a leaf node first"
+          ],
+          "correctIndex": 1,
+          "explanation": "In BST deletion Case 2 (one child), the node is bypassed by connecting its parent pointer directly to its single child, preserving BST order.",
+          "sourceRef": "Chapter 7.pptx, slide 38",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s2-q10",
+          "question": "How is the Balance Factor (BF) of a node in an AVL Tree calculated, and what values are valid for a balanced node?",
+          "options": [
+            "BF = height(Left) - height(Right), and valid values are -1, 0, +1",
+            "BF = height(Left) * height(Right), and valid values are 0, 1",
+            "BF = nodes(Left) - nodes(Right), and valid values are -2, 0, +2",
+            "BF = depth(Node) - height(Node), and valid values are positive integers"
+          ],
+          "correctIndex": 0,
+          "explanation": "The balance factor is the difference in height between the left and right subtrees: height(left) - height(right). In an AVL tree, every node must have BF in {-1, 0, +1}.",
+          "sourceRef": "Chapter 7.pptx, slide 73, 74",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "setNumber": 3,
+      "questions": [
+        {
+          "id": "dsa-medium-s3-q01",
+          "question": "Why does Selection Sort always execute n(n - 1)/2 comparisons (O(n^2) time) even if the input array is already sorted?",
+          "options": [
+            "Because it recursively partitions the array into halves",
+            "Because swapping two elements takes O(n) time",
+            "Because it scans the entire remaining unsorted subarray to find the minimum on every pass without early termination",
+            "Because it uses dynamic memory allocation for each comparison"
+          ],
+          "correctIndex": 2,
+          "explanation": "Selection sort does not detect if an array is already sorted; it must check every element in the remaining subarray to find the minimum, making comparisons always n(n-1)/2.",
+          "sourceRef": "Chapter 3.pptx, slide 21, 22",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s3-q02",
+          "question": "What is the best-case time complexity of Insertion Sort when given an already sorted array?",
+          "options": [
+            "O(n) because each element requires only 1 comparison and 0 shifts",
+            "O(n^2) because all pairs must still be swapped",
+            "O(log n) because it uses binary search for insertions",
+            "O(n log n) because of the divide-and-conquer strategy"
+          ],
+          "correctIndex": 0,
+          "explanation": "If the input array is already sorted, each element is immediately compared with its predecessor, finds its correct place in 1 step, requiring n-1 comparisons total (O(n)).",
+          "sourceRef": "Chapter 3.pptx, slide 26",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s3-q03",
+          "question": "Which sequence of C++ statements correctly deletes the first node of a non-empty singly linked list?",
+          "options": [
+            "Node *temp = head; head = head->next; delete temp;",
+            "delete head; head = head->next;",
+            "head->next = head; delete head;",
+            "Node *temp = head->next; delete temp; head = NULL;"
+          ],
+          "correctIndex": 0,
+          "explanation": "To delete the first node: save head in a temporary pointer temp, advance head to head->next, and then free the memory using delete temp;.",
+          "sourceRef": "Chapter 4.pptx, slide 18",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s3-q04",
+          "question": "In a linked list implementation of a FIFO Queue with front and rear pointers, where do enqueue and dequeue operations occur for O(1) efficiency?",
+          "options": [
+            "enqueue inserts at front, and dequeue removes from rear",
+            "Both enqueue and dequeue occur at rear",
+            "Both enqueue and dequeue occur at front",
+            "enqueue inserts at rear, and dequeue removes from front"
+          ],
+          "correctIndex": 3,
+          "explanation": "Inserting at the tail (rear) is O(1) using rear->next = newNode; rear = newNode;, and removing at the head (front) is O(1) using front = front->next;.",
+          "sourceRef": "Chapter 5.pptx, slide 34, 35, 36",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s3-q05",
+          "question": "During Infix to Postfix conversion, why does an incoming operator pop higher or equal precedence operators from the operator stack?",
+          "options": [
+            "Because the operator stack can hold only one operator at a time",
+            "To convert all arithmetic operators into operands",
+            "Because higher or equal precedence operators must be evaluated before the current incoming operator in postfix notation",
+            "To automatically balance parentheses in the expression"
+          ],
+          "correctIndex": 2,
+          "explanation": "In postfix, operators appear after their operands. Higher or equal precedence operators waiting on the stack must execute first, so they are popped to the output before pushing the lower precedence operator.",
+          "sourceRef": "Chapter 5.pptx, slide 19, 20",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s3-q06",
+          "question": "What output is produced by calling print(3) on the recursive function: void print(int n) { if (n == 0) return; print(n - 1); cout << n << ' '; }?",
+          "options": [
+            "1 2 3 ",
+            "3 2 1 ",
+            "3 3 3 ",
+            "0 1 2 3 "
+          ],
+          "correctIndex": 0,
+          "explanation": "Because the recursive call print(n - 1) occurs BEFORE cout << n, the calls cascade down to n = 0 first and print upon returning from the call stack: 1, then 2, then 3.",
+          "sourceRef": "Chapter 6.pptx, slide 22, 23",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s3-q07",
+          "question": "If height h is defined as the number of levels (where a single root node has height h = 1), what is the maximum number of nodes in a binary tree of height h?",
+          "options": [
+            "2^h",
+            "2^h - 1",
+            "2^(h-1)",
+            "2h + 1"
+          ],
+          "correctIndex": 1,
+          "explanation": "The maximum number of nodes is the sum of 2^i from i=0 to h-1, which equals 2^h - 1. (If root is height 0, the formula is 2^(h+1) - 1).",
+          "sourceRef": "Chapter 7.pptx, slide 15, 16",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s3-q08",
+          "question": "Which data structure is required to implement Level-Order (Breadth-First) Traversal of a binary tree?",
+          "options": [
+            "Stack (LIFO)",
+            "Queue (FIFO)",
+            "Binary Search Tree",
+            "Disjoint Set"
+          ],
+          "correctIndex": 1,
+          "explanation": "Level-order traversal visits nodes level by level from left to right, which requires a FIFO Queue to enqueue child nodes and process them in arrival order.",
+          "sourceRef": "Chapter 7.pptx, slide 46, 47",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s3-q09",
+          "question": "When an AVL tree becomes unbalanced with a Balance Factor of -2 due to an insertion into the right subtree of a right child, which rotation restores balance?",
+          "options": [
+            "Single Right Rotation (LL Rotation)",
+            "Double Left-Right Rotation (LR Rotation)",
+            "Three-way Splitting Rotation",
+            "Single Left Rotation (RR Rotation)"
+          ],
+          "correctIndex": 3,
+          "explanation": "When an insertion occurs in the right subtree of the right child (Right-Right heavy), a Single Left Rotation pivots the right child up to become the new parent.",
+          "sourceRef": "Chapter 7.pptx, slide 76, 78",
+          "confidence": "high"
+        },
+        {
+          "id": "dsa-medium-s3-q10",
+          "question": "When is a double rotation (such as LR Rotation) required in an AVL Tree?",
+          "options": [
+            "When the tree has an odd number of total nodes",
+            "When the imbalance is caused by an insertion into the inner subtree (e.g., right child of the left subtree)",
+            "When both the left and right children are leaf nodes",
+            "Whenever a node with zero balance factor is deleted"
+          ],
+          "correctIndex": 1,
+          "explanation": "Single rotations only fix outer-outer imbalances (LL or RR). An inner zigzag imbalance (LR or RL) requires a double rotation to straighten and balance the subtree.",
+          "sourceRef": "Chapter 7.pptx, slide 76, 79, 80",
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}
