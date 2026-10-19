@@ -216,7 +216,7 @@ html[data-mode="flashcards"].fc-picking .select-wrapper {
 
 .quiz-tile-badge {
   margin-top: auto;
-  padding: 0.15rem 0.55rem;
+  padding: 0.18rem 0.6rem;
   border-radius: 9999px;
   background-color: var(--color-accent-blue);
   border: 1px solid var(--color-accent-blue-border);
@@ -224,7 +224,7 @@ html[data-mode="flashcards"].fc-picking .select-wrapper {
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
 }
 
 /* Question screen */
