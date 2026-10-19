@@ -77,7 +77,7 @@ html[data-mode="flashcards"].fc-picking .select-wrapper {
 
 .quiz-crumb + .quiz-crumb::before {
   content: "\203A";
-  margin: 0 0.3rem;
+  margin: 0 0.38rem;
   color: var(--color-muted);
 }
 
