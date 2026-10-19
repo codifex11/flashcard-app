@@ -22,7 +22,7 @@
   --color-card-band-back: #2F4156;
   --color-card-stack-1: #EBE4DD;
   --color-card-stack-2: #E0D7CF;
-  --color-card-ruled: rgba(47, 65, 86, 0.06);
+  --color-card-ruled: rgba(47, 65, 86, 0.05);
 
   /* Typography and ink colors (using Navy #2F4156 for text) */
   --color-text: #2F4156;
