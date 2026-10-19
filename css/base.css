@@ -13,7 +13,7 @@ body {
 /* Accessible focus visible outlines of at least 3px */
 :focus-visible {
   outline: 3px solid var(--color-ink);
-  outline-offset: 3px;
+  outline-offset: 2.5px;
 }
 
 /* Headings use the elegant editorial serif stack */
