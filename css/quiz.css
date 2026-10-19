@@ -266,7 +266,8 @@ html[data-mode="flashcards"].fc-picking .select-wrapper {
 .quiz-question {
   font-size: clamp(1.15rem, 2.6vw, 1.4rem);
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.48;
+  letter-spacing: -0.005em;
 }
 
 .quiz-warning {
