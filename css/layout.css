@@ -30,10 +30,10 @@
 }
 
 .header-desk-tag {
-  font-size: 0.75rem;
+  font-size: 0.735rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.085em;
   color: var(--color-muted);
 }
 
