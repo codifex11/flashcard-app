@@ -267,11 +267,11 @@
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.095em;
   color: var(--color-muted);
   background-color: rgba(86, 124, 141, 0.12);
-  padding: 0.2rem 0.65rem;
-  border-radius: 4px;
+  padding: 0.22rem 0.65rem;
+  border-radius: 5px;
 }
 
 [data-theme="dark"] .card-label {
