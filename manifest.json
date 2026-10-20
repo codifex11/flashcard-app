@@ -1,0 +1,17 @@
+{
+  "name": "Flashcards — Study Desk",
+  "short_name": "Study Desk",
+  "description": "Interactive study desk with concept flashcards and randomized quizzes for Information Systems courses.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1E293B",
+  "theme_color": "#1E293B",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
