@@ -281,6 +281,44 @@ function attachEventListeners() {
   elements.deckSelect.addEventListener("change", handleDeckChange);
   elements.themeToggle.addEventListener("click", handleThemeToggle);
   elements.card.addEventListener("click", handleCardFlip);
+
+  // Subtle double-click to copy current card text to clipboard
+  elements.card.addEventListener("dblclick", (e) => {
+    e.preventDefault();
+    if (state.cards.length === 0) return;
+    const inner = elements.card.querySelector(".card-inner");
+    const isFlipped = inner && inner.classList.contains("is-flipped");
+    const text = isFlipped ? elements.cardAnswer.textContent : elements.cardQuestion.textContent;
+    if (text && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => {
+        showStatusMessage(isFlipped ? "Answer copied" : "Question copied");
+      }).catch(() => {});
+    }
+  });
+
+  // Touch swipe gestures for natural mobile and tablet navigation
+  let touchStartX = 0;
+  let touchStartY = 0;
+  elements.card.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  elements.card.addEventListener("touchend", (e) => {
+    if (e.changedTouches.length === 1) {
+      const deltaX = e.changedTouches[0].clientX - touchStartX;
+      const deltaY = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+        if (deltaX < 0) {
+          handleNextCard();
+        } else {
+          handlePrevCard();
+        }
+      }
+    }
+  }, { passive: true });
   elements.flipBtn.addEventListener("click", handleCardFlip);
   elements.prevBtn.addEventListener("click", handlePrevCard);
   elements.nextBtn.addEventListener("click", handleNextCard);
