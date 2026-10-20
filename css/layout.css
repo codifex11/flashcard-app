@@ -27,6 +27,7 @@
 .header-titles {
   display: flex;
   flex-direction: column;
+  gap: 0.15rem;
 }
 
 .header-desk-tag {
