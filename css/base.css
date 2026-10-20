@@ -69,3 +69,43 @@ button:disabled {
   cursor: not-allowed;
   pointer-events: none;
 }
+
+/* Clean, distraction-free study sheet printing */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+  }
+
+  .app-header,
+  .study-sidebar,
+  .primary-controls,
+  .mode-switch,
+  .select-wrapper,
+  #theme-toggle,
+  .card-hint,
+  .quiz-actions,
+  footer {
+    display: none !important;
+  }
+
+  .study-layout,
+  .quiz-layout {
+    display: block !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 1.5px solid #cccccc !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .quiz-option {
+    border-color: #cccccc !important;
+    background: #ffffff !important;
+  }
+}

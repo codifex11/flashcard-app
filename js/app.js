@@ -232,8 +232,11 @@ function handleImportFile(event) {
   reader.readAsText(file);
 }
 
-// Handles global keyboard shortcuts for card navigation and flipping
+// Handles global keyboard shortcuts for card navigation, flipping, and study feedback
 function handleKeyDown(event) {
+  if (event.ctrlKey || event.metaKey || event.altKey) {
+    return;
+  }
   const activeEl = document.activeElement;
   const isInputActive = activeEl && (
     activeEl.tagName === "INPUT" ||
@@ -247,18 +250,29 @@ function handleKeyDown(event) {
     return;
   }
 
+  const key = event.key.toLowerCase();
+
   if (event.key === "ArrowRight") {
     event.preventDefault();
     handleNextCard();
   } else if (event.key === "ArrowLeft") {
     event.preventDefault();
     handlePrevCard();
-  } else if (event.key === " " || event.key === "Spacebar" || event.key === "Enter") {
+  } else if (event.key === " " || event.key === "Spacebar" || event.key === "Enter" || key === "f") {
     if (activeEl && (activeEl.tagName === "BUTTON" || activeEl.classList.contains("file-label")) && activeEl.id !== "card") {
       return;
     }
     event.preventDefault();
     handleCardFlip();
+  } else if (key === "1" || key === "k") {
+    event.preventDefault();
+    handleKnownCard();
+  } else if (key === "2" || key === "r") {
+    event.preventDefault();
+    handleReviewCard();
+  } else if (key === "s") {
+    event.preventDefault();
+    handleShuffle();
   }
 }
 

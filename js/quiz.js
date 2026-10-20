@@ -22,6 +22,7 @@
   const LETTERS = ["A", "B", "C", "D"];
   const MODE_KEY = "flashcards.mode";
   const SCORES_KEY = "flashcards.quizScores";
+  const PATH_STORAGE_KEY = "flashcards.lastSubjectPath";
   const CAN_FETCH = location.protocol === "http:" || location.protocol === "https:";
 
   // Quiz state, kept separate from the flashcard state in state.js
@@ -233,6 +234,26 @@
     return "question";
   }
 
+  function savePathState() {
+    try {
+      const p = quiz.path;
+      if (p.dept && p.year && p.sem && p.subject) {
+        localStorage.setItem(PATH_STORAGE_KEY, JSON.stringify({
+          deptName: p.dept.name,
+          yearYear: p.year.year,
+          semName: p.sem.semester,
+          subjectId: p.subject.id
+        }));
+      }
+    } catch (e) {}
+  }
+
+  function clearPathState() {
+    try {
+      localStorage.removeItem(PATH_STORAGE_KEY);
+    } catch (e) {}
+  }
+
   // Selects a value at one navigation depth and clears everything after it
   function choose(key, value) {
     const depth = PATH_KEYS.indexOf(key);
@@ -242,6 +263,7 @@
     quiz.subjectError = "";
 
     if (key === "subject") {
+      savePathState();
       loadSelectedSubject();
       return;
     }
@@ -258,6 +280,9 @@
     }
     if (isFlashcardsMode()) {
       document.documentElement.classList.add("fc-picking");
+    }
+    if (keep <= 3) {
+      clearPathState();
     }
     PATH_KEYS.slice(keep).forEach((k) => { quiz.path[k] = null; });
     quiz.session = null;
@@ -371,10 +396,22 @@
     dom.panel.replaceChildren(buildStep());
     if (focus === "heading") {
       const heading = dom.panel.querySelector(".quiz-heading");
-      if (heading) heading.focus();
+      if (heading) {
+        try {
+          heading.focus({ preventScroll: true });
+        } catch (e) {
+          heading.focus();
+        }
+      }
     } else if (focus === "next") {
       const next = dom.panel.querySelector(".quiz-next");
-      if (next) next.focus();
+      if (next) {
+        try {
+          next.focus({ preventScroll: true });
+        } catch (e) {
+          next.focus();
+        }
+      }
     }
   }
 
@@ -742,20 +779,86 @@
     if (event.ctrlKey || event.metaKey || event.altKey) return;
     const active = document.activeElement;
     if (active && ["INPUT", "TEXTAREA", "SELECT"].includes(active.tagName)) return;
-    if (currentStep() !== "question" || !quiz.session.questions.length) return;
 
-    const session = quiz.session;
+    const step = currentStep();
     const key = event.key.toLowerCase();
-    if (session.answers[session.current] === null) {
-      let idx = ["1", "2", "3", "4"].indexOf(key);
-      if (idx === -1) idx = ["a", "b", "c", "d"].indexOf(key);
-      if (idx !== -1 && idx < session.questions[session.current].options.length) {
+
+    // 1. Question step
+    if (step === "question" && quiz.session && quiz.session.questions.length) {
+      const session = quiz.session;
+      if (session.answers[session.current] === null) {
+        let idx = ["1", "2", "3", "4"].indexOf(key);
+        if (idx === -1) idx = ["a", "b", "c", "d"].indexOf(key);
+        if (idx !== -1 && idx < session.questions[session.current].options.length) {
+          event.preventDefault();
+          answer(idx);
+        }
+      } else if (key === "arrowright" || key === " " || (key === "enter" && !(active && active.tagName === "BUTTON"))) {
         event.preventDefault();
-        answer(idx);
+        nextQuestion();
       }
-    } else if (key === "arrowright" || (key === "enter" && !(active && active.tagName === "BUTTON"))) {
-      event.preventDefault();
-      nextQuestion();
+      if (key === "escape") {
+        event.preventDefault();
+        truncatePath(5);
+      }
+      return;
+    }
+
+    // 2. Results step
+    if (step === "results") {
+      if (key === "enter" || key === " ") {
+        if (!(active && active.tagName === "BUTTON")) {
+          event.preventDefault();
+          const nextAction = findNextAction();
+          if (nextAction) {
+            nextAction.run();
+          } else {
+            choose("set", quiz.path.set);
+          }
+        }
+      } else if (key === "escape" || key === "backspace") {
+        event.preventDefault();
+        truncatePath(5);
+      }
+      return;
+    }
+
+    // 3. Level selection step
+    if (step === "level") {
+      const num = parseInt(key, 10);
+      if (num >= 1 && num <= LEVELS.length) {
+        event.preventDefault();
+        choose("level", LEVELS[num - 1].id);
+      } else if (key === "escape" || key === "backspace") {
+        event.preventDefault();
+        truncatePath(3);
+      }
+      return;
+    }
+
+    // 4. Set selection step
+    if (step === "set") {
+      const level = currentLevelData();
+      const num = parseInt(key, 10);
+      if (level && num >= 1 && num <= level.sets.length) {
+        event.preventDefault();
+        choose("set", num);
+      } else if (key === "escape" || key === "backspace") {
+        event.preventDefault();
+        truncatePath(4);
+      }
+      return;
+    }
+
+    // 5. Earlier hierarchy navigation steps
+    if (["year", "sem", "subject"].includes(step)) {
+      if (key === "escape" || key === "backspace") {
+        event.preventDefault();
+        const depth = PATH_KEYS.indexOf(step);
+        if (depth > 0) {
+          truncatePath(depth - 1);
+        }
+      }
     }
   }
 
@@ -771,6 +874,26 @@
     try {
       quiz.index = await loadIndex();
       quiz.status = "ready";
+
+      // Restore last studied subject if remembered
+      try {
+        const raw = localStorage.getItem(PATH_STORAGE_KEY);
+        if (raw && quiz.index && quiz.index.departments) {
+          const saved = JSON.parse(raw);
+          const dept = quiz.index.departments.find((d) => d.name === saved.deptName);
+          const year = dept ? (dept.years || []).find((y) => y.year === saved.yearYear) : null;
+          const sem = year ? (year.semesters || []).find((s) => s.semester === saved.semName) : null;
+          const subj = sem ? (sem.subjects || []).find((s) => s.id === saved.subjectId) : null;
+          if (dept && year && sem && subj) {
+            quiz.path.dept = dept;
+            quiz.path.year = year;
+            quiz.path.sem = sem;
+            quiz.path.subject = subj;
+            loadSelectedSubject();
+            return;
+          }
+        }
+      } catch (err) {}
     } catch (err) {
       quiz.status = "error";
       quiz.error = err.message;

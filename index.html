@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Study desk with interactive flashcards and randomized quizzes for Information Systems courses.">
+  <meta name="theme-color" content="#1E293B" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F5EFEB" media="(prefers-color-scheme: light)">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>Flashcards — Study Desk</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
   <!-- Inline theme initializer to eliminate flash and apply dark theme immediately -->
   <script>
     (function () {
@@ -114,7 +121,7 @@
       </section>
 
       <section class="card-area" aria-label="Flashcard area">
-        <button id="card" class="card" type="button" aria-label="Flashcard. Press to flip.">
+        <button id="card" class="card" type="button" aria-label="Flashcard. Press to flip." aria-keyshortcuts="Space Enter f" title="Flip card (Space, Enter, or F)">
           <span class="card-inner">
             <span class="card-face card-front">
               <span class="card-top-strip"></span>
@@ -141,13 +148,13 @@
       </section>
 
       <section class="controls primary-controls" aria-label="Card navigation">
-        <button id="prev-btn" class="btn-primary-nav" type="button" aria-label="Previous card">
+        <button id="prev-btn" class="btn-primary-nav" type="button" aria-label="Previous card" aria-keyshortcuts="ArrowLeft" title="Previous card (Left Arrow)">
           <span class="btn-arrow" aria-hidden="true">&larr;</span> Previous
         </button>
-        <button id="flip-btn" class="btn-flip" type="button" aria-label="Flip card">
+        <button id="flip-btn" class="btn-flip" type="button" aria-label="Flip card" aria-keyshortcuts="Space f" title="Flip card (Space or F)">
           Flip Card
         </button>
-        <button id="next-btn" class="btn-primary-nav" type="button" aria-label="Next card">
+        <button id="next-btn" class="btn-primary-nav" type="button" aria-label="Next card" aria-keyshortcuts="ArrowRight" title="Next card (Right Arrow)">
           Next <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </button>
       </section>
@@ -159,13 +166,13 @@
       <section class="panel-section feedback-panel" aria-label="Study feedback">
         <h2 class="panel-heading">Self Check</h2>
         <div class="feedback">
-          <button id="known-btn" class="btn-known" type="button" aria-label="Mark card as known">
+          <button id="known-btn" class="btn-known" type="button" aria-label="Mark card as known" aria-keyshortcuts="k 1" title="I knew it (K or 1)">
             <svg class="btn-svg" viewBox="0 0 18 18" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="3.5 9.5 7.5 13.5 14.5 4.5" />
             </svg>
             I knew it
           </button>
-          <button id="review-btn" class="btn-review" type="button" aria-label="Mark card for review">
+          <button id="review-btn" class="btn-review" type="button" aria-label="Mark card for review" aria-keyshortcuts="r 2" title="Review again (R or 2)">
             <svg class="btn-svg" viewBox="0 0 18 18" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M14 4v4h-4" />
               <path d="M13.5 8A6 6 0 1 0 14 12" />
@@ -180,7 +187,7 @@
       <section class="panel-section tools-panel" aria-label="Study tools">
         <h2 class="panel-heading">Order &amp; Focus</h2>
         <div class="controls secondary-controls">
-          <button id="shuffle-btn" class="btn-quiet" type="button" aria-label="Shuffle cards">Shuffle</button>
+          <button id="shuffle-btn" class="btn-quiet" type="button" aria-label="Shuffle cards" aria-keyshortcuts="s" title="Shuffle cards (S)">Shuffle</button>
           <button id="reset-order-btn" class="btn-quiet" type="button" aria-label="Reset card order">Reset order</button>
           <label class="toggle-container" for="review-only-toggle">
             <input type="checkbox" id="review-only-toggle">
