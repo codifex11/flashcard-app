@@ -238,6 +238,36 @@
     </form>
   </dialog>
 
+  <dialog id="shortcuts-dialog" class="shortcuts-dialog" aria-labelledby="shortcuts-heading">
+    <div class="dialog-header">
+      <h2 id="shortcuts-heading">Keyboard Shortcuts</h2>
+      <span class="dialog-subtitle">Quick keys for studying on the desk</span>
+    </div>
+    <div class="shortcuts-content">
+      <div class="shortcuts-group">
+        <h3 class="shortcuts-group-title">Flashcards</h3>
+        <dl class="shortcuts-list">
+          <div class="shortcuts-row"><dt><kbd>Space</kbd> / <kbd>F</kbd></dt><dd>Flip card</dd></div>
+          <div class="shortcuts-row"><dt><kbd>&larr;</kbd> / <kbd>&rarr;</kbd></dt><dd>Previous / Next</dd></div>
+          <div class="shortcuts-row"><dt><kbd>K</kbd> / <kbd>1</kbd></dt><dd>Mark as known</dd></div>
+          <div class="shortcuts-row"><dt><kbd>R</kbd> / <kbd>2</kbd></dt><dd>Mark for review</dd></div>
+          <div class="shortcuts-row"><dt><kbd>S</kbd></dt><dd>Shuffle deck</dd></div>
+        </dl>
+      </div>
+      <div class="shortcuts-group">
+        <h3 class="shortcuts-group-title">Quiz Mode</h3>
+        <dl class="shortcuts-list">
+          <div class="shortcuts-row"><dt><kbd>1</kbd>&ndash;<kbd>4</kbd> / <kbd>A</kbd>&ndash;<kbd>D</kbd></dt><dd>Select answer</dd></div>
+          <div class="shortcuts-row"><dt><kbd>Space</kbd> / <kbd>Enter</kbd></dt><dd>Next / Continue</dd></div>
+          <div class="shortcuts-row"><dt><kbd>Esc</kbd> / <kbd>Backspace</kbd></dt><dd>Back / Exit set</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="dialog-actions">
+      <button type="button" id="close-shortcuts-btn" class="btn-dialog-primary">Got it</button>
+    </div>
+  </dialog>
+
   <footer>
     <p>A quiet place to practice &bull; Built with plain HTML, CSS, and JavaScript.</p>
   </footer>

@@ -783,6 +783,15 @@
     const step = currentStep();
     const key = event.key.toLowerCase();
 
+    // Universal help shortcut: '?' opens shortcuts cheatsheet
+    if (event.key === "?" || (event.shiftKey && event.key === "/")) {
+      event.preventDefault();
+      if (typeof window.openShortcutsDialog === "function") {
+        window.openShortcutsDialog();
+      }
+      return;
+    }
+
     // 1. Question step
     if (step === "question" && quiz.session && quiz.session.questions.length) {
       const session = quiz.session;

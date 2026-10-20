@@ -232,6 +232,24 @@ function handleImportFile(event) {
   reader.readAsText(file);
 }
 
+// Opens keyboard shortcuts cheatsheet modal
+function openShortcutsDialog() {
+  const dialog = document.getElementById("shortcuts-dialog");
+  if (dialog && !dialog.open) {
+    dialog.showModal();
+  }
+}
+window.openShortcutsDialog = openShortcutsDialog;
+
+// Closes keyboard shortcuts cheatsheet modal
+function closeShortcutsDialog() {
+  const dialog = document.getElementById("shortcuts-dialog");
+  if (dialog && dialog.open) {
+    dialog.close();
+  }
+}
+window.closeShortcutsDialog = closeShortcutsDialog;
+
 // Handles global keyboard shortcuts for card navigation, flipping, and study feedback
 function handleKeyDown(event) {
   if (event.ctrlKey || event.metaKey || event.altKey) {
@@ -243,10 +261,22 @@ function handleKeyDown(event) {
     activeEl.tagName === "TEXTAREA" ||
     activeEl.tagName === "SELECT"
   );
-  const isDialogOpen = elements.addDialog && elements.addDialog.open;
+  if (isInputActive) {
+    return;
+  }
+
+  // Help shortcut: '?' opens shortcuts cheatsheet anywhere
+  if (event.key === "?" || (event.shiftKey && event.key === "/")) {
+    event.preventDefault();
+    openShortcutsDialog();
+    return;
+  }
+
+  const isDialogOpen = (elements.addDialog && elements.addDialog.open) ||
+    document.getElementById("shortcuts-dialog")?.open;
   const isQuizMode = document.documentElement.getAttribute("data-mode") === "quiz";
 
-  if (isInputActive || isDialogOpen || isQuizMode) {
+  if (isDialogOpen || isQuizMode) {
     return;
   }
 
@@ -348,6 +378,19 @@ function attachEventListeners() {
     elements.addCardForm.reset();
     clearFormErrors();
   });
+
+  const closeShortcutsBtn = document.getElementById("close-shortcuts-btn");
+  if (closeShortcutsBtn) {
+    closeShortcutsBtn.addEventListener("click", closeShortcutsDialog);
+  }
+  const shortcutsDialog = document.getElementById("shortcuts-dialog");
+  if (shortcutsDialog) {
+    shortcutsDialog.addEventListener("click", (e) => {
+      if (e.target === shortcutsDialog) {
+        closeShortcutsDialog();
+      }
+    });
+  }
 
   window.addEventListener("keydown", handleKeyDown);
 
