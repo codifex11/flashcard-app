@@ -291,6 +291,7 @@ html[data-mode="flashcards"].fc-picking .select-wrapper {
   text-align: left;
   background-color: var(--color-bg);
   border: 1.5px solid var(--color-border);
+  border-radius: 8px;
   color: var(--color-text);
   font-size: 0.975rem;
   line-height: 1.4;
