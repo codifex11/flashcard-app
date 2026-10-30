@@ -11,6 +11,7 @@ A quiet, warm flashcard app built with plain HTML, CSS, and JavaScript. Designed
 - **Custom Cards**: Add new cards with inline validation, delete custom cards with confirmation, export to JSON, and import JSON files.
 - **Warm Themes**: Soft cream stationery light theme and deep navy-plum dark theme, honoring system preference by default.
 - **Offline & Zero Dependencies**: No build steps, no external fonts, no frameworks, and no network requests.
+- **Craftsmanship & Accessibility**: Hardware-accelerated 3D flips, responsive touch action optimization, theme-aware scrollbar styling, ARIA live announcements, and Progressive Web App installability.
 
 Use the **Quiz / Flashcards** switch in the header to change modes.
 
