@@ -6,12 +6,13 @@
 
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 
 const utilsPath = path.join(__dirname, '..', 'js', 'utils.js');
 const utilsCode = fs.readFileSync(utilsPath, 'utf8');
 
 // Evaluate in global context
-eval(utilsCode);
+vm.runInThisContext(utilsCode);
 
 let passed = 0;
 let failed = 0;
