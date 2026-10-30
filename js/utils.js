@@ -360,6 +360,19 @@ function generateCustomId() {
   return `custom-${Date.now()}-${customCardIdCounter}`;
 }
 
+// Initiates a browser download of text content with proper MIME type
+function downloadTextFile(filename, content, mimeType = "text/plain;charset=utf-8") {
+  const blob = new Blob([content], { type: mimeType });
+  const downloadUrl = URL.createObjectURL(blob);
+  const linkElement = document.createElement("a");
+  linkElement.href = downloadUrl;
+  linkElement.download = filename;
+  document.body.appendChild(linkElement);
+  linkElement.click();
+  document.body.removeChild(linkElement);
+  setTimeout(() => URL.revokeObjectURL(downloadUrl), 100);
+}
+
 // Initiates a browser download of an object formatted as a JSON file
 function downloadJsonFile(filename, data) {
   const jsonString = JSON.stringify(data, null, 2);
