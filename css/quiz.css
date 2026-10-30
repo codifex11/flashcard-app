@@ -183,6 +183,7 @@ html[data-mode="flashcards"].fc-picking .select-wrapper {
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius);
   color: var(--color-text);
+  contain: layout style;
 }
 
 .quiz-tile:hover {
