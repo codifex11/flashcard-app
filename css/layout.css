@@ -89,7 +89,8 @@
   outline: 2px dashed var(--color-ink);
   outline-offset: 6px;
   border-radius: calc(var(--radius) + 4px);
-  transition: outline-color 0.15s ease;
+  background-color: color-mix(in srgb, var(--color-ink) 3%, transparent);
+  transition: outline-color 0.15s ease, background-color 0.15s ease;
 }
 
 .controls.primary-controls {
