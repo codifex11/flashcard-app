@@ -34,6 +34,28 @@ function unescapeHtmlEntities(str) {
     .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
 }
 
+// Strips HTML tags commonly exported from Anki while preserving line breaks
+function stripHtmlPreservingBreaks(html) {
+  if (typeof html !== "string") {
+    return "";
+  }
+  let text = html
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/(p|div)>/gi, "\n")
+    .replace(/<(p|div)[^>]*>/gi, "")
+    .replace(/<li[^>]*>/gi, "\n• ")
+    .replace(/<\/li>/gi, "")
+    .replace(/{{c\d+::(.*?)(?:::.*?)?}}/gi, "$1")
+    .replace(/<[^>]+>/g, "");
+
+  text = unescapeHtmlEntities(text);
+  return text
+    .replace(/\r\n/g, "\n")
+    .replace(/\r/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 // Validates question or answer text, checking trimmed presence and maximum length
 function validateCardText(text) {
   if (typeof text !== "string") {
