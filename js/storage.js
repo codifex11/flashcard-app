@@ -54,10 +54,13 @@ function saveToStorage(key, value) {
   }
 }
 
-// Loads custom cards from localStorage, validating that the result is an array
+// Loads custom cards from localStorage, validating that the result is an array of valid card objects
 function loadStoredCustomCards() {
   const data = loadFromStorage(STORAGE_KEYS.customCards, []);
-  return Array.isArray(data) ? data : [];
+  if (!Array.isArray(data)) {
+    return [];
+  }
+  return data.filter((card) => card && typeof card.question === "string" && typeof card.answer === "string");
 }
 
 // Saves custom cards array to localStorage
