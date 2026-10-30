@@ -155,6 +155,7 @@ function renderPhaseBar() {
     const subjBtn = document.createElement("button");
     subjBtn.type = "button";
     subjBtn.className = "fc-crumb-btn fc-subject-tag";
+    subjBtn.setAttribute("aria-current", "location");
     subjBtn.textContent = academic.subjectName;
     subjBtn.onclick = () => window.openHierarchyStep && window.openHierarchyStep(4);
     elements.fcBreadcrumbs.appendChild(subjBtn);
