@@ -85,6 +85,13 @@
   perspective: 1000px;
 }
 
+.card-area.is-dragover {
+  outline: 2px dashed var(--color-ink);
+  outline-offset: 6px;
+  border-radius: calc(var(--radius) + 4px);
+  transition: outline-color 0.15s ease;
+}
+
 .controls.primary-controls {
   width: 100%;
   max-width: 480px;
