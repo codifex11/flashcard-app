@@ -295,6 +295,8 @@ html[data-mode="flashcards"].fc-picking .select-wrapper {
   color: var(--color-text);
   font-size: 0.975rem;
   line-height: 1.4;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 .quiz-option:hover {
