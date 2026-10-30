@@ -167,13 +167,15 @@ function handleExportCards() {
   const activeDeckObj = state.decks.find((d) => d.id === state.currentDeckId);
   const deckTitle = (activeDeckObj && activeDeckObj.title) || "My cards";
 
+  const safeName = (deckTitle || "my-cards").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "cards";
+
   const exportPayload = {
     name: deckTitle,
     cards: exportCards
   };
 
-  downloadJsonFile("my-cards.json", exportPayload);
-  showStatusMessage("Cards exported");
+  downloadJsonFile(`${safeName}.json`, exportPayload);
+  showStatusMessage(`Exported ${exportCards.length} cards`);
 }
 
 // Handles reading and validating an imported JSON, Anki TSV, Quizlet, or CSV file
