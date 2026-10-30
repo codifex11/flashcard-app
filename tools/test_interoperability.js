@@ -88,6 +88,13 @@ if (typeof parseDelimitedCards === 'function') {
   assert(quizletResult[0].question === 'What is SQL?' && quizletResult[0].answer === 'Structured & Query Language', 'quizlet html cleaned and entities unescaped');
   assert(quizletResult[1].answer === 'Unique "identifier"', 'quizlet entities unescaped');
 
+  // Anki cloze and complex nested HTML
+  const ankiCloze = `Who proposed {{c1::E.F. Codd}} the relational model?\tIn {{c2::1970}} at IBM\tHistory`;
+  const ankiClozeResult = parseDelimitedCards(ankiCloze);
+  assert(ankiClozeResult.length === 1, 'anki cloze line parsed');
+  assert(ankiClozeResult[0].question === 'Who proposed E.F. Codd the relational model?', 'anki cloze question cleaned');
+  assert(ankiClozeResult[0].answer === 'In 1970 at IBM', 'anki cloze answer cleaned');
+
   // Comma separated with quotes
   const csvSample = `"Term 1","Def 1, with comma","Custom Cat"\n"Term 2","Def 2",""`;
   const csvResult = parseDelimitedCards(csvSample);
