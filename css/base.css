@@ -1,5 +1,10 @@
 /* Base typography, document colors, focus states, and button foundations */
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
 body {
   font-family: var(--font-main);
   font-feature-settings: "kern" 1, "liga" 1;
