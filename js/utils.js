@@ -161,6 +161,81 @@ function isHeaderRow(fields) {
   return questionHeaders.includes(f0) && answerHeaders.includes(f1);
 }
 
+// Parses delimited text (Anki TSV, Quizlet TSV/CSV, or standard spreadsheets) into cards
+function parseDelimitedCards(text, forcedDelimiter = null) {
+  if (typeof text !== "string") {
+    return [];
+  }
+  const delimiter = forcedDelimiter || detectDelimiter(text);
+
+  const rawLines = text.split(/\r?\n/);
+  const records = [];
+  let buffer = "";
+  let insideQuotes = false;
+
+  for (let idx = 0; idx < rawLines.length; idx++) {
+    const line = rawLines[idx];
+    if (buffer.length > 0) {
+      buffer += "\n" + line;
+    } else {
+      buffer = line;
+    }
+
+    let quoteCount = 0;
+    for (let c = 0; c < line.length; c++) {
+      if (line[c] === '"') quoteCount++;
+    }
+    if (quoteCount % 2 !== 0) {
+      insideQuotes = !insideQuotes;
+    }
+
+    if (!insideQuotes) {
+      if (buffer.trim().length > 0) {
+        records.push(buffer);
+      }
+      buffer = "";
+    }
+  }
+
+  if (buffer.trim().length > 0) {
+    records.push(buffer);
+  }
+
+  const validCards = [];
+  let isFirstRow = true;
+
+  for (const record of records) {
+    const fields = parseDelimitedLine(record, delimiter);
+    if (!fields || fields.length < 2) {
+      continue;
+    }
+
+    if (isFirstRow) {
+      isFirstRow = false;
+      if (isHeaderRow(fields)) {
+        continue;
+      }
+    }
+
+    const rawQuestion = stripHtmlPreservingBreaks(fields[0] || "");
+    const rawAnswer = stripHtmlPreservingBreaks(fields[1] || "");
+    const rawCategory = stripHtmlPreservingBreaks(fields[2] || "");
+
+    const qVal = validateCardText(rawQuestion);
+    const aVal = validateCardText(rawAnswer);
+
+    if (qVal.valid && aVal.valid) {
+      validCards.push({
+        question: qVal.trimmed,
+        answer: aVal.trimmed,
+        category: rawCategory || "Custom"
+      });
+    }
+  }
+
+  return validCards;
+}
+
 // Validates question or answer text, checking trimmed presence and maximum length
 function validateCardText(text) {
   if (typeof text !== "string") {
