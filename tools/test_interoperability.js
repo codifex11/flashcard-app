@@ -95,6 +95,12 @@ if (typeof parseDelimitedCards === 'function') {
   assert(ankiClozeResult[0].question === 'Who proposed E.F. Codd the relational model?', 'anki cloze question cleaned');
   assert(ankiClozeResult[0].answer === 'In 1970 at IBM', 'anki cloze answer cleaned');
 
+  // Quizlet 2-column format (Term \t Definition)
+  const quizlet2Col = `Binary Search\tO(log n) search on sorted array\nBubble Sort\tO(n^2) comparison sort`;
+  const q2Result = parseDelimitedCards(quizlet2Col);
+  assert(q2Result.length === 2, 'quizlet 2-column parsed 2 cards');
+  assert(q2Result[0].question === 'Binary Search' && q2Result[0].category === 'Custom', 'quizlet 2-column defaults category to Custom');
+
   // Comma separated with quotes
   const csvSample = `"Term 1","Def 1, with comma","Custom Cat"\n"Term 2","Def 2",""`;
   const csvResult = parseDelimitedCards(csvSample);
