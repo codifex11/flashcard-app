@@ -379,6 +379,12 @@ function attachEventListeners() {
     clearFormErrors();
   });
 
+  elements.addDialog.addEventListener("click", (e) => {
+    if (e.target === elements.addDialog) {
+      closeAddCardDialog();
+    }
+  });
+
   const closeShortcutsBtn = document.getElementById("close-shortcuts-btn");
   if (closeShortcutsBtn) {
     closeShortcutsBtn.addEventListener("click", closeShortcutsDialog);
