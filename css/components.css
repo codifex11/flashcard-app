@@ -111,6 +111,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  touch-action: manipulation;
   width: min(92vw, 480px);
   height: 310px;
   padding: 0;
@@ -370,6 +371,7 @@
   font-weight: 600;
   min-height: 48px;
   padding: 0 1.15rem;
+  touch-action: manipulation;
   box-shadow: 0 1px 3px rgba(47, 65, 86, 0.06);
 }
 
