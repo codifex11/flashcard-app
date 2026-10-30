@@ -108,6 +108,45 @@ function parseDelimitedLine(line, delimiter = ",") {
   return fields;
 }
 
+// Detects whether text is separated by tab, comma, semicolon, or pipe
+function detectDelimiter(text) {
+  if (typeof text !== "string") {
+    return ",";
+  }
+  const lines = text.split(/\r?\n/).filter((l) => l.trim().length > 0).slice(0, 5);
+  if (lines.length === 0) {
+    return ",";
+  }
+
+  const counts = { "\t": 0, ",": 0, ";": 0, "|": 0 };
+  for (const line of lines) {
+    for (const d of ["\t", ",", ";", "|"]) {
+      let inQuote = false;
+      let count = 0;
+      for (let i = 0; i < line.length; i++) {
+        if (line[i] === '"') inQuote = !inQuote;
+        else if (line[i] === d && !inQuote) count++;
+      }
+      counts[d] += count;
+    }
+  }
+
+  if (counts["\t"] > 0 && counts["\t"] >= lines.length - 1) {
+    return "\t";
+  }
+
+  let bestDelim = ",";
+  let maxCount = -1;
+  for (const [d, count] of Object.entries(counts)) {
+    if (count > maxCount && count > 0) {
+      maxCount = count;
+      bestDelim = d;
+    }
+  }
+
+  return bestDelim;
+}
+
 // Validates question or answer text, checking trimmed presence and maximum length
 function validateCardText(text) {
   if (typeof text !== "string") {
