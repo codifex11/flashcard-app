@@ -146,17 +146,29 @@ function handleDeleteCard() {
   showStatusMessage("Card deleted");
 }
 
-// Handles exporting the custom cards deck as a downloadable JSON file
+// Handles exporting cards from the custom deck or currently active study deck
 function handleExportCards() {
   const customDeck = state.decks.find((deck) => deck.id === "custom");
-  const exportCards = (customDeck ? customDeck.cards : []).map((card) => ({
+  const targetCards = (state.currentDeckId === "custom" && customDeck && customDeck.cards.length > 0)
+    ? customDeck.cards
+    : (state.cards && state.cards.length > 0 ? state.cards : (customDeck ? customDeck.cards : []));
+
+  if (!targetCards || targetCards.length === 0) {
+    showStatusMessage("No cards to export");
+    return;
+  }
+
+  const exportCards = targetCards.map((card) => ({
     question: card.question,
     answer: card.answer,
-    category: card.category || "Custom"
+    category: card.category || "General"
   }));
 
+  const activeDeckObj = state.decks.find((d) => d.id === state.currentDeckId);
+  const deckTitle = (activeDeckObj && activeDeckObj.title) || "My cards";
+
   const exportPayload = {
-    name: "My cards",
+    name: deckTitle,
     cards: exportCards
   };
 
