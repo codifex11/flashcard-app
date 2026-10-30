@@ -518,7 +518,8 @@
   padding: 0 0.75rem;
 }
 
-.btn-quiet:hover:not(:disabled) {
+.btn-quiet:hover:not(:disabled),
+.file-label.btn-quiet:hover {
   background-color: var(--color-surface-panel);
   border-color: var(--color-ink);
 }
