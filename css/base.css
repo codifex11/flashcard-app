@@ -29,6 +29,7 @@ h3 {
   color: var(--color-text);
   letter-spacing: -0.015em;
   font-weight: 700;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
