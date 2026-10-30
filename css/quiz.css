@@ -177,7 +177,7 @@ html[data-mode="flashcards"].fc-picking .select-wrapper {
   justify-content: flex-start;
   gap: 0.35rem;
   min-height: 104px;
-  padding: 1rem 1.1rem;
+  padding: 1.05rem 1.15rem;
   text-align: left;
   background-color: var(--color-bg);
   border: 1.5px solid var(--color-border);
