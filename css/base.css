@@ -2,6 +2,7 @@
 
 body {
   font-family: var(--font-main);
+  font-feature-settings: "kern" 1, "liga" 1;
   background-color: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
