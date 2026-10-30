@@ -376,15 +376,7 @@ function downloadTextFile(filename, content, mimeType = "text/plain;charset=utf-
 // Initiates a browser download of an object formatted as a JSON file
 function downloadJsonFile(filename, data) {
   const jsonString = JSON.stringify(data, null, 2);
-  const blob = new Blob([jsonString], { type: "application/json" });
-  const downloadUrl = URL.createObjectURL(blob);
-  const linkElement = document.createElement("a");
-  linkElement.href = downloadUrl;
-  linkElement.download = filename;
-  document.body.appendChild(linkElement);
-  linkElement.click();
-  document.body.removeChild(linkElement);
-  URL.revokeObjectURL(downloadUrl);
+  downloadTextFile(filename, jsonString, "application/json;charset=utf-8");
 }
 
 // Wraps an index within a range from 0 to total minus 1 with defensive numeric sanitization
