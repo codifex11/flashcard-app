@@ -53,10 +53,12 @@ function downloadJsonFile(filename, data) {
   URL.revokeObjectURL(downloadUrl);
 }
 
-// Wraps an index within a range from 0 to total minus 1
+// Wraps an index within a range from 0 to total minus 1 with defensive numeric sanitization
 function wrapIndex(index, total) {
-  if (total <= 0) {
+  const safeTotal = Math.floor(Number(total)) || 0;
+  if (safeTotal <= 0) {
     return 0;
   }
-  return ((index % total) + total) % total;
+  const safeIndex = Math.floor(Number(index)) || 0;
+  return ((safeIndex % safeTotal) + safeTotal) % safeTotal;
 }
