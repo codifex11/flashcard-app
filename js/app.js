@@ -269,6 +269,15 @@ function handleKeyDown(event) {
     return;
   }
 
+  // File import shortcut: Ctrl+O / Cmd+O triggers file dialog
+  if ((event.ctrlKey || event.metaKey) && !event.altKey && event.key.toLowerCase() === "o") {
+    event.preventDefault();
+    if (elements.importInput) {
+      elements.importInput.click();
+    }
+    return;
+  }
+
   // Help shortcut: '?' opens shortcuts cheatsheet anywhere
   if (event.key === "?" || (event.shiftKey && event.key === "/")) {
     event.preventDefault();
