@@ -236,6 +236,69 @@ function parseDelimitedCards(text, forcedDelimiter = null) {
   return validCards;
 }
 
+// Automatically detects and parses cards from JSON, Anki/Quizlet TSV, CSV, or plain text
+function parseCardsFromAnyFormat(fileContent, filename = "") {
+  if (typeof fileContent !== "string" || fileContent.trim().length === 0) {
+    return { success: false, cards: [], format: "Unknown", error: "File is empty." };
+  }
+
+  const ext = (filename.split(".").pop() || "").toLowerCase();
+  const trimmed = fileContent.trim();
+
+  // 1. If explicit JSON extension or JSON-like syntax
+  if (ext === "json" || (trimmed.startsWith("{") || trimmed.startsWith("["))) {
+    try {
+      const parsed = JSON.parse(trimmed);
+      let rawList = null;
+
+      if (Array.isArray(parsed)) {
+        rawList = parsed;
+      } else if (parsed && typeof parsed === "object" && Array.isArray(parsed.cards)) {
+        rawList = parsed.cards;
+      }
+
+      if (Array.isArray(rawList)) {
+        const validCards = [];
+        for (const item of rawList) {
+          if (!item || typeof item !== "object") continue;
+          const qVal = validateCardText(typeof item.question === "string" ? item.question : "");
+          const aVal = validateCardText(typeof item.answer === "string" ? item.answer : "");
+          if (qVal.valid && aVal.valid) {
+            validCards.push({
+              question: qVal.trimmed,
+              answer: aVal.trimmed,
+              category: typeof item.category === "string" && item.category.trim() ? item.category.trim() : "Custom"
+            });
+          }
+        }
+        if (validCards.length > 0) {
+          return { success: true, cards: validCards, format: "JSON", error: "" };
+        }
+      }
+    } catch (jsonErr) {
+      // Fall through to delimited parser
+    }
+  }
+
+  // 2. Delimited parser (Anki TSV, Quizlet, CSV, TXT)
+  const delimiter = detectDelimiter(trimmed);
+  const cards = parseDelimitedCards(trimmed, delimiter);
+
+  if (cards.length > 0) {
+    let formatLabel = "CSV";
+    if (delimiter === "\t") {
+      formatLabel = "TSV (Anki/Quizlet)";
+    } else if (delimiter === ";") {
+      formatLabel = "Semicolon-delimited";
+    } else if (delimiter === "|") {
+      formatLabel = "Pipe-delimited";
+    }
+    return { success: true, cards, format: formatLabel, error: "" };
+  }
+
+  return { success: false, cards: [], format: "Unrecognized", error: "No valid flashcards found in file." };
+}
+
 // Validates question or answer text, checking trimmed presence and maximum length
 function validateCardText(text) {
   if (typeof text !== "string") {
