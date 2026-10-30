@@ -151,5 +151,19 @@ if (typeof formatCardsAsTsv === 'function' && typeof formatCardsAsCsv === 'funct
   console.log('  (formatCardsAsTsv/Csv not yet defined)');
 }
 
+console.log('\n8. Testing End-to-End Roundtrip Integrity (Export -> Import)');
+if (typeof formatCardsAsTsv === 'function' && typeof parseCardsFromAnyFormat === 'function') {
+  const testDeck = [
+    { question: 'What is 1NF?', answer: 'Atomic values and unique rows', category: 'Database' },
+    { question: 'What is 2NF?', answer: '1NF plus no partial functional dependencies', category: 'Database' },
+    { question: 'What is 3NF?', answer: '2NF plus no transitive dependencies', category: 'Database' }
+  ];
+  const exportedTsv = formatCardsAsTsv(testDeck);
+  const roundtrip = parseCardsFromAnyFormat(exportedTsv, 'database.tsv');
+  assert(roundtrip.success && roundtrip.cards.length === 3, 'roundtrip preserves card count');
+  assert(roundtrip.cards[0].question === testDeck[0].question && roundtrip.cards[0].answer === testDeck[0].answer, 'roundtrip preserves question and answer text');
+  assert(roundtrip.cards[2].category === testDeck[2].category, 'roundtrip preserves category tag');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
