@@ -147,6 +147,20 @@ function detectDelimiter(text) {
   return bestDelim;
 }
 
+// Detects whether the first row of a delimited file is a column header rather than a flashcard
+function isHeaderRow(fields) {
+  if (!Array.isArray(fields) || fields.length < 2) {
+    return false;
+  }
+  const f0 = String(fields[0] || "").trim().toLowerCase();
+  const f1 = String(fields[1] || "").trim().toLowerCase();
+
+  const questionHeaders = ["front", "question", "prompt", "term", "q", "card front", "#"];
+  const answerHeaders = ["back", "answer", "definition", "def", "a", "card back", "meaning"];
+
+  return questionHeaders.includes(f0) && answerHeaders.includes(f1);
+}
+
 // Validates question or answer text, checking trimmed presence and maximum length
 function validateCardText(text) {
   if (typeof text !== "string") {
