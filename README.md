@@ -8,7 +8,7 @@ A quiet, warm flashcard app built with plain HTML, CSS, and JavaScript. Designed
 - **Paper Index Card Hero**: Realistic 3D flip animation, subtle ruled lines, category stamps, and card deck layering.
 - **Study & Focus Modes**: Track cards with "I knew it" (sage) and "Review again" (blush), plus a dedicated "Review only" mode.
 - **Card Controls**: Previous, Next, Flip, Fisher-Yates Shuffle, and Reset Order.
-- **Custom Cards**: Add new cards with inline validation, delete custom cards with confirmation, export to JSON, and import JSON files.
+- **Custom Cards & Interoperability**: Add new cards with inline validation, delete custom cards with confirmation, drag-and-drop file import, full Anki and Quizlet TSV/CSV and JSON import with automatic format detection and HTML tag cleaning, plus export to JSON or native Anki TSV.
 - **Warm Themes**: Soft cream stationery light theme and deep navy-plum dark theme, honoring system preference by default.
 - **Offline & Zero Dependencies**: No build steps, no external fonts, no frameworks, and no network requests.
 - **Craftsmanship & Accessibility**: Hardware-accelerated 3D flips, responsive touch action optimization, theme-aware scrollbar styling, ARIA live announcements, and Progressive Web App installability.
@@ -31,6 +31,14 @@ python tools/build_bundle.py
 
 If you serve the folder over HTTP instead (e.g. `python -m http.server`), the quiz reads the JSON files directly and the bundle is only a fallback.
 
+## Testing Interoperability
+
+To run the automated Anki/Quizlet parser test suite:
+
+```
+node tools/test_interoperability.js
+```
+
 ## Folder Structure
 
 ```
@@ -44,7 +52,8 @@ flashcard-app/
 │   ├── data-bundle.js Generated copy of all quiz content (for file://)
 │   └── subjects/      One folder of quiz JSON per subject
 ├── tools/
-│   └── build_bundle.py Rebuilds content/data-bundle.js
+│   ├── build_bundle.py Rebuilds content/data-bundle.js
+│   └── test_interoperability.js Unit tests for Anki/Quizlet/CSV import/export
 ├── css/
 │   ├── reset.css      Baseline browser style reset
 │   ├── variables.css  Color tokens and theme variables
@@ -55,11 +64,11 @@ flashcard-app/
 │   └── quiz.css       Quiz mode switch, navigation tiles, questions, and results
 └── js/
     ├── data.js        Built-in decks and card content
-    ├── utils.js       Shuffle, text validation, and file download helpers
+    ├── utils.js       Shuffle, text validation, Anki/Quizlet/CSV parsing, and download helpers
     ├── storage.js     Safe localStorage operations with fallbacks
     ├── state.js       Application state container and mutators
     ├── ui.js          DOM updates, card animations, and dialog states
-    ├── app.js         Event listeners, keyboard shortcuts, and startup
+    ├── app.js         Event listeners, keyboard shortcuts, drag-and-drop, and startup
     └── quiz.js        Quiz content loading, navigation, sessions, and scoring
 ```
 
@@ -70,6 +79,8 @@ Flashcards mode:
 - `Space` or `Enter`: Flip the current card (when not typing in form inputs)
 - `Right Arrow` (`→`): Next card
 - `Left Arrow` (`←`): Previous card
+- `Ctrl+O` / `Cmd+O`: Import cards (JSON, Anki TSV, Quizlet CSV, or plain text)
+- `Ctrl+E` / `Cmd+E`: Export cards to JSON (or `Shift+Click` Export for native Anki TSV)
 - `Escape`: Close the card creation dialog
 
 Quiz mode:
