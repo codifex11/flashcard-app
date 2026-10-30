@@ -315,6 +315,30 @@ function formatCardsAsTsv(cards) {
   return lines.join("\n");
 }
 
+// Formats an array of cards into RFC-4180 compliant CSV format
+function formatCardsAsCsv(cards) {
+  if (!Array.isArray(cards)) {
+    return "";
+  }
+  function escapeCsvField(val) {
+    const str = String(val || "");
+    if (str.includes('"') || str.includes(",") || str.includes("\n") || str.includes("\r")) {
+      return '"' + str.replace(/"/g, '""') + '"';
+    }
+    return str;
+  }
+
+  const lines = ['"Question","Answer","Category"'];
+  for (const card of cards) {
+    if (!card) continue;
+    const q = escapeCsvField(card.question);
+    const a = escapeCsvField(card.answer);
+    const cat = escapeCsvField(card.category || "Custom");
+    lines.push(`${q},${a},${cat}`);
+  }
+  return lines.join("\n");
+}
+
 // Validates question or answer text, checking trimmed presence and maximum length
 function validateCardText(text) {
   if (typeof text !== "string") {
