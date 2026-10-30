@@ -106,6 +106,12 @@ if (typeof parseDelimitedCards === 'function') {
   const csvResult = parseDelimitedCards(csvSample);
   assert(csvResult.length === 2, 'csv sample parsed 2 cards');
   assert(csvResult[0].answer === 'Def 1, with comma' && csvResult[0].category === 'Custom Cat', 'csv card 1 values correct');
+
+  // Multi-line quoted record in CSV
+  const multilineCsv = `"Question with\nmultiple\nlines","Answer line 1\nAnswer line 2","Multi-Line"`;
+  const mlResult = parseDelimitedCards(multilineCsv);
+  assert(mlResult.length === 1, 'parsed multiline quoted CSV record');
+  assert(mlResult[0].question === 'Question with\nmultiple\nlines', 'preserved internal newlines inside quotes');
 } else {
   console.log('  (parseDelimitedCards not yet defined)');
 }
