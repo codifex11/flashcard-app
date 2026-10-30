@@ -299,6 +299,22 @@ function parseCardsFromAnyFormat(fileContent, filename = "") {
   return { success: false, cards: [], format: "Unrecognized", error: "No valid flashcards found in file." };
 }
 
+// Formats an array of cards into tab-separated values (TSV) for native Anki import
+function formatCardsAsTsv(cards) {
+  if (!Array.isArray(cards)) {
+    return "";
+  }
+  const lines = [];
+  for (const card of cards) {
+    if (!card) continue;
+    const q = String(card.question || "").replace(/\t/g, " ").replace(/\r?\n/g, "<br>");
+    const a = String(card.answer || "").replace(/\t/g, " ").replace(/\r?\n/g, "<br>");
+    const cat = String(card.category || "Custom").replace(/\t/g, " ").replace(/\r?\n/g, " ");
+    lines.push(`${q}\t${a}\t${cat}`);
+  }
+  return lines.join("\n");
+}
+
 // Validates question or answer text, checking trimmed presence and maximum length
 function validateCardText(text) {
   if (typeof text !== "string") {
