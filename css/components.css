@@ -888,12 +888,14 @@
 
 .shortcuts-row dt {
   margin: 0;
+  white-space: nowrap;
 }
 
 .shortcuts-row dd {
   margin: 0;
   color: var(--color-muted);
   font-size: 0.82rem;
+  text-align: right;
 }
 
 kbd {
