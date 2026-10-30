@@ -4,6 +4,11 @@
   "description": "Interactive study desk with concept flashcards and randomized quizzes for Information Systems courses.",
   "start_url": "./index.html",
   "display": "standalone",
+  "orientation": "any",
+  "categories": [
+    "education",
+    "productivity"
+  ],
   "background_color": "#1E293B",
   "theme_color": "#1E293B",
   "icons": [
