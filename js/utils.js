@@ -56,6 +56,58 @@ function stripHtmlPreservingBreaks(html) {
     .trim();
 }
 
+// Parses a single delimited line supporting RFC-4180 quotes and escaped double quotes
+function parseDelimitedLine(line, delimiter = ",") {
+  if (typeof line !== "string") {
+    return [];
+  }
+  const fields = [];
+  let currentField = "";
+  let insideQuotes = false;
+  let i = 0;
+
+  while (i < line.length) {
+    const char = line[i];
+
+    if (char === '"') {
+      if (insideQuotes) {
+        if (i + 1 < line.length && line[i + 1] === '"') {
+          currentField += '"';
+          i += 2;
+          continue;
+        } else {
+          insideQuotes = false;
+          i += 1;
+          continue;
+        }
+      } else {
+        if (currentField.length === 0) {
+          insideQuotes = true;
+          i += 1;
+          continue;
+        } else {
+          currentField += '"';
+          i += 1;
+          continue;
+        }
+      }
+    }
+
+    if (char === delimiter && !insideQuotes) {
+      fields.push(currentField);
+      currentField = "";
+      i += 1;
+      continue;
+    }
+
+    currentField += char;
+    i += 1;
+  }
+
+  fields.push(currentField);
+  return fields;
+}
+
 // Validates question or answer text, checking trimmed presence and maximum length
 function validateCardText(text) {
   if (typeof text !== "string") {
