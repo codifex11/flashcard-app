@@ -164,7 +164,7 @@ function handleExportCards() {
   showStatusMessage("Cards exported");
 }
 
-// Handles reading and validating an imported JSON file
+// Handles reading and validating an imported JSON, Anki TSV, Quizlet, or CSV file
 function handleImportFile(event) {
   const file = event.target.files && event.target.files[0];
   if (!file) {
@@ -174,49 +174,22 @@ function handleImportFile(event) {
   const reader = new FileReader();
   reader.onload = (loadEvent) => {
     try {
-      const parsedData = JSON.parse(loadEvent.target.result);
-      let rawList = null;
+      const fileContent = loadEvent.target.result;
+      const parsed = parseCardsFromAnyFormat(fileContent, file.name);
 
-      if (Array.isArray(parsedData)) {
-        rawList = parsedData;
-      } else if (parsedData && typeof parsedData === "object" && Array.isArray(parsedData.cards)) {
-        rawList = parsedData.cards;
-      }
-
-      if (!rawList || rawList.length === 0) {
+      if (!parsed.success || parsed.cards.length === 0) {
         showStatusMessage("Invalid file");
         return;
       }
 
-      const validList = [];
-      for (const item of rawList) {
-        if (!item || typeof item !== "object") {
-          continue;
-        }
-        const qVal = validateCardText(typeof item.question === "string" ? item.question : "");
-        const aVal = validateCardText(typeof item.answer === "string" ? item.answer : "");
-        if (qVal.valid && aVal.valid) {
-          validList.push({
-            question: qVal.trimmed,
-            answer: aVal.trimmed,
-            category: typeof item.category === "string" && item.category.trim() ? item.category.trim() : "Custom"
-          });
-        }
-      }
-
-      if (validList.length === 0) {
-        showStatusMessage("Invalid file");
-        return;
-      }
-
-      importCustomCards(validList);
+      importCustomCards(parsed.cards);
       if (state.currentDeckId !== "custom") {
         setCurrentDeck("custom");
       } else {
         updateActiveCards();
       }
       renderAll();
-      showStatusMessage(`Imported ${validList.length} card${validList.length === 1 ? "" : "s"}`);
+      showStatusMessage(`Imported ${parsed.cards.length} card${parsed.cards.length === 1 ? "" : "s"}`);
     } catch (parseError) {
       showStatusMessage("Invalid file");
     } finally {
