@@ -278,6 +278,13 @@ function handleKeyDown(event) {
     return;
   }
 
+  // File export shortcut: Ctrl+E / Cmd+E triggers deck export
+  if ((event.ctrlKey || event.metaKey) && !event.altKey && event.key.toLowerCase() === "e") {
+    event.preventDefault();
+    handleExportCards(event);
+    return;
+  }
+
   // Help shortcut: '?' opens shortcuts cheatsheet anywhere
   if (event.key === "?" || (event.shiftKey && event.key === "/")) {
     event.preventDefault();
