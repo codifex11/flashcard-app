@@ -22,6 +22,7 @@ const elements = {
   progressBar: document.querySelector(".progress-bar"),
   progressFill: document.getElementById("progress-fill"),
   card: document.getElementById("card"),
+  cardArea: document.querySelector(".card-area"),
   cardQuestion: document.getElementById("card-question"),
   cardAnswer: document.getElementById("card-answer"),
   cardSource: document.getElementById("card-source"),

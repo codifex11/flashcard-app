@@ -183,9 +183,8 @@ function handleExportCards() {
   }
 }
 
-// Handles reading and validating an imported JSON, Anki TSV, Quizlet, or CSV file
-function handleImportFile(event) {
-  const file = event.target.files && event.target.files[0];
+// Processes and imports cards from a File object
+function processImportFile(file) {
   if (!file) {
     return;
   }
@@ -213,16 +212,28 @@ function handleImportFile(event) {
     } catch (parseError) {
       showStatusMessage("Invalid file");
     } finally {
-      elements.importInput.value = "";
+      if (elements.importInput) {
+        elements.importInput.value = "";
+      }
     }
   };
 
   reader.onerror = () => {
     showStatusMessage("Invalid file");
-    elements.importInput.value = "";
+    if (elements.importInput) {
+      elements.importInput.value = "";
+    }
   };
 
   reader.readAsText(file);
+}
+
+// Handles reading and validating an imported JSON, Anki TSV, Quizlet, or CSV file
+function handleImportFile(event) {
+  const file = event.target.files && event.target.files[0];
+  if (file) {
+    processImportFile(file);
+  }
 }
 
 // Opens keyboard shortcuts cheatsheet modal
@@ -356,6 +367,24 @@ function attachEventListeners() {
   elements.deleteCardBtn.addEventListener("click", handleDeleteCard);
   elements.exportBtn.addEventListener("click", handleExportCards);
   elements.importInput.addEventListener("change", handleImportFile);
+
+  if (elements.cardArea) {
+    elements.cardArea.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      elements.cardArea.classList.add("is-dragover");
+    });
+    elements.cardArea.addEventListener("dragleave", () => {
+      elements.cardArea.classList.remove("is-dragover");
+    });
+    elements.cardArea.addEventListener("drop", (event) => {
+      event.preventDefault();
+      elements.cardArea.classList.remove("is-dragover");
+      const droppedFile = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0];
+      if (droppedFile) {
+        processImportFile(droppedFile);
+      }
+    });
+  }
 
   const fileLabel = document.querySelector(".file-label");
   if (fileLabel) {
