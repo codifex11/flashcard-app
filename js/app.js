@@ -189,7 +189,8 @@ function handleImportFile(event) {
         updateActiveCards();
       }
       renderAll();
-      showStatusMessage(`Imported ${parsed.cards.length} card${parsed.cards.length === 1 ? "" : "s"}`);
+      const formatSuffix = parsed.format && parsed.format !== "Unknown" ? ` (${parsed.format})` : "";
+      showStatusMessage(`Imported ${parsed.cards.length} card${parsed.cards.length === 1 ? "" : "s"}${formatSuffix}`);
     } catch (parseError) {
       showStatusMessage("Invalid file");
     } finally {
