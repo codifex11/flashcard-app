@@ -568,6 +568,12 @@
   position: relative;
 }
 
+.file-label:focus-visible,
+.file-label:focus-within {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 2.5px;
+}
+
 .file-label input[type="file"] {
   position: absolute;
   width: 1px;
