@@ -169,13 +169,18 @@ function handleExportCards() {
 
   const safeName = (deckTitle || "my-cards").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "cards";
 
-  const exportPayload = {
-    name: deckTitle,
-    cards: exportCards
-  };
-
-  downloadJsonFile(`${safeName}.json`, exportPayload);
-  showStatusMessage(`Exported ${exportCards.length} cards`);
+  if (event && (event.shiftKey || event.altKey)) {
+    const tsvContent = formatCardsAsTsv(exportCards);
+    downloadTextFile(`${safeName}.tsv`, tsvContent, "text/tab-separated-values;charset=utf-8");
+    showStatusMessage(`Exported ${exportCards.length} cards (Anki TSV)`);
+  } else {
+    const exportPayload = {
+      name: deckTitle,
+      cards: exportCards
+    };
+    downloadJsonFile(`${safeName}.json`, exportPayload);
+    showStatusMessage(`Exported ${exportCards.length} cards (JSON)`);
+  }
 }
 
 // Handles reading and validating an imported JSON, Anki TSV, Quizlet, or CSV file
