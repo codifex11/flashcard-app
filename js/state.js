@@ -269,7 +269,9 @@ function markCardKnown() {
   saveStoredKnown(state.known);
   saveStoredReview(state.review);
 
-  if (state.reviewOnly) {
+  if (state.currentDeckId === "weak-spots") {
+    removeWeakSpot(currentCard.id);
+  } else if (state.reviewOnly) {
     updateActiveCards();
   } else {
     state.currentIndex = wrapIndex(state.currentIndex + 1, state.cards.length);
