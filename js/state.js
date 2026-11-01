@@ -386,6 +386,18 @@ function removeWeakSpot(identifier) {
   return false;
 }
 
+// Returns a dynamic virtual deck object for the Weak Spots collection
+function getWeakSpotDeck() {
+  const cards = Array.isArray(state.weakSpots) ? state.weakSpots : [];
+  return {
+    id: "weak-spots",
+    name: "Weak Spots",
+    title: "Weak Spots",
+    group: "Smart Decks",
+    cards: [...cards]
+  };
+}
+
 // Adds a new custom card to the My cards deck and saves it to storage
 function addCustomCard(question, answer, category) {
   const newCard = {
