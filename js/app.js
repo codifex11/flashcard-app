@@ -176,8 +176,10 @@ function handleExportCards() {
     category: card.category || "General"
   }));
 
-  const activeDeckObj = state.decks.find((d) => d.id === state.currentDeckId);
-  const deckTitle = (activeDeckObj && activeDeckObj.title) || "My cards";
+  const activeDeckObj = state.currentDeckId === "weak-spots"
+    ? { title: "Weak Spots" }
+    : state.decks.find((d) => d.id === state.currentDeckId);
+  const deckTitle = (activeDeckObj && (activeDeckObj.title || activeDeckObj.name)) || "My cards";
 
   const safeName = (deckTitle || "my-cards").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "cards";
 
