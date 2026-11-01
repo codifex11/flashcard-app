@@ -189,5 +189,10 @@ if (typeof addWeakSpot === 'function' && typeof removeWeakSpot === 'function') {
   assert(state.weakSpots.length === 0, 'removeWeakSpot removes mastered card');
 }
 
+if (typeof getWeakSpotDeck === 'function') {
+  const d = getWeakSpotDeck();
+  assert(d.id === 'weak-spots' && d.group === 'Smart Decks', 'getWeakSpotDeck generates correct structure');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
