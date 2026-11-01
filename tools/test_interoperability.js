@@ -165,5 +165,19 @@ if (typeof formatCardsAsTsv === 'function' && typeof parseCardsFromAnyFormat ===
   assert(roundtrip.cards[2].category === testDeck[2].category, 'roundtrip preserves category tag');
 }
 
+console.log('\n9. Testing Weak Spot Card Factory & Pruning');
+const statePath = path.join(__dirname, '..', 'js', 'state.js');
+const storagePath = path.join(__dirname, '..', 'js', 'storage.js');
+const storageCode = fs.readFileSync(storagePath, 'utf8');
+const stateCode = fs.readFileSync(statePath, 'utf8');
+vm.runInThisContext(storageCode);
+vm.runInThisContext(stateCode);
+
+if (typeof createWeakSpotCard === 'function') {
+  const norm = createWeakSpotCard({ question: 'What is ACID?', answer: 'Atomicity', source: 'Slide 1' });
+  assert(norm && norm.id.startsWith('weak-'), 'factory generates weak spot id');
+  assert(norm.mistakeCount === 1, 'factory initializes mistake count to 1');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
