@@ -366,6 +366,26 @@ function addWeakSpot(cardData) {
   return normalized;
 }
 
+// Removes a card from weak spots collection by id or question text
+function removeWeakSpot(identifier) {
+  if (!identifier || !Array.isArray(state.weakSpots)) {
+    return false;
+  }
+  const idStr = String(identifier).toLowerCase();
+  const initialLen = state.weakSpots.length;
+  state.weakSpots = state.weakSpots.filter(
+    (c) => c.id.toLowerCase() !== idStr && c.question.toLowerCase() !== idStr
+  );
+  if (state.weakSpots.length !== initialLen) {
+    saveStoredWeakSpots(state.weakSpots);
+    if (state.currentDeckId === "weak-spots") {
+      updateActiveCards();
+    }
+    return true;
+  }
+  return false;
+}
+
 // Adds a new custom card to the My cards deck and saves it to storage
 function addCustomCard(question, answer, category) {
   const newCard = {
