@@ -731,7 +731,8 @@
     const nextAction = findNextAction();
 
     let message = "Review the material and try again.";
-    if (pct >= 90) message = "Excellent work!";
+    if (pct === 100) message = "Flawless! 100% mastery achieved.";
+    else if (pct >= 90) message = "Excellent work!";
     else if (pct >= 70) message = "Great job \u2014 almost there.";
     else if (pct >= 50) message = "Good effort \u2014 keep practicing.";
 
