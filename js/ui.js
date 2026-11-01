@@ -57,6 +57,19 @@ function renderDeckSelect() {
   }
   elements.deckSelect.innerHTML = "";
   
+  // Smart Decks group: Weak Spots dynamically computed from mistakes and review marks
+  const weakSpotCount = Array.isArray(state.weakSpots) ? state.weakSpots.length : 0;
+  const smartGroup = document.createElement("optgroup");
+  smartGroup.label = "Smart Decks";
+  const weakOption = document.createElement("option");
+  weakOption.value = "weak-spots";
+  weakOption.textContent = `🎯 Weak Spots (${weakSpotCount})`;
+  if (state.currentDeckId === "weak-spots") {
+    weakOption.selected = true;
+  }
+  smartGroup.appendChild(weakOption);
+  elements.deckSelect.appendChild(smartGroup);
+
   const groups = {};
   for (const deck of state.decks) {
     const groupName = deck.group || "Other Decks";
