@@ -11,7 +11,8 @@ const STORAGE_KEYS = {
   known: "flashcards.known",
   review: "flashcards.review",
   lastDeck: "flashcards.lastDeck",
-  theme: "flashcards.theme"
+  theme: "flashcards.theme",
+  weakSpots: "flashcards.weakSpots"
 };
 
 // Checks if localStorage is supported and accessible in the current browser environment
