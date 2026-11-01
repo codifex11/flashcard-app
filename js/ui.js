@@ -19,6 +19,7 @@ const elements = {
   fcSubjectTag: document.getElementById("fc-subject-tag"),
   phaseTabs: document.getElementById("phase-tabs"),
   counter: document.getElementById("counter"),
+  counterLabel: document.querySelector(".counter-label"),
   progressBar: document.querySelector(".progress-bar"),
   progressFill: document.getElementById("progress-fill"),
   card: document.getElementById("card"),
@@ -222,6 +223,9 @@ function renderTheme() {
 
 // Updates the card counter text and the visual progress ribbon fill width
 function renderProgress() {
+  if (elements.counterLabel) {
+    elements.counterLabel.textContent = state.currentDeckId === "weak-spots" ? "Weak Spot" : "Card";
+  }
   const total = state.cards.length;
   if (total === 0) {
     elements.counter.textContent = "0 / 0";
