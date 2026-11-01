@@ -179,5 +179,15 @@ if (typeof createWeakSpotCard === 'function') {
   assert(norm.mistakeCount === 1, 'factory initializes mistake count to 1');
 }
 
+if (typeof addWeakSpot === 'function' && typeof removeWeakSpot === 'function') {
+  state.weakSpots = [];
+  addWeakSpot({ question: 'What is 2NF?', answer: 'No partial dependencies' });
+  assert(state.weakSpots.length === 1, 'addWeakSpot adds new card');
+  addWeakSpot({ question: 'what is 2nf?', answer: 'Different answer' });
+  assert(state.weakSpots.length === 1 && state.weakSpots[0].mistakeCount === 2, 'addWeakSpot deduplicates and increments mistake count');
+  removeWeakSpot('what is 2nf?');
+  assert(state.weakSpots.length === 0, 'removeWeakSpot removes mastered card');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
