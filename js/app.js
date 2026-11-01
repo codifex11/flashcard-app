@@ -132,9 +132,21 @@ function handleAddCardSubmit(event) {
   showStatusMessage("Saved");
 }
 
-// Handles deleting the current custom card after confirmation
+// Handles deleting the current custom card or removing current card from weak spots
 function handleDeleteCard() {
-  if (state.currentDeckId !== "custom" || state.cards.length === 0) {
+  if (state.cards.length === 0) {
+    return;
+  }
+  if (state.currentDeckId === "weak-spots") {
+    const card = state.cards[state.currentIndex];
+    if (card) {
+      removeWeakSpot(card.id);
+      renderAll();
+      showStatusMessage("Removed from weak spots");
+    }
+    return;
+  }
+  if (state.currentDeckId !== "custom") {
     return;
   }
   const isConfirmed = window.confirm("Are you sure you want to delete this card?");
