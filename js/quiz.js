@@ -342,13 +342,17 @@
     const correctOptionText = Array.isArray(q.options) && q.options[q.correct] ? q.options[q.correct] : "";
     const answerText = q.explanation ? `${correctOptionText}\n\nExplanation: ${q.explanation}` : correctOptionText;
     const subjName = (quiz.path.subject && quiz.path.subject.name) || "Quiz";
+    const levelObj = (typeof LEVELS !== "undefined" && Array.isArray(LEVELS) && LEVELS.find((l) => l.id === quiz.path.level)) || null;
+    const levelName = levelObj ? levelObj.label : "";
+    const setNum = quiz.path.set ? `Set ${quiz.path.set}` : "";
+    const sourceContext = [subjName, levelName, setNum, q.source].filter(Boolean).join(" · ");
     const category = `${subjName} (Quiz)`;
 
     addWeakSpot({
       question: q.question,
       answer: answerText,
       category: category,
-      source: q.source || "",
+      source: sourceContext || q.source || "",
       origin: "quiz"
     });
   }
