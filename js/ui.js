@@ -363,16 +363,23 @@ function renderButtonStates() {
   elements.knownBtn.disabled = !hasCards;
   elements.reviewBtn.disabled = !hasCards;
 
-  // Deletion is strictly allowed for cards in the custom deck
-  elements.deleteCardBtn.disabled = !hasCards || state.currentDeckId !== "custom";
+  // Deletion is allowed for cards in the custom deck or removing cards from weak spots
+  const canDelete = hasCards && (state.currentDeckId === "custom" || state.currentDeckId === "weak-spots");
+  elements.deleteCardBtn.disabled = !canDelete;
+  elements.deleteCardBtn.textContent = state.currentDeckId === "weak-spots" ? "Remove card" : "Delete card";
 }
 
 // Updates the live study score counter displaying known and review counts with gentle bounce
 function renderScore() {
   const deckId = state.currentDeckId;
-  const knownCount = (state.known[deckId] || []).length;
-  const reviewCount = (state.review[deckId] || []).length;
-  const newScoreText = `Known: ${knownCount} · Review: ${reviewCount}`;
+  let newScoreText = "";
+  if (deckId === "weak-spots") {
+    newScoreText = `Weak Spots: ${state.cards.length} remaining`;
+  } else {
+    const knownCount = (state.known[deckId] || []).length;
+    const reviewCount = (state.review[deckId] || []).length;
+    newScoreText = `Known: ${knownCount} · Review: ${reviewCount}`;
+  }
 
   if (elements.score.textContent !== newScoreText) {
     elements.score.textContent = newScoreText;
