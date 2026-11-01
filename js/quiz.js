@@ -359,6 +359,10 @@
       return;
     }
     session.answers[session.current] = optionIndex;
+    const currentQ = session.questions[session.current];
+    if (currentQ && optionIndex !== currentQ.correct) {
+      recordQuizMistake(currentQ);
+    }
     render({ focus: "next" });
   }
 
