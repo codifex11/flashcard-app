@@ -302,6 +302,17 @@ function markCardReview() {
   saveStoredKnown(state.known);
   saveStoredReview(state.review);
 
+  if (state.currentDeckId !== "weak-spots") {
+    addWeakSpot({
+      id: currentCard.id,
+      question: currentCard.question,
+      answer: currentCard.answer,
+      category: currentCard.category || "Review",
+      source: currentCard.source || "",
+      origin: "review"
+    });
+  }
+
   state.currentIndex = wrapIndex(state.currentIndex + 1, state.cards.length);
   state.isFlipped = false;
 }
