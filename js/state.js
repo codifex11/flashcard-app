@@ -307,6 +307,24 @@ function toggleReviewOnly(enabled) {
   updateActiveCards();
 }
 
+// Constructs a normalized weak spot card object with unique id, timestamps, and source details
+function createWeakSpotCard(data) {
+  if (!data || typeof data !== "object") {
+    return null;
+  }
+  const id = data.id || `weak-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
+  return {
+    id,
+    question: String(data.question || "").trim(),
+    answer: String(data.answer || "").trim(),
+    category: String(data.category || "Weak Spot").trim(),
+    source: data.source ? String(data.source).trim() : "",
+    origin: data.origin || "review",
+    addedAt: data.addedAt || Date.now(),
+    mistakeCount: Number(data.mistakeCount) || 1
+  };
+}
+
 // Adds a new custom card to the My cards deck and saves it to storage
 function addCustomCard(question, answer, category) {
   const newCard = {
