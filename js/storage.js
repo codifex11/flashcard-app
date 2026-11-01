@@ -78,6 +78,11 @@ function loadStoredWeakSpots() {
   return data.filter((card) => card && typeof card.question === "string" && typeof card.answer === "string");
 }
 
+// Saves weak spot cards array to localStorage
+function saveStoredWeakSpots(cards) {
+  saveToStorage(STORAGE_KEYS.weakSpots, Array.isArray(cards) ? cards : []);
+}
+
 // Loads known card ids per deck from localStorage, validating that the result is an object
 function loadStoredKnown() {
   const data = loadFromStorage(STORAGE_KEYS.known, {});
