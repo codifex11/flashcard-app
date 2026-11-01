@@ -14,6 +14,7 @@ const state = {
   isFlipped: false,
   known: {},          // { deckId: [cardId, ...] }
   review: {},         // { deckId: [cardId, ...] }
+  weakSpots: [],      // array of weak spot card objects from reviews & quizzes
   reviewOnly: false,
   theme: "dark"
 };
