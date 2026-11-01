@@ -818,10 +818,18 @@
 
 .card-source-tag {
   margin-top: 0.5rem;
+  padding: 0.2rem 0.55rem;
   font-size: 0.725rem;
   color: var(--color-muted);
+  background-color: color-mix(in srgb, var(--color-ink) 4%, transparent);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
   font-style: italic;
-  display: block;
+  display: inline-block;
+  max-width: 92%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Keyboard Shortcuts Cheatsheet Dialog
