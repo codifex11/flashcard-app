@@ -7,6 +7,7 @@ A quiet, warm flashcard app built with plain HTML, CSS, and JavaScript. Designed
 - **Quiz Mode (default)**: Multiple-choice quizzes generated from course material. Navigate **Department → Year → Semester → Subject → Level (Easy / Medium / Hard) → Set**, get instant feedback with explanations and slide references, and review missed questions at the end. Best scores per set are saved locally.
 - **Paper Index Card Hero**: Realistic 3D flip animation, subtle ruled lines, category stamps, and card deck layering.
 - **Study & Focus Modes**: Track cards with "I knew it" (sage) and "Review again" (blush), plus a dedicated "Review only" mode.
+- **Weak Spot Smart Deck**: Automatically captures quiz questions you miss and cards you mark "Review again" into an auto-generated, deduplicated "Weak Spots" smart deck with lecture slide annotations and mistake counters. Cards automatically graduate when mastered.
 - **Card Controls**: Previous, Next, Flip, Fisher-Yates Shuffle, and Reset Order.
 - **Custom Cards & Interoperability**: Add new cards with inline validation, delete custom cards with confirmation, drag-and-drop file import, full Anki and Quizlet TSV/CSV and JSON import with automatic format detection and HTML tag cleaning, plus export to JSON or native Anki TSV.
 - **Warm Themes**: Soft cream stationery light theme and deep navy-plum dark theme, honoring system preference by default.
