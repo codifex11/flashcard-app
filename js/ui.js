@@ -109,6 +109,32 @@ function renderPhaseBar() {
   if (!elements.studyHierarchyBar || !elements.phaseTabs) {
     return;
   }
+
+  if (state.currentDeckId === "weak-spots") {
+    elements.studyHierarchyBar.style.display = "flex";
+    if (elements.fcBreadcrumbs) {
+      elements.fcBreadcrumbs.innerHTML = "";
+      const deskTag = document.createElement("span");
+      deskTag.className = "fc-dept-tag";
+      deskTag.textContent = "Study Desk";
+      elements.fcBreadcrumbs.appendChild(deskTag);
+      elements.fcBreadcrumbs.appendChild(createCrumbSep());
+
+      const smartTag = document.createElement("span");
+      smartTag.className = "fc-term-tag";
+      smartTag.textContent = "Smart Decks";
+      elements.fcBreadcrumbs.appendChild(smartTag);
+      elements.fcBreadcrumbs.appendChild(createCrumbSep());
+
+      const spotTag = document.createElement("strong");
+      spotTag.className = "fc-subject-tag";
+      spotTag.textContent = `🎯 Weak Spots (${(state.weakSpots || []).length})`;
+      elements.fcBreadcrumbs.appendChild(spotTag);
+    }
+    elements.phaseTabs.innerHTML = "";
+    return;
+  }
+
   const academic = getCurrentAcademicInfo();
   if (!academic) {
     elements.studyHierarchyBar.style.display = "flex";
