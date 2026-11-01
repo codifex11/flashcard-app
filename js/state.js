@@ -325,6 +325,47 @@ function createWeakSpotCard(data) {
   };
 }
 
+// Adds or updates a weak spot card in the collection and persists to storage
+function addWeakSpot(cardData) {
+  if (!cardData || typeof cardData !== "object") {
+    return null;
+  }
+  const normalized = createWeakSpotCard(cardData);
+  if (!normalized || !normalized.question || !normalized.answer) {
+    return null;
+  }
+
+  if (!Array.isArray(state.weakSpots)) {
+    state.weakSpots = [];
+  }
+
+  const existingIdx = state.weakSpots.findIndex(
+    (c) => c.question.toLowerCase() === normalized.question.toLowerCase()
+  );
+
+  if (existingIdx !== -1) {
+    const existing = state.weakSpots[existingIdx];
+    existing.mistakeCount = (existing.mistakeCount || 1) + 1;
+    existing.addedAt = Date.now();
+    if (normalized.source && !existing.source) {
+      existing.source = normalized.source;
+    }
+    saveStoredWeakSpots(state.weakSpots);
+    if (state.currentDeckId === "weak-spots") {
+      updateActiveCards();
+    }
+    return existing;
+  }
+
+  state.weakSpots.push(normalized);
+  saveStoredWeakSpots(state.weakSpots);
+
+  if (state.currentDeckId === "weak-spots") {
+    updateActiveCards();
+  }
+  return normalized;
+}
+
 // Adds a new custom card to the My cards deck and saves it to storage
 function addCustomCard(question, answer, category) {
   const newCard = {
