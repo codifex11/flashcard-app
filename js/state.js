@@ -177,7 +177,9 @@ function updateActiveCards() {
     return;
   }
 
-  if (state.reviewOnly) {
+  if (state.currentDeckId === "weak-spots") {
+    state.cards = Array.isArray(state.weakSpots) ? [...state.weakSpots] : [];
+  } else if (state.reviewOnly) {
     const reviewIds = state.review[state.currentDeckId] || [];
     state.cards = currentDeck.cards.filter((card) => reviewIds.includes(card.id));
   } else {
