@@ -69,6 +69,15 @@ function saveStoredCustomCards(cards) {
   saveToStorage(STORAGE_KEYS.customCards, cards);
 }
 
+// Loads weak spot cards from localStorage, validating schema integrity
+function loadStoredWeakSpots() {
+  const data = loadFromStorage(STORAGE_KEYS.weakSpots, []);
+  if (!Array.isArray(data)) {
+    return [];
+  }
+  return data.filter((card) => card && typeof card.question === "string" && typeof card.answer === "string");
+}
+
 // Loads known card ids per deck from localStorage, validating that the result is an object
 function loadStoredKnown() {
   const data = loadFromStorage(STORAGE_KEYS.known, {});
