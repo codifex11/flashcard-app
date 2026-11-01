@@ -337,6 +337,22 @@
     };
   }
 
+  function recordQuizMistake(q) {
+    if (!q || typeof addWeakSpot !== "function") return;
+    const correctOptionText = Array.isArray(q.options) && q.options[q.correct] ? q.options[q.correct] : "";
+    const answerText = q.explanation ? `${correctOptionText}\n\nExplanation: ${q.explanation}` : correctOptionText;
+    const subjName = (quiz.path.subject && quiz.path.subject.name) || "Quiz";
+    const category = `${subjName} (Quiz)`;
+
+    addWeakSpot({
+      question: q.question,
+      answer: answerText,
+      category: category,
+      source: q.source || "",
+      origin: "quiz"
+    });
+  }
+
   function answer(optionIndex) {
     const session = quiz.session;
     if (!session || session.finished || session.answers[session.current] !== null) {
