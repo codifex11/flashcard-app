@@ -137,6 +137,7 @@ function initState() {
 
   state.known = loadStoredKnown();
   state.review = loadStoredReview();
+  state.weakSpots = loadStoredWeakSpots();
 
   const savedDeckId = loadStoredLastDeck();
   const deckExists = state.decks.some((deck) => deck.id === savedDeckId);
