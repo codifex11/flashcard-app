@@ -763,7 +763,21 @@
       h("div", { class: "quiz-actions" },
         h("div", { class: "quiz-actions-group" },
           h("button", { type: "button", class: "quiz-btn-quiet", onclick: () => choose("set", quiz.path.set), text: "Retry set" }),
-          h("button", { type: "button", class: "quiz-btn-quiet", onclick: () => truncatePath(5), text: "All sets" })
+          h("button", { type: "button", class: "quiz-btn-quiet", onclick: () => truncatePath(5), text: "All sets" }),
+          missed.length ? h("button", {
+            type: "button",
+            class: "quiz-btn-quiet",
+            onclick: () => {
+              setMode("flashcards");
+              if (typeof setCurrentDeck === "function") {
+                setCurrentDeck("weak-spots");
+              }
+              if (typeof renderAll === "function") {
+                renderAll();
+              }
+            },
+            text: `🎯 Practice Weak Spots (${missed.length}) \u2192`
+          }) : null
         ),
         nextAction ? h("button", { type: "button", class: "quiz-btn-primary", onclick: nextAction.run, text: nextAction.label }) : null
       ),
