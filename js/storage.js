@@ -83,6 +83,11 @@ function saveStoredWeakSpots(cards) {
   saveToStorage(STORAGE_KEYS.weakSpots, Array.isArray(cards) ? cards : []);
 }
 
+// Clears all stored weak spots from localStorage
+function clearStoredWeakSpots() {
+  saveToStorage(STORAGE_KEYS.weakSpots, []);
+}
+
 // Loads known card ids per deck from localStorage, validating that the result is an object
 function loadStoredKnown() {
   const data = loadFromStorage(STORAGE_KEYS.known, {});
