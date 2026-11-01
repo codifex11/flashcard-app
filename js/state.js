@@ -162,6 +162,9 @@ function initState() {
 
 // Retrieves the deck object matching the current deck ID
 function getCurrentDeck() {
+  if (state.currentDeckId === "weak-spots") {
+    return getWeakSpotDeck();
+  }
   return state.decks.find((deck) => deck.id === state.currentDeckId) || state.decks[0];
 }
 
