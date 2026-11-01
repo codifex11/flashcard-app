@@ -308,7 +308,11 @@ function formatCardsAsTsv(cards) {
   for (const card of cards) {
     if (!card) continue;
     const q = String(card.question || "").replace(/\t/g, " ").replace(/\r?\n/g, "<br>");
-    const a = String(card.answer || "").replace(/\t/g, " ").replace(/\r?\n/g, "<br>");
+    let a = String(card.answer || "").replace(/\t/g, " ").replace(/\r?\n/g, "<br>");
+    if (card.source) {
+      const src = String(card.source).replace(/\t/g, " ").replace(/\r?\n/g, " ");
+      a += `<br><small><i>Source: ${src}</i></small>`;
+    }
     const cat = String(card.category || "Custom").replace(/\t/g, " ").replace(/\r?\n/g, " ");
     lines.push(`${q}\t${a}\t${cat}`);
   }
