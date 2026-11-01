@@ -288,7 +288,8 @@ function renderCard() {
   // Update corner category stamp
   const categoryFront = document.getElementById("card-category-front");
   const categoryBack = document.getElementById("card-category-back");
-  const categoryText = currentCard.category || "General";
+  const countTag = currentCard.mistakeCount && currentCard.mistakeCount > 1 ? ` (×${currentCard.mistakeCount})` : "";
+  const categoryText = (currentCard.category || "General") + countTag;
   if (categoryFront) {
     categoryFront.textContent = categoryText;
   }
@@ -298,8 +299,9 @@ function renderCard() {
 
   // Update source reference on back
   if (elements.cardSource) {
-    if (currentCard.sourceRef) {
-      elements.cardSource.textContent = `📖 ${currentCard.sourceRef}`;
+    const src = currentCard.source || currentCard.sourceRef;
+    if (src) {
+      elements.cardSource.textContent = `📖 ${src}`;
       elements.cardSource.style.display = "block";
     } else {
       elements.cardSource.textContent = "";
