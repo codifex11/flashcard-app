@@ -245,7 +245,10 @@ function renderCard() {
     elements.emptyMessage.hidden = false;
     let title = "";
     let desc = "";
-    if (state.reviewOnly) {
+    if (state.currentDeckId === "weak-spots") {
+      title = "No Weak Spots!";
+      desc = "Great job! Any quiz questions you miss or cards you mark \"Review again\" will appear here for focused study.";
+    } else if (state.reviewOnly) {
       title = "All Reviewed!";
       desc = "No cards marked for review in this deck.";
     } else if (state.currentDeckId === "custom") {
