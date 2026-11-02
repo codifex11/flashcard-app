@@ -105,6 +105,16 @@ function handleDeckChange(event) {
   renderAll();
 }
 
+// Handles toggling audio sound effects mute state
+function handleAudioToggle() {
+  if (typeof toggleAudioMute === "function") {
+    toggleAudioMute();
+  }
+  if (typeof renderAudioState === "function") {
+    renderAudioState();
+  }
+}
+
 // Handles toggling the light and dark color theme
 function handleThemeToggle() {
   toggleTheme();
@@ -321,6 +331,13 @@ function handleKeyDown(event) {
     return;
   }
 
+  // Audio mute toggle shortcut: 'M' or 'm' toggles sound effects globally
+  if (event.key === "m" || event.key === "M") {
+    event.preventDefault();
+    handleAudioToggle();
+    return;
+  }
+
   const isDialogOpen = (elements.addDialog && elements.addDialog.open) ||
     document.getElementById("shortcuts-dialog")?.open;
   const isQuizMode = document.documentElement.getAttribute("data-mode") === "quiz";
@@ -358,6 +375,9 @@ function handleKeyDown(event) {
 // Binds all DOM elements to their respective interaction handlers
 function attachEventListeners() {
   elements.deckSelect.addEventListener("change", handleDeckChange);
+  if (elements.audioToggle) {
+    elements.audioToggle.addEventListener("click", handleAudioToggle);
+  }
   elements.themeToggle.addEventListener("click", handleThemeToggle);
   elements.card.addEventListener("click", handleCardFlip);
 
