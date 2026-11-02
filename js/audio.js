@@ -235,3 +235,41 @@ function playReview() {
     // Graceful silence
   }
 }
+
+
+/**
+ * Synthesizes an uplifting ascending chime when completing a quiz set with 100% mastery.
+ * Arpeggiates C5 -> E5 -> G5 -> C6 with delicate shimmer, providing rewarding celebration.
+ */
+function playQuizComplete() {
+  if (isMutedState) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const notes = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+    const baseTime = ctx.currentTime;
+    const noteGap = 0.07;
+    const noteDuration = 0.38;
+
+    notes.forEach((freq, index) => {
+      const startTime = baseTime + index * noteGap;
+      const osc = ctx.createOscillator();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, startTime);
+
+      const gainNode = ctx.createGain();
+      gainNode.gain.setValueAtTime(0.001, startTime);
+      gainNode.gain.linearRampToValueAtTime(0.05, startTime + 0.015);
+      gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + noteDuration);
+
+      osc.connect(gainNode);
+      gainNode.connect(ctx.destination);
+
+      osc.start(startTime);
+      osc.stop(startTime + noteDuration);
+    });
+  } catch (err) {
+    // Graceful silence
+  }
+}
