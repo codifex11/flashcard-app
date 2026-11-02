@@ -12,7 +12,8 @@ const STORAGE_KEYS = {
   review: "flashcards.review",
   lastDeck: "flashcards.lastDeck",
   theme: "flashcards.theme",
-  weakSpots: "flashcards.weakSpots"
+  weakSpots: "flashcards.weakSpots",
+  audioMuted: "flashcards.audio_muted"
 };
 
 // Checks if localStorage is supported and accessible in the current browser environment
@@ -133,4 +134,15 @@ function loadStoredTheme() {
 // Saves the user theme preference to localStorage
 function saveStoredTheme(theme) {
   saveToStorage(STORAGE_KEYS.theme, theme);
+}
+
+// Loads the audio mute preference from localStorage
+function loadStoredAudioMuted() {
+  const muted = loadFromStorage(STORAGE_KEYS.audioMuted, false);
+  return typeof muted === "boolean" ? muted : false;
+}
+
+// Saves the audio mute preference to localStorage
+function saveStoredAudioMuted(isMuted) {
+  saveToStorage(STORAGE_KEYS.audioMuted, Boolean(isMuted));
 }
