@@ -81,6 +81,9 @@ function handleKnownCard() {
     return;
   }
   markCardKnown();
+  if (typeof playKnown === "function") {
+    playKnown();
+  }
   renderAll();
 }
 
@@ -90,6 +93,9 @@ function handleReviewCard() {
     return;
   }
   markCardReview();
+  if (typeof playReview === "function") {
+    playReview();
+  }
   renderAll();
 }
 
