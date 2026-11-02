@@ -203,3 +203,35 @@ function playKnown() {
     // Graceful silence
   }
 }
+
+/**
+ * Synthesizes a dampened woodblock thud when marking a card for review.
+ * A warm, low triangle waveform with rapid decay simulates sorting a card into the study pile.
+ */
+function playReview() {
+  if (isMutedState) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const now = ctx.currentTime;
+    const duration = 0.12;
+
+    const osc = ctx.createOscillator();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(210, now);
+    osc.frequency.exponentialRampToValueAtTime(140, now + duration);
+
+    const gainNode = ctx.createGain();
+    gainNode.gain.setValueAtTime(0.06, now);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    osc.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + duration);
+  } catch (err) {
+    // Graceful silence
+  }
+}
