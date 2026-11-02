@@ -58,3 +58,45 @@ function createNoiseBuffer(ctx, durationSeconds) {
   }
   return buffer;
 }
+
+/**
+ * Synthesizes a gentle stationery paper rustle when an index card is flipped.
+ * Utilizes bandpass-filtered noise swept downward with a soft exponential decay.
+ */
+function playCardFlip() {
+  if (isMutedState) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const now = ctx.currentTime;
+    const duration = 0.16;
+    const noiseBuffer = createNoiseBuffer(ctx, duration);
+    if (!noiseBuffer) return;
+
+    const source = ctx.createBufferSource();
+    source.buffer = noiseBuffer;
+
+    // Bandpass filter to sculpt white noise into paper friction texture
+    const filter = ctx.createBiquadFilter();
+    filter.type = "bandpass";
+    filter.Q.setValueAtTime(1.8, now);
+    filter.frequency.setValueAtTime(750, now);
+    filter.frequency.exponentialRampToValueAtTime(320, now + duration);
+
+    // Soft whisper-level gain envelope
+    const gainNode = ctx.createGain();
+    gainNode.gain.setValueAtTime(0.001, now);
+    gainNode.gain.linearRampToValueAtTime(0.08, now + 0.02);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    source.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
+    source.start(now);
+    source.stop(now + duration);
+  } catch (err) {
+    // Graceful silence on any platform audio restriction
+  }
+}
