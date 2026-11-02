@@ -133,3 +133,35 @@ function playCardTurn() {
     // Graceful silence on any platform audio restriction
   }
 }
+
+/**
+ * Synthesizes a delicate tactile micro-click when selecting an answer option.
+ * Extremely short duration (14ms) provides crisp tactile confirmation without distraction.
+ */
+function playOptionSelect() {
+  if (isMutedState) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const now = ctx.currentTime;
+    const duration = 0.014;
+
+    const osc = ctx.createOscillator();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(720, now);
+    osc.frequency.exponentialRampToValueAtTime(360, now + duration);
+
+    const gainNode = ctx.createGain();
+    gainNode.gain.setValueAtTime(0.06, now);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    osc.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + duration);
+  } catch (err) {
+    // Graceful silence
+  }
+}
