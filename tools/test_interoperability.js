@@ -194,5 +194,41 @@ if (typeof getWeakSpotDeck === 'function') {
   assert(d.id === 'weak-spots' && d.group === 'Smart Decks', 'getWeakSpotDeck generates correct structure');
 }
 
+console.log('\n10. Testing Procedural Audio Engine & Mute Persistence');
+if (typeof window === 'undefined') {
+  const mockStorage = {};
+  global.window = {
+    localStorage: {
+      getItem: (k) => (k in mockStorage ? mockStorage[k] : null),
+      setItem: (k, v) => { mockStorage[k] = String(v); },
+      removeItem: (k) => { delete mockStorage[k]; }
+    }
+  };
+}
+
+const audioPath = path.join(__dirname, '..', 'js', 'audio.js');
+const audioCode = fs.readFileSync(audioPath, 'utf8');
+vm.runInThisContext(audioCode);
+
+if (typeof loadStoredAudioMuted === 'function' && typeof saveStoredAudioMuted === 'function') {
+  saveStoredAudioMuted(true);
+  assert(loadStoredAudioMuted() === true, 'audioMuted stores and loads true boolean');
+  saveStoredAudioMuted(false);
+  assert(loadStoredAudioMuted() === false, 'audioMuted stores and loads false boolean');
+}
+
+if (typeof isAudioMuted === 'function' && typeof setAudioMuted === 'function' && typeof toggleAudioMute === 'function') {
+  setAudioMuted(false);
+  assert(isAudioMuted() === false, 'isAudioMuted reflects set value false');
+  const toggled = toggleAudioMute();
+  assert(toggled === true && isAudioMuted() === true, 'toggleAudioMute flips state to true');
+  toggleAudioMute();
+  assert(isAudioMuted() === false, 'toggleAudioMute flips state back to false');
+}
+
+if (typeof isAudioSupported === 'function') {
+  assert(typeof isAudioSupported() === 'boolean', 'isAudioSupported returns safe boolean in Node.js');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
