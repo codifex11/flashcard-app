@@ -44,3 +44,17 @@ function getAudioContext() {
   }
   return audioContextInstance;
 }
+
+// Procedurally generates an audio buffer filled with uniform white noise
+function createNoiseBuffer(ctx, durationSeconds) {
+  if (!ctx) return null;
+  const duration = durationSeconds || 1.0;
+  const bufferSize = Math.floor(ctx.sampleRate * duration);
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const output = buffer.getChannelData(0);
+  for (let i = 0; i < bufferSize; i++) {
+    // Generate white noise values between -1.0 and 1.0
+    output[i] = Math.random() * 2 - 1;
+  }
+  return buffer;
+}
