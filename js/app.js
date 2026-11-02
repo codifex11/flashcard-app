@@ -11,6 +11,9 @@ function handleCardFlip() {
     return;
   }
   flipCard();
+  if (typeof playCardFlip === "function") {
+    playCardFlip();
+  }
   renderCard();
 }
 
