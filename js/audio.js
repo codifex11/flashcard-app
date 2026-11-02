@@ -165,3 +165,41 @@ function playOptionSelect() {
     // Graceful silence
   }
 }
+
+/**
+ * Synthesizes a gentle harmonic chime when marking a card as known.
+ * Dual sine waves (C5 and E5) create a pleasant, warm consonance.
+ */
+function playKnown() {
+  if (isMutedState) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const now = ctx.currentTime;
+    const duration = 0.32;
+
+    const osc1 = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    osc1.type = "sine";
+    osc2.type = "sine";
+    osc1.frequency.setValueAtTime(523.25, now); // C5
+    osc2.frequency.setValueAtTime(659.25, now); // E5
+
+    const gainNode = ctx.createGain();
+    gainNode.gain.setValueAtTime(0.001, now);
+    gainNode.gain.linearRampToValueAtTime(0.06, now + 0.015);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    osc1.connect(gainNode);
+    osc2.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
+    osc1.start(now);
+    osc2.start(now);
+    osc1.stop(now + duration);
+    osc2.stop(now + duration);
+  } catch (err) {
+    // Graceful silence
+  }
+}
