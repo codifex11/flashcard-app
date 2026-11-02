@@ -8,6 +8,7 @@ A quiet, warm flashcard app built with plain HTML, CSS, and JavaScript. Designed
 - **Paper Index Card Hero**: Realistic 3D flip animation, subtle ruled lines, category stamps, and card deck layering.
 - **Study & Focus Modes**: Track cards with "I knew it" (sage) and "Review again" (blush), plus a dedicated "Review only" mode.
 - **Weak Spot Smart Deck**: Automatically captures quiz questions you miss and cards you mark "Review again" into an auto-generated, deduplicated "Weak Spots" smart deck with lecture slide annotations and mistake counters. Cards automatically graduate when mastered.
+- **Procedural Tactile Audio (Web Audio ASMR)**: Native browser AudioContext synthesizes subtle acoustic feedback with zero MP3/WAV files and zero libraries — gentle paper rustle when flipping cards, warm wooden desk tap when advancing cards, delicate micro-click when choosing quiz answers, harmonic chime for known cards, and an ascending arpeggio on 100% quiz completion. Easily muted at any time with an `M` keypress or the header sound toggle.
 - **Card Controls**: Previous, Next, Flip, Fisher-Yates Shuffle, and Reset Order.
 - **Custom Cards & Interoperability**: Add new cards with inline validation, delete custom cards with confirmation, drag-and-drop file import, full Anki and Quizlet TSV/CSV and JSON import with automatic format detection and HTML tag cleaning, plus export to JSON or native Anki TSV.
 - **Warm Themes**: Soft cream stationery light theme and deep navy-plum dark theme, honoring system preference by default.
@@ -67,6 +68,7 @@ flashcard-app/
     ├── data.js        Built-in decks and card content
     ├── utils.js       Shuffle, text validation, Anki/Quizlet/CSV parsing, and download helpers
     ├── storage.js     Safe localStorage operations with fallbacks
+    ├── audio.js       Procedural Web Audio synthesis (paper rustle, desk tap, chimes)
     ├── state.js       Application state container and mutators
     ├── ui.js          DOM updates, card animations, and dialog states
     ├── app.js         Event listeners, keyboard shortcuts, drag-and-drop, and startup
@@ -80,6 +82,11 @@ Flashcards mode:
 - `Space` or `Enter`: Flip the current card (when not typing in form inputs)
 - `Right Arrow` (`→`): Next card
 - `Left Arrow` (`←`): Previous card
+- `K` or `1`: Mark as known
+- `R` or `2`: Mark for review
+- `S`: Shuffle deck
+- `M`: Mute / unmute procedural sound effects globally (Quiz & Flashcards)
+- `?`: Open keyboard shortcuts cheat sheet
 - `Ctrl+O` / `Cmd+O`: Import cards (JSON, Anki TSV, Quizlet CSV, or plain text)
 - `Ctrl+E` / `Cmd+E`: Export cards to JSON (or `Shift+Click` Export for native Anki TSV)
 - `Escape`: Close the card creation dialog
