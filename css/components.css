@@ -30,7 +30,8 @@
   border-color: var(--color-ink);
 }
 
-/* Theme toggle button */
+/* Header action buttons: Audio and Theme toggles */
+#audio-toggle,
 #theme-toggle {
   width: 44px;
   height: 44px;
@@ -39,13 +40,25 @@
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
   color: var(--color-text);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
 }
 
+#audio-toggle:hover,
 #theme-toggle:hover {
   border-color: var(--color-ink);
   background-color: var(--color-surface-panel);
 }
 
+#audio-toggle:active,
+#theme-toggle:active {
+  transform: translateY(1px);
+}
+
+.audio-icon,
 .theme-icon {
   display: inline-flex;
   align-items: center;
