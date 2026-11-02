@@ -273,3 +273,34 @@ function playQuizComplete() {
     // Graceful silence
   }
 }
+
+
+// Initialize mute state from persistent storage if available
+if (typeof loadStoredAudioMuted === "function") {
+  isMutedState = loadStoredAudioMuted();
+}
+
+/**
+ * Checks whether audio sound effects are currently muted.
+ */
+function isAudioMuted() {
+  return isMutedState;
+}
+
+/**
+ * Updates the audio mute state and persists it to browser storage.
+ */
+function setAudioMuted(muted) {
+  isMutedState = Boolean(muted);
+  if (typeof saveStoredAudioMuted === "function") {
+    saveStoredAudioMuted(isMutedState);
+  }
+  return isMutedState;
+}
+
+/**
+ * Toggles the audio mute state between active and muted.
+ */
+function toggleAudioMute() {
+  return setAudioMuted(!isMutedState);
+}
