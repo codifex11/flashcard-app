@@ -100,3 +100,36 @@ function playCardFlip() {
     // Graceful silence on any platform audio restriction
   }
 }
+
+/**
+ * Synthesizes a soft wooden desk tap when advancing or rewinding cards.
+ * Combines a subtle low-frequency resonance with a tiny dampened impact click.
+ */
+function playCardTurn() {
+  if (isMutedState) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const now = ctx.currentTime;
+    const duration = 0.09;
+
+    // Low wooden body resonance
+    const osc = ctx.createOscillator();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(130, now);
+    osc.frequency.exponentialRampToValueAtTime(65, now + duration);
+
+    const gainNode = ctx.createGain();
+    gainNode.gain.setValueAtTime(0.09, now);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    osc.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + duration);
+  } catch (err) {
+    // Graceful silence on any platform audio restriction
+  }
+}
