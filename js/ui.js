@@ -11,6 +11,7 @@ let statusMessageTimer = null;
 // References to cached DOM elements for fast access
 const elements = {
   deckSelect: document.getElementById("deck-select"),
+  audioToggle: document.getElementById("audio-toggle"),
   themeToggle: document.getElementById("theme-toggle"),
   studyHierarchyBar: document.getElementById("study-hierarchy-bar"),
   fcBreadcrumbs: document.getElementById("fc-breadcrumbs"),
@@ -247,6 +248,25 @@ function renderTheme() {
   }
 }
 
+// Updates the audio toggle button state and SVG icon according to mute state
+function renderAudioState() {
+  if (!elements.audioToggle) {
+    return;
+  }
+  const muted = typeof isAudioMuted === "function" ? isAudioMuted() : false;
+  elements.audioToggle.setAttribute(
+    "aria-label",
+    muted ? "Unmute sound effects (M)" : "Mute sound effects (M)"
+  );
+  elements.audioToggle.setAttribute("aria-pressed", (!muted).toString());
+  const iconContainer = elements.audioToggle.querySelector(".audio-icon") || elements.audioToggle;
+  if (muted) {
+    iconContainer.innerHTML = `<svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="9 4 4 8 2 8 2 12 4 12 9 16 9 4"/><line x1="14" y1="8" x2="18" y2="12"/><line x1="18" y1="8" x2="14" y2="12"/></svg>`;
+  } else {
+    iconContainer.innerHTML = `<svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="9 4 4 8 2 8 2 12 4 12 9 16 9 4"/><path d="M13 7.5a4 4 0 0 1 0 5"/><path d="M15.5 5a7.5 7.5 0 0 1 0 10"/></svg>`;
+  }
+}
+
 // Updates the card counter text and the visual progress ribbon fill width
 function renderProgress() {
   if (elements.counterLabel) {
@@ -397,6 +417,7 @@ function renderReviewToggle() {
 // Performs a complete UI render across all visual components
 function renderAll() {
   renderTheme();
+  renderAudioState();
   renderDeckSelect();
   renderPhaseBar();
   renderProgress();
