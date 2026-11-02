@@ -23,6 +23,9 @@ function handleNextCard() {
     return;
   }
   nextCard();
+  if (typeof playCardTurn === "function") {
+    playCardTurn();
+  }
   renderProgress();
   renderCard();
   renderButtonStates();
@@ -34,6 +37,9 @@ function handlePrevCard() {
     return;
   }
   prevCard();
+  if (typeof playCardTurn === "function") {
+    playCardTurn();
+  }
   renderProgress();
   renderCard();
   renderButtonStates();
