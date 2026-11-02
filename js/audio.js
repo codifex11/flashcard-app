@@ -307,14 +307,16 @@ function toggleAudioMute() {
 
 
 // Automatically resume AudioContext on first user interaction to respect browser autoplay policies
-if (typeof window !== "undefined") {
+if (typeof window !== "undefined" && typeof window.addEventListener === "function") {
   const resumeAudioOnGesture = () => {
     const ctx = getAudioContext();
     if (ctx && ctx.state === "suspended") {
       ctx.resume().catch(() => {});
     }
-    window.removeEventListener("pointerdown", resumeAudioOnGesture);
-    window.removeEventListener("keydown", resumeAudioOnGesture);
+    if (typeof window.removeEventListener === "function") {
+      window.removeEventListener("pointerdown", resumeAudioOnGesture);
+      window.removeEventListener("keydown", resumeAudioOnGesture);
+    }
   };
   window.addEventListener("pointerdown", resumeAudioOnGesture, { passive: true });
   window.addEventListener("keydown", resumeAudioOnGesture, { passive: true });

@@ -501,6 +501,9 @@ function attachEventListeners() {
 function initApp() {
   initState();
   renderAll();
+  if (typeof renderAudioState === "function") {
+    renderAudioState();
+  }
   attachEventListeners();
 }
 
