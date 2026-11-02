@@ -382,7 +382,11 @@
       session.current += 1;
     } else {
       session.finished = true;
-      saveScore(quiz.path.subject.id, quiz.path.level, quiz.path.set, countCorrect(session), session.questions.length);
+      const correctCount = countCorrect(session);
+      saveScore(quiz.path.subject.id, quiz.path.level, quiz.path.set, correctCount, session.questions.length);
+      if (session.questions.length > 0 && correctCount === session.questions.length && typeof playQuizComplete === "function") {
+        playQuizComplete();
+      }
     }
     render({ focus: "heading" });
   }
