@@ -230,5 +230,17 @@ if (typeof isAudioSupported === 'function') {
   assert(typeof isAudioSupported() === 'boolean', 'isAudioSupported returns safe boolean in Node.js');
 }
 
+console.log('\n11. Testing Hands-Free Voice Study Engine');
+const speechPath = path.join(__dirname, '..', 'js', 'speech.js');
+const speechCode = fs.readFileSync(speechPath, 'utf8');
+vm.runInThisContext(speechCode);
+
+if (typeof sanitizeSpeechText === 'function') {
+  assert(sanitizeSpeechText('**ACID** properties in `SQL`') === 'ACID properties in SQL', 'strips markdown bold and backticks');
+  assert(sanitizeSpeechText('Line 1<br><b>Bold</b> and <i>Italic</i>') === 'Line 1 Bold and Italic', 'strips HTML tags and preserves text');
+  assert(sanitizeSpeechText('- Item 1\n- Item 2') === 'Item 1 Item 2', 'cleans list bullet markers and normalizes spaces');
+  assert(sanitizeSpeechText('') === '', 'handles empty string safely');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
