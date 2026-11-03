@@ -207,3 +207,31 @@ function speakCardFace(card, isFlipped) {
   const prefix = isFlipped ? "Answer: " : "Question: ";
   return speakText(`${prefix}${clean}`);
 }
+
+
+/**
+ * Sequentially reads the question, pauses briefly, and then reads the answer aloud.
+ * Ideal for hands-free audio revision while walking or commuting.
+ */
+function speakEntireCard(card, onComplete) {
+  if (!card) return false;
+  const qClean = sanitizeSpeechText(card.question);
+  const aClean = sanitizeSpeechText(card.answer);
+  if (!qClean) return false;
+
+  return speakText(`Question: ${qClean}`, {
+    onEnd: () => {
+      // Gentle 900ms pause before revealing the answer
+      setTimeout(() => {
+        if (!isSpeechSupported()) return;
+        speakText(`Answer: ${aClean}`, {
+          onEnd: () => {
+            if (typeof onComplete === "function") {
+              onComplete();
+            }
+          }
+        });
+      }, 900);
+    }
+  });
+}
