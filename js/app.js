@@ -10,6 +10,9 @@ function handleCardFlip() {
   if (state.cards.length === 0) {
     return;
   }
+  if (typeof cancelSpeech === "function" && typeof isSpeaking === "function" && isSpeaking()) {
+    cancelSpeech();
+  }
   flipCard();
   if (typeof playCardFlip === "function") {
     playCardFlip();
@@ -21,6 +24,9 @@ function handleCardFlip() {
 function handleNextCard() {
   if (state.cards.length < 2) {
     return;
+  }
+  if (typeof cancelSpeech === "function" && typeof isSpeaking === "function" && isSpeaking()) {
+    cancelSpeech();
   }
   nextCard();
   if (typeof playCardTurn === "function") {
@@ -35,6 +41,9 @@ function handleNextCard() {
 function handlePrevCard() {
   if (state.cards.length < 2) {
     return;
+  }
+  if (typeof cancelSpeech === "function" && typeof isSpeaking === "function" && isSpeaking()) {
+    cancelSpeech();
   }
   prevCard();
   if (typeof playCardTurn === "function") {
@@ -101,6 +110,9 @@ function handleReviewCard() {
 
 // Handles switching the active deck from dropdown
 function handleDeckChange(event) {
+  if (typeof cancelSpeech === "function") {
+    cancelSpeech();
+  }
   setCurrentDeck(event.target.value);
   renderAll();
 }
