@@ -81,3 +81,70 @@ function cancelSpeech() {
     renderVoiceState();
   }
 }
+
+
+/**
+ * Synthesizes and speaks text aloud using the browser SpeechSynthesis engine.
+ * Supports callbacks and rate/pitch parameters.
+ */
+function speakText(text, options) {
+  if (!isSpeechSupported() || !text || typeof text !== "string") {
+    return false;
+  }
+
+  const opts = options || {};
+  cancelSpeech();
+
+  try {
+    const utterance = new window.SpeechSynthesisUtterance(text);
+    const voice = getBestVoice();
+    if (voice) {
+      utterance.voice = voice;
+      utterance.lang = voice.lang || "en-US";
+    }
+
+    utterance.rate = typeof opts.rate === "number" ? opts.rate : speechState.rate;
+    utterance.pitch = typeof opts.pitch === "number" ? opts.pitch : speechState.pitch;
+    utterance.volume = 1.0;
+
+    utterance.onstart = () => {
+      speechState.isSpeaking = true;
+      speechState.currentUtterance = utterance;
+      if (typeof renderVoiceState === "function") {
+        renderVoiceState();
+      }
+      if (typeof opts.onStart === "function") {
+        opts.onStart();
+      }
+    };
+
+    utterance.onend = () => {
+      speechState.isSpeaking = false;
+      speechState.currentUtterance = null;
+      if (typeof renderVoiceState === "function") {
+        renderVoiceState();
+      }
+      if (typeof opts.onEnd === "function") {
+        opts.onEnd();
+      }
+    };
+
+    utterance.onerror = (event) => {
+      speechState.isSpeaking = false;
+      speechState.currentUtterance = null;
+      if (typeof renderVoiceState === "function") {
+        renderVoiceState();
+      }
+      if (typeof opts.onError === "function") {
+        opts.onError(event);
+      }
+    };
+
+    window.speechSynthesis.speak(utterance);
+    return true;
+  } catch (err) {
+    speechState.isSpeaking = false;
+    speechState.currentUtterance = null;
+    return false;
+  }
+}
