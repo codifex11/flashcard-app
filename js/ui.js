@@ -11,6 +11,7 @@ let statusMessageTimer = null;
 // References to cached DOM elements for fast access
 const elements = {
   deckSelect: document.getElementById("deck-select"),
+  voiceToggle: document.getElementById("voice-toggle"),
   audioToggle: document.getElementById("audio-toggle"),
   themeToggle: document.getElementById("theme-toggle"),
   studyHierarchyBar: document.getElementById("study-hierarchy-bar"),
@@ -267,6 +268,29 @@ function renderAudioState() {
   }
 }
 
+// Updates the voice read aloud button state and SVG icon according to speaking state
+function renderVoiceState() {
+  if (!elements.voiceToggle) {
+    return;
+  }
+  const speaking = typeof isSpeaking === "function" ? isSpeaking() : false;
+  elements.voiceToggle.setAttribute(
+    "aria-label",
+    speaking ? "Stop reading aloud (V)" : "Read card aloud (V)"
+  );
+  elements.voiceToggle.setAttribute("aria-pressed", speaking.toString());
+  elements.voiceToggle.classList.toggle("is-speaking", speaking);
+
+  const iconContainer = elements.voiceToggle.querySelector(".voice-icon") || elements.voiceToggle;
+  if (speaking) {
+    // Speaking state: Animated sound wave doodle
+    iconContainer.innerHTML = `<svg class="voice-wave-anim" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v14M6 6v8M14 6v8M2 9v2M18 9v2"/></svg>`;
+  } else {
+    // Idle state: Crisp stationery microphone
+    iconContainer.innerHTML = `<svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="6" height="10" rx="3"/><path d="M4 9a6 6 0 0 0 12 0"/><line x1="10" y1="15" x2="10" y2="18"/><line x1="7" y1="18" x2="13" y2="18"/></svg>`;
+  }
+}
+
 // Updates the card counter text and the visual progress ribbon fill width
 function renderProgress() {
   if (elements.counterLabel) {
@@ -418,6 +442,7 @@ function renderReviewToggle() {
 function renderAll() {
   renderTheme();
   renderAudioState();
+  renderVoiceState();
   renderDeckSelect();
   renderPhaseBar();
   renderProgress();
