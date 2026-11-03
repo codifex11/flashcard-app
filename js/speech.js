@@ -22,3 +22,39 @@ const speechState = {
   pitch: 1.0,
   autoRead: false
 };
+
+
+/**
+ * Discovers and returns the highest quality English voice available in the browser.
+ * Prioritizes natural and high-clarity synthesizer profiles.
+ */
+function getBestVoice() {
+  if (!isSpeechSupported()) {
+    return null;
+  }
+  const voices = window.speechSynthesis.getVoices();
+  if (!voices || voices.length === 0) {
+    return null;
+  }
+
+  // Find English voices
+  const enVoices = voices.filter((v) => v.lang && v.lang.toLowerCase().startsWith("en"));
+  if (enVoices.length === 0) {
+    return voices[0] || null;
+  }
+
+  // Prefer natural sounding voices
+  const preferred = enVoices.find((v) => {
+    const name = v.name.toLowerCase();
+    return (
+      name.includes("natural") ||
+      name.includes("google") ||
+      name.includes("samantha") ||
+      name.includes("karen") ||
+      name.includes("daniel") ||
+      name.includes("serena")
+    );
+  });
+
+  return preferred || enVoices.find((v) => v.lang === "en-US") || enVoices[0];
+}
