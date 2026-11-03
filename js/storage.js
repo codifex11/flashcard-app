@@ -13,7 +13,9 @@ const STORAGE_KEYS = {
   lastDeck: "flashcards.lastDeck",
   theme: "flashcards.theme",
   weakSpots: "flashcards.weakSpots",
-  audioMuted: "flashcards.audio_muted"
+  audioMuted: "flashcards.audio_muted",
+  speechRate: "flashcards.speech_rate",
+  speechAuto: "flashcards.speech_auto_enabled"
 };
 
 // Checks if localStorage is supported and accessible in the current browser environment
@@ -145,4 +147,28 @@ function loadStoredAudioMuted() {
 // Saves the audio mute preference to localStorage
 function saveStoredAudioMuted(isMuted) {
   saveToStorage(STORAGE_KEYS.audioMuted, Boolean(isMuted));
+}
+
+// Loads the user-selected speech rate multiplier (defaults to 1.0)
+function loadStoredSpeechRate() {
+  const rate = loadFromStorage(STORAGE_KEYS.speechRate, 1.0);
+  return typeof rate === "number" && rate >= 0.5 && rate <= 2.0 ? rate : 1.0;
+}
+
+// Saves the speech rate multiplier to localStorage
+function saveStoredSpeechRate(rate) {
+  if (typeof rate === "number") {
+    saveToStorage(STORAGE_KEYS.speechRate, rate);
+  }
+}
+
+// Loads the auto-read aloud preference from localStorage (defaults to false)
+function loadStoredSpeechAuto() {
+  const auto = loadFromStorage(STORAGE_KEYS.speechAuto, false);
+  return typeof auto === "boolean" ? auto : false;
+}
+
+// Saves the auto-read aloud preference to localStorage
+function saveStoredSpeechAuto(auto) {
+  saveToStorage(STORAGE_KEYS.speechAuto, Boolean(auto));
 }
