@@ -242,5 +242,23 @@ if (typeof sanitizeSpeechText === 'function') {
   assert(sanitizeSpeechText('') === '', 'handles empty string safely');
 }
 
+if (typeof loadStoredSpeechRate === 'function' && typeof saveStoredSpeechRate === 'function') {
+  saveStoredSpeechRate(1.25);
+  assert(loadStoredSpeechRate() === 1.25, 'speechRate stores and retrieves 1.25 multiplier');
+  saveStoredSpeechRate(999);
+  assert(loadStoredSpeechRate() === 1.0, 'speechRate bounds invalid multipliers to 1.0 default');
+}
+
+if (typeof loadStoredSpeechAuto === 'function' && typeof saveStoredSpeechAuto === 'function') {
+  saveStoredSpeechAuto(true);
+  assert(loadStoredSpeechAuto() === true, 'speechAuto stores and retrieves true');
+  saveStoredSpeechAuto(false);
+  assert(loadStoredSpeechAuto() === false, 'speechAuto stores and retrieves false');
+}
+
+if (typeof isSpeechSupported === 'function') {
+  assert(typeof isSpeechSupported() === 'boolean', 'isSpeechSupported returns safe boolean in Node.js');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
