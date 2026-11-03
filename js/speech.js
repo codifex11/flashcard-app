@@ -148,3 +148,29 @@ function speakText(text, options) {
     return false;
   }
 }
+
+
+/**
+ * Strips markdown formatting, code ticks, and special symbols from text
+ * so that the speech engine pronounces clean, natural sentences without reading punctuation.
+ */
+function sanitizeSpeechText(text) {
+  if (!text || typeof text !== "string") {
+    return "";
+  }
+  return text
+    // Replace markdown bold/italic asterisks and underscores
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/__([^_]+)__/g, "$1")
+    .replace(/_([^_]+)_/g, "$1")
+    // Replace inline code backticks
+    .replace(/`([^`]+)`/g, "$1")
+    // Replace HTML tags
+    .replace(/<[^>]+>/g, " ")
+    // Convert multiple dashes or bullet characters to clean pause commas
+    .replace(/^[\s*•\-–—]+\s*/gm, "")
+    // Normalize consecutive whitespace and newlines
+    .replace(/\s+/g, " ")
+    .trim();
+}
