@@ -193,3 +193,17 @@ function isSpeaking() {
   }
   return speechState.isSpeaking || window.speechSynthesis.speaking;
 }
+
+
+/**
+ * Speaks the active face of a flashcard (question if front, answer if back).
+ */
+function speakCardFace(card, isFlipped) {
+  if (!card) return false;
+  const rawText = isFlipped ? card.answer : card.question;
+  const clean = sanitizeSpeechText(rawText);
+  if (!clean) return false;
+
+  const prefix = isFlipped ? "Answer: " : "Question: ";
+  return speakText(`${prefix}${clean}`);
+}
