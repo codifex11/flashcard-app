@@ -58,3 +58,26 @@ function getBestVoice() {
 
   return preferred || enVoices.find((v) => v.lang === "en-US") || enVoices[0];
 }
+
+
+/**
+ * Immediately cancels any active or pending speech synthesis utterance.
+ * Safely resets speaking flags across browser implementations.
+ */
+function cancelSpeech() {
+  if (!isSpeechSupported()) {
+    speechState.isSpeaking = false;
+    speechState.currentUtterance = null;
+    return;
+  }
+  try {
+    window.speechSynthesis.cancel();
+  } catch (err) {
+    // Graceful fallback
+  }
+  speechState.isSpeaking = false;
+  speechState.currentUtterance = null;
+  if (typeof renderVoiceState === "function") {
+    renderVoiceState();
+  }
+}
