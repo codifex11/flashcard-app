@@ -30,7 +30,8 @@
   border-color: var(--color-ink);
 }
 
-/* Header action buttons: Audio and Theme toggles */
+/* Header action buttons: Voice, Audio and Theme toggles */
+#voice-toggle,
 #audio-toggle,
 #theme-toggle {
   width: 44px;
@@ -47,17 +48,20 @@
   transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
 }
 
+#voice-toggle:hover,
 #audio-toggle:hover,
 #theme-toggle:hover {
   border-color: var(--color-ink);
   background-color: var(--color-surface-panel);
 }
 
+#voice-toggle:active,
 #audio-toggle:active,
 #theme-toggle:active {
   transform: translateY(1px);
 }
 
+.voice-icon,
 .audio-icon,
 .theme-icon {
   display: inline-flex;
