@@ -69,6 +69,22 @@
   justify-content: center;
 }
 
+/* Animated sound wave for active speech reading */
+#voice-toggle.is-speaking {
+  border-color: var(--color-accent-sage);
+  color: var(--color-accent-sage);
+  background-color: var(--color-surface-panel);
+}
+
+.voice-wave-anim {
+  animation: voice-wave-pulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes voice-wave-pulse {
+  0% { transform: scale(0.95); opacity: 0.85; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
 /* Characterful progress ribbon and large friendly counter */
 .progress-info {
   display: flex;
