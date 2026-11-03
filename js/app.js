@@ -367,6 +367,13 @@ function handleKeyDown(event) {
     return;
   }
 
+  // Voice read aloud shortcut: 'V' reads active card aloud (or stops active speech)
+  if (!event.shiftKey && (event.key === "v" || event.key === "V")) {
+    event.preventDefault();
+    handleVoiceToggle();
+    return;
+  }
+
   const isDialogOpen = (elements.addDialog && elements.addDialog.open) ||
     document.getElementById("shortcuts-dialog")?.open;
   const isQuizMode = document.documentElement.getAttribute("data-mode") === "quiz";
