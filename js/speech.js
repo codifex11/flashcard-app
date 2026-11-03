@@ -174,3 +174,22 @@ function sanitizeSpeechText(text) {
     .replace(/\s+/g, " ")
     .trim();
 }
+
+
+// Initialize speech rate and auto-read state from persistent storage
+if (typeof loadStoredSpeechRate === "function") {
+  speechState.rate = loadStoredSpeechRate();
+}
+if (typeof loadStoredSpeechAuto === "function") {
+  speechState.autoRead = loadStoredSpeechAuto();
+}
+
+/**
+ * Returns true if speech synthesis is currently active or speaking.
+ */
+function isSpeaking() {
+  if (!isSpeechSupported()) {
+    return false;
+  }
+  return speechState.isSpeaking || window.speechSynthesis.speaking;
+}
