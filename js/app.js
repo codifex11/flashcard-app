@@ -105,6 +105,23 @@ function handleDeckChange(event) {
   renderAll();
 }
 
+// Handles toggling hands-free voice reading for the active card
+function handleVoiceToggle() {
+  const isQuiz = document.documentElement.getAttribute("data-mode") === "quiz";
+  if (isQuiz) {
+    if (typeof speakQuizQuestion === "function") {
+      speakQuizQuestion();
+    }
+  } else {
+    if (typeof toggleReadCurrentCard === "function") {
+      toggleReadCurrentCard();
+    }
+  }
+  if (typeof renderVoiceState === "function") {
+    renderVoiceState();
+  }
+}
+
 // Handles toggling audio sound effects mute state
 function handleAudioToggle() {
   if (typeof toggleAudioMute === "function") {
@@ -375,6 +392,9 @@ function handleKeyDown(event) {
 // Binds all DOM elements to their respective interaction handlers
 function attachEventListeners() {
   elements.deckSelect.addEventListener("change", handleDeckChange);
+  if (elements.voiceToggle) {
+    elements.voiceToggle.addEventListener("click", handleVoiceToggle);
+  }
   if (elements.audioToggle) {
     elements.audioToggle.addEventListener("click", handleAudioToggle);
   }
