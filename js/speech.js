@@ -235,3 +235,26 @@ function speakEntireCard(card, onComplete) {
     }
   });
 }
+
+
+/**
+ * Toggles speech reading for the current card.
+ * If already speaking, it stops speech immediately. If quiet, it reads the current card aloud.
+ */
+function toggleReadCurrentCard() {
+  if (isSpeaking()) {
+    cancelSpeech();
+    return false;
+  }
+
+  if (typeof state === "undefined" || !state.cards || state.cards.length === 0) {
+    return false;
+  }
+
+  const currentCard = state.cards[state.currentIndex];
+  if (!currentCard) {
+    return false;
+  }
+
+  return speakCardFace(currentCard, Boolean(state.isFlipped));
+}
