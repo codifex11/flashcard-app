@@ -260,5 +260,17 @@ if (typeof isSpeechSupported === 'function') {
   assert(typeof isSpeechSupported() === 'boolean', 'isSpeechSupported returns safe boolean in Node.js');
 }
 
+if (typeof formatQuizQuestionSpeech === 'function') {
+  const sampleQ = {
+    question: 'What does **SQL** stand for?',
+    options: ['Structured Query Language', 'Simple Question Link', 'System Query Logic', 'Standard Question List']
+  };
+  const formatted = formatQuizQuestionSpeech(sampleQ);
+  assert(formatted.includes('Question: What does SQL stand for?'), 'formats clean question text');
+  assert(formatted.includes('Option A: Structured Query Language.'), 'formats option A correctly');
+  assert(formatted.includes('Option D: Standard Question List.'), 'formats option D correctly');
+  assert(formatQuizQuestionSpeech(null) === '', 'handles null question safely');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
