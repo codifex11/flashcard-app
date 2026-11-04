@@ -272,5 +272,16 @@ if (typeof formatQuizQuestionSpeech === 'function') {
   assert(formatQuizQuestionSpeech(null) === '', 'handles null question safely');
 }
 
+if (typeof cycleSpeechRate === 'function' && typeof setSpeechRate === 'function' && typeof getSpeechRate === 'function') {
+  setSpeechRate(1.0);
+  assert(getSpeechRate() === 1.0, 'setSpeechRate sets initial rate to 1.0');
+  const r1 = cycleSpeechRate();
+  assert(r1 === 1.25, 'first cycle advances rate to 1.25');
+  const r2 = cycleSpeechRate();
+  assert(r2 === 0.85, 'second cycle advances rate to 0.85');
+  const r3 = cycleSpeechRate();
+  assert(r3 === 1.0, 'third cycle wraps rate back to 1.0');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
