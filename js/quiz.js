@@ -714,7 +714,21 @@
     return h("div", { class: "quiz-step" },
       h("div", { class: "quiz-q-top" },
         h("p", { class: "quiz-q-counter", text: `Question ${session.current + 1} of ${total}` }),
-        h("p", { class: "quiz-q-score", text: `${levelInfo(quiz.path.level).name} \u00b7 Set ${quiz.path.set} \u00b7 Correct: ${countCorrect(session)}` })
+        h("div", { class: "quiz-q-top-right" },
+          h("button", {
+            type: "button",
+            class: "quiz-listen-btn",
+            onclick: () => {
+              if (typeof speakQuizQuestion === "function") {
+                speakQuizQuestion();
+              }
+            },
+            "aria-label": "Read question aloud (V)",
+            title: "Read question aloud (V)",
+            text: "🔊 Listen"
+          }),
+          h("p", { class: "quiz-q-score", text: `${levelInfo(quiz.path.level).name} \u00b7 Set ${quiz.path.set} \u00b7 Correct: ${countCorrect(session)}` })
+        )
       ),
       progressBar((session.current + (answered ? 1 : 0)) / total),
       h("h2", { class: "quiz-question quiz-heading", id: "quiz-heading", tabindex: "-1" }, richText(question.question)),
