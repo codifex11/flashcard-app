@@ -110,6 +110,7 @@ function speakText(text, options) {
     utterance.onstart = () => {
       speechState.isSpeaking = true;
       speechState.currentUtterance = utterance;
+      speechState.activeText = text;
       if (typeof renderVoiceState === "function") {
         renderVoiceState();
       }
@@ -118,9 +119,16 @@ function speakText(text, options) {
       }
     };
 
+    utterance.onboundary = (event) => {
+      if (typeof opts.onBoundary === "function") {
+        opts.onBoundary(event);
+      }
+    };
+
     utterance.onend = () => {
       speechState.isSpeaking = false;
       speechState.currentUtterance = null;
+      speechState.activeText = "";
       if (typeof renderVoiceState === "function") {
         renderVoiceState();
       }
