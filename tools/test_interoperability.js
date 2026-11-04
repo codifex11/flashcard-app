@@ -291,5 +291,13 @@ if (typeof speakQuizQuestion === 'function') {
   assert(speakQuizQuestion() === false, 'speakQuizQuestion returns false safely without active quiz session');
 }
 
+if (typeof speakEntireCard === 'function') {
+  assert(speakEntireCard(null) === false, 'speakEntireCard handles null card safely');
+}
+
+if (typeof speakQuizExplanation === 'function') {
+  assert(speakQuizExplanation(null) === false, 'speakQuizExplanation handles null question safely');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
