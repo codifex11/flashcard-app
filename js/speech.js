@@ -412,3 +412,11 @@ function announceSpeechStatus(message) {
   }
   announcer.textContent = message;
 }
+
+
+// Preload and cache voices when the browser fires voiceschanged
+if (typeof window !== "undefined" && typeof window.speechSynthesis !== "undefined" && typeof window.speechSynthesis.addEventListener === "function") {
+  window.speechSynthesis.addEventListener("voiceschanged", () => {
+    getBestVoice();
+  });
+}
