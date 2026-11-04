@@ -855,6 +855,31 @@
   color: var(--color-accent-rose);
 }
 
+/* Speech speed control badge in study bar */
+.speech-speed-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.speech-speed-badge:hover {
+  border-color: var(--color-ink);
+  background-color: var(--color-surface-panel);
+}
+
+.speech-speed-badge:active {
+  transform: translateY(1px);
+}
+
 .card-source-tag {
   margin-top: 0.5rem;
   padding: 0.2rem 0.55rem;
