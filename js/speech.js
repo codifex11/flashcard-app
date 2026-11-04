@@ -354,3 +354,32 @@ function cycleSpeechRate() {
   const nextIdx = currentIdx === -1 ? 0 : (currentIdx + 1) % SPEECH_RATES.length;
   return setSpeechRate(SPEECH_RATES[nextIdx]);
 }
+
+
+/**
+ * Checks whether continuous auto-read mode is currently enabled.
+ */
+function isSpeechAutoEnabled() {
+  return Boolean(speechState.autoRead);
+}
+
+/**
+ * Sets and persists continuous auto-read mode.
+ */
+function setSpeechAuto(enabled) {
+  speechState.autoRead = Boolean(enabled);
+  if (typeof saveStoredSpeechAuto === "function") {
+    saveStoredSpeechAuto(speechState.autoRead);
+  }
+  if (typeof renderVoiceState === "function") {
+    renderVoiceState();
+  }
+  return speechState.autoRead;
+}
+
+/**
+ * Toggles continuous auto-read mode on or off.
+ */
+function toggleSpeechAuto() {
+  return setSpeechAuto(!speechState.autoRead);
+}
