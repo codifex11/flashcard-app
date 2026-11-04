@@ -275,6 +275,9 @@
 
   // Goes back by keeping only the first `keep` navigation choices
   function truncatePath(keep) {
+    if (typeof cancelSpeech === "function") {
+      cancelSpeech();
+    }
     if (!confirmLeaveSession()) {
       return;
     }
@@ -374,6 +377,9 @@
   }
 
   function nextQuestion() {
+    if (typeof cancelSpeech === "function") {
+      cancelSpeech();
+    }
     const session = quiz.session;
     if (!session || session.answers[session.current] === null) {
       return;
