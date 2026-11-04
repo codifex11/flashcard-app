@@ -283,5 +283,13 @@ if (typeof cycleSpeechRate === 'function' && typeof setSpeechRate === 'function'
   assert(r3 === 1.0, 'third cycle wraps rate back to 1.0');
 }
 
+if (typeof toggleReadCurrentCard === 'function') {
+  assert(toggleReadCurrentCard() === false, 'toggleReadCurrentCard returns false safely without active card');
+}
+
+if (typeof speakQuizQuestion === 'function') {
+  assert(speakQuizQuestion() === false, 'speakQuizQuestion returns false safely without active quiz session');
+}
+
 console.log(`\nTests Summary: ${passed} passed, ${failed} failed\n`);
 process.exit(failed > 0 ? 1 : 0);
