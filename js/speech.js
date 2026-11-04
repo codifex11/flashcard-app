@@ -258,3 +258,20 @@ function toggleReadCurrentCard() {
 
   return speakCardFace(currentCard, Boolean(state.isFlipped));
 }
+
+
+/**
+ * Formats a quiz question and its lettered answer choices into a natural speech string.
+ */
+function formatQuizQuestionSpeech(questionObj) {
+  if (!questionObj || !questionObj.question) {
+    return "";
+  }
+  const cleanQ = sanitizeSpeechText(questionObj.question);
+  const letters = ["A", "B", "C", "D"];
+  const optionsText = (questionObj.options || [])
+    .map((opt, i) => `Option ${letters[i] || i + 1}: ${sanitizeSpeechText(opt)}.`)
+    .join(" ");
+
+  return `Question: ${cleanQ}. ${optionsText}`;
+}
