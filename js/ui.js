@@ -281,6 +281,9 @@ function renderVoiceState() {
   );
   elements.voiceToggle.setAttribute("aria-pressed", speaking.toString());
   elements.voiceToggle.classList.toggle("is-speaking", speaking);
+  if (elements.card) {
+    elements.card.classList.toggle("is-narrating", speaking);
+  }
 
   const iconContainer = elements.voiceToggle.querySelector(".voice-icon") || elements.voiceToggle;
   if (speaking) {
