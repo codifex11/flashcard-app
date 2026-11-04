@@ -14,6 +14,7 @@ const elements = {
   voiceToggle: document.getElementById("voice-toggle"),
   audioToggle: document.getElementById("audio-toggle"),
   themeToggle: document.getElementById("theme-toggle"),
+  speechSpeedBtn: document.getElementById("speech-speed-btn"),
   studyHierarchyBar: document.getElementById("study-hierarchy-bar"),
   fcBreadcrumbs: document.getElementById("fc-breadcrumbs"),
   fcDeptTag: document.getElementById("fc-dept-tag"),
@@ -291,6 +292,17 @@ function renderVoiceState() {
   }
 }
 
+// Updates the speech rate indicator pill with the current playback speed
+function renderSpeechSpeed() {
+  if (!elements.speechSpeedBtn) {
+    return;
+  }
+  const rate = typeof getSpeechRate === "function" ? getSpeechRate() : 1.0;
+  const label = `${rate}x`;
+  elements.speechSpeedBtn.textContent = label;
+  elements.speechSpeedBtn.setAttribute("aria-label", `Cycle speech speed (currently ${label})`);
+}
+
 // Updates the card counter text and the visual progress ribbon fill width
 function renderProgress() {
   if (elements.counterLabel) {
@@ -443,6 +455,7 @@ function renderAll() {
   renderTheme();
   renderAudioState();
   renderVoiceState();
+  renderSpeechSpeed();
   renderDeckSelect();
   renderPhaseBar();
   renderProgress();
