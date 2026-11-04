@@ -9,7 +9,7 @@ A quiet, warm flashcard app built with plain HTML, CSS, and JavaScript. Designed
 - **Study & Focus Modes**: Track cards with "I knew it" (sage) and "Review again" (blush), plus a dedicated "Review only" mode.
 - **Weak Spot Smart Deck**: Automatically captures quiz questions you miss and cards you mark "Review again" into an auto-generated, deduplicated "Weak Spots" smart deck with lecture slide annotations and mistake counters. Cards automatically graduate when mastered.
 - **Procedural Tactile Audio (Web Audio ASMR)**: Native browser AudioContext synthesizes subtle acoustic feedback with zero MP3/WAV files and zero libraries — gentle paper rustle when flipping cards, warm wooden desk tap when advancing cards, delicate micro-click when choosing quiz answers, harmonic chime for known cards, and an ascending arpeggio on 100% quiz completion. Easily muted at any time with an `M` keypress or the header sound toggle.
-- **Hands-Free Voice Study (Web Speech API)**: Uses the browser's native `window.speechSynthesis` to read flashcard questions, answers, and quiz questions aloud at natural speeds with zero external libraries. Controlled effortlessly via the `V` key shortcut or the header voice toggle button. Ideal for auditory learners, accessibility, and revision while commuting or walking.
+- **Hands-Free Voice Study (Web Speech API)**: Uses the browser's native `window.speechSynthesis` to read flashcard questions, answers, and quiz questions aloud at natural speeds with zero external libraries. Controlled effortlessly via the `V` key shortcut or the header voice toggle button. Includes continuous auto-read mode (`Shift+V`) for studying while walking or commuting, dynamic speech rate presets (`0.85x`, `1.0x`, `1.25x`), and automatic audio ducking between speech and procedural soundscapes.
 - **Card Controls**: Previous, Next, Flip, Fisher-Yates Shuffle, and Reset Order.
 - **Custom Cards & Interoperability**: Add new cards with inline validation, delete custom cards with confirmation, drag-and-drop file import, full Anki and Quizlet TSV/CSV and JSON import with automatic format detection and HTML tag cleaning, plus export to JSON or native Anki TSV.
 - **Warm Themes**: Soft cream stationery light theme and deep navy-plum dark theme, honoring system preference by default.
@@ -88,6 +88,7 @@ Flashcards mode:
 - `R` or `2`: Mark for review
 - `S`: Shuffle deck
 - `V`: Read card aloud / stop speech (Hands-Free Voice Study)
+- `Shift+V`: Toggle continuous auto-read aloud mode on card change
 - `M`: Mute / unmute procedural sound effects globally (Quiz & Flashcards)
 - `?`: Open keyboard shortcuts cheat sheet
 - `Ctrl+O` / `Cmd+O`: Import cards (JSON, Anki TSV, Quizlet CSV, or plain text)
