@@ -391,3 +391,24 @@ function setSpeechAuto(enabled) {
 function toggleSpeechAuto() {
   return setSpeechAuto(!speechState.autoRead);
 }
+
+
+/**
+ * Announces status changes politely to screen readers and assistive technology.
+ */
+function announceSpeechStatus(message) {
+  if (typeof document === "undefined" || !document.body || !message) {
+    return;
+  }
+  let announcer = document.getElementById("speech-announcer");
+  if (!announcer) {
+    announcer = document.createElement("div");
+    announcer.id = "speech-announcer";
+    announcer.setAttribute("aria-live", "polite");
+    announcer.setAttribute("aria-atomic", "true");
+    announcer.className = "sr-only";
+    announcer.style.cssText = "position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;";
+    document.body.appendChild(announcer);
+  }
+  announcer.textContent = message;
+}
