@@ -297,3 +297,24 @@ function speakQuizQuestion() {
   const spokenText = formatQuizQuestionSpeech(currentQ);
   return speakText(spokenText);
 }
+
+
+/**
+ * Speaks feedback and explanation aloud after answering a quiz question.
+ */
+function speakQuizExplanation(questionObj, chosenIndex) {
+  if (!questionObj) return false;
+  const isCorrect = chosenIndex === questionObj.correctIndex;
+  const letters = ["A", "B", "C", "D"];
+  const correctOptText = sanitizeSpeechText(questionObj.options[questionObj.correctIndex] || "");
+  const explText = sanitizeSpeechText(questionObj.explanation || "");
+
+  let speechFeedback = "";
+  if (isCorrect) {
+    speechFeedback = `Correct! ${explText}`;
+  } else {
+    speechFeedback = `Incorrect. The correct answer is Option ${letters[questionObj.correctIndex] || ""}: ${correctOptText}. ${explText}`;
+  }
+
+  return speakText(speechFeedback);
+}
