@@ -144,6 +144,19 @@ function handleVoiceToggle() {
   }
 }
 
+// Handles cycling speech playback speed presets
+function handleSpeechSpeedClick() {
+  if (typeof cycleSpeechRate === "function") {
+    const newRate = cycleSpeechRate();
+    if (typeof renderSpeechSpeed === "function") {
+      renderSpeechSpeed();
+    }
+    if (typeof showStatusMessage === "function") {
+      showStatusMessage(`Speech speed: ${newRate}x`);
+    }
+  }
+}
+
 // Handles toggling audio sound effects mute state
 function handleAudioToggle() {
   if (typeof toggleAudioMute === "function") {
@@ -423,6 +436,9 @@ function attachEventListeners() {
   elements.deckSelect.addEventListener("change", handleDeckChange);
   if (elements.voiceToggle) {
     elements.voiceToggle.addEventListener("click", handleVoiceToggle);
+  }
+  if (elements.speechSpeedBtn) {
+    elements.speechSpeedBtn.addEventListener("click", handleSpeechSpeedClick);
   }
   if (elements.audioToggle) {
     elements.audioToggle.addEventListener("click", handleAudioToggle);
