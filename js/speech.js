@@ -318,3 +318,39 @@ function speakQuizExplanation(questionObj, chosenIndex) {
 
   return speakText(speechFeedback);
 }
+
+
+const SPEECH_RATES = [1.0, 1.25, 0.85];
+
+/**
+ * Returns the current speech rate multiplier.
+ */
+function getSpeechRate() {
+  return speechState.rate;
+}
+
+/**
+ * Sets and persists a new speech rate multiplier.
+ */
+function setSpeechRate(rate) {
+  if (typeof rate !== "number" || rate < 0.5 || rate > 2.0) {
+    return speechState.rate;
+  }
+  speechState.rate = rate;
+  if (typeof saveStoredSpeechRate === "function") {
+    saveStoredSpeechRate(rate);
+  }
+  if (typeof renderSpeechSpeed === "function") {
+    renderSpeechSpeed();
+  }
+  return speechState.rate;
+}
+
+/**
+ * Cycles through available speech rate presets (1.0x -> 1.25x -> 0.85x).
+ */
+function cycleSpeechRate() {
+  const currentIdx = SPEECH_RATES.indexOf(speechState.rate);
+  const nextIdx = currentIdx === -1 ? 0 : (currentIdx + 1) % SPEECH_RATES.length;
+  return setSpeechRate(SPEECH_RATES[nextIdx]);
+}
