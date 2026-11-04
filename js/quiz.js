@@ -838,6 +838,15 @@
       return;
     }
 
+    // Voice reading shortcut: 'V' reads the active question and options aloud
+    if (key === "v" && step === "question") {
+      event.preventDefault();
+      if (typeof speakQuizQuestion === "function") {
+        speakQuizQuestion();
+      }
+      return;
+    }
+
     // 1. Question step
     if (step === "question" && quiz.session && quiz.session.questions.length) {
       const session = quiz.session;
