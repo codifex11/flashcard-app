@@ -35,6 +35,11 @@ function handleNextCard() {
   renderProgress();
   renderCard();
   renderButtonStates();
+  if (typeof isSpeechAutoEnabled === "function" && isSpeechAutoEnabled()) {
+    if (typeof speakCardFace === "function") {
+      speakCardFace(state.cards[state.currentIndex], state.isFlipped);
+    }
+  }
 }
 
 // Handles navigating to the previous card
@@ -52,6 +57,11 @@ function handlePrevCard() {
   renderProgress();
   renderCard();
   renderButtonStates();
+  if (typeof isSpeechAutoEnabled === "function" && isSpeechAutoEnabled()) {
+    if (typeof speakCardFace === "function") {
+      speakCardFace(state.cards[state.currentIndex], state.isFlipped);
+    }
+  }
 }
 
 // Handles shuffling the active cards
