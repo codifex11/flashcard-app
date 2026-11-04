@@ -59,6 +59,14 @@ function createNoiseBuffer(ctx, durationSeconds) {
   return buffer;
 }
 
+// Returns a gain scalar that gently ducks procedural sound effects while voice synthesis is speaking
+function getAudioGainMultiplier() {
+  if (typeof isSpeaking === "function" && isSpeaking()) {
+    return 0.45;
+  }
+  return 1.0;
+}
+
 /**
  * Synthesizes a gentle stationery paper rustle when an index card is flipped.
  * Utilizes bandpass-filtered noise swept downward with a soft exponential decay.
@@ -86,8 +94,9 @@ function playCardFlip() {
 
     // Soft whisper-level gain envelope
     const gainNode = ctx.createGain();
+    const peakGain = 0.08 * getAudioGainMultiplier();
     gainNode.gain.setValueAtTime(0.001, now);
-    gainNode.gain.linearRampToValueAtTime(0.08, now + 0.02);
+    gainNode.gain.linearRampToValueAtTime(peakGain, now + 0.02);
     gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration);
 
     source.connect(filter);
@@ -121,7 +130,8 @@ function playCardTurn() {
     osc.frequency.exponentialRampToValueAtTime(65, now + duration);
 
     const gainNode = ctx.createGain();
-    gainNode.gain.setValueAtTime(0.09, now);
+    const tapGain = 0.09 * getAudioGainMultiplier();
+    gainNode.gain.setValueAtTime(tapGain, now);
     gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration);
 
     osc.connect(gainNode);
