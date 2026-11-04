@@ -275,3 +275,25 @@ function formatQuizQuestionSpeech(questionObj) {
 
   return `Question: ${cleanQ}. ${optionsText}`;
 }
+
+
+/**
+ * Reads the active quiz question and its answer choices aloud.
+ * If already speaking, stops speech immediately.
+ */
+function speakQuizQuestion() {
+  if (isSpeaking()) {
+    cancelSpeech();
+    return false;
+  }
+  if (typeof quiz === "undefined" || !quiz.session || !quiz.session.questions) {
+    return false;
+  }
+  const currentQ = quiz.session.questions[quiz.session.current];
+  if (!currentQ) {
+    return false;
+  }
+
+  const spokenText = formatQuizQuestionSpeech(currentQ);
+  return speakText(spokenText);
+}
