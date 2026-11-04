@@ -397,6 +397,18 @@ function handleKeyDown(event) {
     return;
   }
 
+  // Continuous auto-read mode shortcut: Shift+V toggles hands-free reading on card navigation
+  if (event.shiftKey && (event.key === "v" || event.key === "V")) {
+    event.preventDefault();
+    if (typeof toggleSpeechAuto === "function") {
+      const active = toggleSpeechAuto();
+      if (typeof showStatusMessage === "function") {
+        showStatusMessage(active ? "Auto-read enabled (hands-free)" : "Auto-read disabled");
+      }
+    }
+    return;
+  }
+
   const isDialogOpen = (elements.addDialog && elements.addDialog.open) ||
     document.getElementById("shortcuts-dialog")?.open;
   const isQuizMode = document.documentElement.getAttribute("data-mode") === "quiz";
